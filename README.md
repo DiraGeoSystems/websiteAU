@@ -19,6 +19,19 @@ Please keep this simple and static.
 a required by GitHub Pages, where we intend to publish.
 The empty `.nojekyll` file is also for GitHub Pages.)
 
+## Rechtliches
+
+Es scheint eine **Impressumspflicht** zu geben, ein von jeder
+Seite einsehbares Impressum ist also eine Notwendigkeit. Hier
+müsste allerdings eine funktionierende Mail-Adresse schon
+reichen, eine Postadresse und die UID schaffen Vertrauen.
+
+Weiter ist eine **Datenschutz-Erklärung** zwingend.
+Sobald die Seite von EU-Bürgern verwendet wird, werden diese
+sich auf die DSGVO berufen, wür müssen also auch hinsichtlich
+DSGVO eine vollständige und korrekte Datenschutz-Erklärung
+erstellen und auf jeder Seite (im Footer) verlinken.
+
 ## Icons and Tiles
 
 - favicon.ico can be created with Gimp: just export to `*.ico`
