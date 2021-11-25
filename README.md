@@ -21,16 +21,33 @@ The empty `.nojekyll` file is also for GitHub Pages.)
 
 ## Rechtliches
 
-Es scheint eine **Impressumspflicht** zu geben, ein von jeder
-Seite einsehbares Impressum ist also eine Notwendigkeit. Hier
-müsste allerdings eine funktionierende Mail-Adresse schon
-reichen, eine Postadresse und die UID schaffen Vertrauen.
+In der Schweiz gibt es seit 2012 eine **Impressumspflicht**
+(revidiertes Gesetz über den unlauteren Wettbewerb UWG).
+In Deutschland gibt es das als *Anbieterkennzeichnung* schon
+länger. Es geht darum, dass der Urheber der Seiten zweifelsfrei
+identifiziert und kontaktiert werden kann. Also: Firmenname
+(wie im Handelsregister eingetragen), funktionierende Mail
+und Postadresse, optional Telefonnummer und Firmennummer.
+Dies entweder auf jeder Seite oder auf jeder Seite einen
+Link zu einer Impressum-Seite.
+
+Achtung: für eine Geschäftstätigkeit in Deutschland/EU
+sind weiter erforderlich:
+
+- Name und Vorname einer vertretungsberechtigten Person
+- Telefonnummer
+- Umsatzsteuer- oder Wirtschaftssteuer-Identifikationsnummer (wenn vorhanden)
+- Handels-, Vereins-, Partnerschafts- oder Genossenschaftsregister
+  mit Registernummer (falls vorhanden)
+
+Quelle: <https://www.cyon.ch/blog/Impressum-Websites/>  
 
 Weiter ist eine **Datenschutz-Erklärung** zwingend.
 Sobald die Seite von EU-Bürgern verwendet wird, werden diese
-sich auf die DSGVO berufen, wür müssen also auch hinsichtlich
+sich auf die DSGVO berufen, wir müssen also auch hinsichtlich
 DSGVO eine vollständige und korrekte Datenschutz-Erklärung
-erstellen und auf jeder Seite (im Footer) verlinken.
+erstellen und auf jeder Seite (im Footer) verlinken. Siehe:
+<https://www.cyon.ch/blog/anleitung-datenschutzerklaerung>
 
 ## Icons and Tiles
 
