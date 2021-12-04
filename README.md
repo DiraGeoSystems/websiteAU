@@ -16,7 +16,7 @@ Please keep this simple and static.
 - docs/js/
 
 (I'd prefer to rename *docs/* to *site/*, but *docs/* is
-a required by GitHub Pages, where we intend to publish.
+required by GitHub Pages, where we intend to publish.
 The empty `.nojekyll` file is also for GitHub Pages.)
 
 ## Rechtliches
@@ -31,7 +31,7 @@ und Postadresse, optional Telefonnummer und Firmennummer.
 Dies entweder auf jeder Seite oder auf jeder Seite einen
 Link zu einer Impressum-Seite.
 
-Achtung: für eine Geschäftstätigkeit in Deutschland/EU
+**Achtung:** für eine Geschäftstätigkeit in Deutschland/EU
 sind weiter erforderlich:
 
 - Name und Vorname einer vertretungsberechtigten Person
@@ -40,14 +40,22 @@ sind weiter erforderlich:
 - Handels-, Vereins-, Partnerschafts- oder Genossenschaftsregister
   mit Registernummer (falls vorhanden)
 
-Quelle: <https://www.cyon.ch/blog/Impressum-Websites/>  
+Quelle: <https://www.cyon.ch/blog/Impressum-Websites/>
 
 Weiter ist eine **Datenschutz-Erklärung** zwingend.
 Sobald die Seite von EU-Bürgern verwendet wird, werden diese
 sich auf die DSGVO berufen, wir müssen also auch hinsichtlich
 DSGVO eine vollständige und korrekte Datenschutz-Erklärung
-erstellen und auf jeder Seite (im Footer) verlinken. Siehe:
-<https://www.cyon.ch/blog/anleitung-datenschutzerklaerung>
+erstellen und auf jeder Seite (im Footer) verlinken.
+Bei Hosting auf *GitHub Pages* (oder wo auch immer) ist
+sicher mindestens auf deren Datenschutzerklärung zu verweisen.
+
+Siehe:
+
+- <https://www.cyon.ch/blog/anleitung-datenschutzerklaerung>
+- <https://www.datenschutzstelle.li/index.php/?cID=316>
+- <https://docs.github.com/en/github/site-policy/github-privacy-statement>
+- <https://docs.github.com/en/github/site-policy/global-privacy-practices>
 
 ## Icons and Tiles
 

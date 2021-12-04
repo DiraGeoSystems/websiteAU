@@ -16,8 +16,9 @@ h2{text-align:center;padding-top:64px;padding-bottom:24px;}
 h2 span.heading{padding:5px 8px;display:inline-block;
   background-color:#000;color:#f3f9e9;
   letter-spacing:4px;text-transform:uppercase}
-h3{padding-top:32px}
 footer a{text-decoration:none;}
 footer a:hover{color:#c5e19b;}
-address{font-style:normal;margin-left:2pc;padding:1pc 0pc}
 #team a{color:#595959;}
+
+.legal h2{text-align:left; padding-top:32px; padding-bottom:8px}
+.legal address{font-style:normal;margin-left:2pc;padding:1pc 0pc}
