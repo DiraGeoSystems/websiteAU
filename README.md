@@ -86,6 +86,11 @@ a Facebook thingy that helps control what Facebook (and
 others) display when their users share this page.
 Details on <https://ogp.me/>
 
+## Content
+
+The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
+Use the entity `&#9776;` &#9776; or `&#x2630;` &#X2630; in HTML.
+
 ## References
 
 - <https://html5boilerplate.com> and  

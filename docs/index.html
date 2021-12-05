@@ -19,9 +19,8 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/w3.css">
-  <!--<link rel="stylesheet" href="css/main.css">-->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
   <meta name="theme-color" content="#595959">
 </head>
@@ -31,35 +30,53 @@
 <!-- Dira | Data | Mapping | Team | Contact -->
 
 <!-- Links (sit on top) -->
+<!-- https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
 <div class="w3-top">
   <div class="w3-bar w3-padding w3-black w3-opacity-min topitem">
-    <a href="#" class="w3-button w3-black"><i class="fa fa-home w3-large"></i></a>
-    <a href="#dira" class="w3-button w3-black">Dira</a>
-    <a href="#work" class="w3-button w3-black">Work</a>
-    <a href="#team" class="w3-button w3-black">Team</a>
-    <a href="#contact" class="w3-button w3-black">Contact</a>
-    <a href="#" class="w3-button w3-black w3-right">DE/<b>EN</b></a>
+    <!--<a href="#" class="w3-button w3-black"><i class="fa fa-home w3-large"></i></a>-->
+    <a href="#home" class="w3-button w3-black"><b>Dira</b></a>
+    <a href="#data" class="w3-button w3-black w3-hide-small">Data</a>
+    <a href="#mapping" class="w3-button w3-black w3-hide-small">Mapping</a>
+    <a href="#team" class="w3-button w3-black w3-hide-small">Team</a>
+    <a href="#contact" class="w3-button w3-black w3-hide-small">Contact</a>
+    <!--<a href="#" class="w3-button w3-black w3-right">DE/<b>EN</b></a>-->
+    <a href="javascript:void(0);" onclick="toggleDropNav()"
+       class="icon w3-button w3-black w3-right w3-large w3-hide-medium w3-hide-large">&#9776;</a>
   </div>
+  <div id="dropnav" class="w3-bar-block w3-black w3-opacity-min topitem w3-hide w3-hide-large w3-hide-medium">
+    <a href="#data" onclick="closeDropNav()" class="w3-bar-item w3-button">Data</a>
+    <a href="#mapping" onclick="closeDropNav()" class="w3-bar-item w3-button">Mapping</a>
+    <a href="#team" onclick="closeDropNav()" class="w3-bar-item w3-button">Team</a>
+    <a href="#contact" onclick="closeDropNav()" class="w3-bar-item w3-button">Contact</a>
+  </div>
+  <script>
+    // elem.classList has methods add(), remove(), and toggle(), but is
+    // missing in old browsers, so here we stick to className fiddling
+    function toggleDropNav() {
+      var x = document.getElementById("dropnav");
+      if (x.className.indexOf("w3-show") < 0) x.className += " w3-show";
+      else x.className = x.className.replace(" w3-show", "");
+    }
+    function closeDropNav() {
+      var x = document.getElementById("dropnav");
+      if (x.className.indexOf("w3-show") >= 0)
+        x.className = x.className.replace(" w3-show", "");
+    }
+  </script>
 </div>
 
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-    <!-- <span class="w3-tag">Maybe some text here</span> -->
-  </div>
-  <div class="w3-display-position" style="left:50%;top:60%;transform:translate(-50%,-50%)scale(150%,150%)">
-    <img src="img/LogoDraft2Black.svg" alt="Dira Logo" style="width:100%;max-width:600px;" >
-  </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large w3-hide-small">
-    <span class="w3-tag">making fine geo software</span>
+<!-- Header with background image -->
+<header class="bgimg" id="home">
+  <div class="w3-center w3-padding-large">
+    <img src="img/LogoDraft2Black.svg" alt="Dira Logo" class="w3-image">
   </div>
 </header>
 
-<!-- Add a background color and large text to the whole page -->
+<!-- Set background color, large text, and some patina to whole page -->
 <div class="w3-sand w3-grayscale-min w3-large">
 
 <!-- About Container -->
-<div class="w3-container" id="dira">
+<section class="w3-container" id="dira">
   <div class="w3-content" style="max-width:700px">
     <h2><span class="heading">DIRA GEOSYSTEMS</span></h2>
     <p>Dira GeoSystems is dedicated to developing software for
@@ -67,31 +84,35 @@
       by putting all our craft and care into our products and
       projects and sharing our vast experience to the benefit
       of our customers.</p>
-    <p>Dira is Swahili for compass, an old arabic measure of
-      length (about one meter), and associates with Indira,
-      a byname of the Hindu godess of beauty.
-    </p>
+    <p>Dira GeoSystems develops <span class="w3-tag">ProSuite</span>,
+      the productivity extension for ArcGIS for data production,
+      quality assurance, and cartographic refinement.
+      The new ProSuite is open source. Follow its active development right
+      at the source on <a href="https://github.com/prosuite/prosuite">GitHub</a>.
+      Your technical question might already be answered in the
+      <a href="https://prosuite.github.io/techblog">ProSuite Tech Blog</a>.</p>
     <img src="img/schwan-512x512.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
   </div>
-</div>
+</section>
 
-<!-- Work Container -->
-<div class="w3-container" id="work">
+<!-- Data Container -->
+<section class="w3-container" id="data">
   <div class="w3-content" style="max-width:700px">
-    <h2><span class="heading">Data and Mapping</span></h2>
-    <p>Dira GeoSystems develops <span class="w3-tag">ProSuite</span>,
-    the productivity extension for ArcGIS for data production,
-    quality assurance, and cartographic refinement.</p>
-    <p>The new ProSuite is open source. Follow its active development right
-    at the source on <a href="https://github.com/prosuite/prosuite">GitHub</a>.
-    Your technical question might already be answered in the
-    <a href="https://prosuite.github.io/techblog">ProSuite Tech Blog</a>.</p>
-
+    <h2><span class="heading">Data</span></h2>
+    <p>Dira produces software for your tremendously useful geodata.</p>
+    <p>Our portfolio includes the <span class="w3-tag">ProSuite QA Solution</span>
+      for advanced high performance quality checking of your geodata,
+      along with a broad range of highly effective and usable tools
+      for interactive editing.</p>
+    <p><span class="w3-tag">LocationFinder</span> is probably the fastest
+      address and place name search for your data. It features fine grained
+      configuration and normatization options, provides an easy
+      REST interface for your own clients, and seamlessly integrates
+      into the ArcGIS platform.</p>
+    <p>More details soon. Stay tuned. We're getting ready.</p>
     <img src="img/lori-512x512.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
 
-    <p>Stay tuned. We're getting ready.</p>
-    <p>In the meantime, here are some logo studies...</p>
-
+<!--
     <div class="w3-row">
       <div class="w3-half w3-container w3-center">
         <p>Logo study: <b>compass</b></p>
@@ -106,27 +127,32 @@
         <p><img class="w3-image" src="img/logo-study-globe-white.png" alt="Logo globe white"></p>
       </div>
     </div>
-
-    <p class="w3-center">Palette:
-      <span style="width:100px;background-color:#dcedc2">dcedc2</span>
-      <span style="width:100px;background-color:#404040">404040</span>
-      <span style="width:100px;background-color:#f3f9e9">f3f9e9</span>
-      <span style="width:100px;background-color:#c5e19b">c5e19b</span>
-      <span style="width:100px;background-color:#595959">595959</span>
-      <span style="width:100px;background-color:#262626">262626</span></p>
-
-      <p class="w3-center"><img class="w3-image" src="img/LogoDraft2Black.png"/></p>
+-->
   </div>
-</div>
+</section>
+
+<!-- Mapping Container -->
+<section class="w3-container" id="mapping">
+  <div class="w3-content" style="max-width:700px">
+    <h2><span class="heading">Mapping</span></h2>
+    <p>Clean data is a necessary basis for effective cartography,
+      but in itself not sufficient. You need specialised data models
+      for good performance and managability, and for the utmost
+      quality and beauty you will want some (manual and automatic)
+      refinement. Our <span class="w3-tag">ProSuite Carto Solution</span>
+      offers a large range of automatic processes and interactive tools
+      for cartographic refinement. Combine it with Dira's long standing
+      expertise in cartography: we are glad to help.</p>
+  </div>
+</section>
 
 <!-- Team Container -->
-<div class="w3-container" id="team">
+<section class="w3-container" id="team">
   <div class="w3-content" style="max-width:700px">
-    <h2><span class="heading">People at Dira</span></h2>
-    <p>Dira comes to live through a core team and a network of
-    affiliated developers, specialists, and friends.
-    We are all dedicated to crafting the finest quality tools
-    for your geo data and your maps.</p>
+    <h2><span class="heading">Team</span></h2>
+    <p>Dira is the concentrated effort of a core team and
+      a network of affiliated developers, specialists, and
+      friends, all established and committed to highest quality.</p>
     <div class="w3-row">
       <div class="w3-col m6 w3-panel">
         <div class="w3-card-4">
@@ -172,32 +198,43 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Contact Container -->
-<div class="w3-container" id="contact" style="padding-bottom:32px;">
+<section class="w3-container" id="contact" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
-    <h2><span class="heading">Contact Us</span></h2>
+    <h2><span class="heading">Contact</span></h2>
     <p>Dira GeoSystems is based in Zürich.<br>We are best reached by mail:<br>
     say <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+    <p>By the way, <span class="w3-tag">Dira</span> is Swahili for compass,
+      an old arabic measure of length (about one metre), and
+      associates with Indira, a byname of the Hindu godess of beauty.</p>
+
     <img src="img/mean-curv-blur-1280.jpg" class="w3-image" style="width:100%">
+    <p class="w3-center">Palette:
+      <span style="width:100px;background-color:#dcedc2">dcedc2</span>
+      <span style="width:100px;background-color:#404040">404040</span>
+      <span style="width:100px;background-color:#f3f9e9">f3f9e9</span>
+      <span style="width:100px;background-color:#c5e19b">c5e19b</span>
+      <span style="width:100px;background-color:#595959">595959</span>
+      <span style="width:100px;background-color:#262626">262626</span></p>
+    <!-- <p class="w3-center"><img class="w3-image" src="img/LogoDraft2Black.png"/></p> -->
   </div>
-</div>
+</section>
 
 <!-- End page content -->
 </div>
 
-<!-- Footer -->
 <footer class="footer w3-container w3-black w3-padding-48 w3-center">
   <div class="w3-row">
     <div class="w3-col m4">
-      <a href="http://www.dirageosystems.ch/">Dira GeoSystems AG</a><br>
+      Dira GeoSystems AG<br>
       Else-Züblin-Strasse 48<br>
       CH-8047 Zürich
     </div>
-    <div class="w3-col m4">
-      <br>
+    <div class="w3-col m4 w3-margin-top w3-margin-bottom">
       <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a><br>
+      <a href="https://www.dirageosystems.ch">www.dirageosystems.ch</a>
       <!--Tel <a href="tel:+41999999999">+41 99 999 99 99</a><br>-->
     </div>
     <div class="w3-col m4">

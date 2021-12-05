@@ -7,11 +7,12 @@ html, body {
   background-position: center;
   background-size: cover;
   background-image: url("../img/value-propagate-1280.jpg");
-  min-height: 58%;
+  min-height: 40%;
 }
 .topitem {
   text-transform:uppercase;
 }
+header img {margin-top:32px;}
 h2{text-align:center;padding-top:64px;padding-bottom:24px;}
 h2 span.heading{padding:5px 8px;display:inline-block;
   background-color:#000;color:#f3f9e9;
