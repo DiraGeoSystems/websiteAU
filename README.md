@@ -19,6 +19,15 @@ Please keep this simple and static.
 required by GitHub Pages, where we intend to publish.
 The empty `.nojekyll` file is also for GitHub Pages.)
 
+## Content
+
+The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
+Use the entity `&#9776;` &#9776; or `&#x2630;` &#X2630; in HTML.
+
+First drafts of the Dira Logo were created on looka.com here:
+<https://looka.com/s/77498297>. The present version was drawn
+from scratch in Inkscape.
+
 ## Rechtliches
 
 In der Schweiz gibt es seit 2012 eine **Impressumspflicht**
@@ -57,6 +66,23 @@ Siehe:
 - <https://docs.github.com/en/github/site-policy/github-privacy-statement>
 - <https://docs.github.com/en/github/site-policy/global-privacy-practices>
 
+## Analytics
+
+Should we decide for site usage statistics, we could use good
+old StatCounter (I'm using this for the IEG site) or Google Analytics
+as in the snipped below. But beware that we have to update our
+**privacy policy** accordingly!
+
+```HTML
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+```
+
 ## Icons and Tiles
 
 - favicon.ico can be created with Gimp: just export to `*.ico`
@@ -85,11 +111,6 @@ The `og:foo` meta tags are for the Open Graph Protocol,
 a Facebook thingy that helps control what Facebook (and
 others) display when their users share this page.
 Details on <https://ogp.me/>
-
-## Content
-
-The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
-Use the entity `&#9776;` &#9776; or `&#x2630;` &#X2630; in HTML.
 
 ## References
 
