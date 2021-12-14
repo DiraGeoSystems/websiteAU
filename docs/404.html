@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-* {
-  line-height: 1.2;
-  margin: 0;
-}
-html {
-  font-family: sans-serif;
-  text-align: center;
-  color: #f3f9e9;
-  display: table;
-  height: 100%;
-  width: 100%;
-  background-color: #404040
+<meta charset="utf-8">
+<title>Page Not Found | Dira GeoSystems</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {line-height:1.2;margin:0;}
+html, body {
+  width:100%;height:100%;
+  font-family:sans-serif;
+  line-height:150%;
+  display:table;
+  text-align:center;
+  text-shadow:2px 2px 0 #444;
+  color:#eee;
+  background-color:#444;
 }
 body {
-  display: table-cell;
-  vertical-align: middle;
-  margin: 2em auto;
+  background-position:center;
+  background-size:cover;
+  background-image:url("img/MercatorMonstreMarin.jpg");
+  display:table-cell;
+  vertical-align:middle;
+  margin:2em auto;
 }
 h1 {
-  color: #dcedc2;
-  font-size: 2em;
-  font-weight: normal;
+  font-size:2em;
+  font-weight:700;
+  margin:3pc auto;
 }
 p {
-  margin: 0 auto;
-  width: 280px;
+  font-size:1.44em;
+  font-weight:500;
+  margin:1pc auto;
 }
-
-@media only screen and (max-width: 280px) {
-  body, p {
-    width: 95%;
-  }
-  h1 {
-    font-size: 1.5em;
-    margin: 0 0 0.3em;
-  }
+a {color:#eee;}
+.dragons {
+  color:#eb4630;
+  text-shadow:1px 1px 0 #fda;
+  margin-top:1pc;
 }
-  </style>
-</head>
+.source {
+  color:#ccc;font-size:1em;
+  position:absolute;width:100%;bottom:0;
+  z-index:-1; /*just in case: behind other text*/
+}
+.source a {color:#ccc;}
+</style>
 
 <body>
-  <!--TODO logo here, ev link to main page-->
-  <a href="/"><img src="img/dira-logo-120x120.png"></a>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+  <h1 class="dragons" title="Here Be Dragons">Hic Sunt Dracones</h1>
+  <h1 title="HTTP 404">(Page Not Found)</h1>
+  <p>The page you were trying to view <nobr>does not exist.</nobr></p>
+  <p>Go back to safe waters: <a href="/">www.dirageosystems.ch</a></p>
+  <p class="source">Detail from a Mercator globe from about 1550,
+    <a href="https://www2.unil.ch/mercator/en/index.html">digitized
+    by Université de Lausanne</a></p>
 </body>
-
 </html>
