@@ -3,9 +3,21 @@
 
 It “lives” in a Git repository, is statically generated
 (well, at present really just statically created), and
-online at <https://www.dirageosystems.ch> since November 2021.
+online at <https://dirageosystems.ch> since December 2021.
 
 Please keep this simple and static.
+
+## Hosting
+
+Presently hosted at [GitHub Pages](https://pages.github.com),
+straight from the GitHub repository. Things to consider:
+
+- GitHub Pages only works for a public repository
+- GitHub Pages publishes the *docs/* directory on the main branch
+- need empty file *docs/.nojekyll* to disable Jekyll
+- turned on “Enforce HTTPS”: HTTP requests get a 301
+  (permanent redirect) to HTTPS; good
+- read the GitHub Pages docs about custom domains
 
 ## Structure
 
@@ -68,10 +80,10 @@ Siehe:
 
 ## Analytics
 
-Should we decide for site usage statistics, we could use good
-old StatCounter (I'm using this for the IEG site) or Google Analytics
-as in the snipped below. But beware that we have to update our
-**privacy policy** accordingly!
+*Should* we decide for site usage statistics, we could use
+good old StatCounter (I'm using this for the IEG site) or
+Google Analytics as in the snipped below. But beware that
+we have to update our **privacy policy** accordingly!
 
 ```HTML
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
@@ -83,20 +95,25 @@ as in the snipped below. But beware that we have to update our
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 ```
 
-## Icons and Tiles
+## Metadata
+
+HTML5 Boilerplate comes with a host of metadata/files.
+Here is a short summary of how they work:
+
+### Icons and Tiles
 
 - favicon.ico can be created with Gimp: just export to `*.ico`
 - icon.png is the Apple Touch Icon for iOS devices
 - tile.png and tile-wide.png are for IE11 tiles
 
-## Meta Files
+### Meta Files
 
 - robots.txt – config site crawling, see <https://www.robotstxt.org>
 - browserconfig.xml – settings for IE11 and Edge browsers
 - site.webmanifest – the Web App Manifest, see below
-- 404.html – should be returned on HTTP/404 errors
+- 404.html – should be returned on HTTP/404 errors (works with GitHub Pages)
 
-## Web App Manifest
+### Web App Manifest
 
 The web app manifest belongs to the realm of progressive web
 apps (PWAs) and allows a web site to be installed on a mobile
@@ -105,7 +122,7 @@ referenced from HTML with `<meta rel="manifest" href="FILE">`.
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 has the details.
 
-## Open Graph Metadata
+### Open Graph Metadata
 
 The `og:foo` meta tags are for the Open Graph Protocol,
 a Facebook thingy that helps control what Facebook (and
@@ -125,3 +142,6 @@ Details on <https://ogp.me/>
 - <https://looka.com>  
   a useful online logo generator; could download an
   entire brand kit, but that is no longer free
+
+- <https://pages.github.com/>  
+  free website hosting straight from a GitHub repo.
