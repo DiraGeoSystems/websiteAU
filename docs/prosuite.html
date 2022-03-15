@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dira GeoSystems / ProSuite</title>
+  <meta name="description" content="ProSuite by Dira GeoSystems is the productivity extension for ArcGIS Pro for data and map production">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Dira GeoSystems">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dirageosystems.ch">
+  <meta property="og:image" content="https://dirageosystems.ch/icon.png">
+  <meta property="og:description" content="Software for tremendously useful geodata and the most beautiful maps">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="theme-color" content="#595959">
+</head>
+
+<body>
+
+<!-- Links (sit on top) -->
+<!-- https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
+<div class="w3-top">
+  <div class="w3-bar w3-padding w3-black w3-opacity-min topitem">
+    <a href="index.html" class="w3-button w3-black"><b>Dira</b></a>
+    <a href="#prosuite" class="w3-button w3-black">ProSuite</a>
+    <a href="#contact" class="w3-button w3-black w3-hide-small">Contact</a>
+    <!--<a href="#" class="w3-button w3-black w3-right">DE/<b>EN</b></a>-->
+    <a href="javascript:void(0);" onclick="toggleDropNav()"
+       class="icon w3-button w3-black w3-right w3-large w3-hide-medium w3-hide-large">&#9776;</a>
+  </div>
+  <div id="dropnav" class="w3-bar-block w3-black w3-opacity-min topitem w3-hide w3-hide-large w3-hide-medium">
+    <a href="#prosuite" onclick="closeDropNav()" class="w3-bar-item w3-button">ProSuite</a>
+    <a href="#contact" onclick="closeDropNav()" class="w3-bar-item w3-button">Contact</a>
+  </div>
+  <script>
+    // elem.classList has methods add(), remove(), and toggle(), but is
+    // missing in old browsers, so here we stick to className fiddling
+    function toggleDropNav() {
+      var x = document.getElementById("dropnav");
+      if (x.className.indexOf("w3-show") < 0) x.className += " w3-show";
+      else x.className = x.className.replace(" w3-show", "");
+    }
+    function closeDropNav() {
+      var x = document.getElementById("dropnav");
+      if (x.className.indexOf("w3-show") >= 0)
+        x.className = x.className.replace(" w3-show", "");
+    }
+  </script>
+</div>
+
+<!-- Header with background image -->
+<header class="bgimg" id="home">
+  <div class="w3-center w3-padding-large">
+    <img src="img/DiraLogoWeb.svg" alt="Dira Logo" class="w3-image">
+  </div>
+</header>
+
+<!-- Set background color and large text to whole page -->
+<div class="w3-sand w3-large">
+
+<section class="w3-container" id="lf">
+  <div class="w3-content" style="max-width:700px">
+    <h1><span class="heading">ProSuite</span></h1>
+    <img src="img/LogoPS256.png" alt="Logo" class="w3-image" style="width:128px;float:right">
+    <p>Dira GeoSystem's ProSuite is a suite of high-end productivity
+      tools for data production and cartographic refinement on top
+      of ArcGIS Pro.</p>
+  </div>
+</section>
+
+<section class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+    <h2><span class="heading">Section</span></h2>
+    <p>...</p>
+  </div>
+</section>
+
+<section class="w3-container" id="contact" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h2><span class="heading">Contact</span></h2>
+    <p>Please contact us at
+      <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a>
+      or phone <a href="tel:+41442448442">+41 44 2448442</a> for further
+      information or a quote.</p>
+
+    <img src="img/mean-curv-blur-1280.jpg" class="w3-image w3-grayscale-min" style="width:100%">
+  </div>
+</section>
+
+<!-- End page content -->
+</div>
+
+<footer class="footer w3-container w3-black w3-padding-48 w3-center">
+  <div class="w3-row">
+    <div class="w3-col m4">
+      Dira GeoSystems AG<br>
+      Else-Züblin-Strasse 48<br>
+      CH-8047 Zürich
+    </div>
+    <div class="w3-col m4">
+      <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a><br>
+      <a href="https://www.dirageosystems.ch">www.dirageosystems.ch</a><br>
+      Tel. <a href="tel:+41442448442">+41 44 2448442</a>
+    </div>
+    <div class="w3-col m4">
+      find us on <a href="https://github.com/dirageo"><img src="img/GitHub-Mark-Light-32px.png" width="24"> GitHub</a><br>
+      <a href="privacypolicy.html">Privacy Policy/Datenschutz</a><br>
+      <a href="impressum.html">Imprint/Impressum</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

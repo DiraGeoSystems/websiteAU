@@ -21,6 +21,8 @@ h1 span.heading,h2 span.heading{
 footer a{text-decoration:none;}
 footer a:hover{color:#c5e19b;}
 #team a{color:#595959;}
+.green{color:#000!important;background-color:#c5e19b!important}
+.border-brown{border-color: #775544!important}
 
 .legal h2{text-align:left; padding-top:32px; padding-bottom:8px}
 .legal address{font-style:normal;margin-left:2pc;padding:1pc 0pc}
