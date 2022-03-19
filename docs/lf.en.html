@@ -33,13 +33,14 @@
     <a href="index.html" class="w3-button w3-black"><b>Dira</b></a>
     <a href="#lf" class="w3-button w3-black">Location&thinsp;Finder</a>
     <a href="#contact" class="w3-button w3-black w3-hide-small">Contact</a>
-    <!--<a href="#" class="w3-button w3-black w3-right">DE/<b>EN</b></a>-->
+    <a href="lf.de.html" class="w3-button w3-black w3-right w3-hide-small">DE/<b>EN</b></a>
     <a href="javascript:void(0);" onclick="toggleDropNav()"
        class="icon w3-button w3-black w3-right w3-large w3-hide-medium w3-hide-large">&#9776;</a>
   </div>
   <div id="dropnav" class="w3-bar-block w3-black w3-opacity-min topitem w3-hide w3-hide-large w3-hide-medium">
     <a href="#lf" onclick="closeDropNav()" class="w3-bar-item w3-button">LocationFinder</a>
     <a href="#contact" onclick="closeDropNav()" class="w3-bar-item w3-button">Contact</a>
+    <a href="lf.de.html" onclick="closeDropNav()" class="w3-bar-item w3-button">DE/<b>EN</b></a>
   </div>
   <script>
     // elem.classList has methods add(), remove(), and toggle(), but is
@@ -72,9 +73,9 @@
     <h1><span class="heading">Location&thinsp;Finder</span></h1>
     <img src="lf/lf-logo256.png" alt="Logo" class="w3-image" style="width:128px;float:right">
     <p>Dira GeoSystem's LocationFinder provides a fast and friendly
-      search over your place and address data. It is an on-premise
-      solution and therefore suitable even for your sensitive in-house
-      data.</p>
+      <span class="tag">interactive search</span> over your place and
+      address data. It is an on-premise solution and therefore suitable
+      even for your sensitive in-house data.</p>
   </div>
 </section>
 
@@ -142,8 +143,8 @@
     <h2><span class="heading">Architecture</span></h2>
     <p>LocationFinder is a server-side solution.
       It consists of two programs: a Builder and a Service.
-      The Builder reads your source data and builds an index structure.
-      The Service consults this index to answer requests over a simple REST API.
+      The <span class="tag">Builder</span> reads your source data and builds an index structure.
+      The <span class="tag">Service</span> consults this index to answer requests over a simple REST API.
       (It also implements a relevant subset of the Esri REST API, so that it
       can be integrated into the ArcGIS platform.)
       The Builder reads data from a <a href="lf/TheSimpleXmlFormat.pdf">simple XML format</a>.
@@ -178,13 +179,13 @@
       per customer come at a 50% discount.</p>
     <p>There are two options for buying LocationFinder:</p>
     <ol>
-      <li>Perpetual license for the current version.
-        Support is not included but available.
+      <li><span class="tag">Perpetual license</span> for the current
+        version. Support is not included but available.
         An upgrade to the latest version is available
         at the price of an additional instance.
       </li>
-      <li>Yearly subscription, giving the right to use
-        the latest (or any older) version for one year,
+      <li><span class="tag">Yearly subscription,</span> giving the
+        right to use the latest (or any older) version for one year,
         including remote support for the latest and the
         previous version.
       </li>

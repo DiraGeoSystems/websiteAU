@@ -18,6 +18,10 @@ h1 span.heading,h2 span.heading{
   padding:5px 8px;display:inline-block;
   background-color:#000;color:#f3f9e9;
   letter-spacing:4px;text-transform:uppercase}
+span.tag{
+  display:inline-block;padding:0.05em 0.3em;
+  background-color:#222;color:#f3f9e9;
+}
 footer a{text-decoration:none;}
 footer a:hover{color:#c5e19b;}
 #team a{color:#595959;}

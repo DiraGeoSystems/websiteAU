@@ -1,3 +1,4 @@
+# Open Issues and Tasks
 
 - [x] replace bird images
 - [x] remove grayscale filter
@@ -8,4 +9,4 @@
 - [x] create PJ512 to replace PJ400
 - [x] revise 404.html
 - [ ] subpage for PS
-- [ ] subpage for LF
+- [x] subpage for LF (de/en)
