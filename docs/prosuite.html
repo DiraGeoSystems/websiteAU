@@ -22,6 +22,20 @@
   <link rel="stylesheet" href="css/style.css">
 
   <meta name="theme-color" content="#595959">
+
+  <script>
+    function toggleAccordion(id) {
+      var x = document.getElementById(id);
+      var w = x.previousElementSibling;
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        if (w) w.classList.add("open");
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        if (w) w.classList.remove("open");
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -69,59 +83,234 @@
 <div class="w3-sand w3-large">
 
 <section class="w3-container" id="prosuite">
-  <div class="w3-content" style="max-width:700px">
+  <div class="w3-content">
     <h1><span class="heading">Dira ProSuite</span></h1>
-    <img src="img/LogoPS256.png" alt="Logo" class="w3-image" style="width:128px;float:right">
+    <img src="img/LogoPS256.png" alt="Logo" class="w3-image w3-padding"
+      style="width:160px;float:right">
     <p>Dira GeoSystems entwickelt und vertreibt mit der Dira ProSuite
-      leistungsfähige Werkzeuge für die professionelle Datenproduktion,
-      Qualitätssicherung und Kartografie. Dira ProSuite ist realisiert als
+      leistungsfähige Werkzeuge für die professionelle Daten&shy;produktion,
+      Qualitäts&shy;sicherung und Kartografie. Dira ProSuite ist realisiert als
       eine Erweiterung (“Add-In”) für Esri's ArcGIS Pro.</p>
     <p>Dira ProSuite umfasst drei Funktionsbereiche:</p>
     <ol>
-      <li>die schnellste am Markt verfügbare Qualitätsprüfung für Geodaten</li>
-      <li>Werkzeuge für hoch-effiziente (v.a. topografische) Datenproduktion</li>
-      <li>eine Reihe von Prozessen für die voll- und halbautomatische
+      <li><span class="tag">ProSuite QA</span>
+        ist die schnellste am Markt verfügbare Qualitätsprüfung für Geodaten</li>
+      <li><span class="tag">ProSuite Tools</span>
+        sind Bearbeitungs-Werkzeuge für die hoch-effiziente (v.a. topografische)
+        Datenproduktion und Fehlerkorrektur</li>
+      <li><span class="tag">ProSuite Carto</span>
+        sind eine Reihe von Prozessen für die voll- und halbautomatische
         kartografische Nachbearbeitung für höchste ästhetische Ansprüche</li>
     </ol>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('grossklein')"
+        class="w3-button w3-gray">Für kleine und grosse Organisationen geeignet</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="grossklein">
+        <p>Die Dira ProSuite QA Extension wird sowohl zur Prüfung sehr grosser
+          Datenmengen in komplexen Organisationen, als auch in kleineren Projekten
+          erfolgreich und wirtschaftlich eingesetzt. Sie unterstützt die interaktive
+          Prüfung durch den Anwender in ArcGIS Pro und ebenfalls die automatisierte
+          Prüfung als Batch-Prozess.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('complete')"
+        class="w3-button w3-gray">Eine komplette und in sich schlüssige Lösung</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="complete">
+        <p>AddIn für ArcGIS Pro</p>
+        <ul>
+          <li>Werkzeuge für Fehlersuche und -behebung in Geodaten</li>
+          <li>Bearbeitungswerkzeuge</li>
+          <li>Hilfswerkzeuge (z.B. Durchmusterungsassistent)</li>
+          <li>Kartografische Algorithmen</li>
+        </ul>
+        <p>Administrationsklient</p>
+        <ul>
+          <li>Konfiguration von Qualitätsprüfungen</li>
+          <li>Konfiguration von Kartenprozessen</li>
+          <li>weitere zentrale Konfigurationen</li>
+        </ul>
+        <p>Batch-Prozesse</p>
+        <ul>
+          <li>Qualitätsprüfungen</li>
+          <li>Schemaanalysen</li>
+          <li>Kartenprozesse</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="w3-container" id="prosuite-qa">
+  <div class="w3-content">
+    <h2><span class="heading">ProSuite QA Extension</span></h2>
+    <p class="w3-panel w3-leftbar">Professionelle Qualitätssicherung von Geodaten</p>
+    <p>Die ProSuite QA Extension ist die umfassende Lösung zur
+      Qualitätsprüfung von Geodaten in ArcGIS. Sie besticht durch
+      Effizienz, Prüflogik, Stabilität, Skalier- und Integrierfähigkeit,
+      und überzeugt Organisationen mit Verantwortung für grosse, komplexe
+      oder kritische Datenbestände. Geodaten- und Kartenproduzenten
+      erzielen mit der ProSuite QA Extension eine Steigerung
+      von Produktivität und Datenqualität: sowohl im Prozess der
+      Datenbearbeitung, als auch bei der Entgegennahme und Abgabe
+      von Datenprodukten.</p>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('qatestcats')"
+        class="w3-button w3-gray">Das Herzstück: 120 Testalgorithmen</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="qatestcats">
+        <p>Über 120 verfügbare Testalgorithmen bieten nahezu unbegrenzte
+          Möglichkeiten für die Qualitätsprüfung von Geodaten.
+          Merkmale der QA-Tests:</p>
+        <ul>
+          <li>Sehr schnelle Prüfung räumlicher Beziehungen, auch bei sehr grossen Datenmengen</li>
+          <li>Fehlergeometrie und beteiligte Features werden exakt identifiziert</li>
+          <li>Komplexe Attributbedingungen können mit räumlichen Bedingungen kombiniert werden</li>
+          <li>Individuelle Ausnahmen können gespeichert werden</li>
+          <li>Features aus unterschiedlichen Datenbanken können gegeneinander geprüft werden</li>
+        </ul>
+      </div>
+
+      <h3 onclick="toggleAccordion('qatests')"
+        class="w3-button w3-gray">Definition und Prüfung individueller Qualitätsbedingungen</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="qatests">
+        <p>Die ProSuite QA Extension bietet über die Standardmechanismen der
+          Geodatabase hinaus umfassende Möglichkeiten für die Definition und
+          Prüfung von Qualitätsbedingungen. Derzeit sind über 120 Test-Algorithmen
+          in folgenden Kategorien verfügbar:</p>
+        <ul>
+          <li>Attribute und Beziehungen</li>
+          <li>Geometrie einzelner Features</li>
+          <li>Lineare Netzwerke (auch ohne geometrische Netzwerke)</li>
+          <li>Proximität (Abstände zwischen Features)</li>
+          <li>Topologische Bedingungen (auch ohne Topologie-Datasets)</li>
+          <li>M-Werte</li>
+          <li>Z-Werte</li>
+          <li>3D-Gebäude (Multi Patches)</li>
+          <li>Polygonnetzwerke (Grenzlinien und Zentroide)</li>
+          <li>Kartografische Symbolisierung</li>
+          <li>Schemas von Tabellen/Featureklassen</li>
+          <li>Komplexe Kombinationen dieser Kategorien</li>
+        </ul>
+        <p><a class="w3-button w3-brown w3-card" title="PDF"
+          href="#">Technische Referenz</a></p>
+      </div>
+
+      <h3 onclick="toggleAccordion('exacterrors')"
+        class="w3-button w3-gray">Exakte Identifikation von Fehlern</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="exacterrors">
+        <p>Dira ProSuite QA dokumentiert gefundene Fehler und Warnungen
+          in Fehler-Featureklassen. Ein Durchmusterungsassistent führt
+          den Anwender direkt zu den einzelnen Fehlern. Dabei werden
+          die Fehlergeometrie, die am Fehler beteiligten Features sowie
+          Informationen zur betroffenen Qualitätsregel angezeigt.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('errorrecovery')"
+        class="w3-button w3-gray">Effiziente interaktive Fehlerbehebung</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="errorrecovery">
+        <p>Der Anwender wird bei der Fehlerdurchmusterung jeweils zum
+          geografisch nächsten Fehler geführt. Aufgrund der exakten
+          Fehlerbeschreibung und der effizienten Editierwerkzeuge,
+          kann der identifizierte Fehler sofort behoben werden.</p>
+        <p>Die Editierwerkzeuge stehen, ausser für die Fehlerkorrektur,
+          auch für die normale Datenerfassung zur Verfügung.
+          Dazu bieten sie einen optimierten Bearbeitungsablauf,
+          und vereinfachen viele anspruchsvolle Bearbeitungsaufgaben
+          (z.B. topologisch korrekte Angleichung von Features,
+          Massenattributierung, Bearbeitung linearer Netzwerke).</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('qaperformance')"
+        class="w3-button w3-gray">Höchste Performanz auch bei sehr grossen Datenmengen</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="qaperformance">
+        <p>Dank In-Memory-Technologie können auch sehr grosse Datenmengen
+          schnell geprüft werden. Insbesondere räumliche Beziehungen
+          lassen sich sehr performant prüfen. Die QA-Tests werden in einem
+          Test-Container ausgeführt, der sowohl einen hocheffizienten
+          Datenzugriff garantiert, als auch eine sehr schnelle Verarbeitung
+          von kachelweise im Arbeitsspeicher gehaltenen Features erlaubt.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('qaconfig')"
+        class="w3-button w3-gray">Komfortable Konfiguration und einfacher Austausch</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="qaconfig">
+        <p>Für die Konfiguration der QA-Tests steht eine komfortable
+          grafische Administrationsumgebung zur Verfügung. Die Konfiguration
+          wird in einer Datenbank (dem ProSuite Data Dictionary) gehalten und
+          kann in Form von XML-Dateien exportiert und ausgetauscht werden.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('qaprodenv')"
+        class="w3-button w3-gray">Optimierte Datenproduktionsumgebung</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="qaprodenv">
+        <p>Die ProSuite QA Extension ermöglicht Prüfungen direkt bei der
+          Datenerfassung in ArcGIS&nbsp;Pro. Vor der Auslieferung garantiert
+          eine sehr schnelle und umfassende Prüfung des gesamten Datensatzes
+          die spezifizierte Qualität.</p>
+        <ul>
+          <li>Integrierte Bearbeitungswerkzeuge (ProSuite Edit-Tools) unterstützen
+            die fehlerfreie Erfassung und die effiziente Fehlerkorrektur</li>
+          <li>Deutliche Produktivitätssteigerung dank kurzer Prüf-/Korrekturzyklen</li>
+          <li>Mehrstufige Prüfung: ausgewählte Objekte, ganze Arbeitspakete
+            oder vollständig integrierter Datenbestand</li>
+        </ul>
+      </div>
+
+      <h3 onclick="toggleAccordion('qabatch')"
+        class="w3-button w3-gray">Automatisierte Prüfung mit Geoprocessing-Werkzeugen</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="qabatch">
+        <p>Qualitätsprüfungen können auch ausserhalb von ArcGIS&nbsp;Pro
+          automatisiert ausgeführt werden<!--mit Geoprocessing-Werkzeugen-->:</p>
+        <ul>
+          <li>Prüfung gegen individuelle Qualitätsbedingungen</li>
+          <li>Ad-hoc-Prüfung von grundlegenden Qualitätsbedingungen</li>
+          <li>Dokumentation und Bewertung von Schemaunterschieden</li>
+          <li>Prüfung des Resultats von Datumstransformationen</li>
+        </ul>
+        <p>Die Prüfergebnisse werden umfangreich dokumentiert.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('qaintegration')"
+        class="w3-button w3-gray">Flexible Integration in bestehende Umgebungen</h3>
+      <div class="w3-container w3-light-gray w3-hide" id="qaintegration">
+        <p>Die ProSuite QA Extension ist gut einsetzbar auch im Rahmen
+          von Fachschalen und ergänzend zu bestehenden QA-Lösungen.</p>
+      </div>
+    </div> <!-- end accordion -->
+
   </div>
 </section>
 
 <section class="w3-container">
-  <div class="w3-content" style="max-width:700px">
+  <div class="w3-content">
     <h2><span class="heading">Status & Road Ahead</span></h2>
-    <p>Die Dira ProSuite ist aktuell in Entwicklung. Grosse Teile der
-      vollständigen Lösung haben schon Produktions-Status (und sind
-      auch im produktiven Einsatz), andere Teile befinden sich noch
-      in aktiver Entwicklung. Teile der Dira ProSuite sind
-      Open Source und stehen der freien Verwendung und kritischen
-      Einsichtnahme offen:
-      <a href="https://github.com/prosuite">github.com/prosuite</a>.
-    </p>
-  </div>
-</section>
-
-<section class="w3-container">
-  <div class="w3-content" style="max-width:700px">
-    <h2><span class="heading">Hintergrund</span></h2>
+    <p>Die Dira ProSuite ist aktuell in Entwicklung. Wesentliche
+      Komponenten der vollständigen Lösung stehen schon bereit
+      (und sind auch im produktiven Einsatz), andere Komponenten
+      befinden sich noch in aktiver Entwicklung.
+      Teile der Dira ProSuite sind Open Source und stehen der freien
+      Verwendung und kritischen Einsichtnahme offen:
+      <a href="https://github.com/prosuite">github.com/prosuite</a>.</p>
     <p>Die ProSuite wurde vormals von Esri Schweiz als Erweiterung
       von ArcMap entwickelt und vertrieben. Mit der Abkündigung von
       ArcMap hat Esri Schweiz auch die ProSuite abgekündigt.
       Dira GeoSystems entwickelt eine <em>neue Lösung</em> auf Basis
-      von ArcGIS Pro mit zwei Zielen: (1) auch auf der
-      neuen Basis vergleichbare Funktionalität anbieten und (2)
-      weitgehende Wiederverwendung der bestehenden Konfigurationen
+      von ArcGIS Pro mit zwei Zielen: (1) auch auf der neuen Basis
+      vergleichbare Funktionalität anbieten und (2) weitgehende
+      Wiederverwendbarkeit der bestehenden Konfigurationen
       kundenseits. Dira GeoSystems will den Kunden Kontinuität und
-      einen nahtlosen Übergang in die “neue Welt” von ArcGIS Pro
+      einen nahtlosen Übergang in die “neue Welt” von ArcGIS&nbsp;Pro
       bieten. Gleichzeitig wird Dira GeoSystems die Funktionalität
       auch überarbeiten, verbessern, und dabei genau auf die
-      Bedürfnisse unserer Kunden hören.
-    </p>
+      Bedürfnisse unserer Kunden hören.</p>
   </div>
 </section>
 
 <section class="w3-container" id="contact" style="padding-bottom:32px;">
-  <div class="w3-content" style="max-width:700px">
-    <h2><span class="heading">Contact</span></h2>
+  <div class="w3-content">
+    <h2><span class="heading">Kontakt</span></h2>
     <p>Für weitere Auskünfte oder ein Angebot kontaktieren Sie uns bitte:
       Telefon <a href="tel:+41442448442">+41 44 2448442</a> oder Mail an
       <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
