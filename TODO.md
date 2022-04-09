@@ -8,5 +8,7 @@
 - [x] favicon etc.
 - [x] create PJ512 to replace PJ400
 - [x] revise 404.html
-- [ ] subpage for PS (add images)
+- [x] subpage for PS (add images)
+      - [ ] more images
+      - [ ] English version
 - [x] subpage for LF (de/en)
