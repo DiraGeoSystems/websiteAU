@@ -30,9 +30,9 @@
 <!-- https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
 <div class="w3-top">
   <div class="w3-bar w3-padding w3-black w3-opacity-min topitem">
-    <a href="#home" class="w3-button w3-black"><b>Dira</b></a>
-    <a href="#data" class="w3-button w3-black w3-hide-small">Data+Mapping</a>
+    <a href="#home" class="w3-button w3-black" onclick="closeDropNav()"><b>Dira</b></a>
     <a href="#products" class="w3-button w3-black w3-hide-small">Products</a>
+    <a href="#services" class="w3-button w3-black w3-hide-small">Services</a>
     <a href="#team" class="w3-button w3-black w3-hide-small">Team</a>
     <a href="#contact" class="w3-button w3-black w3-hide-small">Contact</a>
     <!--<a href="#" class="w3-button w3-black w3-right">DE/<b>EN</b></a>-->
@@ -40,8 +40,8 @@
        class="icon w3-button w3-black w3-right w3-large w3-hide-medium w3-hide-large">&#9776;</a>
   </div>
   <div id="dropnav" class="w3-bar-block w3-black w3-opacity-min topitem w3-hide w3-hide-large w3-hide-medium">
-    <a href="#data" onclick="closeDropNav()" class="w3-bar-item w3-button">Data+Mapping</a>
     <a href="#products" onclick="closeDropNav()" class="w3-bar-item w3-button">Products</a>
+    <a href="#services" onclick="closeDropNav()" class="w3-bar-item w3-button">Services</a>
     <a href="#team" onclick="closeDropNav()" class="w3-bar-item w3-button">Team</a>
     <a href="#contact" onclick="closeDropNav()" class="w3-bar-item w3-button">Contact</a>
   </div>
@@ -75,40 +75,23 @@
 <section class="w3-container" id="dira">
   <div class="w3-content">
     <h1><span class="heading">Dira GeoSystems</span></h1>
-    <p>Dira GeoSystems is dedicated to developing software for
-      tremendously useful geodata and the most beautiful maps.
-      We put all our craft and care into our products and projects
-      and share our vast experience to the benefit of our customers.</p>
-    <p>Dira GeoSystems offers a range of products for data quality,
-      editing, and cartographic refinement. Dira also offers specialised
-      consulting in the area of geodata management and cartography.</p>
+    <p>Dira GeoSystems develops software for the efficient production
+      of highly accurate geodata and beautiful maps. We specialize both
+      in the ergonomics of the user experience and high-performance
+      algorithms to boost the productivity of data production and processing.
+      Our main products are built on the ProSuite software platform that
+      has been developed for more than a decade for interactive data capture
+      and editing, quality assurance, and cartographic refinement.
+      The ProSuite platform is currently used by a variety of organisations
+      ranging from the national mapping agencies of Switzerland, Germany, and
+      Austria to medium and small organisations, such as the GIS departments
+      at the state and local level or private companies.</p>
+    <p>Dira GeoSystems has been founded in 2021 with the mission to build
+      and support the ProSuite tools for ArcGIS Pro and ArcGIS Enterprise.
+      Additionally, we support large and small organisations during and
+      after the migration to ArcGIS Pro leveraging our experience with
+      large data models and our expertise in cartography.</p>
     <img src="img/minahasa1.jpg" alt="" style="width:100%;max-width:1000px" class="w3-card-4">
-  </div>
-</section>
-
-<!-- Data+Mapping Container -->
-<section class="w3-container" id="data">
-  <div class="w3-content">
-    <h2><span class="heading">Data &amp; Mapping</span></h2>
-    <p>Our portfolio includes <span class="tag">Dira ProSuite</span>
-      for advanced high performance quality checking of your geodata,
-      along with a broad range of highly effective and usable tools for
-      interactive editing. These Quality Assurance tools run as an Add-In
-      for Esri's ArcGIS&nbsp;Pro and are also accessible through a Python API.</p>
-    <p>Clean data is a necessary basis for effective cartography.
-      For decent performance and easy data manageability you also
-      need specialised data models. And for the utmost quality and
-      beauty of your maps you will want some (manual and automatic)
-      refinement. Dira ProSuite therefore offers a large range of
-      automatic processes and interactive tools for cartographic refinement.
-      Combine it with Dira's long standing expertise in cartography:
-      we are glad to help.</p>
-    <p><span class="tag">LocationFinder</span> is probably the fastest
-      address and place name search for your data. It features fine grained
-      configuration and normatization options, provides an easy
-      REST interface for your own clients, and seamlessly integrates
-      into the ArcGIS platform.</p>
-    <img src="img/minahasa2.jpg" alt="" style="width:100%;max-width:1000px" class="w3-card-4">
   </div>
 </section>
 
@@ -116,15 +99,15 @@
 <section class="w3-container" id="products">
   <div class="w3-content">
     <h2><span class="heading">Products</span></h2>
-    <p>Dira GeoSystems engineers a range of products to answer specific
-      market demands and maintains them to highest customer satisfaction:</p>
+    <p>Dira GeoSystems engineers the following products to the highest
+      customer satisfaction:</p>
 
-      <div class="w3-card-4 w3-panel w3-leftbar border-brown green">
-        <a href="prosuite.html"><img src="img/LogoPS256.png" alt="Logo" class="w3-image"
-          style="float:right;max-width:138px;border:5px solid transparent"></a>
-        <h3>Dira ProSuite</h3>
-        <p>Dira GeoSystem's ProSuite is a suite of high-end productivity
-          tools for data production, quality assurance, and cartographic
+    <div class="w3-card-4 w3-panel w3-leftbar border-brown green">
+      <a href="prosuite.html"><img src="img/LogoPS256.png" alt="Logo" class="w3-image"
+        style="float:right;max-width:138px;border:5px solid transparent"></a>
+      <h3>Dira ProSuite</h3>
+      <p>Dira GeoSystem's ProSuite is a suite of high-end productivity
+        tools for data production, quality assurance, and cartographic
           refinement, implemented as an extension of Esri's flagship
           application ArcGIS Pro.</p>
         <p><a class="w3-button w3-brown w3-card" href="prosuite.html">Product Details</a></p>
@@ -141,6 +124,29 @@
       <p><a class="w3-button w3-brown w3-card" href="lf.de.html">Product Details</a></p>
     </div>
 
+    <img src="img/minahasa2.jpg" alt="" style="width:100%;max-width:1000px" class="w3-card-4">
+  </div>
+</section>
+
+<!-- Services Container -->
+<section class="w3-container" id="services">
+  <div class="w3-content">
+    <h2><span class="heading">Services</spadatan></h2>
+    <p>Dira GeoSystems provides training and consulting services
+      for the Dira ProSuite product family and LocationFinder.
+      The ProSuite codebase is easily integrated into customer-specific
+      solutions, allowing for cost-efficient and rapid development of
+      your software projects.</p>
+    <p>We are happy to share our vast experience in data production
+      and cartography. Our special expertise covers the following
+      topics:</p>
+    <ul>
+      <li>Geodatabase modelling and design</li>
+      <li>Data and map production workflows, geodatabase versioning
+        and (Oracle) database tuning</li>
+      <li>Designing workflows for the processing of very large datasets</li>
+      <li>Software development for ArcGIS Pro and ArcGIS Enterprise</li>
+    </ul>
     <img src="img/minahasa3.jpg" alt="" style="width:100%;max-width:1000px" class="w3-card-4 w3-margin-top">
   </div>
 </section>
@@ -205,7 +211,7 @@
         <div class="w3-card-4 w3-center">
           <img src="img/esri-startup-partner-sand.png" alt="Esri Startup Partner" class="w3-image">
           <div class="w3-container w3-center">
-            <p>Dira partners with <a href="https://esri.ch">Esri</a><br>
+            <p>Dira partners with <a href="https://esri.ch" target="_blank">Esri</a><br>
             and engages into<br>
             <em>The Science of Where</em></p>
           </div>
