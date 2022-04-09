@@ -22,6 +22,20 @@
   <link rel="stylesheet" href="css/style.css">
 
   <meta name="theme-color" content="#595959">
+
+  <script>
+    function toggleAccordion(id) {
+      var x = document.getElementById(id);
+      var w = x.previousElementSibling;
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        if (w) w.classList.add("open");
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        if (w) w.classList.remove("open");
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -73,37 +87,54 @@
     <h1><span class="heading">Location&thinsp;Finder</span></h1>
     <img src="lf/lf-logo256.png" alt="Logo" class="w3-image w3-padding"
       style="width:128px;float:right">
-    <p>Dira GeoSystem's LocationFinder provides a fast and friendly
-      <span class="tag">interactive search</span> over your place and
-      address data. It is an on-premise solution and therefore suitable
-      even for your sensitive in-house data.</p>
+    <p>Dira GeoSystem's LocationFinder is probably the fastest
+      <span class="tag">interactive search</span> over your place
+      and address data. It features fine grained configuration and
+      normatization options, provides an easy REST interface for
+      creating your own clients, and seamlessly integrates into
+      the ArcGIS platform. As an on-premise solution it is
+      particularly suitable for your sensitive in-house data.</p>
   </div>
 </section>
 
 <section class="w3-container">
   <div class="w3-content">
     <h2><span class="heading">Use Cases</span></h2>
-    <p>LocationFinder assumes that you have your own location data
-      and want to make it available for interactive search and/or map
-      panning/zooming. Location data could be anything with a location,
-      for example: addresses, place names, land parcels, hydrants,
-      retail outlets, etc.
-    </p>
-    <table class="w3-table w3-bordered">
-      <thead>
-        <tr><th>Suppose you represent...</th><th>then you may want to search your...</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Retailer</td><td>branches, competitors, customers</td></tr>
-        <tr><td>Emergency service</td><td>place names, mountain names, field names</td></tr>
-        <tr><td>Police of Fire Fighters</td><td>addresses, street names, districts, hydrants</td></tr>
-        <tr><td>Local Government</td><td>field names, land parcels (name, number), maintenance areas</td></tr>
-        <tr><td>Telecommunication Provider</td><td>antennas, addresses, administrative regions</td></tr>
-      </tbody>
-    </table>
+    <p>LocationFinder provides interactive search for named
+      locations such as addresses, place names, land parcels,
+      hydrants, retail outlets, etc.</p>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('yourdata')"
+        class="w3-button w3-gray">Your Own Data</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="yourdata">
+        <p>LocationFinder assumes that you have your own location data
+          and want to make it available for interactive search and/or map
+          panning/zooming.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('usecases')"
+        class="w3-button w3-gray">Use Case Examples</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="usecases">
+        <table class="w3-table w3-bordered">
+          <thead>
+            <tr><th>Suppose you represent...</th><th>then you may want to search your...</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Retailer</td><td>branches, competitors, customers</td></tr>
+            <tr><td>Emergency service</td><td>place names, mountain names, field names</td></tr>
+            <tr><td>Police of Fire Fighters</td><td>addresses, street names, districts, hydrants</td></tr>
+            <tr><td>Local Government</td><td>field names, land parcels (name, number), maintenance areas</td></tr>
+            <tr><td>Telecommunication Provider</td><td>antennas, addresses, administrative regions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="w3-center">
-      <img src="lf/lf-portal.png" alt="LocationFinder integrated into ArcGIS" class="w3-image">
-      <br>LocationFinder integrated into ArcGIS
+      <p><img src="lf/lf-portal.png" class="w3-image w3-card"
+        alt="LocationFinder integrated into ArcGIS">
+      <br>LocationFinder integrated into ArcGIS</p>
     </div>
   </div>
 </section>
@@ -111,30 +142,45 @@
 <section class="w3-container">
   <div class="w3-content">
     <h2><span class="heading">Features</span></h2>
-    <ul>
-      <li>interactive forward geocoding (find coordinates of a given name)</li>
-      <li>provides lexicographically sorted suggestions for each partial input</li>
-      <li>reverse geocoding (given a point, find nearest existing point of interest or address)</li>
-      <li>very performant, even with large datasets</li>
-      <li>very simple REST API for queries</li>
-      <li>optional filter clauses to restrict search</li>
-      <li>written in 100% .NET, no other dependencies</li>
-      <li>works on-premise, so suitable for your sensitive data</li>
-      <li>simple installation and administration</li>
-      <li>can be integratd into the ArcGIS platform
-        (ArcGIS Online, ArcGIS Enterprise, ArcGIS Pro)
-      </li>
-    </ul>
-    <p>Limitations</p>
-    <ul>
-      <li>LocationFinder does not include data</li>
-      <li>LocationFinder does not include an end-user interface
-        (it is meant to be integrated into your application)</li>
-      <li>At present, LocationFinder is not suitable for batch geocoding</li>
-    </ul>
+    <p>LocationFinder has been optimized for speedy search,
+      easy administration, and extensive configurability.</p>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('featurelist')"
+        class="w3-button w3-gray">Feature List</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="featurelist">
+        <ul>
+          <li>interactive forward geocoding (find coordinates of a given name)</li>
+          <li>provides lexicographically sorted suggestions for each partial input</li>
+          <li>reverse geocoding (given a point, find nearest existing point of interest or address)</li>
+          <li>very performant, even with large datasets</li>
+          <li>very simple REST API for queries</li>
+          <li>optional filter clauses to restrict search</li>
+          <li>written in 100% .NET, no other dependencies</li>
+          <li>works on-premise, so suitable for your sensitive data</li>
+          <li>simple installation and administration</li>
+          <li>can be integratd into the ArcGIS platform
+            (ArcGIS Online, ArcGIS Enterprise, ArcGIS Pro)
+          </li>
+        </ul>
+      </div>
+
+      <h3 onclick="toggleAccordion('limitations')"
+        class="w3-button w3-gray">Limitations</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="limitations">
+        <ul>
+          <li>LocationFinder does not ship with data</li>
+          <li>LocationFinder does not include an end-user interface
+            (it is meant to be integrated into your application)</li>
+          <li>At present, LocationFinder is not suitable for batch geocoding</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="w3-center">
-      <img src="lf/lf-restsamp.png" alt="LocationFinder REST API" class="w3-image">
-      <br>the simple REST API for integration
+      <p><img src="lf/lf-restsamp.png" class="w3-image w3-card"
+        alt="LocationFinder REST API">
+      <br>the simple REST API for integration</p>
     </div>
   </div>
 </section>
@@ -144,8 +190,10 @@
     <h2><span class="heading">Architecture</span></h2>
     <p>LocationFinder is a server-side solution.
       It consists of two programs: a Builder and a Service.
-      The <span class="tag">Builder</span> reads your source data and builds an index structure.
-      The <span class="tag">Service</span> consults this index to answer requests over a simple REST API.
+      The <span class="tag">Builder</span> reads your source data
+      and builds an index structure.
+      The <span class="tag">Service</span> consults this index
+      to answer requests over a simple REST API.
       (It also implements a relevant subset of the Esri REST API, so that it
       can be integrated into the ArcGIS platform.)
       The Builder reads data from a <a href="lf/TheSimpleXmlFormat.pdf">simple XML format</a>.
@@ -156,19 +204,39 @@
       of places to help the end user in its search. It is also possible
       to “aggregate” entities to larger entities, for example to
       aggregate streets or communities from address points.</p>
-    <p><b>Note:</b> the LocationFinder does not include an end-user interface!
-      It has been designed to be integrated into other applications through
-      its simple REST API. (Or it can be integrated directly into ArcGIS.)
-      Dira GeoSystems is glad to help with integrations.</p>
-    <p><b>Requirements:</b> you will need a Windows system with .NET Framework 4.8
-      and a fast local disk to hold the index. There are no other dependencies.</p>
-    <p><b>Road ahead:</b> the next major version of LocationFinder will require
-      .NET Core (in its current version) and be available or Windows,
-      Linux, inside containers, or wherever .NET Core will be supported.</p>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('nogui')"
+        class="w3-button w3-gray">Integration into your application(s)</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="nogui">
+        <p>LocationFinder does <em>not</em> include an end-user interface!
+          It has been designed to be integrated into other applications through
+          its simple REST API. (Or it can be integrated directly into ArcGIS.)
+          Dira GeoSystems is glad to help with integration.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('requirements')"
+        class="w3-button w3-gray">System requirements</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="requirements">
+        <p>You will need a Windows system with .NET Framework 4.8
+          and a fast local disk to hold the index.
+          There are no other dependencies.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('roadahead')"
+        class="w3-button w3-gray">Road Ahead</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="roadahead">
+        <p>The next major version of LocationFinder will require
+          .NET Core (in its current version) and be available for Windows,
+          Linux, inside containers, or wherever .NET Core will be supported.</p>
+      </div>
+    </div>
+
     <div class="w3-center">
-      <img src="lf/lf-arch.png" alt="LocationFinder architecture" class="w3-image">
+      <p><img src="lf/lf-arch.png" class="w3-image w3-card"
+        alt="LocationFinder architecture"></p>
     </div>
-    </div>
+  </div>
 </section>
 
 <section class="w3-container">

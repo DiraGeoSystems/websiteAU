@@ -22,6 +22,20 @@
   <link rel="stylesheet" href="css/style.css">
 
   <meta name="theme-color" content="#595959">
+
+  <script>
+    function toggleAccordion(id) {
+      var x = document.getElementById(id);
+      var w = x.previousElementSibling;
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        if (w) w.classList.add("open");
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        if (w) w.classList.remove("open");
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -89,23 +103,40 @@
       nach benannten “Locations” über ein einziges Textfeld.
       <span class="tag">Locations</span> sind z.B. Adressen, Ortsnamen,
       Postleitzahlen, Gletscher, Hydranten, und allgemein Points of Interest.</p>
-    <p>Der LocationFinder arbeitet auf Ihren eigenen Daten (es werden
-      keine Daten mitgeliefert) und macht diese einer interaktiven Suche
-      zugänglich, etwa um eine Karte richtig zu positionieren.</p>
-    <table class="w3-table w3-bordered">
-      <thead>
-        <tr><th>Branche/Bereich</th><th>Suche nach (Beispiele)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Grossverteiler</td><td>Adressen, Filialen, evtl. Konkurrenzstandorte</td></tr>
-        <tr><td>Rettungsdienste</td><td>Orte, Flurnamen, Berge, Spitäler, Flugbasen</td></tr>
-        <tr><td>Polizei, Feuerwehr, Sanität</td><td>Adressen, Strassen, Quartiere</td></tr>
-        <tr><td>Gemeinden, Ämter</td><td>Flurnamen, Flurstücke, Dienststellen, Werkhöfe</td></tr>
-        <tr><td>Telekommunikation</td><td>Antennen, Adressen, administrative Regionen</td></tr>
-      </tbody>
-    </table>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('yourdata')"
+        class="w3-button w3-gray">Ihre eigenen Daten</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="yourdata">
+        <p>Der LocationFinder arbeitet auf Ihren eigenen Daten (es werden
+          keine Daten mitgeliefert) und macht diese einer interaktiven Suche
+          zugänglich, etwa um eine Karte richtig zu positionieren.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('usecases')"
+        class="w3-button w3-gray">Anwendungsbeispiele</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="usecases">
+        <p>Der LocationFinder arbeitet auf Ihren eigenen Daten (es werden
+          keine Daten mitgeliefert) und macht diese einer interaktiven Suche
+          zugänglich, etwa um eine Karte richtig zu positionieren.</p>
+        <table class="w3-table w3-bordered">
+          <thead>
+            <tr><th>Branche/Bereich</th><th>Suche nach (Beispiele)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Grossverteiler</td><td>Adressen, Filialen, evtl. Konkurrenzstandorte</td></tr>
+            <tr><td>Rettungsdienste</td><td>Orte, Flurnamen, Berge, Spitäler, Flugbasen</td></tr>
+            <tr><td>Polizei, Feuerwehr, Sanität</td><td>Adressen, Strassen, Quartiere</td></tr>
+            <tr><td>Gemeinden, Ämter</td><td>Flurnamen, Flurstücke, Dienststellen, Werkhöfe</td></tr>
+            <tr><td>Telekommunikation</td><td>Antennen, Adressen, administrative Regionen</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="w3-center">
-      <p><img src="lf/lf-portal.png" alt="LocationFinder integrated into ArcGIS" class="w3-image">
+      <p><img src="lf/lf-portal.png" class="w3-image w3-card"
+        alt="LocationFinder integrated into ArcGIS">
       <br>Der LocationFinder als Suche integriert in ArcGIS</p>
     </div>
   </div>
@@ -114,29 +145,45 @@
 <section class="w3-container">
   <div class="w3-content">
     <h2><span class="heading">Features</span></h2>
-    <ul>
-      <li>interaktive Geocodierung (gegeben Name/Adresse, finde Koordinaten)</li>
-      <li>lexikografisch sortierte Trefferliste auch für partielle Anfragen</li>
-      <li>reverse geocoding (gegeben Punkt, finde nächstgelegene Adresse/Ortsname)</li>
-      <li>sehr hohe Geschwindigkeit, auch bei sehr vielen Locations</li>
-      <li>sehr einfache REST-Schnittstelle für Abfragen</li>
-      <li>Abfragen können mit Booleschen Filtern die Suchergebnisse einschränken</li>
-      <li>entwickelt in 100% .NET, keine weiteren Abhängigkeiten</li>
-      <li>arbeitet on-premise und somit <em>auch für sensitive Daten</em> geeignet</li>
-      <li>einfache Installation und Administration</li>
-      <li>optionale Integration in die ArcGIS-Plattform
-        (ArcGIS Online, ArcGIS Enterprise, ArcGIS Pro)</li>
-    </ul>
-    <p>Limitationen</p>
-    <ul>
-      <li>der LocationFinder umfasst <em>keine</em> eigenen Daten</li>
-      <li>der LocationFinder stellt <em>kein</em> Interface für Endanwender zur Verfügung,
-        denn sein Anwendungsfeld ist die Integration in <em>Ihre</em> Applikation</li>
-      <li>der LocationFinder wurde für die interaktive Suche entwickelt und ist
-        nicht geeignet für die Geocodierung von Listen (batch geocoding)</li>
-    </ul>
+    <p>Der LocationFinder ist optimiert auf Geschwindigkeit,
+      einfache Administration (keine Abhängigkeiten), und
+      weitgehende Konfigurierbarkeit.</p>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('featurelist')"
+        class="w3-button w3-gray">Eigenschaften</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="featurelist">
+        <ul>
+          <li>interaktive Geocodierung (gegeben Name/Adresse, finde Koordinaten)</li>
+          <li>lexikografisch sortierte Trefferliste auch für partielle Anfragen</li>
+          <li>reverse geocoding (gegeben Punkt, finde nächstgelegene Adresse/Ortsname)</li>
+          <li>sehr hohe Geschwindigkeit, auch bei sehr vielen Locations</li>
+          <li>einfache REST-Schnittstelle für Abfragen</li>
+          <li>Abfragen können mit Booleschen Filtern die Suchergebnisse einschränken</li>
+          <li>entwickelt in 100% .NET, keine weiteren Abhängigkeiten</li>
+          <li>arbeitet on-premise und somit <em>auch für sensitive Daten</em> geeignet</li>
+          <li>einfache Installation und Administration</li>
+          <li>optionale Integration in die ArcGIS-Plattform
+            (ArcGIS Online, ArcGIS Enterprise, ArcGIS Pro)</li>
+        </ul>
+      </div>
+
+      <h3 onclick="toggleAccordion('limitations')"
+        class="w3-button w3-gray">Limitationen</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="limitations">
+        <ul>
+          <li>der LocationFinder umfasst <em>keine</em> eigenen Daten</li>
+          <li>der LocationFinder stellt <em>kein</em> Interface für Endanwender zur Verfügung,
+            denn sein Anwendungsfeld ist die Integration in <em>Ihre</em> Applikation</li>
+          <li>der LocationFinder wurde für die interaktive Suche entwickelt und ist
+            nicht geeignet für die Geocodierung von Listen (batch geocoding)</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="w3-center">
-      <p><img src="lf/lf-restsamp.png" alt="LocationFinder REST API" class="w3-image">
+      <p><img src="lf/lf-restsamp.png" class="w3-image w3-card"
+        alt="LocationFinder REST API">
       <br>Eine einfache REST API für die Integration</p>
     </div>
   </div>
@@ -163,23 +210,42 @@
       in gewissem Umfang die orthographische Toleranz zu bestimmen.
       Weiter ist es möglich, aus bestehenden Locations Aggregate abzuleiten,
       etwa Strassenzüge und Postleitzahlgebiete aus Adresspunkten.</p>
-    <p><b>Hinweis:</b> Das Builder-Programm hat eine grafische Schnittstelle
-      für die Erstellung der Build-Configuration. Das Service-Programm
-      stellt jedoch nur eine REST API zur Verfügung und <em>kein</em>
-      Interface für den Endanwender. Der Service ist dafür gebaut,
-      in eine Anwendung (oder in die ArcGIS-Plattform) integriert
-      zu werden. Dira GeoSystems verfügt über grosse Erfahrung
-      bei der Integration des LocationFinders in Ihre Anwendungen.</p>
-    <p><b>Anforderungen:</b> der LocationFinder verlangt .NET Framework 4.8
-      und eine schnelle lokale Disk für den Index.
-      Es gibt keine weiteren Abhängigkeiten,
-      Installation und Betrieb sind daher sehr einfach.</p>
-    <p><b>Road ahead:</b> der nächste Hauptrelease wird die Abhängigkeiten
-      nochmals reduzieren und nur noch .NET Core (in der dann aktuellen
-      Version) voraussetzen, womit der LocationFinder auch auf Linux-Systemen
-      oder in Containern betrieben werden kann.</p>
+
+    <div class="accordion">
+      <h3 onclick="toggleAccordion('nogui')"
+        class="w3-button w3-gray">Integration in Ihre Anwendung(en)</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="nogui">
+        <p>Das Builder-Programm hat eine grafische Schnittstelle
+          für die Erstellung der Build-Configuration. Das Service-Programm
+          stellt jedoch nur eine REST API zur Verfügung und <em>kein</em>
+          Interface für den Endanwender. Der Service ist dafür gebaut,
+          in eine Anwendung (oder in die ArcGIS-Plattform) integriert
+          zu werden. Dira GeoSystems verfügt über grosse Erfahrung
+          bei der Integration des LocationFinders in Ihre Anwendungen.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('requirements')"
+        class="w3-button w3-gray">Systemanforderungen</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="requirements">
+        <p>Der LocationFinder verlangt .NET Framework 4.8
+          und eine schnelle lokale Disk für den Index.
+          Es gibt keine weiteren Abhängigkeiten,
+          Installation und Betrieb sind daher sehr einfach.</p>
+      </div>
+
+      <h3 onclick="toggleAccordion('roadahead')"
+        class="w3-button w3-gray">Road Ahead</h3>
+      <div class="w3-container w3-hide w3-light-gray" id="roadahead">
+        <p>Der nächste Hauptrelease wird die Abhängigkeiten nochmals
+          reduzieren und nur noch .NET Core (in der dann aktuellen
+          Version) voraussetzen, womit der LocationFinder auch auf
+          Linux-Systemen oder in Containern betrieben werden kann.</p>
+      </div>
+    </div>
+
     <div class="w3-center">
-      <img src="lf/lf-arch.png" alt="LocationFinder-Architektur" class="w3-image">
+      <p><img src="lf/lf-arch.png" class="w3-image w3-card"
+        alt="LocationFinder-Architektur"></p>
     </div>
   </div>
 </section>
