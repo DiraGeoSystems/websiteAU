@@ -13,19 +13,22 @@ Presently hosted at [GitHub Pages](https://pages.github.com),
 straight from the GitHub repository. Things to consider:
 
 - GitHub Pages only works for a public repository
-- GitHub Pages publishes the *docs/* directory on the main branch
+- GitHub Pages publishes the *docs/* directory on the *main* branch
 - need empty file *docs/.nojekyll* to disable Jekyll
 - turned on “Enforce HTTPS”: HTTP requests get a 301
   (permanent redirect) to HTTPS; good
+- configured the custom subdomain www.dirageosystems.ch and the
+  custom apex domain dirageosystems.ch; a DNS CNAME record points
+  www.dirageosystems.ch to dirageosystems.github.io and several
+  DNS A records point dirageosystems.github.io to the GitHub servers
 - read the GitHub Pages docs about custom domains
 
 ## Structure
 
 - README.md – what you are reading now
 - docs/ – the finished site to be published
-- docs/css/
-- docs/img/
-- docs/js/
+- docs/{css,img,js}/ – published static assets
+- docs/foo/ – subfolders for topics may be used
 
 (I'd prefer to rename *docs/* to *site/*, but *docs/* is
 required by GitHub Pages, where we intend to publish.
