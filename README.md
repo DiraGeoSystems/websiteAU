@@ -34,6 +34,26 @@ straight from the GitHub repository. Things to consider:
 required by GitHub Pages, where we intend to publish.
 The empty `.nojekyll` file is also for GitHub Pages.)
 
+## Editing Workflow
+
+1. Git: Clone the repository (once only)
+2. Edit the web site. Remember: only files in *docs/* are published.
+   Files outside this folder, like this README file, are not part
+   of the published web site.
+3. Test locally: open your local copy of *index.html* in
+   a browser (better: several browsers), navigate to your
+   changes, test behavior. You may use the browser's
+   Debugger tools (**F12**) to simulate small screens
+   and look into the console for errors and warnings.
+4. Git: review and commit your changes.
+   Use a short but descriptive commit message.
+5. Git: push your commit(s) to GitHub.
+   GitHub will automatically publish the changes
+   within a few minutes.
+6. Test the published web site: navigate to
+   <https://www.dirageosystems.ch> and review your changes
+   with your Desktop browser and your mobile browser.
+
 ## Content
 
 The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
