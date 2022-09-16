@@ -40,3 +40,5 @@ span.tag{
 
 .legal h2{text-align:left; padding-top:32px; padding-bottom:8px}
 .legal address{font-style:normal;margin-left:2pc;padding:1pc 0pc}
+
+img.delimiter{width:100%;max-width:1000px;}
