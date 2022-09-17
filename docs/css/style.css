@@ -42,3 +42,7 @@ span.tag{
 .legal address{font-style:normal;margin-left:2pc;padding:1pc 0pc}
 
 img.delimiter{width:100%;max-width:1000px;}
+
+/* links (mail/web/tel) not too close for mobiles */
+.thickleading{line-height: 220%;}
+.footer{line-height:160%}
