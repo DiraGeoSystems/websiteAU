@@ -19,7 +19,7 @@ Open Issues
   (in Titel ggf. Pro Suite und Location Finder)
 - [ ] Nav Menu Produkte: ohne Unteritems (Use Cases etc), da wir
   die Webseite ja knapp halten wollen und für Details ein PDF haben?!
-
+- [ ] Marc: Bilder ev höher (UJ: vs Mobiles) und etwas nach oben schieben
 Themen für Marc
 
 - [ ] Aktualitäten (z.B. Stelleninserat): wo und wie?
