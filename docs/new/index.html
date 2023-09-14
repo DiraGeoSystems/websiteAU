@@ -1,0 +1,349 @@
+<!doctype html>
+<html class="h-100" lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>dirageosystems.ch</title>
+    <meta name="description" content="Dira GeoSystems creates software for producing top quality geodata and the most beautiful maps">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/custom.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/icons/favicon-16x16.png">
+    <link rel="manifest" href="dist/icons/site.webmanifest">
+    <link rel="mask-icon" href="dist/icons/safari-pinned-tab.svg" color="#284b9a">
+    <link rel="shortcut icon" href="dist/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="dist/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </symbol>
+    </svg>
+
+    <nav class="navbar navbar-expand-lg border-bottom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="dist/img/dirageosystems.svg" alt="Dira GeoSystems AG" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#dira">DIRA</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html#product" data-bs-toggle="dropdown" aria-expanded="true">Produkte</a>
+                        <ul class="dropdown-menu" data-bs-popper="static">
+                            <li class="nav-item-1"><a class="dropdown-item" href="locationfinder.html">Location finder</a>
+                                <ul class="dropdown-menu-1">
+                                    <li class="nav-dropdown"><a href="locationfinder.html#use-cases" class="nav-link">Use cases</a></li>
+                                    <li class="nav-dropdown"><a href="locationfinder.html#features" class="nav-link">Features</a></li>
+                                    <li class="nav-dropdown"><a href="locationfinder.html#architecture" class="nav-link">Architecture</a></li>
+                                    <li class="nav-dropdown"><a href="locationfinder.html#licencing" class="nav-link">Licencing</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item-1"><hr class="dropdown-divider"></li>
+                            <li class="nav-item-1">
+                                <a class="dropdown-item" href="prosuite.html">Pro suite</a>
+                                <ul class="dropdown-menu-1">
+                                    <li class="nav-dropdown"><a href="prosuite.html#qa" class="nav-link">Q&A</a></li>
+                                    <li class="nav-dropdown"><a href="prosuite.html#edit-tools" class="nav-link">Edit tools</a></li>
+                                    <li class="nav-dropdown"><a href="prosuite.html#carto" class="nav-link">Carto</a></li>
+                                    <li class="nav-dropdown"><a href="prosuite.html#status" class="nav-link">Status & road ahead</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto ms-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">en</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<section id="dira" class="box">
+    <div id="myCarousel" class="container carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="dist/img/carousel/rebberge.jpg" alt="Rebberge">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Awesome software for highly<br>accurate geodata and lucid maps!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="dist/img/carousel/zurich.jpg" alt="Zürich">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Boost of the productivity of<br>data production and processing!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="dist/img/carousel/reisfelder.jpg" alt="Reisfelder">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Interactive data capture and editing,<br>quality assurance and cartographic refinement!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section id="product" class="box">
+    <div class="container my-lg text-center">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="dist/img/dira-box-locationfinder.png" class="img-fluid" alt="Location finder">
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <h2>Location Finder</h2>
+                <p>Dira GeoSystem's LocationFinder is a fast and friendly
+                  interactive search engine over your address and place data
+                  with plentiful configuration possibilities for fine-tuning
+                  the end user's search experience.</p>
+                <p class="more"><a href="locationfinder.html">more</a></p>
+                <p class="pdf"><a href="#"><img src="dist/img/icons/pdf.svg" alt="PDF herunterladen"></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-lg text-center">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-1">
+                <h2>Pro Suite</h2>
+                <p>Dira GeoSystem's ProSuite is a suite of high-end productivity
+                  tools for data production, quality assurance, and cartographic
+                  refinement, implemented as an extension of Esri's flagship
+                  application ArcGIS Pro.</p>
+                <p class="more"><a href="prosuite.html">more</a></p>
+                <p class="pdf"><a href="#"><img src="dist/img/icons/pdf.svg" alt="PDF herunterladen"></a></p>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <img src="dist/img/dira-box-prosuite.png" class="img-fluid" alt="Location finder">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="box background-color-1">
+    <div class="container">
+        <div class="col-lg-8 offset-lg-2 mb-6">
+            <h2 class="text-center mt-5">Services</h2>
+            <p>Dira GeoSystems provides training and consulting services
+              for the Dira ProSuite product family and LocationFinder.
+              The Dira ProSuite codebase is easily integrated into
+              customer-specific solutions, allowing for the cost-efficient
+              and rapid development of your software projects. We are happy
+              to share our vast experience in data production and cartography.
+              Our special expertise covers the following topics:</p>
+            <ul>
+                <li>Geodatabase modelling and design</li>
+                <li>Data and map production workflows, geodatabase versioning and (Oracle) database tuning</li>
+                <li>Designing workflows for the processing of very large datasets</li>
+                <li>Software development for ArcGIS Pro and ArcGIS Enterprise</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="box mt-5">
+    <div class="container text-center">
+        <h2 class="mb-5">Our Team</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img class="rounded-circle" src="dist/img/team/EMA512.jpg" alt="Emanuel Mahler" height="140" width="140">
+                <h3>Emanuel Mahler</h3>
+                <p>Founder & CEO<br>Software Engineer</p>
+                <ul class="border-bottom">
+                    <li><a href="mailto:e.mahler@dirageosystems.ch"><img src="dist/img/icons/mail.svg" alt="E-Mail" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/xing.svg" alt="XING" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img class="rounded-circle" src="dist/img/team/UJR512.jpg" alt="Urs-Jakob Rüetschi" height="140" width="140">
+                <h3>Urs-Jakob Rüetschi</h3>
+                <p>Co-Founder & Board Member<br>Software Engineer</p>
+                <ul class="border-bottom">
+                    <li><a href="mailto:ujr@dirageosystems.ch"><img src="dist/img/icons/mail.svg" alt="E-Mail" height="25" width="25"></a></li>
+                    <!--<li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>-->
+                    <!--<li><a href="#"><img src="dist/img/icons/xing.svg" alt="XING" height="25" width="25"></a></li>-->
+                    <li><a href="https://ch.linkedin.com/in/urs-jakob-r%C3%BCetschi-2225043"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img class="rounded-circle" src="dist/img/team/PDU512.jpg" alt="Paola Dürlewanger" height="140" width="140">
+                <h3>Paola Dürlewanger</h3>
+                <p>Account Manager<br>Technical Support</p>
+                <ul class="border-bottom">
+                    <li><a href="mailto:p.duerlewanger@dirageosystems.ch"><img src="dist/img/icons/mail.svg" alt="E-Mail" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/xing.svg" alt="XING" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img class="rounded-circle" src="dist/img/team/MBE512.jpg" alt="Emanuel Mahler" height="140" width="140">
+                <h3>Markus Bedel</h3>
+                <p>Supporter & Advisor<br>Project and Product Manager</p>
+                <ul>
+                    <li><a href="mailto:m.bedel@esri.ch"><img src="dist/img/icons/mail.svg" alt="E-Mail" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/xing.svg" alt="XING" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img class="rounded-circle" src="dist/img/team/PJ512.jpg" alt="Emanuel Mahler" height="140" width="140">
+                <h3>Peter Jäger</h3>
+                <p>Member of the Board<br>Mentor & Business Councel</p>
+                <ul>
+                    <li><a href="p.jaeger@esri.ch"><img src="dist/img/icons/mail.svg" alt="E-Mail" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/xing.svg" alt="XING" height="25" width="25"></a></li>
+                    <li><a href="#"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img class="rounded-circle" src="dist/img/team/esri-startup-partner-sand.png" alt="Esri" height="140" width="140">
+                <h3>Dira partners with Esri</h3>
+                <p>The Science of Where</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="box mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 mb-6 text-center">
+                <h2>Contact</h2>
+                <p>Dira GeoSystems AG<br>c/o Impact Hub Zürich AG<br>Viaduktstrasse 93-95<br>CH-8005 Zürich</p>
+                <p>We are best reached by mail:<br><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+                <ul class="mb-6">
+                    <!--<li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>-->
+                    <!--<li><a href="#"><img src="dist/img/icons/instagram.svg" alt="Instagram" height="25" width="25"></a></li>-->
+                    <!--<li><a href="#"><img src="dist/img/icons/pinterest.svg" alt="Pinterest" height="25" width="25"></a></li>-->
+                    <li><a href="https://ch.linkedin.com/company/dira-geosystems"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
+                    <li><a href="https://github.com/dirageosystems"><img src="dist/img/icons/github-mark.svg" alt="GitHub" height="32" width="32"></a></li>
+                </ul>
+<!--
+                <form>
+                    <h3>Subscribe to our newsletter</h3>
+                    <p>Monthly digest of what's new and exciting.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" type="text" class="form-control rounded-0" placeholder="Email address">
+                        <button class="btn rounded-0" type="button">Subscribe</button>
+                    </div>
+                    <p class="mt-4"><small>Thanks for submitting!</small></p>
+                </form>
+-->
+              </div>
+        </div>
+    </div>
+</section>
+
+<section class="background-color-2">
+    <div class="container my-md text-center text-white">
+        <div class="col-lg-8 offset-lg-2">
+            <p>By the way, Dira is Swahili for compass,
+              an old arabic measure of length (about one metre),
+              and associates with Indira, a byname of the Hindu goddess of beauty.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer mt-auto">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <p>Dira GeoSystems AG</p>
+                <p><a href="https://www.dirageosystems.ch/" title="Dira GeoSystems AG">www.dirageosystems.ch</a></p>
+            </div>
+
+            <div class="col-lg-3">
+                <p><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+                <p><a href="tel:+41442448442">+41 44 244 84 42</a></p>
+            </div>
+
+            <div class="col-lg-3 offset-lg-3">
+                <p>find us on <a href="https://github.com/dirageosystems"><img src="dist/img/icons/github-mark-white.svg" width="20" alt="GitHub"> GitHub</a></p>
+                <p><a href="privacypolicy.html" title="privacy policy">Datenschutz</a> /
+                  <a href="impressum.html" title="imprint">Impressum</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const sections = document.querySelectorAll("section[id]");
+    window.addEventListener("scroll", navHighlighter);
+    function navHighlighter() {
+        let scrollY = window["pageYOffset"];
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = (current.getBoundingClientRect().top + window["pageYOffset"]) - 200;
+            sectionId = current.getAttribute("id");
+            if (
+                scrollY > sectionTop &&
+                scrollY <= sectionTop + sectionHeight
+            ){
+                document.querySelector(".navbar a.nav-link[href*=" + sectionId + "]").classList.add("active");
+            } else {
+                document.querySelector(".navbar a.nav-link[href*=" + sectionId + "]").classList.remove("active");
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
