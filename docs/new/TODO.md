@@ -20,6 +20,13 @@ Open Issues
 - [ ] Nav Menu Produkte: ohne Unteritems (Use Cases etc), da wir
   die Webseite ja knapp halten wollen und für Details ein PDF haben?!
 
+Feedback aus Team
+
+- Claims in Bildern 2 und 3 schwer zu lesen
+- Bei “Our Team” Mail-Adresse ausschreiben (anstatt Social Icons)
+- Link auf LinkedIn-Seite von Dira?
+- Product-PDFs später, lieber schnell die neue Seite
+
 Themen für Marc
 
 - [ ] Aktualitäten (z.B. Stelleninserat): wo und wie?
@@ -29,6 +36,6 @@ Themen für Marc
 Tasks
 
 - [ ] Produktseiten (ProSuite und LF) ausarbeiten
-- [ ] PDFs zu Produkten erstellen und verlinken
+- [ ] PDFs zu Produkten erstellen und verlinken (evtl erst später)
 - [ ] Unterseiten: Impressum und Datenschutz (nur deutsch) (UJR)
 - [ ] Übersetzung de/en: solange nicht gemacht, DE/EN Links entfernen
