@@ -17,7 +17,7 @@ Open Issues
   m.E. (UJR) entweder gar nicht oder alternierend
 - [x] Produktnamen: ProSuite und LocationFinder
   (in Titel ggf. Pro Suite und Location Finder)
-- [ ] Nav Menu Produkte: ohne Unteritems (Use Cases etc), da wir
+- [x] Nav Menu Produkte: ohne Unteritems (Use Cases etc), da wir
   die Webseite ja knapp halten wollen und für Details ein PDF haben?!
 - [ ] Marc: Bilder ev höher (UJ: vs Mobiles) und etwas nach oben schieben
 
