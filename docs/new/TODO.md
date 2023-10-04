@@ -11,7 +11,7 @@ Open Issues
 - [x] Hamburger-Menü: schliessen bei Auswahl (sonst Screen verdeckt)
 - [x] Bild esri Partner Network: bg color, squeezed
 - [x] File rename: s/pro-suite.html/prosuite.html/ und analog lf
-- [ ] Social icons: situativ verlinken oder löschen
+- [x] Social icons: situativ verlinken oder löschen
 - [x] Contact: GitHub-Icon/Link
 - [ ] Einigung über Section Background (white/gray):
   m.E. (UJR) entweder gar nicht oder alternierend
