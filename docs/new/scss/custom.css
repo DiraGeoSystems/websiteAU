@@ -145,6 +145,10 @@ header {
 .carousel-item {
   height: 32rem; }
 
+.carousel-caption h2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem; }
+
 /*
 .carousel-caption {
     color: #000000;
@@ -180,6 +184,12 @@ header {
   text-transform: none; }
 #team ul {
   padding-bottom: 3rem; }
+@media (max-width: 767px) {
+  #team .border-bottom-xs {
+    border-bottom: 1px solid #929292; } }
+@media (max-width: 991px) {
+  #team .border-bottom-sm {
+    border-bottom: 1px solid #929292; } }
 
 #team li,
 #contact li {

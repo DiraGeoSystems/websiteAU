@@ -25,7 +25,7 @@ Feedback aus Team
 
 - Claims in Bildern 2 und 3 schwer zu lesen
 - Bei “Our Team” Mail-Adresse ausschreiben (anstatt Social Icons)
-- Link auf LinkedIn-Seite von Dira?
+- [x] Link auf LinkedIn-Seite von Dira?
 - Product-PDFs später, lieber schnell die neue Seite
 
 Themen für Marc
