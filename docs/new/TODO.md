@@ -38,5 +38,5 @@ Tasks
 
 - [ ] Produktseiten (ProSuite und LF) ausarbeiten
 - [ ] PDFs zu Produkten erstellen und verlinken (evtl erst später)
-- [ ] Unterseiten: Impressum und Datenschutz (nur deutsch) (UJR)
+- [x] Unterseiten: Impressum und Datenschutz (nur deutsch) (UJR)
 - [ ] Übersetzung de/en: solange nicht gemacht, DE/EN Links entfernen
