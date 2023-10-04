@@ -5,11 +5,11 @@ Open Issues
 - [x] section product: each product it's own box image
   (instead of dira-boxen.png) (also: downsample, 2.5MB is too big)
 - [ ] Alignment der Boxen zum Text: erstere zu tief
-- [ ] Team: 2x3 grid bei mittlerer Breite unschön (2, 1, 2, 1)
+- [x] Team: 2x3 grid bei mittlerer Breite unschön (2, 1, 2, 1)
 - [ ] Hamburger-Menü: oranger Unterstrich auf volle Breite?
   Lieber nur Wort-Länge (wie bei breitem Bildschirm)
-- [ ] Hamburger-Menü: schliessen bei Auswahl (sonst Screen verdeckt)
-- [ ] Bild esri Partner Network: bg color, squeezed
+- [x] Hamburger-Menü: schliessen bei Auswahl (sonst Screen verdeckt)
+- [x] Bild esri Partner Network: bg color, squeezed
 - [x] File rename: s/pro-suite.html/prosuite.html/ und analog lf
 - [ ] Social icons: situativ verlinken oder löschen
 - [x] Contact: GitHub-Icon/Link
