@@ -4,7 +4,7 @@ Open Issues
 
 - [x] section product: each product it's own box image
   (instead of dira-boxen.png) (also: downsample, 2.5MB is too big)
-- [ ] Alignment der Boxen zum Text: erstere zu tief
+- [x] Alignment der Boxen zum Text: erstere zu tief (keep as is)
 - [x] Team: 2x3 grid bei mittlerer Breite unschön (2, 1, 2, 1)
 - [ ] Hamburger-Menü: oranger Unterstrich auf volle Breite?
   Lieber nur Wort-Länge (wie bei breitem Bildschirm)
@@ -13,18 +13,22 @@ Open Issues
 - [x] File rename: s/pro-suite.html/prosuite.html/ und analog lf
 - [x] Social icons: situativ verlinken oder löschen
 - [x] Contact: GitHub-Icon/Link
-- [ ] Einigung über Section Background (white/gray):
-  m.E. (UJR) entweder gar nicht oder alternierend
+- [x] Einigung über Section Background (white/gray):
+  m.E. (UJR) entweder gar nicht oder alternierend; in Abstimmung mit
+  Marc: make it all white (and silently see if there are any reactions)
 - [x] Produktnamen: ProSuite und LocationFinder
   (in Titel ggf. Pro Suite und Location Finder)
 - [x] Nav Menu Produkte: ohne Unteritems (Use Cases etc), da wir
   die Webseite ja knapp halten wollen und für Details ein PDF haben?!
-- [ ] Marc: Bilder ev höher (UJ: vs Mobiles) und etwas nach oben schieben
+- [x] Marc: Bilder ev höher (UJ: vs Mobiles) und etwas nach oben schieben;
+  TelCo mit Marc am 6.10.: belassen, wie es ist
 
 Feedback aus Team
 
-- Claims in Bildern 2 und 3 schwer zu lesen
-- Bei “Our Team” Mail-Adresse ausschreiben (anstatt Social Icons)
+- Claims in Bildern 2 und 3 schwer zu lesen -> Paola: Details?
+- Bei “Our Team” Mail-Adresse ausschreiben (anstatt Social Icons);
+  hmm, mit Icon wirkt's so schön aufgeräumt; Rechtsklick Copy Email
+  Address wäre dann die Lösung...
 - [x] Link auf LinkedIn-Seite von Dira?
 - Product-PDFs später, lieber schnell die neue Seite
 
@@ -39,4 +43,4 @@ Tasks
 - [ ] Produktseiten (ProSuite und LF) ausarbeiten
 - [ ] PDFs zu Produkten erstellen und verlinken (evtl erst später)
 - [x] Unterseiten: Impressum und Datenschutz (nur deutsch) (UJR)
-- [ ] Übersetzung de/en: solange nicht gemacht, DE/EN Links entfernen
+- [x] Übersetzung de/en: solange nicht gemacht, DE/EN Links entfernen
