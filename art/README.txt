@@ -11,3 +11,8 @@ Monstre Marin:
 Seeungeheuer ab einem Digitalisat der Uni Lausanne
 von einem von Mercators terrestrischen Globen (ca 1550).
 <https://www2.unil.ch/mercator/en/index.html>
+
+Dira-Dummy:
+Platzhalter für einen zu findenden Mitarbeiter
+von Marc Seidel im Rahmen der Erneuerung der Webseite
+(für die praktische Verwendung kleinere PNGs ableiten)
