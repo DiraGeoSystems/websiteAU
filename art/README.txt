@@ -16,3 +16,7 @@ Dira-Dummy:
 Platzhalter für einen zu findenden Mitarbeiter
 von Marc Seidel im Rahmen der Erneuerung der Webseite
 (für die praktische Verwendung kleinere PNGs ableiten)
+
+animals/*:
+initiale Platzhalter für die Mitarbeiter-Fotos;
+alle von UJR und AR, die meisten aus dem Züricher Zoo.
