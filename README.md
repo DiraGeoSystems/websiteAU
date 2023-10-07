@@ -5,7 +5,10 @@ It “lives” in a Git repository, is statically generated
 (well, at present really just statically created), and
 online at <https://dirageosystems.ch> since December 2021.
 
-Please keep this simple and static.
+In 2023 we contracted dreamis.ch to redesign the website.
+It now uses Bootstrap (no longer W3CSS).
+
+Please keep this **simple and static.**
 
 ## Hosting
 
@@ -17,18 +20,21 @@ straight from the GitHub repository. Things to consider:
 - need empty file *docs/.nojekyll* to disable Jekyll
 - turned on “Enforce HTTPS”: HTTP requests get a 301
   (permanent redirect) to HTTPS; good
-- configured the custom subdomain www.dirageosystems.ch and the
-  custom apex domain dirageosystems.ch; a DNS CNAME record points
-  www.dirageosystems.ch to dirageosystems.github.io and several
-  DNS A records point dirageosystems.github.io to the GitHub servers
+- configured the custom subdomain `www.dirageosystems.ch` and the
+  custom apex domain `dirageosystems.ch`; a DNS CNAME record points
+  `www.dirageosystems.ch` to `dirageosystems.github.io` and several
+  DNS A records point `dirageosystems.github.io` to the GitHub servers
 - read the GitHub Pages docs about custom domains
 
 ## Structure
 
 - README.md – what you are reading now
 - docs/ – the finished site to be published
-- docs/{css,img,js}/ – published static assets
+- docs/dist/{css,fonts,icons,img,js}/ – published static assets
+- docs/scss/ – custom CSS source for new site
 - docs/foo/ – subfolders for topics may be used
+- docs/v1/index.html – the old (version 1) site for reference
+- docs/prosuite/doc/api/* – generated Python `prosuite` documentation
 
 (I'd prefer to rename *docs/* to *site/*, but *docs/* is
 required by GitHub Pages, where we intend to publish.
@@ -47,21 +53,11 @@ The empty `.nojekyll` file is also for GitHub Pages.)
    and look into the console for errors and warnings.
 4. Git: review and commit your changes.
    Use a short but descriptive commit message.
-5. Git: push your commit(s) to GitHub.
-   GitHub will automatically publish the changes
-   within a few minutes.
+5. Git: push your commit(s) to GitHub; it will automatically
+   publish the changes within a few minutes.
 6. Test the published web site: navigate to
    <https://www.dirageosystems.ch> and review your changes
    with your Desktop browser and your mobile browser.
-
-## Content
-
-The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
-Use the entity `&#9776;` &#9776; or `&#x2630;` &#X2630; in HTML.
-
-First drafts of the Dira Logo were created on looka.com here:
-<https://looka.com/s/77498297>. The present version was drawn
-from scratch in Inkscape.
 
 ## Rechtliches
 
@@ -118,7 +114,14 @@ we have to update our **privacy policy** accordingly!
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 ```
 
-## Metadata
+## Miscellaneous
+
+The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
+Use the entity `&#9776;` &#9776; or `&#x2630;` &#X2630; in HTML.
+
+First drafts of the Dira Logo were created on looka.com here:
+<https://looka.com/s/77498297>. The present version was drawn
+from scratch in Inkscape.
 
 HTML5 Boilerplate comes with a host of metadata/files.
 Here is a short summary of how they work:
@@ -132,16 +135,19 @@ Here is a short summary of how they work:
 ### Meta Files
 
 - robots.txt – config site crawling, see <https://www.robotstxt.org>
-- browserconfig.xml – settings for IE11 and Edge browsers
+- browserconfig.xml – settings for IE11 and Edge browsers, see
+  <https://msdn.microsoft.com/en-us/library/ie/dn455106.aspx>
 - site.webmanifest – the Web App Manifest, see below
 - 404.html – should be returned on HTTP/404 errors (works with GitHub Pages)
+- CNAME – required by GitHub Pages
+- .nojekyll – required by GitHub Pages (to avoid Jekyll processing)
 
 ### Web App Manifest
 
 The web app manifest belongs to the realm of progressive web
 apps (PWAs) and allows a web site to be installed on a mobile
 device's home screen (without an app store). It is a JSON file
-referenced from HTML with `<meta rel="manifest" href="FILE">`.
+referenced from HTML with `<link rel="manifest" href="FILE">`.
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 has the details.
 

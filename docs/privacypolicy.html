@@ -1,16 +1,82 @@
 <!DOCTYPE html>
-<html lang="de">
+<html class="h-100" lang="de">
 <head>
   <meta charset="utf-8">
   <title>Datenschutzerklärung | Dira GeoSystems AG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/w3.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="dist/css/custom.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="dist/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="dist/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="dist/icons/favicon-16x16.png">
+  <link rel="manifest" href="dist/icons/site.webmanifest">
+  <link rel="mask-icon" href="dist/icons/safari-pinned-tab.svg" color="#284b9a">
+  <link rel="shortcut icon" href="dist/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="dist/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 </head>
-<body class="w3-container w3-sand legal">
+<body class="d-flex flex-column h-100">
 
-<h1>Datenschutzerklärung</h1>
+<header>
+  <nav class="navbar navbar-expand-lg border-bottom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="dist/img/dirageosystems.svg" alt="Dira GeoSystems AG" height="80"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html#dira"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">DIRA</span></a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="index.html#products" data-bs-toggle="dropdown" aria-expanded="true">Produkte</a>
+                    <ul class="dropdown-menu" data-bs-popper="static">
+                        <li class="nav-item-1">
+                            <a class="dropdown-item" href="index.html#locationfinder">Location Finder</a>
+                            <!-- <ul class="dropdown-menu-1">
+                                <li class="nav-dropdown"><a href="locationfinder.html#use-cases" class="nav-link">Use cases</a></li>
+                                <li class="nav-dropdown"><a href="locationfinder.html#features" class="nav-link">Features</a></li>
+                                <li class="nav-dropdown"><a href="locationfinder.html#architecture" class="nav-link">Architecture</a></li>
+                                <li class="nav-dropdown"><a href="locationfinder.html#licencing" class="nav-link">Licencing</a></li>
+                            </ul> -->
+                        </li>
+                        <!-- <li class="nav-item-1"><hr class="dropdown-divider"></li> -->
+                        <li class="nav-item-1">
+                          <!-- <a class="nav-link" href="#products"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Pro Suite</span></a> -->
+                            <a class="dropdown-item" href="index.html#prosuite">Pro Suite</a>
+                            <!-- <ul class="dropdown-menu-1">
+                                <li class="nav-dropdown"><a href="prosuite.html#qa" class="nav-link">Q&A</a></li>
+                                <li class="nav-dropdown"><a href="prosuite.html#edit-tools" class="nav-link">Edit tools</a></li>
+                                <li class="nav-dropdown"><a href="prosuite.html#carto" class="nav-link">Carto</a></li>
+                                <li class="nav-dropdown"><a href="prosuite.html#status" class="nav-link">Status & road ahead</a></li>
+                            </ul> -->
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="index.html#services"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Services</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#team"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Team</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kontakt</span></a></li>
+            </ul>
+
+            <!-- <ul class="navbar-nav ml-auto ms-lg-5">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">en</a>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+  </nav>
+</header>
+
+<section id="imprint" class="box">
+  <div class="container">
+    <div class="col-lg-8 offset-lg-2 mb-6">
+
+<h2>Datenschutzerklärung</h2>
 
 <p>Personendaten sind Daten, die sich auf eine bestimmte oder
 bestimmbare Person beziehen. Die vorliegende Datenschutzerklärung
@@ -27,7 +93,7 @@ dieser Drittseiten.</p>
 jederzeit zu ändern. Es gilt die jeweils auf unseren Webseiten
 veröffentlichte Fassung.</p>
 
-<h2>Verantwortlichkeit</h2>
+<h3>Verantwortlichkeit</h3>
 
 <p>Für diese Webseiten verantwortlich ist:</p>
 
@@ -41,7 +107,7 @@ Web: <a href="https://www.dirageosystems.ch">www.dirageosystems.ch</a><br>
 Tel: <a href="tel:+41442448442">+41 44 2448442</a>
 </address>
 
-<h2>Datenverarbeitung</h2>
+<h3>Datenverarbeitung</h3>
 
 <p>Der vorliegende Webauftritt ist als statische Seite realisiert,
 welche keine Personendaten erhebt, mit den folgenden Ausnahmen:</p>
@@ -68,7 +134,7 @@ und GitHub's <a href="https://docs.github.com/en/github/site-policy/global-priva
 <!--Social Plugins: ab wann das Plugin aktiv wird und trackt-->
 <!--etc.-->
 
-<h2>Datensicherheit</h2>
+<h3>Datensicherheit</h3>
 
 <p>Werden unsere Webseiten über das https-Protokoll aufgerufen,
 dann ist der Transfer verschlüsselt. Die gängigen Browser zeigen
@@ -80,7 +146,7 @@ Massnahmen, um Ihre Daten gegen zufällige oder vorsätzliche
 Manipulationen, Verlust oder unbefugten Zugriff Dritter zu schützen.
 Diese Massnahmen passen wir der technologischen Entwicklung an.</p>
 
-<h2>Ihre Rechte (Betroffenenrechte)</h2>
+<h3>Ihre Rechte (Betroffenenrechte)</h3>
 
 <p>Sie haben das Recht, Auskunft über Ihre von uns verarbeiteten
 personenbezogenen Daten zu verlangen. Sie haben weiter das Recht,
@@ -101,6 +167,34 @@ geltend zu machen.</p>
 in Widerspruch zu geltenden Datenschutzbestimmungen steht, so haben
 Sie die Möglichkeit, bei einer zuständigen Datenschutz-Aufsichtsbehörde
 Beschwerde einzureichen.</p>
+
+<p class="mt-5"><em>This privacy policy is available in German only.</em></p>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer mt-auto">
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-3">
+      <p>Dira GeoSystems AG</p>
+      <p><a href="https://www.dirageosystems.ch/" title="Dira GeoSystems AG">www.dirageosystems.ch</a></p>
+    </div>
+
+    <div class="col-lg-3">
+      <p><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+      <p><a href="tel:+41442448442">+41 44 244 84 42</a></p>
+    </div>
+
+    <div class="col-lg-3 offset-lg-3">
+      <p>find us on <a href="https://github.com/dirageosystems"><img src="dist/img/icons/github-mark-white.svg" width="20" alt="GitHub"> GitHub</a></p>
+      <p><a href="privacypolicy.html" title="privacy policy">Datenschutz</a> /
+        <a href="impressum.html" title="imprint">Impressum</a></p>
+    </div>
+  </div>
+</div>
+</footer>
 
 </body>
 </html>

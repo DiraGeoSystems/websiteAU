@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dira GeoSystems / software for producing high-quality geodata and beautiful maps</title>
+  <meta name="description" content="Dira GeoSystems creates software for producing top quality geodata and the most beautiful maps">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Dira GeoSystems">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dirageosystems.ch">
+  <meta property="og:image" content="https://dirageosystems.ch/icon.png">
+  <meta property="og:description" content="Software for tremendously useful geodata and the most beautiful maps">
+
+  <link rel="canonical" href="https://dirageosystems.ch">
+
+  <link rel="manifest" href="../dist/icons/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="../dist/icons/apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="theme-color" content="#595959">
+</head>
+
+<body>
+
+<!-- Links (sit on top) -->
+<!-- https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
+<div class="w3-top">
+  <div class="w3-bar w3-padding w3-black w3-opacity-min topitem">
+    <a href="#home" class="w3-button w3-black" onclick="closeDropNav()"><b>Dira</b></a>
+    <a href="#products" class="w3-button w3-black w3-hide-small">Products</a>
+    <a href="#services" class="w3-button w3-black w3-hide-small">Services</a>
+    <a href="#team" class="w3-button w3-black w3-hide-small">Team</a>
+    <a href="#contact" class="w3-button w3-black w3-hide-small">Contact</a>
+    <!--<a href="#" class="w3-button w3-black w3-right">DE/<b>EN</b></a>-->
+    <a href="javascript:void(0);" onclick="toggleDropNav()"
+       class="icon w3-button w3-black w3-right w3-large w3-hide-medium w3-hide-large">&#9776;</a>
+  </div>
+  <div id="dropnav" class="w3-bar-block w3-black w3-opacity-min topitem w3-hide w3-hide-large w3-hide-medium">
+    <a href="#products" onclick="closeDropNav()" class="w3-bar-item w3-button">Products</a>
+    <a href="#services" onclick="closeDropNav()" class="w3-bar-item w3-button">Services</a>
+    <a href="#team" onclick="closeDropNav()" class="w3-bar-item w3-button">Team</a>
+    <a href="#contact" onclick="closeDropNav()" class="w3-bar-item w3-button">Contact</a>
+  </div>
+  <script>
+    // elem.classList has methods add(), remove(), and toggle(), but is
+    // missing in old browsers, so here we stick to className fiddling
+    function toggleDropNav() {
+      var x = document.getElementById("dropnav");
+      if (x.className.indexOf("w3-show") < 0) x.className += " w3-show";
+      else x.className = x.className.replace(" w3-show", "");
+    }
+    function closeDropNav() {
+      var x = document.getElementById("dropnav");
+      if (x.className.indexOf("w3-show") >= 0)
+        x.className = x.className.replace(" w3-show", "");
+    }
+  </script>
+</div>
+
+<!-- Header with background image -->
+<header class="bgimg" id="home">
+  <div class="w3-center w3-padding-large">
+    <img src="img/DiraLogoWeb.svg" alt="Dira Logo" class="w3-image">
+  </div>
+</header>
+
+<!-- Set background color and large text to whole page -->
+<div class="w3-sand w3-large">
+
+<!-- Job ad -->
+<section class="w3-container">
+  <div class="w3-content">
+    <div class="w3-card-4 w3-panel w3-leftbar w3-border w3-border-indigo w3-light-blue" style="margin-top:2pc">
+      <p>Stelleninserat: <a href="Stelleninserat_Softwareentwicklung.pdf"
+        title="Job ad / Stelleninserat (PDF)">Software Developer</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- About Container -->
+<section class="w3-container" id="dira">
+  <div class="w3-content">
+    <h1><span class="heading">Dira GeoSystems</span></h1>
+    <p>Dira GeoSystems develops software for the efficient production
+      of highly accurate geodata and beautiful maps. We specialize both
+      in the ergonomics of the user experience and high-performance
+      algorithms to boost the productivity of data production and processing.
+      Our main products are built on the ProSuite software platform that
+      has been developed for more than a decade for interactive data capture
+      and editing, quality assurance, and cartographic refinement.
+      The ProSuite platform is currently used by a variety of organisations
+      ranging from the national mapping agencies of Switzerland, Germany, and
+      Austria to medium and small organisations, such as the GIS departments
+      at the state and local level or private companies.</p>
+    <p>Dira GeoSystems has been founded in 2021 with the mission to build
+      and support the ProSuite tools for ArcGIS Pro and ArcGIS Enterprise.
+      Additionally, we support large and small organisations during and
+      after the migration to ArcGIS Pro leveraging our experience with
+      large data models and our expertise in cartography.</p>
+    <img src="img/minahasa1.jpg" alt="delimiter" class="delimiter w3-card-4">
+  </div>
+</section>
+
+<!-- Products Container -->
+<section class="w3-container" id="products">
+  <div class="w3-content">
+    <h2><span class="heading">Products</span></h2>
+    <p>Dira GeoSystems engineers the following products to the highest
+      customer satisfaction:</p>
+
+    <div class="w3-card-4 w3-panel w3-leftbar border-brown green">
+      <a href="prosuite.html"><img src="img/LogoPS256.png" alt="Logo" class="w3-image"
+        style="float:right;max-width:138px;border:5px solid transparent"></a>
+      <h3>Dira ProSuite</h3>
+      <p>Dira GeoSystem's ProSuite is a suite of high-end productivity
+        tools for data production, quality assurance, and cartographic
+          refinement, implemented as an extension of Esri's flagship
+          application ArcGIS Pro.</p>
+        <p><a class="w3-button w3-brown w3-card" href="prosuite.html">Product Details</a></p>
+    </div>
+
+    <div class="w3-card-4 w3-panel w3-leftbar border-brown green">
+      <a href="lf.de.html"><img src="img/LogoLF256.png" alt="Logo" class="w3-image"
+        style="float:right;max-width:144px"></a>
+      <h3 class="heading">LocationFinder</h3>
+      <p>Dira GeoSystem's LocationFinder is a fast and friendly
+        interactive search engine over your address and place data
+        with plentiful configuration possibilities for fine-tuning
+        the end user's search experience.</p>
+      <p><a class="w3-button w3-brown w3-card" href="lf.de.html">Product Details</a></p>
+    </div>
+
+    <img src="img/minahasa2.jpg" alt="delimiter" class="delimiter w3-card-4">
+  </div>
+</section>
+
+<!-- Services Container -->
+<section class="w3-container" id="services">
+  <div class="w3-content">
+    <h2><span class="heading">Services</spadatan></h2>
+    <p>Dira GeoSystems provides training and consulting services
+      for the Dira ProSuite product family and LocationFinder.
+      The ProSuite codebase is easily integrated into customer-specific
+      solutions, allowing for cost-efficient and rapid development of
+      your software projects.</p>
+    <p>We are happy to share our vast experience in data production
+      and cartography. Our special expertise covers the following
+      topics:</p>
+    <ul>
+      <li>Geodatabase modelling and design</li>
+      <li>Data and map production workflows, geodatabase versioning
+        and (Oracle) database tuning</li>
+      <li>Designing workflows for the processing of very large datasets</li>
+      <li>Software development for ArcGIS Pro and ArcGIS Enterprise</li>
+    </ul>
+    <img src="img/minahasa3.jpg" alt="delimiter" class="delimiter w3-card-4 w3-margin-top">
+  </div>
+</section>
+
+<!-- Team Container -->
+<section class="w3-container" id="team">
+  <div class="w3-content">
+    <h2><span class="heading">Team</span></h2>
+    <p>Dira is the concentrated effort of a core team and
+      a network of affiliated developers, specialists, and
+      friends, all established and committed to highest quality.</p>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-panel">
+        <div class="w3-card-4">
+          <img src="img/team/EMA512.jpg" alt="Emanuel Mahler" class="w3-image">
+          <div class="w3-container w3-center green">
+            <p><span class="tag">Emanuel Mahler</span><br>
+            Founder &amp; CEO<br>Software Engineer<br>
+            <a href="mailto:e.mahler@dirageosystems.ch">e.mahler@dirageosystems.ch</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-panel">
+        <div class="w3-card-4">
+          <img src="img/team/UJR512.jpg" alt="Urs-Jakob Rüetschi" class="w3-image">
+          <div class="w3-container w3-center green">
+            <p><span class="tag">Urs-Jakob Rüetschi</span><br>
+            Co-Founder &amp; Board Member<br>Software Engineer<br>
+            <a href="mailto:ujr@dirageosystems.ch">ujr@dirageosystems.ch</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-panel">
+        <div class="w3-card-4">
+          <img src="img/team/PDU512.jpg" alt="Paola Dürlewanger" class="w3-image">
+          <div class="w3-container w3-center green">
+            <p><span class="tag">Paola Dürlewanger</span><br>
+              Account Manager<br>Technical Support<br>
+            <a href="mailto:p.duerlewanger@dirageosystems.ch">p.duerlewanger@dirageosystems.ch</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-panel">
+        <div class="w3-card-4">
+          <img src="img/team/MBE512.jpg" alt="Markus Bedel" class="w3-image">
+          <div class="w3-container w3-center green">
+            <p><span class="tag">Markus Bedel</span><br>
+              Supporter &amp; Advisor<br>Project and Product Manager<br>
+            <a href="mailto:m.bedel@esri.ch">m.bedel@dirageosystems.ch</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-panel">
+        <div class="w3-card-4">
+          <img src="img/team/PJ512.jpg" alt="Peter Jäger" class="w3-image">
+          <div class="w3-container w3-center green">
+            <p><span class="tag">Peter Jäger</span><br>
+            Member of the Board<br>Mentor &amp; Business Counsel<br>
+            <a href="mailto:p.jaeger@esri.ch">p.jaeger@dirageosystems.ch</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-panel">
+        <div class="w3-card-4 w3-center">
+          <img src="img/esri/esri-startup-partner-sand.png" alt="Esri Startup Partner" class="w3-image">
+          <div class="w3-container w3-center">
+            <p>Dira partners with <a href="https://esri.ch" target="_blank">Esri</a><br>
+            and engages into<br>
+            <em>The Science of Where</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="img/minahasa4.jpg" alt="delimiter" class="delimiter w3-card-4 w3-margin-top">
+  </div>
+</section>
+
+<!-- Contact Container -->
+<section class="w3-container" id="contact" style="padding-bottom:32px;">
+  <div class="w3-content">
+    <h2><span class="heading">Contact</span></h2>
+    <p>Dira GeoSystems is based in Zürich.<br>We are best reached by mail:<br>
+    say <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+    <p>By the way, <span class="tag">Dira</span> is Swahili for compass,
+      an old arabic measure of length (about one metre), and
+      associates with Indira, a byname of the Hindu godess of beauty.</p>
+
+    <img src="img/mean-curv-blur-1280.jpg" alt="delimiter" class="delimiter w3-card-4 w3-grayscale-min">
+    <!-- <p class="w3-center">Palette:
+      <span style="width:100px;background-color:#dcedc2">dcedc2</span>
+      <span style="width:100px;background-color:#404040">404040</span>
+      <span style="width:100px;background-color:#f3f9e9">f3f9e9</span>
+      <span style="width:100px;background-color:#c5e19b">c5e19b</span>
+      <span style="width:100px;background-color:#595959">595959</span>
+      <span style="width:100px;background-color:#262626">262626</span></p> -->
+  </div>
+</section>
+
+<!-- End page content -->
+</div>
+
+<footer class="footer w3-container w3-black w3-padding-48 w3-center">
+  <div class="w3-row">
+    <div class="w3-col m4 w3-margin-bottom">
+      Dira GeoSystems AG<br>
+      c/o Impact Hub Zürich AG<br>
+      Viaduktstrasse 93-95<br>
+      CH-8005 Zürich
+    </div>
+    <div class="w3-col m4 w3-margin-bottom thickleading">
+      <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a><br>
+      <a href="https://www.dirageosystems.ch">www.dirageosystems.ch</a><br>
+      Tel. <a href="tel:+41442448442">+41 44 2448442</a>
+    </div>
+    <div class="w3-col m4 thickleading">
+      find us on <a href="https://github.com/dirageosystems"><img src="img/icons/github-mark-white.svg" width="24" alt="GitHub Mark"> GitHub</a><br>
+      <a href="privacypolicy.html">Privacy Policy/Datenschutz</a><br>
+      <a href="impressum.html">Imprint/Impressum</a>
+    </div>
+  </div>
+</footer>
+
+  <!--<script src="js/vendor/modernizr-3.11.2.min.js"></script>-->
+  <!--<script src="js/plugins.js"></script>-->
+  <!--<script src="js/main.js"></script>-->
+
+</body>
+</html>

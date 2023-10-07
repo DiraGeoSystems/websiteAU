@@ -1,433 +1,170 @@
-<!DOCTYPE html>
-<html class="no-js" lang="de">
-
+<!doctype html>
+<html class="h-100" lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Dira GeoSystems / ProSuite</title>
-  <meta name="description" content="Dira ProSuite: Erweiterung für ArcGIS Pro für Datenproduktion, Qualitätssicherung und Kartographie / productivity extension for ArcGIS Pro for data production, quality assurance, and cartographic refinement">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="Dira GeoSystems">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dirageosystems.ch">
-  <meta property="og:image" content="https://dirageosystems.ch/icon.png">
-  <meta property="og:description" content="Software for tremendously useful geodata and the most beautiful maps">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/w3.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <meta name="theme-color" content="#595959">
-
-  <script>
-    function toggleAccordion(id) {
-      var x = document.getElementById(id);
-      var w = x.previousElementSibling;
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        if (w) w.classList.add("open");
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-        if (w) w.classList.remove("open");
-      }
-    }
-  </script>
+    <meta charset="utf-8">
+    <title>dirageosystems.ch</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/custom.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/icons/favicon-16x16.png">
+    <link rel="manifest" href="dist/icons/site.webmanifest">
+    <link rel="mask-icon" href="dist/icons/safari-pinned-tab.svg" color="#284b9a">
+    <link rel="shortcut icon" href="dist/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="dist/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
+<body class="d-flex flex-column h-100">
 
-<body>
+<header>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </symbol>
+    </svg>
 
-<!-- Links (sit on top) -->
-<!-- https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
-<div class="w3-top">
-  <div class="w3-bar w3-padding w3-black w3-opacity-min topitem">
-    <a href="index.html" class="w3-button w3-black"><b>Dira</b></a>
-    <a href="#prosuite" class="w3-button w3-black w3-hide-small">ProSuite</a>
-    <a href="#status" class="w3-button w3-black w3-hide-small">Status</a>
-    <a href="#contact" class="w3-button w3-black w3-hide-small">Kontakt</a>
-    <!--<a href="prosuite.en.html" class="w3-button w3-black w3-right"><b>DE</b>/EN</a>-->
-    <a href="javascript:void(0);" onclick="toggleDropNav()"
-       class="icon w3-button w3-black w3-right w3-large w3-hide-medium w3-hide-large">&#9776;</a>
-  </div>
-  <div id="dropnav" class="w3-bar-block w3-black w3-opacity-min topitem w3-hide w3-hide-large w3-hide-medium">
-    <a href="#prosuite" onclick="closeDropNav()" class="w3-bar-item w3-button">ProSuite</a>
-    <a href="#status" onclick="closeDropNav()" class="w3-bar-item w3-button">Status</a>
-    <a href="#contact" onclick="closeDropNav()" class="w3-bar-item w3-button">Kontakt</a>
-    <!-- <a href="prosuite.en.html" onclick="closeDropNav()" class="w3-bar-item w3-button"><b>DE</b>/EN</a> -->
-  </div>
-  <script>
-    // elem.classList has methods add(), remove(), and toggle(), but is
-    // missing in old browsers, so here we stick to className fiddling
-    function toggleDropNav() {
-      var x = document.getElementById("dropnav");
-      if (x.className.indexOf("w3-show") < 0) x.className += " w3-show";
-      else x.className = x.className.replace(" w3-show", "");
-    }
-    function closeDropNav() {
-      var x = document.getElementById("dropnav");
-      if (x.className.indexOf("w3-show") >= 0)
-        x.className = x.className.replace(" w3-show", "");
-    }
-  </script>
-</div>
+    <nav class="navbar navbar-expand-lg border-bottom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="dist/img/dirageosystems.svg" alt="Dira GeoSystems AG" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html#dira">DIRA</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="index.html#product" data-bs-toggle="dropdown" aria-expanded="true">Produkte</a>
+                        <ul class="dropdown-menu" data-bs-popper="static">
+                            <li class="nav-item-1"><a class="dropdown-item" href="locationfinder.html">Location finder</a>
+                                <ul class="dropdown-menu-1">
+                                    <li class="nav-dropdown"><a href="locationfinder.html#use-cases" class="nav-link">Use cases</a></li>
+                                    <li class="nav-dropdown"><a href="locationfinder.html#features" class="nav-link">Features</a></li>
+                                    <li class="nav-dropdown"><a href="locationfinder.html#architecture" class="nav-link">Architecture</a></li>
+                                    <li class="nav-dropdown"><a href="locationfinder.html#licencing" class="nav-link">Licencing</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item-1"><hr class="dropdown-divider"></li>
+                            <li class="nav-item-1">
+                                <a class="dropdown-item" href="prosuite.html">Pro suite</a>
+                                <ul class="dropdown-menu-1">
+                                    <li class="nav-dropdown"><a href="prosuite.html#qa" class="nav-link">Q&A</a></li>
+                                    <li class="nav-dropdown"><a href="prosuite.html#edit-tools" class="nav-link">Edit tools</a></li>
+                                    <li class="nav-dropdown"><a href="prosuite.html#carto" class="nav-link">Carto</a></li>
+                                    <li class="nav-dropdown"><a href="prosuite.html#status" class="nav-link">Status & road ahead</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
-<!-- Header with background image -->
-<header class="bgimg" id="home">
-  <div class="w3-center w3-padding-large">
-    <img src="img/DiraLogoWeb.svg" alt="Dira Logo" class="w3-image">
-  </div>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto ms-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">en</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 
-<!-- Set background color and large text to whole page -->
-<div class="w3-sand w3-large">
-
-<section class="w3-container" id="prosuite">
-  <div class="w3-content">
-    <h1><span class="heading">Dira ProSuite</span></h1>
-    <img src="img/LogoPS256.png" alt="Logo" class="w3-image w3-padding"
-      style="width:160px;float:right">
-    <p>Dira GeoSystems entwickelt und vertreibt mit der Dira ProSuite
-      leistungsfähige Werkzeuge für die professionelle Daten&shy;produktion,
-      Qualitäts&shy;sicherung und Kartografie. Dira ProSuite ist realisiert
-      als eine Erweiterung (“Add-In”) für Esri's ArcGIS Pro.</p>
-
-    <!--Our portfolio includes <span class="tag">Dira ProSuite</span>
-      for advanced high performance quality checking of your geodata,
-      along with a broad range of highly effective and usable tools for
-      interactive editing. These Quality Assurance tools run as an Add-In
-      for Esri's ArcGIS&nbsp;Pro and are also accessible through a Python API.-->
-
-    <div class="accordion">
-      <h3 onclick="toggleAccordion('components')"
-        class="w3-button w3-gray">Drei komplementäre Funktionsbereiche</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="components">
-        <p>Dira ProSuite umfasst drei Funktionsbereiche, die sich ergänzen,
-          aber auch separat eingesetzt werden können:</p>
-        <ol>
-          <li><a href="#prosuite-qa"><span class="xtag">ProSuite QA</span></a>
-            ist die schnellste am Markt verfügbare Qualitätsprüfung für Geodaten</li>
-          <li><a href="#prosuite-edit"><span class="xtag">ProSuite Edit Tools</span></a>
-            sind Bearbeitungs-Werkzeuge für die hoch-effiziente (v.a. topografische)
-            Datenproduktion und Fehlerkorrektur</li>
-          <li><a href="#prosuite-carto"><span class="xtag">ProSuite Carto</span></a>
-            sind eine Reihe von Prozessen für die voll- und halbautomatische
-            kartografische Nachbearbeitung für höchste ästhetische Ansprüche</li>
-        </ol>
-      </div>
-
-      <h3 onclick="toggleAccordion('grossklein')"
-        class="w3-button w3-gray">Für kleine und grosse Organisationen geeignet</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="grossklein">
-        <p>Dira ProSuite wird erfolgreich zur wirtschaftlichen Bearbeitung und
-          Prüfung sehr grosser Datenmengen in komplexen Organisationen eingesetzt,
-          hat sich aber ebenso in kleineren Projekten bewährt.
-          Dira ProSuite unterstützt sowohl die interaktive Bearbeitung und Prüfung
-          durch den Anwender in ArcGIS&nbsp;Pro als auch den automatisierten
-          Einsatz als Batch-Prozess.</p>
-      </div>
-
-      <h3 onclick="toggleAccordion('complete')"
-        class="w3-button w3-gray">Eine komplette und in sich schlüssige Lösung</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="complete">
-        <p>Add-In für ArcGIS Pro</p>
-        <ul>
-          <li>Werkzeuge für Fehlersuche und -behebung in Geodaten</li>
-          <li>Bearbeitungswerkzeuge</li>
-          <li>Hilfswerkzeuge (z.B. Durchmusterungsassistent)</li>
-          <li>Kartografische Algorithmen</li>
-        </ul>
-        <p>Administrationsklient</p>
-        <ul>
-          <li>Konfiguration von Qualitätsprüfungen</li>
-          <li>Konfiguration von Kartenprozessen</li>
-          <li>weitere zentrale Konfigurationen</li>
-        </ul>
-        <p>Batch-Prozesse</p>
-        <ul>
-          <li>Qualitätsprüfungen</li>
-          <li>Schemaanalysen</li>
-          <li>Kartenprozesse</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="w3-container" id="prosuite-qa">
-  <div class="w3-content">
-    <h2><span class="heading">ProSuite QA</span></h2>
-    <p class="w3-panel w3-leftbar">Professionelle Qualitätssicherung von Geodaten</p>
-    <p>Dira ProSuite QA ist die umfassende Lösung zur Qualitätsprüfung
-      von Geodaten in ArcGIS. Sie besticht durch Effizienz, Prüflogik,
-      Stabilität, Skalier- und Integrierfähigkeit, und überzeugt
-      Organisationen mit Verantwortung für grosse, komplexe oder
-      kritische Datenbestände. Geodaten- und Kartenproduzenten
-      erzielen mit der ProSuite QA eine Steigerung von Produktivität
-      und Datenqualität: sowohl im Prozess der Datenbearbeitung, als
-      auch bei der Entgegennahme und Abgabe von Datenprodukten.</p>
-
-    <div class="accordion">
-      <h3 onclick="toggleAccordion('qatestcats')"
-        class="w3-button w3-gray">Das Herzstück: 130 Testalgorithmen</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="qatestcats">
-        <p>Über 130 verfügbare Testalgorithmen bieten nahezu unbegrenzte
-          Möglichkeiten für die Qualitätsprüfung von Geodaten.
-          Merkmale der QA-Tests:</p>
-        <ul>
-          <li>Sehr schnelle Prüfung räumlicher Beziehungen, auch bei sehr grossen Datenmengen</li>
-          <li>Fehlergeometrie und beteiligte Features werden exakt identifiziert</li>
-          <li>Komplexe Attributbedingungen können mit räumlichen Bedingungen kombiniert werden</li>
-          <li>Individuelle Ausnahmen können gespeichert werden</li>
-          <li>Features aus unterschiedlichen Datenbanken können gegeneinander geprüft werden</li>
-        </ul>
-      </div>
-
-      <h3 onclick="toggleAccordion('qatests')"
-        class="w3-button w3-gray">Definition und Prüfung individueller Qualitätsbedingungen</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="qatests">
-        <p>Dira ProSuite QA bietet über die Standardmechanismen der
-          Geodatabase hinaus umfassende Möglichkeiten für die Definition und
-          Prüfung von Qualitätsbedingungen. Derzeit sind über 120 Test-Algorithmen
-          in folgenden Kategorien verfügbar:</p>
-        <ul>
-          <li>Attribute und Beziehungen</li>
-          <li>Geometrie einzelner Features</li>
-          <li>Lineare Netzwerke (auch ohne geometrische Netzwerke)</li>
-          <li>Proximität (Abstände zwischen Features)</li>
-          <li>Topologische Bedingungen (auch ohne Topologie-Datasets)</li>
-          <li>M-Werte</li>
-          <li>Z-Werte</li>
-          <li>3D-Gebäude (Multi Patches)</li>
-          <li>Polygonnetzwerke (Grenzlinien und Zentroide)</li>
-          <li>Kartografische Symbolisierung</li>
-          <li>Schemas von Tabellen/Featureklassen</li>
-          <li>Komplexe Kombinationen dieser Kategorien</li>
-        </ul>
-        <!-- <p><a class="w3-button w3-brown w3-card" title="PDF"
-          href="#">Technische Referenz</a></p> -->
-      </div>
-
-      <h3 onclick="toggleAccordion('exacterrors')"
-        class="w3-button w3-gray">Exakte Identifikation von Fehlern</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="exacterrors">
-        <p>Dira ProSuite QA dokumentiert gefundene Fehler und Warnungen
-          in Fehler-Featureklassen. Ein Durchmusterungsassistent führt
-          den Anwender direkt zu den einzelnen Fehlern. Dabei werden
-          die Fehlergeometrie, die am Fehler beteiligten Features sowie
-          Informationen zur betroffenen Qualitätsregel angezeigt.</p>
-        <div class="w3-center">
-          <img src="prosuite/qa-exact-errors.jpg" class="w3-image"
-               alt="Exakte Identifikation von Fehlern">
+<section id="products" class="box">
+    <div class="container my-lg text-center">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="dist/img/dira-box-locationfinder.png" class="img-fluid" alt="Location finder">
+            </div>
+            <div class="col-lg-6">
+                <h2>Location Finder</h2>
+                <p>Dira GeoSystem's LocationFinder ist eine äusserst schnelle und benutzerfreundliche interaktive Suche nach benannten «Locations» wie z.B. Ortsnamen, Adressen, Grundstücksnummern, Points of Interest, etc. Der LocationFinder ist eine «on-premise» Lösung und daher auch für sensitive In-House-Daten verwendbar.</p>
+                <h3 id="use-cases" class="box">Use cases</h3>
+                <p>Der LocationFinder ermöglicht die interaktive Suche nach benannten «Locations» über ein einziges Textfeld. Locations sind z.B. Adressen, Ortsnamen, Postleitzahlen, Gletscher, Hydranten, und allgemein Points of Interest.</p>
+                <ul class="arrow my-5">
+                    <li>Ihre eigenen Dateien</li>
+                    <li>Anwendungsbeispiele</li>
+                </ul>
+                <h2 id="features" class="box">Features</h2>
+                <p>Der LocationFinder ist optimiert auf Geschwindigkeit, einfache Administration (keine Abhängigkeiten), und weitgehende Konfigurierbarkeit.</p>
+            </div>
         </div>
-      </div>
+    </div>
+</section>
 
-      <h3 onclick="toggleAccordion('errorrecovery')"
-        class="w3-button w3-gray">Effiziente interaktive Fehlerbehebung</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="errorrecovery">
-        <p>Der Anwender wird bei der Fehlerdurchmusterung jeweils zum
-          geografisch nächsten Fehler geführt. Aufgrund der exakten
-          Fehlerbeschreibung und der effizienten Editierwerkzeuge,
-          kann der identifizierte Fehler sofort behoben werden.</p>
-        <p>Die Editierwerkzeuge stehen, ausser für die Fehlerkorrektur,
-          auch für die normale Datenerfassung zur Verfügung.
-          Dazu bieten sie einen optimierten Bearbeitungsablauf,
-          und vereinfachen viele anspruchsvolle Bearbeitungsaufgaben
-          (z.B. topologisch korrekte Angleichung von Features,
-          Massenattributierung, Bearbeitung linearer Netzwerke).</p>
-        <div class="w3-center">
-          <img src="prosuite/qa-easy-fix.jpg" class="w3-image"
-               alt="Effiziente interaktive Fehlerbehebung">
+<section>
+    <div class="container my-lg text-center">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="dist/img/dira-box-prosuite.png" class="img-fluid" alt="Location finder">
+            </div>
+            <div class="col-lg-6">
+                <h2>Location Finder</h2>
+                <p>Dira GeoSystems entwickelt und vertreibt mit der Dira ProSuite leistungsfähige Werkzeuge für die professionelle Datenproduktion, Qualitätssicherung und Kartografie. Dira ProSuite ist realisiert als eine Erweiterung («Add-In») für Esri's ArcGIS Pro.</p>
+                <h2>Use cases</h2>
+                <p>Der LocationFinder ermöglicht die interaktive Suche nach benannten «Locations» über ein einziges Textfeld. Locations sind z.B. Adressen, Ortsnamen, Postleitzahlen, Gletscher, Hydranten, und allgemein Points of Interest.</p>
+                <ul class="arrow my-5">
+                    <li>Drei komplementäre Funktionsbereiche</li>
+                    <li>Für kleine und grosse Organisationen geeignet</li>
+                    <li>Eine komplette und in sich schlüssige Lösung</li>
+                </ul>
+                <h2>Pro suite QA</h2>
+                <p>Professionelle Qualitätssicherung von Geodaten</p>
+                <p class="mt-5">Dira ProSuite QA ist die umfassende Lösung zur Qualitätsprüfung von Geodaten in ArcGIS. Sie besticht durch Effizienz, Prüflogik, Stabilität, Skalier- und Integrierfähigkeit, und überzeugt Organisationen mit Verantwortung für grosse, komplexe oder kritische Datenbestände. Geodaten- und Kartenproduzenten erzielen mit der ProSuite QA eine Steigerung von Produktivität und Datenqualität.</p>
+            </div>
         </div>
-      </div>
-
-      <h3 onclick="toggleAccordion('qaperformance')"
-        class="w3-button w3-gray">Höchste Performanz auch bei sehr grossen Datenmengen</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="qaperformance">
-        <p>Dank In-Memory-Technologie können auch sehr grosse Datenmengen
-          schnell geprüft werden. Insbesondere räumliche Beziehungen
-          lassen sich sehr performant prüfen. Die QA-Tests werden in einem
-          Test-Container ausgeführt, der sowohl einen hocheffizienten
-          Datenzugriff garantiert, als auch eine sehr schnelle Verarbeitung
-          von kachelweise im Arbeitsspeicher gehaltenen Features erlaubt.</p>
-      </div>
-
-      <h3 onclick="toggleAccordion('qaconfig')"
-        class="w3-button w3-gray">Komfortable Konfiguration und einfacher Austausch</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="qaconfig">
-        <p>Für die Konfiguration der QA-Tests steht eine komfortable
-          grafische Administrationsumgebung zur Verfügung. Die Konfiguration
-          wird in einer Datenbank (dem ProSuite Data Dictionary) gehalten und
-          kann in Form von XML-Dateien exportiert und ausgetauscht werden.</p>
-      </div>
-
-      <h3 onclick="toggleAccordion('qaprodenv')"
-        class="w3-button w3-gray">Optimierte Datenproduktionsumgebung</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="qaprodenv">
-        <p>Dira ProSuite QA ermöglicht Prüfungen direkt bei der
-          Datenerfassung in ArcGIS&nbsp;Pro. Vor der Auslieferung garantiert
-          eine sehr schnelle und umfassende Prüfung des gesamten Datensatzes
-          die spezifizierte Qualität.</p>
-        <ul>
-          <li>Integrierte Bearbeitungswerkzeuge (ProSuite Edit-Tools) unterstützen
-            die fehlerfreie Erfassung und die effiziente Fehlerkorrektur</li>
-          <li>Deutliche Produktivitätssteigerung dank kurzer Prüf-/Korrekturzyklen</li>
-          <li>Mehrstufige Prüfung: ausgewählte Objekte, ganze Arbeitspakete
-            oder vollständig integrierter Datenbestand</li>
-        </ul>
-      </div>
-
-      <h3 onclick="toggleAccordion('qabatch')"
-        class="w3-button w3-gray">Automatisierte Prüfung mit Geoprocessing-Werkzeugen</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="qabatch">
-        <p>Qualitätsprüfungen können auch ausserhalb von ArcGIS&nbsp;Pro
-          automatisiert ausgeführt werden<!--mit Geoprocessing-Werkzeugen-->:</p>
-        <ul>
-          <li>Prüfung gegen individuelle Qualitätsbedingungen</li>
-          <li>Ad-hoc-Prüfung von grundlegenden Qualitätsbedingungen</li>
-          <li>Dokumentation und Bewertung von Schemaunterschieden</li>
-          <li>Prüfung des Resultats von Datumstransformationen</li>
-        </ul>
-        <p>Die Prüfergebnisse werden umfangreich dokumentiert.</p>
-      </div>
-
-      <h3 onclick="toggleAccordion('qaintegration')"
-        class="w3-button w3-gray">Flexible Integration in bestehende Umgebungen</h3>
-      <div class="w3-container w3-light-gray w3-hide" id="qaintegration">
-        <p>Dira ProSuite QA ist gut einsetzbar auch im Rahmen von
-          Fachschalen und ergänzend zu bestehenden QA-Lösungen.</p>
-      </div>
-    </div> <!-- end accordion -->
-
-    <div class="w3-margin-top w3-center">
-      <img src="prosuite/qa-shot1.png" class="w3-image w3-card-4"
-           alt="Screenshot showing ProSuite QA running in ArcGIS Pro">
-      <br>ProSuite QA running in ArcGIS Pro
     </div>
-  </div>
 </section>
 
-<section class="w3-container" id="prosuite-edit">
-  <div class="w3-content">
-    <h2><span class="heading">ProSuite Edit Tools</span></h2>
-    <p class="w3-panel w3-leftbar">Hocheffiziente Geodatenerfassung und -bearbeitung</p>
-    <p>Dira ProSuite Edit Tools können als Teil der QA zur
-      effizienten Fehlerkorrektur aber auch unabhängig von der QA
-      zur effizienten Datenerfassung und -bearbeitung eingesetzt werden.
-      Über mehr als 15 Jahre wurden die Abläufe der interaktiven
-      Bearbeitung optimiert und mit verschiedenen nationalen
-      Kartierungsbehörden sowie Ämtern auf länder- bzw. kantonsebene
-      weiter entwickelt.</p>
-    <p>Dank der interaktiven Editierwerkzeuge kann die Erfassungsproduktivität
-      und Kontrolle über das Verhalten der Tools und damit auch die Qualität
-      um ein Vielfaches gesteigert werden.</p>
-    <p>Die wichtigsten Werkzeuge stehen schon auf ArcGIS&nbsp;Pro zur Verfügung.
-      Dazu gehören die Klassiker «Reshape Along», «Advanced Reshape»,
-      «Remove Overlaps» und weitere. Gerne unterstützen wir Sie bei der
-      Migration auf die neue Plattform und implementieren weitere Werkzeuge
-      nach Bedarf oder als Teil unserer Subskription.</p>
-  </div>
-</section>
-
-<section class="w3-container" id="prosuite-carto">
-  <div class="w3-content">
-    <h2><span class="heading">ProSuite Carto</span></h2>
-    <p>Dira ProSuite Carto sind rund 20 “Carto Prozesse” für die
-      kartografische Nachbearbeitung von topographischen Daten,
-      die höchsten ästhetischen Ansprüchen genügen müssen.
-      Die Carto Prozesse sind flexibel konfigurierbar, sowohl
-      zentralisiert als auch individuell am Arbeitsplatz. Alle
-      Prozesse können interaktiv als Bearbeitungswerkzeug oder
-      massenmässig über Selektionen oder die ganze Datenbank
-      ausgeführt werden.</p>
-
-  <!--Clean data is a necessary basis for effective cartography.
-  For decent performance and easy data manageability you also
-  need specialised data models. And for the utmost quality and
-  beauty of your maps you will want some (manual and automatic)
-  refinement. Dira ProSuite therefore offers a large range of
-  automatic processes and interactive tools for cartographic refinement.-->
-
-    <!--<div class="accordion">
-      <h3 onclick="toggleAccordion('cartofoo')"
-        class="w3-button w3-gray">Topic Title</h3>
-      <div class="w3-container w3-hide w3-light-gray" id="cartofoo">
-        <p>Topic Details, preferably with an image!</p>
-      </div>
-    </div>-->
-  </div>
-</section>
-
-<section class="w3-container" id="status">
-  <div class="w3-content">
-    <h2><span class="heading">Status & Road Ahead</span></h2>
-    <p>Die <em>Dira ProSuite für ArcGIS Pro</em> ist ein kommerzielles
-      Produkt der Dira GeoSystems AG, bestehend aus Erweiterungen für
-      <em>Esri ArcGIS Pro</em> sowie Server-Komponenten. Grosse Teile
-      der Dira ProSuite sind Open Source und stehen der freien
-      Verwendung und kritischen Einsichtnahme offen unter
-      <a href="https://github.com/prosuite">github.com/prosuite</a>.</p>
-    <p>Dira ProSuite ist aktuell in Entwicklung. Wesentliche
-      Komponenten der vollständigen Lösung stehen schon bereit
-      (und sind auch im produktiven Einsatz), andere Komponenten
-      befinden sich noch in aktiver Entwicklung.</p>
-    <p>Mitarbeiter von Dira publizieren zu technischen Themen rund um
-      die Dira ProSuite im <a href="https://prosuite.github.io/techblog"
-      target="_blank">ProSuite Tech Blog</a>.</p>
-    <p>Die ProSuite wurde vormals von Esri Schweiz als Erweiterung
-      für ArcMap entwickelt und vertrieben. Der Source Code dieser
-      <em>Esri ProSuite für ArcMap</em> ist proprietäres Eigentum
-      von Esri Schweiz AG. Mit der Abkündigung von ArcMap hat
-      Esri Schweiz auch die ProSuite abgekündigt.
-      Dira GeoSystems entwickelt diese <em>neue Lösung</em> auf Basis
-      von ArcGIS Pro mit zwei Zielen: (1) auch auf der neuen Basis
-      vergleichbare Funktionalität anbieten und (2) weitgehende
-      Wiederverwendbarkeit der bestehenden Konfigurationen
-      kundenseits. Dira GeoSystems will den Kunden Kontinuität und
-      einen nahtlosen Übergang in die “neue Welt” von ArcGIS&nbsp;Pro
-      bieten. Gleichzeitig wird Dira GeoSystems die Funktionalität
-      auch überarbeiten, verbessern, und dabei genau auf die
-      Bedürfnisse unserer Kunden hören.</p>
-  </div>
-</section>
-
-<section class="w3-container" id="contact" style="padding-bottom:32px;">
-  <div class="w3-content">
-    <h2><span class="heading">Kontakt</span></h2>
-    <p>Für weitere Auskünfte oder ein Angebot kontaktieren Sie uns bitte:<br>
-      Telefon <a href="tel:+41442448442">+41&nbsp;44&nbsp;2448442</a> oder Mail an
-      <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
-
-    <img src="img/mean-curv-blur-1280.jpg" alt="delimiter" class="delimiter w3-card-4 w3-grayscale-min">
-  </div>
-</section>
-
-<!-- End page content -->
-</div>
-
-<footer class="footer w3-container w3-black w3-padding-48 w3-center">
-  <div class="w3-row">
-    <div class="w3-col m4">
-      Dira GeoSystems AG<br>
-      c/o Impact Hub Zürich AG<br>
-      Viaduktstrasse 93-95<br>
-      CH-8005 Zürich
+<section class="background-color-2">
+    <div class="container my-md text-center text-white">
+        <div class="col-lg-8 offset-lg-2">
+            <p>By the way, Dira is Swahili for compass,
+              an old arabic measure of length (about one metre),
+              and associates with Indira, a byname of the Hindu goddess of beauty.</p>
+        </div>
     </div>
-    <div class="w3-col m4 w3-margin-top">
-      <a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a><br>
-      <a href="https://www.dirageosystems.ch">www.dirageosystems.ch</a><br>
-      Tel. <a href="tel:+41442448442">+41 44 2448442</a>
+</section>
+
+<footer class="footer mt-auto">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <p>Dira GeoSystems AG</p>
+                <p><a href="https://www.dirageosystems.ch/" title="Dira GeoSystems AG">www.dirageosystems.ch</a></p>
+            </div>
+
+            <div class="col-lg-3">
+                <p><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+                <p><a href="tel:+41442448442">+41 44 244 84 42</a></p>
+            </div>
+
+            <div class="col-lg-3 offset-lg-3">
+                <p>find us on <a href="https://github.com/dirageosystems"><img src="dist/img/icons/github-mark-white.svg" width="20" alt="GitHub"> GitHub</a></p>
+                <p><a href="#">Datenschutz</a> / <a href="#">Impressum</a></p>
+            </div>
+        </div>
     </div>
-    <div class="w3-col m4 w3-margin-top">
-      find us on <a href="https://github.com/dirageosystems"><img src="img/github-mark-white.svg" alt="GitHub Mark" width="24"> GitHub</a><br>
-      <a href="privacypolicy.html">Privacy Policy/Datenschutz</a><br>
-      <a href="impressum.html">Imprint/Impressum</a>
-    </div>
-  </div>
 </footer>
+
+<script src="dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
