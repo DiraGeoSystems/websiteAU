@@ -114,6 +114,15 @@ we have to update our **privacy policy** accordingly!
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 ```
 
+## Search Engines
+
+- [Google Search Console][gsc] may report a duplicate that is has
+  no canonical link; this asks for a `<link rel="canonoical" ...>`
+  element; see also [Wikipedia article][wikicanonical]
+
+[gsc]: https://search.google.com/search-console
+[wikicanonical]: https://en.wikipedia.org/wiki/Canonical_link_element
+
 ## Miscellaneous
 
 The “hamburger” symbol ☰ has Unicode 2630 (hex) or 9776 (dec).
