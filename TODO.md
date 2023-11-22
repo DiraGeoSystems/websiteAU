@@ -6,10 +6,9 @@ Open Issues
   (instead of dira-boxen.png) (also: downsample, 2.5MB is too big)
 - [x] Alignment der Boxen zum Text: erstere zu tief (keep as is)
 - [x] Team: 2x3 grid bei mittlerer Breite unschön (2, 1, 2, 1)
-- [ ] Hamburger-Menü: oranger Unterstrich auf volle Breite?
+- [x] Hamburger-Menü: oranger Unterstrich auf volle Breite?
   Lieber nur Wort-Länge (wie bei breitem Bildschirm)
-- [ ] Hamburger-Menü: Subitems in Products aufhübschen (und Menü
-  schliessen bei Auswahl, das geht hier noch nicht (see next item))
+- [x] Hamburger-Menü: Subitems in Products aufhübschen
 - [x] Hamburger-Menü: schliessen bei Auswahl (sonst Screen verdeckt)
 - [x] Bild esri Partner Network: bg color, squeezed
 - [x] File rename: s/pro-suite.html/prosuite.html/ und analog lf
@@ -37,12 +36,12 @@ Feedback aus Team for new website
 Themen für Marc
 
 - [x] Aktualitäten (z.B. Stelleninserat): wo und wie?
-- [ ] Hervorhebungen im Text (cf alte Seite, aber etwas
-  weniger krass: Dira-Farben, z.B. Blau?)
+- [x] Hervorhebungen im Text (cf alte Seite, aber etwas weniger krass:
+  Dira-Farben, z.B. Blau?) --> `<strong>` und `<u>` “Dira Orange”
 
 Tasks
 
-- [ ] Produktseiten (ProSuite und LF) ausarbeiten
+- [ ] Produktseiten (ProSuite und LF) ausarbeiten --> M.B.
 - [ ] PDFs zu Produkten erstellen und verlinken (evtl erst später)
 - [ ] Durchgängig zweisprachig de/en (ausser Impressum/Datenschutz)
 - [x] Unterseiten: Impressum und Datenschutz (nur deutsch) (UJR)
