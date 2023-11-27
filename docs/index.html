@@ -36,7 +36,7 @@
             <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
         </symbol>
     </svg>
-
+        
     <nav class="navbar navbar-expand-lg border-bottom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="dist/img/dirageosystems.svg" alt="Dira GeoSystems AG" height="80"></a>
@@ -46,45 +46,64 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#dira"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">DIRA</span></a></li>
+                            
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="index.html#products" data-bs-toggle="dropdown" aria-expanded="true"><span>Produkte</span></a>
+                        <a class="nav-link dropdown-toggle lang-de" href="index.html#products" data-bs-toggle="dropdown" aria-expanded="true">
+                            <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Produkte</span>
+                        </a>
+                        <a class="nav-link dropdown-toggle lang-en" href="index.html#products" data-bs-toggle="dropdown" aria-expanded="true">
+                            <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Products</span>
+                        </a>
                         <ul class="dropdown-menu" data-bs-popper="static">
                             <li class="nav-item-1">
-                                <a class="dropdown-item" href="index.html#locationfinder">Location Finder</a>
-                                <!-- <ul class="dropdown-menu-1">
-                                    <li class="nav-dropdown"><a href="locationfinder.html#use-cases" class="nav-link">Use cases</a></li>
-                                    <li class="nav-dropdown"><a href="locationfinder.html#features" class="nav-link">Features</a></li>
-                                    <li class="nav-dropdown"><a href="locationfinder.html#architecture" class="nav-link">Architecture</a></li>
-                                    <li class="nav-dropdown"><a href="locationfinder.html#licencing" class="nav-link">Licencing</a></li>
-                                </ul> -->
+                                <a class="dropdown-item lang-de" href="index.html#locationfinder">Location Finder</a>
+                                <a class="dropdown-item lang-en" href="index.html#locationfinder">Location Finder</a>
+                                <!-- Add language-specific URLs for the dropdown items if needed -->
                             </li>
-                            <!-- <li class="nav-item-1"><hr class="dropdown-divider"></li> -->
                             <li class="nav-item-1">
-                              <!-- <a class="nav-link" href="#products"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Pro Suite</span></a> -->
-                                <a class="dropdown-item" href="index.html#prosuite">Pro Suite</a>
-                                <!-- <ul class="dropdown-menu-1">
-                                    <li class="nav-dropdown"><a href="prosuite.html#qa" class="nav-link">Q&A</a></li>
-                                    <li class="nav-dropdown"><a href="prosuite.html#edit-tools" class="nav-link">Edit tools</a></li>
-                                    <li class="nav-dropdown"><a href="prosuite.html#carto" class="nav-link">Carto</a></li>
-                                    <li class="nav-dropdown"><a href="prosuite.html#status" class="nav-link">Status & road ahead</a></li>
-                                </ul> -->
+                                <a class="dropdown-item lang-de" href="index.html#prosuite">Pro Suite</a>
+                                <a class="dropdown-item lang-en" href="index.html#prosuite">Pro Suite</a>
+                                <!-- Add language-specific URLs for the dropdown items if needed -->
                             </li>
                         </ul>
                     </li>
-
-                    <li class="nav-item"><a class="nav-link" href="index.html#services"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Services</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#team"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Team</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contact"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kontakt</span></a></li>
+        
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html#services"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Services</span></a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html#team"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Team</span></a></li> -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link lang-de" href="index.html#services" id="DienstleistungenDE">
+                                <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Dienstleistungen</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-en" href="index.html#services" id="ServicesEN">
+                                <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Services</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#team"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Team</span></a></li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-de" href="index.html#contact" id="KontaktDE">
+                                <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kontakt</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-en" href="index.html#contact" id="ContactEN">
+                                <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--  <li class="nav-item"><a class="nav-link" href="index.html#contact"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kontakt</span></a></li> -->
                 </ul>
-
-                <!-- <ul class="navbar-nav ml-auto ms-lg-5">
+        
+                <ul class="navbar-nav ml-auto ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">de</a>
+                        <a class="nav-link nav-link-lang" href="#" data-lang="de" id="langDe">de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">en</a>
+                        <a class="nav-link nav-link-lang" href="#" data-lang="en" id="langEn">en</a>
                     </li>
-                </ul> -->
+                </ul>
             </div>
         </div>
     </nav>
