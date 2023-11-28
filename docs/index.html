@@ -423,24 +423,53 @@
 <script src="dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    const sections = document.querySelectorAll("section[id]");
-    window.addEventListener("scroll", navHighlighter);
-    function navHighlighter() {
-        let scrollY = window["pageYOffset"];
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = (current.getBoundingClientRect().top + window["pageYOffset"]) - 200;
-            sectionId = current.getAttribute("id");
-            if (
-                scrollY > sectionTop &&
-                scrollY <= sectionTop + sectionHeight
-            ){
-                document.querySelector(".navbar a.nav-link[href*=" + sectionId + "]").classList.add("active");
-            } else {
-                document.querySelector(".navbar a.nav-link[href*=" + sectionId + "]").classList.remove("active");
-            }
+    document.addEventListener('DOMContentLoaded', function () {
+        const langButtons = document.querySelectorAll('.nav-link-lang');
+        const initialLang = getCookie('lang') || 'de'; // Get stored language preference or default to English
+
+        updateLanguage(initialLang);
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                const lang = button.getAttribute('data-lang');
+                updateLanguage(lang);
+            });
         });
-    }
+
+        function updateLanguage(lang) {
+            // Set a cookie to remember the selected language
+            document.cookie = `lang=${lang}; path=/`;
+
+            // Update the lang attribute of the html tag
+            document.getElementById('htmlTag').setAttribute('lang', lang);
+
+            // Toggle visibility of language-specific elements
+            const elementsDe = document.querySelectorAll('.lang-de');
+            const elementsEn = document.querySelectorAll('.lang-en');
+
+            elementsDe.forEach(element => {
+                element.style.display = lang === 'de' ? 'block' : 'none';
+            });
+
+            elementsEn.forEach(element => {
+                element.style.display = lang === 'en' ? 'block' : 'none';
+            });
+
+            // Toggle visibility of title elements
+            const titleDe = document.getElementById('locationFinderTitleDe');
+            const titleEn = document.getElementById('locationFinderTitleEn');
+
+            titleDe.style.display = lang === 'de' ? 'block' : 'none';
+            titleEn.style.display = lang === 'en' ? 'block' : 'none';
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    });
 </script>
 
 </body>
