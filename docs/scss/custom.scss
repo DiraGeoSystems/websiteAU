@@ -68,11 +68,11 @@ section {
 
     a {
         color: #000000;
-        text-decoration: none;
+        text-decoration: underline #f8ba00;
 
         &:focus,
         &:hover {
-            text-decoration: underline;
+            text-decoration: underline #f8ba00 .2ex;
         }
     }
 
@@ -82,7 +82,7 @@ section {
     }
 
     li::before {
-        content: "-";
+        content: "—";
         padding-right: 10px;
     }
 
@@ -335,6 +335,8 @@ header {
     }
 
     a {
+        text-decoration: none;
+
         &:focus,
         &:hover {
             opacity: .5;
