@@ -38,6 +38,9 @@ Themen für Marc
 - [x] Aktualitäten (z.B. Stelleninserat): wo und wie?
 - [x] Hervorhebungen im Text (cf alte Seite, aber etwas weniger krass:
   Dira-Farben, z.B. Blau?) --> `<strong>` und `<u>` “Dira Orange”
+- [ ] Carousel-Bilder: oben/unten zuviel abgeschnitten: höher auf
+  Webseite oder Bilder auf das "Breitformat" anpassen; beim Rebberg
+  müssten die grünen Kacheln eine Reihe höher rauf (sonst unsichtbar)
 
 Themen für Martin
 
