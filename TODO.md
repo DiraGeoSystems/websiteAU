@@ -41,8 +41,8 @@ Themen für Marc
 
 Tasks
 
-- [ ] Produktseiten (ProSuite und LF) ausarbeiten --> M.B.
-- [ ] PDFs zu Produkten erstellen und verlinken (evtl erst später)
-- [ ] Durchgängig zweisprachig de/en (ausser Impressum/Datenschutz)
+- [ ] Produktseiten (ProSuite und LF) ausarbeiten? (or just the PDFs?)
+- [x] PDFs zu Produkten erstellen und verlinken (evtl erst später)
+- [x] Durchgängig zweisprachig de/en (ausser Impressum/Datenschutz)
 - [x] Unterseiten: Impressum und Datenschutz (nur deutsch) (UJR)
 - [x] Übersetzung de/en: solange nicht gemacht, DE/EN Links entfernen
