@@ -6,9 +6,11 @@ It “lives” in a Git repository, is statically generated
 online at <https://dirageosystems.ch> since December 2021.
 
 In 2023 we contracted dreamis.ch to redesign the website.
-It now uses Bootstrap (no longer W3CSS).
+It now uses Bootstrap (no longer W3CSS) and the custom CSS
+is generated and minified from scss/custom.scss (keep these
+files in sync, either with a scss processor or manually).
 
-Please keep this **simple and static.**
+Please keep this **simple** and **static.**
 
 ## Hosting
 

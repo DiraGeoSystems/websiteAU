@@ -38,6 +38,8 @@
     </svg>
 
     <nav class="navbar navbar-expand-lg border-bottom fixed-top">
+        <!-- Note: the a.nav-link fragment identifier MUST agree with the section#id below!
+             (This is assumed by the JavaScript code that underlines the current section.) -->
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="dist/img/dirageosystems.svg" alt="Dira GeoSystems AG" height="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +47,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#dira"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">DIRA</span></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html#dira"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">DIRA</span></a>
+                    </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle lang-de" href="index.html#products" data-bs-toggle="dropdown" aria-expanded="true">
@@ -81,7 +85,9 @@
                                 <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Services</span>
                             </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#team"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Team</span></a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#team"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Team</span></a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link lang-de" href="index.html#contact" id="KontaktDE">
                                 <span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kontakt</span>
@@ -176,7 +182,7 @@
             </div>
         </div>
 
-         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
@@ -474,9 +480,11 @@
                 scrollY > sectionTop &&
                 scrollY <= sectionTop + sectionHeight
             ){
-                document.querySelector(".navbar a.nav-link[href*=" + sectionId + "]").classList.add("active");
+                document.querySelectorAll(".navbar a.nav-link[href*=" + sectionId + "]")
+                        .forEach(elem => elem.classList.add("active"))
             } else {
-                document.querySelector(".navbar a.nav-link[href*=" + sectionId + "]").classList.remove("active");
+                document.querySelectorAll(".navbar a.nav-link[href*=" + sectionId + "]")
+                        .forEach(elem => elem.classList.remove("active"))
             }
         });
     }
