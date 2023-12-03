@@ -533,6 +533,12 @@
 
             titleDe.style.display = lang === 'de' ? 'block' : 'none';
             titleEn.style.display = lang === 'en' ? 'block' : 'none';
+
+            // Add the "active" class to the corresponding language button
+            const langButton = document.querySelector(`.nav-link-lang[data-lang="${lang}"]`);
+            if (langButton) {
+                langButton.classList.add('active');
+            }
         }
 
         function getCookie(name) {
