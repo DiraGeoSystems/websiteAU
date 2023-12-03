@@ -499,6 +499,12 @@
                 event.preventDefault();
                 const lang = button.getAttribute('data-lang');
                 updateLanguage(lang);
+
+                // Remove the "active" class from all language buttons
+                langButtons.forEach(b => b.classList.remove('active'));
+
+                // Add the "active" class to the clicked language button
+                button.classList.add('active');
             });
         });
 
