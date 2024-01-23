@@ -20,3 +20,8 @@ von Marc Seidel im Rahmen der Erneuerung der Webseite
 animals/*:
 initiale Platzhalter für die Mitarbeiter-Fotos;
 alle von UJR und AR, die meisten aus dem Züricher Zoo.
+
+DiraGlobeSpec:
+My attempt to create the Dira Globe with MetaPost,
+with annotation, for communication with designers...
+
