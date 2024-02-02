@@ -47,7 +47,7 @@ Themen für Martin
 - [ ] In `updateLanguage()` scheint mir der Abschnitt “Toggle
   visibility of title elements” überflüssig, weil schon durch
   den allgemeinen toggle über die `lang-xx` class erledigt?
-- [ ] Underline of “DE” or “EN” vanishes after clicking a nav item
+- [x] Underline of “DE” or “EN” vanishes after clicking a nav item
 
 Tasks
 
