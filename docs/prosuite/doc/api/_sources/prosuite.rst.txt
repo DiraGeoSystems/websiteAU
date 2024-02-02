@@ -1,77 +1,31 @@
 ProSuite package
 ================
 
-condition module
--------------------------
-
-.. automodule:: prosuite.condition
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-dataset module
------------------------
-
-.. automodule:: prosuite.dataset
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-model module
+Data Model
 ---------------------
 
-.. automodule:: prosuite.model
+.. automodule:: prosuite.data_model
    :members:
    :undoc-members:
    :show-inheritance:
 
-parameter module
--------------------------
+Quality
+---------------------
 
-.. automodule:: prosuite.parameter
+.. automodule:: prosuite.quality
    :members:
    :undoc-members:
    :show-inheritance:
 
-perimeter module
-----------------------------
+Verification
+---------------------
 
-.. automodule:: prosuite.perimeter
+.. automodule:: prosuite.verification
    :members:
    :undoc-members:
    :show-inheritance:
 
-
-service module
-----------------------------
-
-.. automodule:: prosuite.service
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-specification module
-------------------------------------
-
-.. automodule:: prosuite.specification
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-transformed_dataset module
----------------------------
-
-.. automodule:: prosuite.transformed_dataset
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-utils module
+Utils
 ---------------------
 
 .. automodule:: prosuite.utils
@@ -79,37 +33,8 @@ utils module
    :undoc-members:
    :show-inheritance:
 
-
-
-verification_parameters module
--------------------------------------
-
-.. automodule:: prosuite.verification_parameters
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-verification_response module
--------------------------------------
-
-.. automodule:: prosuite.verification_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-xml_specification module
----------------------------------
-
-.. automodule:: prosuite.xml_specification
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-Subpackages
------------
+Organisational modules - Subpackages
+------------------------------------
 
 .. toctree::
    :maxdepth: 2

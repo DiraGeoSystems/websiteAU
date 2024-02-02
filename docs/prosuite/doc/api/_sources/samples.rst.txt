@@ -8,12 +8,12 @@ Basic Concepts
 A quality verification is a test run based on a specific **quality specification**. A quality specification holds one or 
 more **quality conditions**. Each quality condition represents a test algorithm configured for one or more specific datasets. 
 
-In order to execute a verification the **prosuite.Service** class is used to create the communication channel to the server and to 
+In order to execute a verification the **prosuite.verification.service** class is used to create the communication channel to the server and to 
 start the verification of a specific quality specification.
 
 .. code-block:: python
 
-    service = prosuite.Service(host_name='localhost', port_nr=5151)
+    service = prosuite.verification.service(host_name='localhost', port_nr=5151)
     service.verify(specification=my_specification)
 
 
@@ -37,36 +37,40 @@ The Specification class holds a set of conditions that can be configured program
 #. Define the Data Model (= workspace)
 #. Create the Datasets (= feature classes, tables with optional filter) in the model
 #. Create a Service instance containing the connection properties
-#. Define the specification: create a prosuite.Specification instance
+#. Define the specification: create a prosuite.quality instance
 #. Create Condition instances using the static Conditions class and add them to the specification
 #. Optionally define the verification perimeter
 #. Optionally define the verification output directory
 #. Execute the verification
 
 .. code-block:: python
-    :linenos:
+   :linenos:
+      
+    import prosuite as ps
 
-    import prosuite
+    model = ps.Model("TopoModel", "D:\Test Data\ExtractStGallen.gdb") # From "ProSuite Documentation / SampleData.zip"
+    datasets = [ps.Dataset("TLM_FLIESSGEWAESSER", model),
+                ps.Dataset("TLM_STRASSE", model)]
 
-    model = prosuite.Model("TopoModel", "C:/Data/TopographicData.gdb")
-    datasets = [prosuite.Dataset("FLIESSGEWAESSER", model), 
-                prosuite.Dataset("STRASSE", model)]
+    service = ps.Service(host_name='localhost', port_nr=5151) # You might want to change this to the host and port of your ProSuite installation
 
-    service = prosuite.Service(host_name='localhost', port_nr=5151)
-
-    simpleSpecification = prosuite.Specification(
+    simpleSpecification = ps.Specification(
         name='MinimumLengthSpecification',
         description='A very simple quality specification checking feature and segment length of roads and rivers')
 
     for dataset in datasets:
-        simpleSpecification.add_condition(prosuite.Conditions.qa_min_length_0(dataset, limit=10, is3_d=False))
-        simpleSpecification.add_condition(prosuite.Conditions.qa_segment_length_0(dataset, 1.5, False))
+        simpleSpecification.add_condition(ps.Conditions.qa_min_length_0(dataset, limit=10, is3_d=False))
+        simpleSpecification.add_condition(ps.Conditions.qa_segment_length_0(dataset, 1.5, False))
 
-    envelope = prosuite.EnvelopePerimeter(x_min=2599839, y_min=1200036, x_max=2600026, y_max=1200086)
-    out_dir = 'C:/temp/verification_output'
+    envelope = ps.EnvelopePerimeter(x_min=2750673, y_min=1215551, x_max=2765845, y_max=1206640)
 
-    for verification_response in service.verify(specification=simpleSpecification, output_dir=out_dir, perimeter=envelope):
-        print(verification_response)
+    out_dir = 'C:/temp/verification_output' # You might want to change this to a directory that exists on your system, also make sure no Issue.gdb exists in this directory
+
+    verification_responses = service.verify(specification=simpleSpecification, output_dir=out_dir, perimeter=envelope)
+
+    for verification_response in verification_responses:
+        print(verification_response.message)
+    
 
 
 .. raw:: html
@@ -75,45 +79,84 @@ The Specification class holds a set of conditions that can be configured program
    <summary><a>Response Messages</a></summary>
 
 .. code-block:: console
+    :linenos:
 
-   service_call_status: Running     message_level: Info     message: Reading datasets for 'TopoModel'
-   service_call_status: Running     message_level: Info     message: 199 dataset(s) read
-   service_call_status: Running     message_level: Info     message: Begin quality verification
-   service_call_status: Running     message_level: Info     message:   Quality specification: VerySimpleSpecification
-   service_call_status: Running     message_level: Info     message:   Verification tile size: 5000
-   service_call_status: Running     message_level: Info     message:   Extent: 187 x 50
-   service_call_status: Running     message_level: Info     message:     X-Min: 2599839
-   service_call_status: Running     message_level: Info     message:     Y-Min: 1200036
-   service_call_status: Running     message_level: Info     message:     X-Max: 2600026
-   service_call_status: Running     message_level: Info     message:     Y-Max: 1200086
-   service_call_status: Running     message_level: Info     message: Verifying quality conditions per cached tiles (container tests)
-   service_call_status: Running     message_level: Info     message:   Processing tile 0 of 1: XMin: 2’599’839.00 YMin: 1’200’036.00 XMax: 2’600’026.00 YMax: 1’200’086.00
-   service_call_status: Running     message_level: Info     message: Quality verification finished
-   service_call_status: Running     message_level: Info     message:   Number of verified datasets: 2.
-   service_call_status: Running     message_level: Info     message:   Number of verified quality conditions: 2
-   service_call_status: Running     message_level: Info     message:     No category:
-   service_call_status: Running     message_level: Info     message:       QaMinLength(0) FLIESSGEWAESSER
-   service_call_status: Running     message_level: Warn     message:       QaMinLength(0) TLM_STRASSE - errors: 1
-   service_call_status: Running     message_level: Info     message: Issues written to C:\temp\verification_output\Issues.gdb
-   service_call_status: Running     message_level: Info     message: Creating spatial index for 1 issue feature in 'IssueLines'
-   service_call_status: Running     message_level: Info     message: Documenting verification results...
-   service_call_status: Running     message_level: Info     message:   Verification report written to C:/temp/verification_output\verification.xml
-   service_call_status: Running     message_level: Info     message:   Html report written to C:\temp\verification_output\verification.html    
-   service_call_status: Running     message_level: Info     message: Html report:
-   service_call_status: Running     message_level: Info     message:   C:\temp\verification_output\verification.html
-   service_call_status: Running     message_level: Info     message: Quality specification report:
-   service_call_status: Running     message_level: Info     message:   C:\temp\verification_output\qualityspecification.html
-   service_call_status: Finished    message_level: Info     message: Verification Finished
+    Creating external issue file geodatabase
+    Starting quality verification using quality specification MinimumLengthSpecification with verification tile size 5000Extent: 15172 x 8911
+    X-Min: 2750673
+    Y-Min: 1206640
+    X-Max: 2765845
+    Y-Max: 1215551
+
+    Verifying quality conditions per cached tiles (container tests)
+    Processing tile 0 of 8: XMin: 2’750’673.00 YMin: 1’206’640.00 XMax: 2’755’673.00 YMax: 1’211’640.00
+    Processing tile 1 of 8: XMin: 2’755’673.00 YMin: 1’206’640.00 XMax: 2’760’673.00 YMax: 1’211’640.00
+    Processing tile 2 of 8: XMin: 2’760’673.00 YMin: 1’206’640.00 XMax: 2’765’673.00 YMax: 1’211’640.00
+    Processing tile 3 of 8: XMin: 2’765’673.00 YMin: 1’206’640.00 XMax: 2’765’845.00 YMax: 1’211’640.00
+    Processing tile 4 of 8: XMin: 2’750’673.00 YMin: 1’211’640.00 XMax: 2’755’673.00 YMax: 1’215’551.00
+    Processing tile 5 of 8: XMin: 2’755’673.00 YMin: 1’211’640.00 XMax: 2’760’673.00 YMax: 1’215’551.00
+    Processing tile 6 of 8: XMin: 2’760’673.00 YMin: 1’211’640.00 XMax: 2’765’673.00 YMax: 1’215’551.00
+    Processing tile 7 of 8: XMin: 2’765’673.00 YMin: 1’211’640.00 XMax: 2’765’845.00 YMax: 1’215’551.00
+    Quality verification finishedNumber of verified datasets: 2.
+    Number of verified conditions: 4
+    No category
+    QaMinLength(0) TLM_FLIESSGEWAESSER - errors: 290
+    QaMinLength(0) TLM_STRASSE - errors: 974
+    QaSegmentLength(0) TLM_FLIESSGEWAESSER - errors: 1733
+    QaSegmentLength(0) TLM_STRASSE - errors: 1939
+    Warning count: 0
+    Error count: 4’936
+    The quality specification is not fulfilled
+
+    Issues written to C:\temp\verification_output\Issues.gdb
+
+    Verification report written to C:\temp\verification_output\verification.xml
+    Html report:
+    C:\temp\verification_output\verification.html
+    Quality specification report:
+    C:\temp\verification_output\qualityspecification.html
 
 .. raw:: html
 
    </details>
 
-|
+
+Control verification with the Issue class
+=========================================
+The Issue class can be used to control the verification process. It can be used to stop the verification process 
+when a certain issue condition is met.
+A sample Python script can be found in the ProSuite/prosuite-python-sample Repository (https://github.com/ProSuite/prosuite-python-samples/blob/main/QA%20Scripting/issue_demo.py).
+
+
+.. code-block:: python
+   :linenos:
+
+   issue_allowable = True
+
+    for verification_response in verification_responses:
+        if len(verification_response.issues) > 0:
+            for issue in verification_response.issues:
+                # Demo Prints
+
+                # print(issue.description)
+                # print(issue.involved_objects)
+                # print(issue.geometry)
+                # print(issue.issue_code)
+                # print(issue.allowable)
+                # print(issue.stop_condition)
+
+                if issue.allowable is False:
+                    print(f"Not allowed issue met: {issue.description} in {issue.involved_objects[0].table_name}")
+                    print("Stopping verification")
+                    issue_allowable = False
+                    break
+
+        if issue_allowable is False:
+            break 
 
 ..  _xmlverification-link:
 
-Verification using Xml Specification
+Verification using XML Specification
 ====================================
 #. Create a Service instance. In this example the service runs on a remote server machine.
 #. Define the quality specification: create a XmlSpecification instance from a specification.qa.xml file.
@@ -126,7 +169,7 @@ Verification using Xml Specification
 
     import prosuite
 
-    service = prosuite.Service(host_name='arcgis_server', port_nr=5151)
+    service = prosuite.verification.service(host_name='arcgis_server', port_nr=5151)
 
     xml_file = "\\share\QA\specifications\road_specification.qa.xml"
     sde_file = "\\share\connection_files\production_QA_version.sde"
@@ -137,7 +180,7 @@ Verification using Xml Specification
 
     out_dir = '\\share\QA\results\verification_output'
 
-    for verification_response in service.verify(specification=spec, output_dir = out_dir):
+    for verification_response in service.verify(specification=xml_spec, output_dir = out_dir):
         print(verification_response.message_level)
         print(verification_response.service_call_status)
         print(verification_response.message)
@@ -178,7 +221,7 @@ credentials on a non-windows platform, see `the gRPC Python docs <https://grpc.g
     ssl_credentials = prosuite.utils.get_ssl_channel_credentials()
 
     # if channel_credentials are passed to the Verification constructor, a secure channel will be established.
-    service = prosuite.Service(host_name='localhost', port_nr=5151, channel_credentials=ssl_credentials)
+    service = prosuite.verification.service(host_name='localhost', port_nr=5151, channel_credentials=ssl_credentials)
 
 
 Define a WKB perimeter
@@ -194,7 +237,7 @@ Define a WKB perimeter
     # the wkb_perimeter can be assigned to the perimeter parameter in verify()
     
 .. note::
-    the variable 'poly_as_hex_string' is the hex string representation of a polygon or envelope. It can be
+    The variable 'poly_as_hex_string' is the hex string representation of a polygon or envelope. It can be
     produced for example from an arcpy.Geometry. Any arcpy.Geometry can be converted to WKB and encoded as hex based string::
 
         poly_as_hex_string = arcpy_polygon_geometry.WKB.hex()
@@ -224,13 +267,13 @@ Optionally, change advanced verification parameters, such as the Verification ti
     import prosuite
 
     xml_file = 'C:/temp/road_specification.qa.xml'
-    service = prosuite.Service(host_name='localhost', port_nr=5151)
+    service = prosuite.verification.service(host_name='localhost', port_nr=5151)
     
     xml_spec = prosuite.XmlSpecification(
         specification_file=xml_file, specification_name="Produktionsunterstuetzung",
                                          data_source_replacements=[["ProductionModel", sde_file]])
 
-    params = prosuite.VerificationParameters(tile_size=10000)
+    params = prosuite.verification.VerificationParameters(tile_size=10000)
 
     out_dir = 'C:/temp/verification_output'
 
@@ -245,7 +288,7 @@ Start and stop the local service process
 ========================================
 If no service is constantly running and the python script should run without interaction, e.g. as a batch job, 
 the server process can be started directly from python on the local machine. 
-In this example, an xml specifiction is used.
+In this example, an XML specification is used.
 
 .. code-block:: python
     :linenos:
@@ -266,7 +309,7 @@ In this example, an xml specifiction is used.
     # Wait for the process to start, initialize the ArcGIS license and the communication channl
     time.sleep(10)
 
-    service = prosuite.Service(host_name='LOCALHOST', port_nr=5151)
+    service = prosuite.verification.service(host_name='LOCALHOST', port_nr=5151)
 
     xml_file = "C:/Data/specifications/road_specification.qa.xml"
     workspace = "C:/Data/TopographicData.gdb"
