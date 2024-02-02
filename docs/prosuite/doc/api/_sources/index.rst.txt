@@ -16,7 +16,7 @@ Dira ProSuite Python Client
    xmlspec
 
 The Dira ProSuite Python Client is the Python API for the ProSuite Quality Verification Server. 
-ProSuite is a suite of high-end productivity tools for ArcGIS for data production, quality assurance, and cartographic refinement.
+ProSuite is a suite of high-end productivity tools for data production, quality assurance, and cartographic refinement within ArcGIS
 
 The ProSuite Python Client is a lightweight package that provides access to the ProSuite QA functionality through a pythonic API.
 Quality specifications containing QA tests for geodata can be fully defined in Python and executed on a ProSuite server which 
@@ -31,8 +31,8 @@ System Requirements
 
 Installation
 ============
-The ProSuite Python Client API is installed by the standard Python Package Manager. Make sure to
-run Pip from the python distribution / environment where you need ProSuite to be installed.
+The ProSuite Python Client API is installed by the standard Python Package Manager. Make sure to run 
+Pip from the Python distribution/environment where you need ProSuite to be installed.
 
 .. code-block:: python
 
