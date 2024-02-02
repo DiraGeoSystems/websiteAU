@@ -312,13 +312,13 @@ header {
 
     @media (max-width:767px) {
         .border-bottom-xs {
-            border-bottom: 1px solid #929292;
+            border-bottom: 0px solid #929292;
         }
     }
 
     @media (max-width:991px) {
         .border-bottom-sm {
-            border-bottom: 1px solid #929292;
+            border-bottom: 0px solid #929292;
         }
     }
 }
