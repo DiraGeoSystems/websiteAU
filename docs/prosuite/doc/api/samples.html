@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samples &mdash; ProSuite 1.3.2 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Samples &mdash; ProSuite 1.3.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8ca9e7a0"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> ProSuite
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ProSuite
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -71,7 +76,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Samples</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/samples.rst.txt" rel="nofollow"> View page source</a>
@@ -83,9 +88,9 @@
            <div itemprop="articleBody">
              
   <section id="samples">
-<span id="samples-link"></span><h1>Samples<a class="headerlink" href="#samples" title="Permalink to this heading"></a></h1>
+<span id="samples-link"></span><h1>Samples<a class="headerlink" href="#samples" title="Link to this heading"></a></h1>
 <section id="basic-concepts">
-<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this heading"></a></h2>
+<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Link to this heading"></a></h2>
 <p>A quality verification is a test run based on a specific <strong>quality specification</strong>. A quality specification holds one or
 more <strong>quality conditions</strong>. Each quality condition represents a test algorithm configured for one or more specific datasets.</p>
 <p>In order to execute a verification the <strong>prosuite.verification.service</strong> class is used to create the communication channel to the server and to
@@ -104,7 +109,7 @@ or a general introduction, refer to the ProSuite HTML help or the ‘Quick Refer
 prosuite-qa-microservice.exe. By default the communication channel is <a class="reference external" href="http://localhost:5151">http://localhost:5151</a>.</p>
 </section>
 <section id="verify-a-specification-created-in-code">
-<span id="codeverification-link"></span><h2>Verify a specification created in code<a class="headerlink" href="#verify-a-specification-created-in-code" title="Permalink to this heading"></a></h2>
+<span id="codeverification-link"></span><h2>Verify a specification created in code<a class="headerlink" href="#verify-a-specification-created-in-code" title="Link to this heading"></a></h2>
 <p>The Specification class holds a set of conditions that can be configured programmatically.</p>
 <ol class="arabic simple">
 <li><p>Define the Data Model (= workspace)</p></li>
@@ -181,7 +186,7 @@ prosuite-qa-microservice.exe. By default the communication channel is <a class="
 </div>
 </details></section>
 <section id="control-verification-with-the-issue-class">
-<h2>Control verification with the Issue class<a class="headerlink" href="#control-verification-with-the-issue-class" title="Permalink to this heading"></a></h2>
+<h2>Control verification with the Issue class<a class="headerlink" href="#control-verification-with-the-issue-class" title="Link to this heading"></a></h2>
 <p>The Issue class can be used to control the verification process. It can be used to stop the verification process
 when a certain issue condition is met.
 A sample Python script can be found in the ProSuite/prosuite-python-sample Repository (<a class="reference external" href="https://github.com/ProSuite/prosuite-python-samples/blob/main/QA%20Scripting/issue_demo.py">https://github.com/ProSuite/prosuite-python-samples/blob/main/QA%20Scripting/issue_demo.py</a>).</p>
@@ -211,7 +216,7 @@ A sample Python script can be found in the ProSuite/prosuite-python-sample Repos
 </div>
 </section>
 <section id="verification-using-xml-specification">
-<span id="xmlverification-link"></span><h2>Verification using XML Specification<a class="headerlink" href="#verification-using-xml-specification" title="Permalink to this heading"></a></h2>
+<span id="xmlverification-link"></span><h2>Verification using XML Specification<a class="headerlink" href="#verification-using-xml-specification" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Create a Service instance. In this example the service runs on a remote server machine.</p></li>
 <li><p>Define the quality specification: create a XmlSpecification instance from a specification.qa.xml file.</p></li>
@@ -249,7 +254,7 @@ should be used, the data source replacements can be defined as part of the XML s
 defined at the very end of the XML file, provide a path to a file geodatabase or an sde file.</p>
 </section>
 <section id="get-specification-names-from-xmlspecification">
-<h2>Get specification names from XmlSpecification<a class="headerlink" href="#get-specification-names-from-xmlspecification" title="Permalink to this heading"></a></h2>
+<h2>Get specification names from XmlSpecification<a class="headerlink" href="#get-specification-names-from-xmlspecification" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">prosuite</span>
 <span class="linenos">2</span><span class="n">xml_file</span> <span class="o">=</span> <span class="s1">&#39;C:/temp/road_specification.qa.xml&#39;</span>
 <span class="linenos">3</span><span class="n">names_list</span> <span class="o">=</span> <span class="n">prosuite</span><span class="o">.</span><span class="n">XmlSpecification</span><span class="o">.</span><span class="n">get_specification_names</span><span class="p">(</span><span class="n">xml_file</span><span class="p">)</span>
@@ -258,7 +263,7 @@ defined at the very end of the XML file, provide a path to a file geodatabase or
 </div>
 </section>
 <section id="verification-on-secure-channel">
-<h2>Verification on Secure Channel<a class="headerlink" href="#verification-on-secure-channel" title="Permalink to this heading"></a></h2>
+<h2>Verification on Secure Channel<a class="headerlink" href="#verification-on-secure-channel" title="Link to this heading"></a></h2>
 <p>In this example, the grpc.ssl_channel_credentials object is created by a utility method, that gets the
 required root certificates automatically from the windows certificate store. For advanced scenarios or
 credentials on a non-windows platform, see <a class="reference external" href="https://grpc.github.io/grpc/python/grpc.html">the gRPC Python docs</a>.</p>
@@ -271,7 +276,7 @@ credentials on a non-windows platform, see <a class="reference external" href="h
 </div>
 </section>
 <section id="define-a-wkb-perimeter">
-<h2>Define a WKB perimeter<a class="headerlink" href="#define-a-wkb-perimeter" title="Permalink to this heading"></a></h2>
+<h2>Define a WKB perimeter<a class="headerlink" href="#define-a-wkb-perimeter" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">prosuite</span>
 <span class="linenos">2</span><span class="n">poly_as_hex_string</span> <span class="o">=</span> <span class="s1">&#39;01ee0300000100000001eb03000001000000050000004060e5e8cfd5434100c3640aa44f32410000000000000000f8065f282dd6434100c3640aa44f32410000000000000000f8065f282dd6434170d71262d64f324100000000000000004060e5e8cfd5434170d71262d64f324100000000000000004060e5e8cfd5434100c3640aa44f32410000000000000000&#39;</span>
 <span class="linenos">3</span><span class="n">wkb_perimeter</span> <span class="o">=</span> <span class="n">prosuite</span><span class="o">.</span><span class="n">WkbPerimeter</span><span class="p">(</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">poly_as_hex_string</span><span class="p">))</span>
@@ -289,7 +294,7 @@ produced for example from an arcpy.Geometry. Any arcpy.Geometry can be converted
 </div>
 </section>
 <section id="acessing-a-verification-response">
-<h2>Acessing a verification response<a class="headerlink" href="#acessing-a-verification-response" title="Permalink to this heading"></a></h2>
+<h2>Acessing a verification response<a class="headerlink" href="#acessing-a-verification-response" title="Link to this heading"></a></h2>
 <p>service.verify() returns an iterable of ResponseVerification objects. It is
 iterable because the verification service returns a reponse stream. Hence the progress can be printed in real-time.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">verification_response</span> <span class="ow">in</span> <span class="n">service</span><span class="o">.</span><span class="n">verify</span><span class="p">():</span>
@@ -300,7 +305,7 @@ iterable because the verification service returns a reponse stream. Hence the pr
 </div>
 </section>
 <section id="advanced-parameters">
-<h2>Advanced Parameters<a class="headerlink" href="#advanced-parameters" title="Permalink to this heading"></a></h2>
+<h2>Advanced Parameters<a class="headerlink" href="#advanced-parameters" title="Link to this heading"></a></h2>
 <p>Optionally, change advanced verification parameters, such as the Verification tile_size (the default is 5000m)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">prosuite</span>
 <span class="linenos"> 2</span>
@@ -324,7 +329,7 @@ iterable because the verification service returns a reponse stream. Hence the pr
 </div>
 </section>
 <section id="start-and-stop-the-local-service-process">
-<h2>Start and stop the local service process<a class="headerlink" href="#start-and-stop-the-local-service-process" title="Permalink to this heading"></a></h2>
+<h2>Start and stop the local service process<a class="headerlink" href="#start-and-stop-the-local-service-process" title="Link to this heading"></a></h2>
 <p>If no service is constantly running and the python script should run without interaction, e.g. as a batch job,
 the server process can be started directly from python on the local machine.
 In this example, an XML specification is used.</p>
