@@ -382,7 +382,7 @@
                     <li><a href="https://www.linkedin.com/in/peter-j%C3%A4ger-62874ba/"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
                 </ul>
             </div>
-            <div class="col-md-6 col-lg-4 mt-5 no-shuffel background">
+            <div class="col-md-6 col-lg-4 mt-5 background no-shuffel">
               <img class="round-circle" src="dist/img/team/NN512.png" alt="Nomen Nominandum" height="140" width="140">
               <h3 id="JobAdTitleDe" class="lang-de">Spontanbewerbungen<br>willkommen</h3>
               <h3 id="JobAdTitleEn" class="lang-en">Unsolicited applications<br>welcome</h3>
@@ -483,31 +483,42 @@
 
 <script>
   // Function to shuffle array except elements with class "no-shuffle"
-    function shuffleArray(array) {
-        let shuffableArray = array.filter(item => !item.classList.contains('no-shuffle'));
-        let fixedArray = array.filter(item => item.classList.contains('no-shuffle'));
+  function shuffleArray(array) {
+    let shuffableArray = [];
+    let fixedArray = [];
 
-        for (let i = shuffableArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffableArray[i], shuffableArray[j]] = [shuffableArray[j], shuffableArray[i]];
-        }
+    // Separate elements with and without the "no-shuffle" class
+    array.forEach(item => {
+      if (!item.classList.contains('no-shuffle')) {
+        shuffableArray.push(item);
+      } else {
+        fixedArray.push(item);
+      }
+    });
 
-        return [...fixedArray, ...shuffableArray]; // Keep fixed items at their place
+    // Shuffle the shuffableArray
+    for (let i = shuffableArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffableArray[i], shuffableArray[j]] = [shuffableArray[j], shuffableArray[i]];
     }
 
-    // Shuffle team members on page reload
-    document.addEventListener('DOMContentLoaded', function () {
-        const container = document.getElementById('teamContainerShuffel');
-        const itemsArray = Array.from(container.children);
+    // Combine the fixed and shuffled arrays
+    return fixedArray.concat(shuffableArray);
+  }
 
-        const shuffledArray = shuffleArray(itemsArray);
+  // Shuffle team members on page reload
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('teamContainerShuffel');
+    const itemsArray = Array.from(container.children);
 
-        // Clear the container
-        container.innerHTML = '';
+    const shuffledArray = shuffleArray(itemsArray);
 
-        // Reattach the sorted elements
-        shuffledArray.forEach(item => container.appendChild(item));
-    });
+    // Clear the container
+    container.innerHTML = '';
+
+    // Reattach the sorted elements
+    shuffledArray.forEach(item => container.appendChild(item));
+  });
 
     const sections = document.querySelectorAll("section[id]");
     window.addEventListener("scroll", navHighlighter);
