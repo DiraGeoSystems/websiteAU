@@ -371,8 +371,8 @@
                     <li><a href="https://www.linkedin.com/in/lukasdivis/"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
                 </ul>
             </div>
-            <!-- no-shuffel Team memebers -->
-            <div class="col-md-6 col-lg-4 mt-5 no-shuffel">
+            <!-- no-shuffle Team memebers -->
+            <div class="col-md-6 col-lg-4 mt-5 no-shuffle">
                 <img class="rounded-circle" src="dist/img/team/PJ512.jpg" alt="Peter Jäger" height="140" width="140">
                 <h3>Peter Jäger</h3>
                 <p id="PeterDe" class="lang-de">Mentor &<br>Verwaltungsrat</p>
@@ -382,7 +382,7 @@
                     <li><a href="https://www.linkedin.com/in/peter-j%C3%A4ger-62874ba/"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
                 </ul>
             </div>
-            <div class="col-md-6 col-lg-4 mt-5 background no-shuffel">
+            <div class="col-md-6 col-lg-4 mt-5 background no-shuffle">
               <img class="round-circle" src="dist/img/team/NN512.png" alt="Nomen Nominandum" height="140" width="140">
               <h3 id="JobAdTitleDe" class="lang-de">Spontanbewerbungen<br>willkommen</h3>
               <h3 id="JobAdTitleEn" class="lang-en">Unsolicited applications<br>welcome</h3>
@@ -483,51 +483,45 @@
 
 <script>
   // Function to shuffle array except elements with class "no-shuffle"
-  function shuffleArray(array) {
-    let shuffableArray = [];
-    let fixedArray = [];
+    function shuffleArray(array) {
+        let shuffableArray = [];
+        let fixedArray = [];
+        let resultArray = [];
 
-    // Separate elements with and without the "no-shuffle" class
-    array.forEach(item => {
-      if (!item.classList.contains('no-shuffle')) {
-        shuffableArray.push(item);
-      } else {
-        fixedArray.push(item);
-      }
-    });
+        // Separate elements with and without the "no-shuffle" class, and keep track of their original indices
+      array.forEach((item) => {
+          if (item.classList.contains('no-shuffle')) {
+              fixedArray.push(item);
+          } else {
+              shuffableArray.push(item);
+          }
+      });
 
-    // Shuffle the shuffableArray
-    for (let i = shuffableArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffableArray[i], shuffableArray[j]] = [shuffableArray[j], shuffableArray[i]];
+        // Shuffle the shuffableArray
+        for (let i = shuffableArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffableArray[i], shuffableArray[j]] = [shuffableArray[j], shuffableArray[i]];
+        }
+
+        // Result array, with the shuffeled ones comming first
+      resultArray = [...shuffableArray, ...fixedArray];
+
+        return resultArray;
     }
 
+    // Shuffle team members on page reload
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('teamContainerShuffel');
+        const itemsArray = Array.from(container.children);
 
-    // Merge the fixedElements back into their original positions
-    const mergedArray = array.map(item => {
-      if (item.classList.contains('no-shuffle')) {
-        return item;
-      } else {
-        return shuffableArray.shift();
-      }
+        const resultArray = shuffleArray(itemsArray);
+
+        // Clear the container
+        container.innerHTML = '';
+
+        // Reattach the sorted elements
+        resultArray.forEach(item => container.appendChild(item));
     });
-
-    return mergedArray;
-  }
-
-  // Shuffle team members on page reload
-  document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('teamContainerShuffel');
-    const itemsArray = Array.from(container.children);
-
-    const shuffledArray = shuffleArray(itemsArray);
-
-    // Clear the container
-    container.innerHTML = '';
-
-    // Reattach the sorted elements
-    shuffledArray.forEach(item => container.appendChild(item));
-  });
 
     const sections = document.querySelectorAll("section[id]");
     window.addEventListener("scroll", navHighlighter);
