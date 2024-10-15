@@ -361,7 +361,7 @@
                     <li><a href="https://github.com/thereallinusrg"><img src="dist/img/icons/github-mark.svg" alt="GitHub" height="25" width="25"></a></li>
                 </ul>
             </div>
-            <div class="col-md-6 col-lg-4 mt-5">
+            <div class="col-md-6 col-lg-4 mt-5 ">
                 <img class="rounded-circle" src="dist/img/team/LDI.jpg" alt="Lukas Divis" height="140" width="140">
                 <h3>Lukas Divis</h3>
                 <p id="LukasDe" class="lang-de">Vertriebsleiter &<br>Vertreter in Australien</p>
@@ -371,7 +371,8 @@
                     <li><a href="https://www.linkedin.com/in/lukasdivis/"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
                 </ul>
             </div>
-            <div class="col-md-6 col-lg-4 mt-5">
+            <!-- no-shuffel Team memebers -->
+            <div class="col-md-6 col-lg-4 mt-5 no-shuffel">
                 <img class="rounded-circle" src="dist/img/team/PJ512.jpg" alt="Peter Jäger" height="140" width="140">
                 <h3>Peter Jäger</h3>
                 <p id="PeterDe" class="lang-de">Mentor &<br>Verwaltungsrat</p>
@@ -381,15 +382,7 @@
                     <li><a href="https://www.linkedin.com/in/peter-j%C3%A4ger-62874ba/"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
                 </ul>
             </div>
-            <!-- <div class="col-md-6 col-lg-4 mt-5">
-                <img class="rounded-circle" src="dist/img/team/esri-startup-partner-320.png" alt="Esri" height="140" width="140">
-                <h3>Dira partners with Esri</h3>
-                <p>The Science of Where<br>&nbsp;</p>
-                <ul>
-                  <li><a href="https://www.linkedin.com/company/esri/"><img src="dist/img/icons/linkedin.svg" alt="LinkedIn" height="25" width="25"></a></li>
-                </ul>
-            </div> -->
-            <div class="col-md-6 col-lg-4 mt-5 background">
+            <div class="col-md-6 col-lg-4 mt-5 no-shuffel background">
               <img class="round-circle" src="dist/img/team/NN512.png" alt="Nomen Nominandum" height="140" width="140">
               <h3 id="JobAdTitleDe" class="lang-de">Spontanbewerbungen<br>willkommen</h3>
               <h3 id="JobAdTitleEn" class="lang-en">Unsolicited applications<br>welcome</h3>
@@ -489,12 +482,17 @@
 <script src="dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  // Function to shuffle array
+  // Function to shuffle array except elements with class "no-shuffle"
     function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
+        let shuffableArray = array.filter(item => !item.classList.contains('no-shuffle'));
+        let fixedArray = array.filter(item => item.classList.contains('no-shuffle'));
+
+        for (let i = shuffableArray.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+            [shuffableArray[i], shuffableArray[j]] = [shuffableArray[j], shuffableArray[i]];
         }
+
+        return [...fixedArray, ...shuffableArray]; // Keep fixed items at their place
     }
 
     // Shuffle team members on page reload
@@ -502,9 +500,13 @@
         const container = document.getElementById('teamContainerShuffel');
         const itemsArray = Array.from(container.children);
 
-        shuffleArray(itemsArray);
+        const shuffledArray = shuffleArray(itemsArray);
 
-        itemsArray.forEach(item => container.appendChild(item));
+        // Clear the container
+        container.innerHTML = '';
+
+        // Reattach the sorted elements
+        shuffledArray.forEach(item => container.appendChild(item));
     });
 
     const sections = document.querySelectorAll("section[id]");
