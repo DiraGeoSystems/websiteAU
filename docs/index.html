@@ -502,8 +502,17 @@
       [shuffableArray[i], shuffableArray[j]] = [shuffableArray[j], shuffableArray[i]];
     }
 
-    // Combine the fixed and shuffled arrays
-    return fixedArray.concat(shuffableArray);
+
+    // Merge the fixedElements back into their original positions
+    const mergedArray = array.map(item => {
+      if (item.classList.contains('no-shuffle')) {
+        return item;
+      } else {
+        return shuffableArray.shift();
+      }
+    });
+
+    return mergedArray;
   }
 
   // Shuffle team members on page reload
