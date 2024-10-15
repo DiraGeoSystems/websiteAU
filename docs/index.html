@@ -254,7 +254,7 @@
     </div>
 </section>
 
-<section id="services" class="box">
+<section id="services-section" class="box">
     <div class="container" id="services">
         <div class="col-lg-8 offset-lg-2 mb-6">
             <h2 id="ServicesTitleDe" class="lang-de text-center">Dienstleistungen</h2>
@@ -297,7 +297,7 @@
 <section id="team" class="box mt-5">
     <div class="container text-center">
         <h2 class="mb-5">Team</h2>
-        <div class="row">
+        <div class="row" id="teamContainerShuffel">
             <div class="col-md-6 col-lg-4 mt-5">
                 <img class="rounded-circle" src="dist/img/team/EMA512.jpg" alt="Emanuel Mahler" height="140" width="140">
                 <h3>Emanuel Mahler</h3>
@@ -410,8 +410,9 @@
     </div>
 </section>
 
-<section id="contact" class="box mt-5">
-    <div class="container" id="contact">
+<section id="contact-section" class="box mt-5">
+<div class="container" id="contact">
+
         <div class="row">
             <div class="col-lg-4 offset-lg-4 mb-6 text-center">
                 <h2 id="ContactTitleDe" class="lang-de">Kontakt</h2>
@@ -420,8 +421,8 @@
                     Geibelstrasse 35<br>
                     CH-8037 Zürich</p>
                 <p><a href="tel:+41442448442">+41 44 244 84 42</a></p>
-                <p id="EmailTitleDe" class="lang-de">Am besten erreichen Sie uns per E-Mail:<br><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</p>
-                <p id="EmailTitleEn" class="lang-en">We are best reached by email:<br><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</p>
+                <p id="EmailTitleDe" class="lang-de">Am besten erreichen Sie uns per E-Mail:<br><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch</a></p>
+                <p id="EmailTitleEn" class="lang-en">We are best reached by email:<br><a href="mailto:hello@dirageosystems.ch">hello@dirageosystems.ch></a></p>
 
                 <ul class="mb-6">
                     <!--<li><a href="#"><img src="dist/img/icons/facebook.svg" alt="Facebook" height="25" width="25"></a></li>-->
@@ -492,6 +493,24 @@
 <script src="dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+  // Function to shuffle array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // Shuffle team members on page reload
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('teamContainerShuffel');
+        const itemsArray = Array.from(container.children);
+
+        shuffleArray(itemsArray);
+
+        itemsArray.forEach(item => container.appendChild(item));
+    });
+
     const sections = document.querySelectorAll("section[id]");
     window.addEventListener("scroll", navHighlighter);
     function navHighlighter() {
