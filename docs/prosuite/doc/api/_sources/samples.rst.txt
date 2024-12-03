@@ -208,6 +208,89 @@ Get specification names from XmlSpecification
     print(names_list)
 
 
+Verification using DDX Specification
+====================================
+
+Using the DDX Specification, you can directly run quality verification defined in your Data Dictionary Editor through the Python API. This approach allows you to leverage predefined quality specifications and dataset configurations, making it simple to execute targeted data quality checks programmatically based on the settings in your data dictionary.
+
+#. Create a Service instance. In this example, the service runs on a local server machine.
+#. Define the quality specification by creating a `DdxSpecification` instance using the `ddx_id` and the `project_short_name`. These identifiers can be found in the **Data Dictionary Editor**.
+#. Define the verification parameters, including any specific **dataset ID** and **object IDs** to verify. Both the dataset ID and object IDs can also be checked in the **Data Dictionary Editor**.
+#. Optionally define advanced parameters such as `update_issues_in_verified_model` and `save_verification_statistics`.
+#. Define the verification output directory.
+#. Execute the verification.
+
+.. code-block:: python
+    :linenos:
+
+    import prosuite
+
+    service = prosuite.Service(host_name='localhost', port_nr=5151)
+
+    ddx_id = 9  
+    project_short_name = "..." 
+    specification = prosuite.DdxSpecification(ddx_id=ddx_id, project_short_name=project_short_name)
+
+    road_dataset_id = 138
+    road_object_ids_to_verify = [3606433] 
+    rail_dataset_id = 141
+    rail_object_ids_to_verify = [2105461, 2105452, 2105593]
+
+    params = prosuite.VerificationParameters(user_name="UJR")
+
+    # Optionally provided object ID lists per dataset (use dataset ID from data dictionary)
+    params.add_objects_to_verify(road_dataset_id, road_object_ids_to_verify)
+    params.add_objects_to_verify(rail_dataset_id, rail_object_ids_to_verify)
+
+    # Optionally, write the issue to the error datasets in the data model
+    params.update_issues_in_verified_model = True
+
+    # Optionally, save the verification statistics to the respective data dictionary table (requires DDX schema 1.0.0.1)
+    params.save_verification_statistics = True
+
+    out_dir = 'C:/temp/verification_output'
+    extent = None  # Optionally define the verification extent
+  
+    for verification_response in service.verify(specification=specification, output_dir=out_dir, perimeter=extent, parameters=params):
+        print(verification_response.message_level)
+        print(verification_response.service_call_status)
+        print(verification_response.message)
+
+**Notes:**
+
+* **Directories**: Ensure the specified paths are accessible by the server, especially for output directories.
+* **update_issues_in_verified_model**: If set to `True`, this updates issues within the error datasets in the verified model.
+* **save_verification_statistics**: If set to `True`, this option saves verification statistics into the Data Dictionary database.
+
+Verification using DDX Specification with Automatic Object List Generation
+==========================================================================
+
+In addition to specifying individual object IDs, you can also automatically retrieve all feature IDs within a dataset for comprehensive quality verification. This can be done by using a function (e.g., `get_object_ids_from_feature_class`) to fetch all object IDs, allowing you to apply checks across an entire dataset. This approach is especially useful for verifying large datasets.
+
+Use this method to streamline quality verification for complete datasets or to apply selection queries for filtered checks. Simply generate the object list and add it to your verification parameters.
+
+.. code-block:: python
+    :linenos:
+
+    import arcpy
+
+    def get_object_ids_from_feature_class(feature_class, selection_query=None):
+        object_ids = []
+        with arcpy.da.SearchCursor(feature_class, ["OBJECTID"], selection_query) as cursor:
+            for row in cursor:
+                object_ids.append(row[0])
+        return object_ids
+
+    ddx_id = 9
+    ddx_project_short_name = ""
+    road_dataset_id = 138
+
+    
+    road_feature_class = r"C:\DIRA\... sde\feature_class"
+    road_selection_query = None  # Optional: SQL filter query
+
+    road_object_ids_to_verify = get_object_ids_from_feature_class(road_feature_class, road_selection_query)
+
 Verification on Secure Channel
 ==============================
 In this example, the grpc.ssl_channel_credentials object is created by a utility method, that gets the 
