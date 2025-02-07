@@ -125,7 +125,7 @@ Control verification with the Issue class
 =========================================
 The Issue class can be used to control the verification process. It can be used to stop the verification process 
 when a certain issue condition is met.
-A sample Python script can be found in the ProSuite/prosuite-python-sample Repository (https://github.com/ProSuite/prosuite-python-samples/blob/main/QA%20Scripting/issue_demo.py).
+A sample Python script can be found in `the ProSuite Python Samples repository <https://github.com/ProSuite/prosuite-python-samples/blob/main/QA%20Scripting/issue_demo.ipynb>`__.
 
 
 .. code-block:: python
@@ -174,9 +174,10 @@ Verification using XML Specification
     xml_file = "\\share\QA\specifications\road_specification.qa.xml"
     sde_file = "\\share\connection_files\production_QA_version.sde"
 
+    # Data source replacements: see notes below
     xml_spec = prosuite.XmlSpecification(specification_file=xml_file, 
-                                        specification_name="Produktionsunterstuetzung",
-                                        data_source_replacements=[["ProductionModel", sde_file]])
+                                         specification_name="Produktionsunterstuetzung",
+                                         data_source_replacements=[["ProductionModel", sde_file]])
 
     out_dir = '\\share\QA\results\verification_output'
 
@@ -187,14 +188,22 @@ Verification using XML Specification
 
 **Notes:**
 
-* Directories: The specified paths must be accessible by the server, hence use UNC-paths.
-* Data Source Replacements: The datasets in the XML specifications use a workspace_id as reference to the database.
+**Directories**: The specified paths must be accessible by the server, hence use UNC-paths.
 
-For each workspace_id a valid connection is required in order to access the feature class or table. If the workspace 
-for the workspace_id is not defined in the XML file or a different workspace (e.g. a user-specific geodatabase version) 
-should be used, the data source replacements can be defined as part of the XML specification. For each workspace_id 
-defined at the very end of the XML file, provide a path to a file geodatabase or an sde file.
+**Data Source Replacements**: 
+The datasets in the XML specifications use a Workspace ID as reference to the database. The Workspace ID is defined at the bottom of the XML file. 
+Data source replacements are provided in the format of string pairs [<workspace_id>, <path_to_geodatabase>].
 
+Examples: 
+
+* [“TLM_Data”, “C:/full/path/to/connection.sde”]
+* [“ERM_Data”, “C:/full/path/to/data.gdb”]
+
+For each Workspace ID defined at the very end of the XML file, provide a path to a file geodatabase or an sde file.
+o	If no data source replacement is provided, a connectionString must be defined for the respective workspace in the XML. This is achieved by exporting the full workspace information when exporting the XML specification in the data dictionary editor by checking the Option ‘Export workspace connection information’.
+o	If one or more datasource replacements are provided they will be used to find the referenced datasets in the XML by using the specified geodatabase for the respective workspace id.
+
+For more details see the documentation of the verification service: :py:class:`prosuite.verification.Service`.
 
 Get specification names from XmlSpecification
 =============================================
