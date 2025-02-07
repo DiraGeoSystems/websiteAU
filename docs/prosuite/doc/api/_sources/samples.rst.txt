@@ -200,8 +200,9 @@ Examples:
 * [“ERM_Data”, “C:/full/path/to/data.gdb”]
 
 For each Workspace ID defined at the very end of the XML file, provide a path to a file geodatabase or an sde file.
-o	If no data source replacement is provided, a connectionString must be defined for the respective workspace in the XML. This is achieved by exporting the full workspace information when exporting the XML specification in the data dictionary editor by checking the Option ‘Export workspace connection information’.
-o	If one or more datasource replacements are provided they will be used to find the referenced datasets in the XML by using the specified geodatabase for the respective workspace id.
+
+*	If no data source replacement is provided, a connectionString must be defined for the respective workspace in the XML. This is achieved by exporting the full workspace information when exporting the XML specification in the data dictionary editor by checking the Option ‘Export workspace connection information’.
+*	If one or more datasource replacements are provided they will be used to open the referenced datasets in the XML by using the specified geodatabase for the respective workspace id.
 
 For more details see the documentation of the verification service: :py:class:`prosuite.verification.Service`.
 

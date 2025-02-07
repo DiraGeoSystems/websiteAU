@@ -251,9 +251,11 @@ Data source replacements are provided in the format of string pairs [&lt;workspa
 <li><p>[“TLM_Data”, “C:/full/path/to/connection.sde”]</p></li>
 <li><p>[“ERM_Data”, “C:/full/path/to/data.gdb”]</p></li>
 </ul>
-<p>For each Workspace ID defined at the very end of the XML file, provide a path to a file geodatabase or an sde file.
-o       If no data source replacement is provided, a connectionString must be defined for the respective workspace in the XML. This is achieved by exporting the full workspace information when exporting the XML specification in the data dictionary editor by checking the Option ‘Export workspace connection information’.
-o       If one or more datasource replacements are provided they will be used to find the referenced datasets in the XML by using the specified geodatabase for the respective workspace id.</p>
+<p>For each Workspace ID defined at the very end of the XML file, provide a path to a file geodatabase or an sde file.</p>
+<ul class="simple">
+<li><p>If no data source replacement is provided, a connectionString must be defined for the respective workspace in the XML. This is achieved by exporting the full workspace information when exporting the XML specification in the data dictionary editor by checking the Option ‘Export workspace connection information’.</p></li>
+<li><p>If one or more datasource replacements are provided they will be used to open the referenced datasets in the XML by using the specified geodatabase for the respective workspace id.</p></li>
+</ul>
 <p>For more details see the documentation of the verification service: <a class="reference internal" href="prosuite.html#prosuite.verification.Service" title="prosuite.verification.Service"><code class="xref py py-class docutils literal notranslate"><span class="pre">prosuite.verification.Service</span></code></a>.</p>
 </section>
 <section id="get-specification-names-from-xmlspecification">
