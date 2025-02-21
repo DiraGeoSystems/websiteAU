@@ -359,3 +359,12 @@ header {
         }
     }
 }
+
+.nav-link-lang {
+    padding: 0.5rem 0.75rem !important;
+    
+    &.active {
+        font-weight: bold;
+        color: var(--bs-primary) !important;
+    }
+}

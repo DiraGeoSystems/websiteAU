@@ -89,61 +89,52 @@
         }
         document.addEventListener('DOMContentLoaded', function () {
             const langButtons = document.querySelectorAll('.nav-link-lang');
-            const initialLang = getCookie('lang') || 'de'; // Get stored language preference or default to English
-    
+            const initialLang = getCookie('lang') || 'de'; // Get stored language preference or default to German
+            
+            // Initialize language on page load
             updateLanguage(initialLang);
-    
+            
             langButtons.forEach(button => {
                 button.addEventListener('click', function (event) {
                     event.preventDefault();
                     const lang = button.getAttribute('data-lang');
                     updateLanguage(lang);
-    
-                    // Remove the "active" class from all language buttons
-                    langButtons.forEach(b => b.classList.remove('active'));
-    
-                    // Add the "active" class to the clicked language button
-                    button.classList.add('active');
                 });
             });
-    
+            
             function updateLanguage(lang) {
-                // Set a cookie to remember the selected language
-                document.cookie = `lang=${lang}; path=/`;
-    
-                // Update the lang attribute of the html tag
+                // Set cookie with 30 day expiration
+                const date = new Date();
+                date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+                document.cookie = `lang=${lang};expires=${date.toUTCString()};path=/`;
+                
+                // Update html lang attribute
                 document.getElementById('htmlTag').setAttribute('lang', lang);
-    
+                
+                // Update active state of language buttons
+                document.querySelectorAll('.nav-link-lang').forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
                 // Toggle visibility of language-specific elements
-                const elementsDe = document.querySelectorAll('.lang-de');
-                const elementsEn = document.querySelectorAll('.lang-en');
-    
-                elementsDe.forEach(element => {
-                    element.style.display = lang === 'de' ? 'block' : 'none';
+                document.querySelectorAll('[class*="lang-"]').forEach(element => {
+                    if (element.classList.contains(`lang-${lang}`)) {
+                        element.style.display = '';  // Use default display
+                    } else {
+                        element.style.display = 'none';
+                    }
                 });
-    
-                elementsEn.forEach(element => {
-                    element.style.display = lang === 'en' ? 'block' : 'none';
-                });
-    
-                // Toggle visibility of title elements
-                const titleDe = document.getElementById('locationFinderTitleDe');
-                const titleEn = document.getElementById('locationFinderTitleEn');
-    
-                titleDe.style.display = lang === 'de' ? 'block' : 'none';
-                titleEn.style.display = lang === 'en' ? 'block' : 'none';
-    
-                // Add the "active" class to the corresponding language button
-                const langButton = document.querySelector(`.nav-link-lang[data-lang="${lang}"]`);
-                if (langButton) {
-                    langButton.classList.add('active');
-                }
             }
-    
+            
             function getCookie(name) {
                 const value = `; ${document.cookie}`;
                 const parts = value.split(`; ${name}=`);
                 if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
             }
         });
     </script>
