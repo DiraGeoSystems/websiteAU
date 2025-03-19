@@ -1,12 +1,36 @@
 /* sass "scss/custom.scss:dist/css/custom.min.css" --style compressed  */
-
+:root {
+    --primary-dira-cobalt: #1D4A9B;
+    --sec-deep-ocean: #283A5C;
+    --acc-amber-gold: #F0BC45;
+    --acc-sec-pale-honey: #FFD885;
+    --dark-1-deep-space: #232933;
+    --dark-2-black: #01040a;
+    --general-bg-linen: #fffcfa;
+    --acc-chestnut: #663C35;
+    --acc-terracotta: #C43D25;
+    --acc-blush: #BFA8A4;
+    --acc-sage: #B2BAA0;
+    --acc-olive: #748746;
+    --acc-moss: #405410;
+    --prosuite-main: #4A6EB8;
+    --prosuite-sec: #B89267;
+    --prosuite-accent: #9A9073;
+    --prosuite-bg-1: #D8DCE5;
+    --produite-bg-2: #E9DCCC;
+    --location-finder-main: #56A9D3;
+    --location-finder-sec: #87B46C;
+    --location-finder-accent: #9A9073;
+    --location-finder-bg-1: #C4D6DF;
+    --location-finder-bg-2: #B5BEB3;
+}
 /* open-sans-regular - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/open-sans-v35-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../dist/fonts/open-sans-v35-latin-regular.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-700 - latin */
@@ -15,14 +39,21 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/open-sans-v35-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../dist/fonts/open-sans-v35-latin-700.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
     min-height: 75rem;
+}
+
+.main-container {
     padding-top: 10.5rem;
+}
+
+.landing-page {
+    min-height: 80vh;
 }
 
 .box {
@@ -30,11 +61,15 @@ body {
 }
 
 .background-color-1 {
-    background-color: #d6d5d5;
+    background-color: var(--general-bg-linen);
 }
 
 .background-color-2 {
-    background-color: #b7b7b7;
+    background-color: var(--acc-amber-gold);
+}
+
+.standout-color {
+    background-color: var(--acc-chestnut);
 }
 
 .border-bottom {
@@ -59,20 +94,20 @@ section {
     }
 
     strong {
-        color: #f8ba00;
+        color: var(--acc-amber-gold);
     }
 
     u {
-        color: #f8ba00;
+        color: var(--acc-amber-gold);
     }
 
     a {
         color: #000000;
-        text-decoration: underline #f8ba00;
+        text-decoration: underline var(--acc-amber-gold);
 
         &:focus,
         &:hover {
-            text-decoration: underline #f8ba00 .2ex;
+            text-decoration: underline var(--acc-amber-gold) .2ex;
         }
     }
 
@@ -148,7 +183,7 @@ header {
 }
 
 .navbar {
-    background-color: #ffffff;
+    background-color: var(--general-bg-linen);
 
     .navbar-nav {
         .nav-link {
@@ -161,7 +196,7 @@ header {
         .active,
         .nav-link:focus,
         .nav-link:hover {
-            border-bottom-color: #f8ba00;
+            border-bottom-color: var(--acc-amber-gold);
         }
 
         .nav-item {
@@ -193,7 +228,7 @@ header {
         &:focus,
         &:hover {
             background-color: transparent;
-            color: #f8ba00;
+            color: var(--acc-amber-gold);
         }
     }
 
@@ -219,7 +254,7 @@ header {
 
             &:focus::before,
             &:hover::before {
-                color: #f8ba00;
+                color: var(--acc-amber-gold);
             }
         }
     }
@@ -238,7 +273,7 @@ header {
                 border-bottom: none;
 
                 span {
-                    border-bottom: 2px solid #f8ba00;
+                    border-bottom: 2px solid var(--acc-amber-gold);
                     padding-bottom: 8px;
                 }
             }
@@ -345,12 +380,12 @@ header {
 }
 
 .footer {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--acc-sec-pale-honey);
+    color: var(--dark-2-black);
     font-size: 16px;
 
     a {
-        color: #ffffff;
+        color: var(--dark-2-black);
         text-decoration: none;
 
         &:focus,
@@ -365,6 +400,63 @@ header {
     
     &.active {
         font-weight: bold;
-        color: var(--bs-primary) !important;
+        color: var(--primary-dira-cobalt) !important;
     }
+}
+
+/* CSS for initial draw animation and scroll-based control */
+
+/* Initial drawing animation */
+@keyframes initialDraw {
+    from {
+        stroke-dashoffset: 5000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Base styles for contour lines */
+.contour {
+    fill: none;
+    stroke-dasharray: 5000;
+    /* Initial state is invisible */
+    stroke-dashoffset: 5000;
+}
+
+/* Class for initial drawing animation when page loads */
+.initial-draw {
+    fill: none;
+    stroke-dasharray: 5000; /* Increased value */
+    stroke-dashoffset: 5000; /* Same as dasharray */
+    animation: initialDraw 4s forwards ease-in-out;
+}
+
+/* Define delays for groups of contours */
+.contour:nth-child(n+1):nth-child(-n+10).initial-draw {
+    animation-delay: 0.2s;
+}
+.contour:nth-child(n+11):nth-child(-n+20).initial-draw {
+    animation-delay: 0.4s;
+}
+.contour:nth-child(n+21):nth-child(-n+30).initial-draw {
+    animation-delay: 0.6s;
+}
+.contour:nth-child(n+31):nth-child(-n+40).initial-draw {
+    animation-delay: 0.8s;
+}
+.contour:nth-child(n+41):nth-child(-n+50).initial-draw {
+    animation-delay: 1s;
+}
+.contour:nth-child(n+51):nth-child(-n+60).initial-draw {
+    animation-delay: 1.2s;
+}
+.contour:nth-child(n+61):nth-child(-n+70).initial-draw {
+    animation-delay: 1.4s;
+}
+.contour:nth-child(n+71):nth-child(-n+80).initial-draw {
+    animation-delay: 1.6s;
+}
+.contour:nth-child(n+81):nth-child(-n+90).initial-draw {
+    animation-delay: 1.8s;
 }
