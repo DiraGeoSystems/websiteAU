@@ -226,14 +226,14 @@ section {
     }
 }
 
-
 header {
     font-size: 18px;
     text-transform: uppercase;
 }
 
 .navbar-toggler {
-    border-radius: unset;
+    border-radius: 6px;
+    border-color: var(--acc-sec-pale-honey);
 }
 
 .navbar-brand {
@@ -300,6 +300,7 @@ header {
         border-bottom: 1px solid var(--acc-sec-pale-honey);
         padding-bottom: 10px;
         padding-top: 10px;
+        font-weight: 500;
 
         &:focus,
         &:hover {
