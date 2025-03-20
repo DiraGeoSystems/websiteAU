@@ -30,7 +30,7 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/open-sans-v35-latin-regular.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("dist/fonts/open-sans-v35-latin-regular.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-700 - latin */
@@ -39,7 +39,7 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    src: url("../fonts/open-sans-v35-latin-700.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("dist/fonts/open-sans-v35-latin-700.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 body {
@@ -255,8 +255,8 @@ header {
     }
 
     .dropdown-menu {
-        border-color: #000000;
-        border-radius: unset;
+        border-color: var(--sec-deep-ocean);
+        border-radius: 17% 83% 17% 83% / 17% 17% 83% 83%;
         margin-top: 25px;
         min-width: 250px;
         padding: 0;
@@ -358,12 +358,12 @@ header {
  */
 
 .btn {
-    background-color: #000000;
+    background-color: var(--primary-dira-cobalt);
     color: #ffffff;
 
     &:focus,
     &:hover {
-        background-color: #000000;
+        background-color: var(--sec-deep-ocean);
         color: #ffffff;
         opacity: .5;
     }
