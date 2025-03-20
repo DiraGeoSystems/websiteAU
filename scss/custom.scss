@@ -51,7 +51,6 @@ body {
 /* CSS for the background contour setup */
 .main-container {
     position: relative;
-    min-height: 100vh; /* Ensures the container is at least as tall as the viewport */
     margin-top: 15vh;
 }
 
@@ -61,12 +60,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Places it behind content */
-    pointer-events: none; /* Allows clicking through to content */
-    overflow: hidden; /* Prevents scrollbars */
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     background-color: var(--general-bg-linen);
 }
 
@@ -435,11 +434,12 @@ header {
 }
 
 .footer {
+    position: relative; /* Ensure footer is in the normal document flow */
+    z-index: 1; /* Make sure it's above the background */
+    margin-top: auto; /* This helps push it to the bottom */
     background-color: var(--acc-sec-pale-honey);
     color: var(--dark-2-black);
     font-size: 16px;
-    position: relative; /* Make sure footer is in normal flow */
-    z-index: 1; /* Ensure it's above the background */
 
     a {
         color: var(--dark-2-black);
