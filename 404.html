@@ -9,7 +9,7 @@
 * {line-height:1.2;margin:0;}
 html, body {
   width:100%;height:100%;
-  font-family:sans-serif;
+  font-family: "Garamond", serif;
   line-height:150%;
   display:table;
   text-align:center;
@@ -26,6 +26,12 @@ body {
   margin:2em auto;
 }
 h1 {
+  font-size:3em;
+  font-weight:800;
+  margin:3pc auto;
+}
+
+h2 {
   font-size:2em;
   font-weight:700;
   margin:3pc auto;
@@ -35,12 +41,25 @@ p {
   font-weight:500;
   margin:1pc auto;
 }
-a {color:#eee;}
-.dragons {
-  color:#eb4630;
-  text-shadow:1px 1px 0 #fda;
-  margin-top:1pc;
+a {
+    color:#eee;
+    text-shadow:1px 1px 0 #bf2d00;
+    text-decoration:none;
+    font-weight:bold;
 }
+
+.dragons {
+  margin-top:1pc;
+    text-shadow:2px 2px 0 #bf2d00;
+    font-weight:bold;
+
+}
+
+.explain {
+    width:50%;bottom:0;
+    z-index:-1; /*just in case: behind other text*/
+}
+
 .source {
   color:#ccc;font-size:1em;
   position:absolute;width:100%;bottom:0;
@@ -51,9 +70,10 @@ a {color:#eee;}
 
 <body>
   <h1 class="dragons" title="Here Be Dragons">Hic Sunt Dracones</h1>
-  <h1 title="HTTP 404">(Page Not Found)</h1>
-  <p>The page you were trying to view <nobr>does not exist.</nobr></p>
+  <h2 title="HTTP 404">Page Not Found</h2>
   <p>Go back to safe waters: <a href="/">www.dirageosystems.ch</a></p>
+  <p class="explain">"Hic Sunt Dracones" or "Here Be Dragons" was a phrase used by medieval cartographers to mark dangerous or unexplored territories on maps. While the exact Latin phrase appears on only one known historical artifact—the Hunt-Lenox Globe (c. 1510)—sea monsters and mythical creatures were commonly drawn on uncharted areas of medieval maps, warning sailors of the unknown dangers that might await them.</p>
+
   <p class="source">Detail from a Mercator globe from about 1550,
     <a href="https://www2.unil.ch/mercator/en/index.html">digitized
     by Université de Lausanne</a></p>
