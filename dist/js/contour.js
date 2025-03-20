@@ -124,30 +124,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 const section = document.getElementById("background");
                 if (!section) return;
 
-                const rect = section.getBoundingClientRect();
+                // For fixed backgrounds, use the window's scroll position instead of element position
+                const scrollY = window.scrollY;
                 const viewportHeight = window.innerHeight;
 
-                // Calculate scroll progress factor with much shorter range
-                // This will complete the effect after approximately two scroll motions
+                // Calculate how far down the page we've scrolled, as a ratio of viewport height
+                // Multiply by a factor to make the effect complete after ~2 scroll actions
+                const scrollRatio = (scrollY / viewportHeight) * 2;
 
-                // Calculate position relative to viewport center
-                // -1 when completely above viewport, 0 at center, 1 when completely below
-                const viewportCenter = window.innerHeight / 2;
-                const elementCenter = rect.top + (rect.height / 2);
-                const distanceFromCenter = (elementCenter - viewportCenter) / (viewportCenter + rect.height/2);
-
-                // Create a normalized value that goes from 0 to 1 as element passes through viewport
-                // When element is at the top of viewport, value is close to 0
-                // When element is centered, value is 0.5
-                // When element is at bottom of viewport, value is close to 1
-                let scrollPosition = 0.5 - (distanceFromCenter / 2);
-
-                // Apply a multiplier to make it complete faster (after ~2 scrolls)
-                // We'll adjust from center position (0.5)
-                scrollPosition = 0.5 + (scrollPosition - 0.5) * 5;
-
-                // Clamp the value between 0 and 1
-                const positionFactor = Math.max(0, Math.min(1, scrollPosition));
+                // Clamp between 0 and 1
+                const positionFactor = Math.max(0, Math.min(1, scrollRatio));
 
                 // Apply parallax effect to all contours with staggered movement
                 contours.forEach((contour) => {
