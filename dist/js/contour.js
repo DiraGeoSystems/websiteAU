@@ -37,6 +37,22 @@ document.addEventListener("DOMContentLoaded", function() {
             svgElement.id = "contour-svg";
             svgImage.parentNode.replaceChild(svgElement, svgImage);
 
+            if (svgElement) {
+                // Make sure the SVG has a viewBox
+                if (!svgElement.getAttribute('viewBox')) {
+                    const width = svgElement.getAttribute('width') || 100;
+                    const height = svgElement.getAttribute('height') || 100;
+                    svgElement.setAttribute('viewBox', `0 0 ${width} ${height}`);
+                }
+
+                // Set width and height to 100%
+                svgElement.setAttribute('width', '100%');
+                svgElement.setAttribute('height', '100%');
+
+                // Set preserveAspectRatio to cover the area
+                svgElement.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+            }
+
             // Check if there are any contour elements before proceeding
             const contourElements = svgElement.querySelectorAll(".contour, [id^='C'], [id^='D']");
             if (contourElements.length === 0) {
@@ -96,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const groupIndex = Math.floor(index / 10);
             const delay = 0.2 * (groupIndex + 1);
 
-            contour.style.animation = `initialDraw 4s forwards ease-in-out ${delay}s`;
+            contour.style.animation = `initialDraw 6s forwards ease-in-out ${delay}s`;
         });
 
         // Switch to scroll-based animation after initial drawing completes
@@ -110,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Set up just the parallax (no undrawing)
             setupScrollHandler(allContours);
 
-        }, 4500); // Wait for initial drawing animation to complete
+        }, 6000); // Wait for initial drawing animation to complete
 
         function setupScrollHandler(contours) {
             // Calculate max level for normalization
