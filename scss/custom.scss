@@ -254,7 +254,7 @@ header {
     }
 
     .dropdown-menu {
-        border-color: var(--sec-deep-ocean);
+        border-color: var(--acc-sec-pale-honey);
         border-radius: 17px;
         margin-top: 25px;
         min-width: 250px;
@@ -271,7 +271,7 @@ header {
     }
 
     .dropdown-item {
-        border-bottom: 1px solid var(--sec-deep-ocean);
+        border-bottom: 1px solid var(--acc-sec-pale-honey);
         padding-bottom: 10px;
         padding-top: 10px;
 
@@ -279,7 +279,9 @@ header {
         &:hover {
             background-color: transparent;
             color: var(--primary-dira-cobalt);
+            text-decoration: underline;
         }
+
     }
 
     .dropdown-divider {
