@@ -1,139 +1,1 @@
-<!doctype html>
-<html class="h-100" id="htmlTag" lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Dira GeoSystems</title>
-    <meta content="Dira GeoSystems creates software for producing top quality geodata and the most beautiful maps"
-          name="description">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/dist/css/custom.min.css" rel="stylesheet">
-    <link href="/dist/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-    <link href="/dist/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-    <link href="/dist/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-    <link href="/dist/icons/site.webmanifest" rel="manifest">
-    <link color="#284b9a" href="/dist/icons/safari-pinned-tab.svg" rel="mask-icon">
-    <link href="/dist/icons/favicon.ico" rel="shortcut icon">
-    <link href="https://www.dirageosystems.ch" rel="canonical">
-    <meta content="#ffffff" name="msapplication-TileColor">
-    <meta content="/dist/icons/browserconfig.xml" name="msapplication-config">
-    <meta content="#ffffff" name="theme-color">
-</head>
-
-<body class="d-flex flex-column h-100">
-{% include header.html %}
-<main class="main-container">
-  <div id="background">
-    <img src="../dist/img/Zevreila_Contour.svg" alt="Zevreilahorn contour lines" id="contour-svg">
-  </div>
-  {{ content }}
-</main>
-{% include footer.html %}
-<script src="/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/dist/js/contour.js"></script>
-<script>
-    const sections = document.querySelectorAll("section[id]");
-    window.addEventListener("scroll", navHighlighter);
-    function navHighlighter() {
-        let scrollY = window["pageYOffset"];
-        // Always highlight the current page's nav link
-        const currentPath = window.location.pathname;
-        const currentPage = currentPath.split('/').pop() || 'index.html';
-        // First remove active class from all nav links except language buttons
-        document.querySelectorAll(".navbar a.nav-link:not(.nav-link-lang)").forEach(elem => {
-            elem.classList.remove("active");
-        });
-
-        // Highlight current page link and handle Products dropdown
-        if (currentPage === 'prosuite.html' || currentPage === 'locationfinder.html') {
-            // Highlight the specific product link
-            document.querySelectorAll(`.navbar a.nav-link[href$="${currentPage}"]`).forEach(link => {
-                link.classList.add("active");
-            });
-            // Highlight the Products dropdown toggle
-            document.querySelectorAll('.navbar .dropdown-toggle').forEach(dropdownToggle => {
-                if (!dropdownToggle.classList.contains('nav-link-lang')) {
-                    dropdownToggle.classList.add("active");
-                }
-            });
-        } else {
-            // For non-product pages, just highlight the current page link
-            document.querySelectorAll(`.navbar a.nav-link[href$="${currentPage}"]`).forEach(link => {
-                if (!link.classList.contains('nav-link-lang')) {
-                    link.classList.add("active");
-                }
-            });
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Trigger the navHighlighter on page load to set initial state
-        navHighlighter();
-        const langButtons = document.querySelectorAll('.nav-link-lang');
-        // Check URL parameter first, then fall back to browser language
-        const urlParams = new URLSearchParams(window.location.search);
-        const langParam = urlParams.get('lang');
-        // Only check browser language if no URL parameter exists
-        let selectedLang;
-        if (langParam === 'de' || langParam === 'en') {
-            selectedLang = langParam;
-        } else {
-            const browserLang = navigator.language || navigator.userLanguage;
-            selectedLang = browserLang.startsWith('de') ? 'de' : 'en';
-        }
-
-        // Initialize language on page load
-        updateLanguage(selectedLang);
-        langButtons.forEach(button => {
-            button.addEventListener('click', function (event) {
-                event.preventDefault();
-                const lang = button.getAttribute('data-lang');
-                updateLanguage(lang);
-            });
-        });
-
-        function updateLanguage(lang) {
-            // Update html lang attribute
-            document.getElementById('htmlTag').setAttribute('lang', lang);
-            // Update active state of language buttons
-            document.querySelectorAll('.nav-link-lang').forEach(btn => {
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-
-
-            // Toggle visibility of language-specific elements
-
-            document.querySelectorAll('[class*="lang-"]').forEach(element => {
-                if (element.classList.contains(`lang-${lang}`)) {
-                    element.style.display = '';  // Use default display
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-
-            // Update all navigation links to include the current language
-            document.querySelectorAll('a').forEach(link => {
-                if (link.href && link.href.startsWith(window.location.origin)) {
-                    // Only modify internal links
-                    const url = new URL(link.href);
-                    if (!url.pathname.endsWith('.svg') && !url.pathname.endsWith('.png') && !url.pathname.endsWith('.jpg')) {
-                        // Don't modify image links
-                        url.searchParams.set('lang', lang);
-                        link.href = url.toString();
-                    }
-                }
-            });
-            // Update current URL without reloading
-            const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
-            window.history.replaceState({}, '', url);
-        }
-    });
-</script>
-</body>
-</html>
-
+<!doctype html><html class="h-100" id="htmlTag" lang="en"><head>    <meta charset="utf-8">    <title>Dira GeoSystems</title>    <meta content="Dira GeoSystems creates software for producing top quality geodata and the most beautiful maps"          name="description">    <meta content="width=device-width, initial-scale=1" name="viewport">    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">    <link href="/dist/css/custom.min.css" rel="stylesheet">    <link href="/dist/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">    <link href="/dist/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">    <link href="/dist/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">    <link href="/dist/icons/site.webmanifest" rel="manifest">    <link color="#284b9a" href="/dist/icons/safari-pinned-tab.svg" rel="mask-icon">    <link href="/dist/icons/favicon.ico" rel="shortcut icon">    <link href="https://www.dirageosystems.ch" rel="canonical">    <meta content="#ffffff" name="msapplication-TileColor">    <meta content="/dist/icons/browserconfig.xml" name="msapplication-config">    <meta content="#ffffff" name="theme-color"></head><body class="d-flex flex-column h-100">{% include header.html %}<main class="main-container">    <div id="background">        <img alt="Zevreilahorn contour lines" id="contour-svg" src="../dist/img/Zevreila_Contour.svg">    </div>    {{ content }}</main>{% include footer.html %}<script src="/dist/js/bootstrap.bundle.min.js"></script><script src="/dist/js/contour.js"></script><script src="/dist/js/nav-highlighter.js"></script><script src="/dist/js/language-switcher.js"></script></body></html>
