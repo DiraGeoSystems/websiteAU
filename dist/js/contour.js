@@ -1,8 +1,18 @@
-// JavaScript for progressive scroll-based SVG animation
+// Clean SVG animation solution with adjusted parameters
 document.addEventListener("DOMContentLoaded", function() {
     const svgContainer = document.getElementById("dira");
     const svgImage = document.querySelector("#dira img");
     const svgUrl = svgImage.getAttribute("src");
+
+    // Add the keyframes dynamically
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+    @keyframes initialDraw {
+      from { stroke-dashoffset: 7000; }
+      to { stroke-dashoffset: 0; }
+    }
+  `;
+    document.head.appendChild(styleSheet);
 
     // Fetch the SVG file
     fetch(svgUrl)
@@ -13,126 +23,102 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.text();
         })
         .then(svgContent => {
-            // Create a DOM parser to parse the SVG content
             const parser = new DOMParser();
             const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
             const svgElement = svgDoc.documentElement;
 
-            // Add id to the SVG element
             svgElement.id = "contour-svg";
-
-            // Replace the image with the inline SVG
             svgImage.parentNode.replaceChild(svgElement, svgImage);
 
-            // Now set up the scroll animation since the SVG is now inline
-            setupScrollAnimation();
+            setupAnimation();
         })
         .catch(error => {
             console.error("Error loading SVG:", error);
         });
 
-    function setupScrollAnimation() {
+    function setupAnimation() {
         const svg = document.getElementById("contour-svg");
-        const contourLines = svg.querySelectorAll(".contour");
+        let contourLines = svg.querySelectorAll(".contour");
 
-        console.log(`Found ${contourLines.length} contour lines`);
-
-        // If no contour lines are found, you might need to add the class
+        // If no contour lines are found, add the class to all paths
         if (contourLines.length === 0) {
             const paths = svg.querySelectorAll("path");
             paths.forEach(path => {
                 path.classList.add("contour");
             });
-            console.log(`Added 'contour' class to ${paths.length} path elements`);
+            contourLines = svg.querySelectorAll(".contour");
         }
 
-        const allContours = svg.querySelectorAll(".contour");
+        const allContours = Array.from(contourLines);
 
-        // Set up initial drawing animation through CSS
+        // PHASE 1: Initial Drawing Animation - ADJUSTED TO 4s
         allContours.forEach((contour, index) => {
             contour.style.fill = "none";
-            contour.style.strokeDasharray = "5000";
+            contour.style.strokeDasharray = "7000";
+            contour.style.strokeDashoffset = "7000";
+            contour.style.transition = "none";
 
-            // Initial animation will be handled by CSS, but ensure it's properly set
-            contour.style.animation = "none"; // Reset any existing animations
+            void contour.offsetWidth;
 
-            // Set transition for smooth scroll-based animations later
-            contour.style.transition = "none"; // Will be updated after initial animation
-
-            // Apply the CSS class for initial animation
-            contour.classList.add("initial-draw");
-
-            // Staggered delays based on index
             const groupIndex = Math.floor(index / 10);
             const delay = 0.2 * (groupIndex + 1);
-            contour.style.animationDelay = `${delay}s`;
+
+            // ANIMATION DURATION REDUCED TO 4s
+            contour.style.animation = `initialDraw 4s forwards ease-in-out ${delay}s`;
         });
 
-        // After initial animation completes, set up for scroll-based animation
+        // PHASE 2: Switch to scroll-based animation after initial drawing completes
         setTimeout(() => {
-            allContours.forEach((contour, index) => {
-                // Remove initial animation
-                contour.classList.remove("initial-draw");
+            allContours.forEach((contour) => {
+                contour.style.animation = "none";
 
-                // Prepare for scroll-based animation
-                contour.style.transition = "stroke-dashoffset 0.1s linear";
+                // SCROLL ANIMATION SPEED - ADJUST THE 0.1s VALUE TO CHANGE RESPONSIVENESS
+                contour.style.transition = "stroke-dashoffset 0.05s linear";
 
-                // Start with fully drawn lines (strokeDashoffset = 0)
                 contour.style.strokeDashoffset = "0";
             });
 
-            // Now enable the scroll-based animation
+            setupScrollHandler(allContours);
+
+        }, 4500); // Adjusted timing for 4s animation + delays
+
+        function setupScrollHandler(contours) {
+            function handleScroll() {
+                const section = document.getElementById("dira");
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // SCROLL TRIGGER POINT CALCULATION
+                // Adjust the formula below to change when and how fast the animation responds to scrolling
+                // 1 - ((rect.top + rect.height / 2) / (viewportHeight + rect.height / 2))
+                // This calculates a value from 0 (when section enters viewport) to 1 (when it leaves viewport)
+
+                // You can adjust the thresholds by modifying this formula
+                // For example, to start the animation sooner, you could use:
+                // const positionFactor = Math.max(0, Math.min(1, 1 - ((rect.top + rect.height * 0.7) / (viewportHeight + rect.height * 0.7))));
+
+                const positionFactor = Math.max(0, Math.min(1,
+                    1 - ((rect.top + rect.height * 0.9) / (viewportHeight + rect.height * 0.9))
+                ));
+
+                const progress = positionFactor;
+
+                // Apply the animation to each contour with staggered effect
+                contours.forEach((contour, index) => {
+                    const groupIndex = Math.floor(index / 10);
+                    // STAGGER AMOUNT - Adjust 0.05 to change how staggered the effect is
+                    const delayFactor = 0.005 * groupIndex;
+
+                    const adjustedProgress = Math.max(0, Math.min(1, progress - delayFactor));
+                    // ADJUSTED TO 5000 to match the new dasharray value
+                    const dashOffset = adjustedProgress * 7000;
+
+                    contour.style.strokeDashoffset = dashOffset.toString();
+                });
+            }
+
             window.addEventListener("scroll", handleScroll);
-            // Initial check
             handleScroll();
-        }, 5000); // Wait for initial animation to complete (8s animation + 1s buffer)
-
-        function handleScroll() {
-            const section = document.getElementById("dira");
-            const rect = section.getBoundingClientRect();
-
-            // Calculate how much of the section has been scrolled
-            // When section is at top of viewport, progress = 0 (fully drawn)
-            // When section is scrolled away, progress = 1 (fully erased)
-            const sectionHeight = section.offsetHeight;
-            const viewportHeight = window.innerHeight;
-
-            // Calculate scroll progress (0 to 1)
-            let scrollProgress = 0;
-
-            // If section is below viewport
-            if (rect.top >= viewportHeight) {
-                scrollProgress = 0; // Not scrolled yet, fully drawn
-            }
-            // If section is above viewport
-            else if (rect.bottom <= 0) {
-                scrollProgress = 1; // Fully scrolled past, fully erased
-            }
-            // If section is partially in viewport
-            else {
-                // Calculate based on how much of section has moved past top of viewport
-                // This creates a smooth transition as user scrolls through the section
-                scrollProgress = Math.max(0, Math.min(1, -rect.top / (sectionHeight - viewportHeight / 2)));
-            }
-
-            console.log(`Scroll progress: ${scrollProgress.toFixed(2)}, Top: ${rect.top.toFixed(0)}, Bottom: ${rect.bottom.toFixed(0)}`);
-
-            // Apply the scroll progress to each contour line
-            // When progress is 0, lines are fully drawn (strokeDashoffset = 0)
-            // When progress is 1, lines are fully erased (strokeDashoffset = 10000)
-            allContours.forEach((contour, index) => {
-                // Add slight delay based on index for staggered effect
-                const groupIndex = Math.floor(index / 10);
-                const delayFactor = 0.05 * groupIndex;
-
-                // Adjust progress for this specific contour to create staggered effect
-                // Earlier contours respond sooner to scrolling
-                const adjustedProgress = Math.max(0, Math.min(1, scrollProgress - delayFactor));
-
-                // Map progress (0-1) to strokeDashoffset (0-10000)
-                const dashOffset = adjustedProgress * 8000;
-                contour.style.strokeDashoffset = dashOffset.toString();
-            });
         }
     }
 });
