@@ -20,7 +20,10 @@
   </head>
   <body class="d-flex flex-column h-100">
     {% include header.html %}
-    <main class="main-container background-color-1">
+    <main class="main-container">
+      <div id="background">
+        <img src="../dist/img/Zevreila_Contour.svg" alt="Zevreilahorn contour lines" id="contour-svg">
+      </div>
       {{ content }}
     </main>
     {% include footer.html %}

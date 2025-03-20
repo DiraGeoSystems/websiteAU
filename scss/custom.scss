@@ -48,12 +48,48 @@ body {
     min-height: 75rem;
 }
 
+/* CSS for the background contour setup */
 .main-container {
-    padding-top: 6rem;
+    position: relative;
+    min-height: 100vh; /* Ensures the container is at least as tall as the viewport */
+    /* Other styles you might already have */
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Places it behind content */
+    pointer-events: none; /* Allows clicking through to content */
+    overflow: hidden; /* Prevents scrollbars */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: var(--general-bg-linen);
+}
+
+#background img, #contour-svg {
+    width: auto;
+    height: 100%;
+    min-width: 100%; /* Ensures it's at least as wide as the container */
+    object-fit: cover; /* Maintains aspect ratio while covering the container */
+    object-position: center; /* Centers the SVG */
+}
+
+/* Make sure content appears above the background */
+.main-container > *:not(#background) {
+    position: relative;
+    z-index: 1;
 }
 
 .box {
     scroll-margin: 120px;
+}
+
+.transparent-background {
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .background-color-1 {
@@ -350,6 +386,10 @@ header {
     }
 }
 
+#dira {
+    height: 500px;
+}
+
 #team {
     h3 {
         text-transform: none;
@@ -417,17 +457,4 @@ header {
         color: var(--primary-dira-cobalt) !important;
     }
 }
-
-//#contour-svg {
-//    mask-image: linear-gradient(to bottom,
-//            transparent 0%,
-//            black 10%,
-//            black 90%,
-//            transparent 100%);
-//    -webkit-mask-image: linear-gradient(to bottom,
-//            transparent 0%,
-//            black 10%,
-//            black 90%,
-//            transparent 100%);
-//}
 

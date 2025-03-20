@@ -1,7 +1,14 @@
-// Clean SVG animation solution with adjusted parameters
 document.addEventListener("DOMContentLoaded", function() {
-    const svgContainer = document.getElementById("dira");
-    const svgImage = document.querySelector("#dira img");
+    const svgContainer = document.getElementById("background");
+
+    // Exit early if container doesn't exist
+    if (!svgContainer) return;
+
+    const svgImage = document.querySelector("#background img, #background #contour-svg");
+
+    // Exit early if there's no SVG image
+    if (!svgImage) return;
+
     const svgUrl = svgImage.getAttribute("src");
 
     // Add the keyframes dynamically
@@ -30,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
             svgElement.id = "contour-svg";
             svgImage.parentNode.replaceChild(svgElement, svgImage);
 
+            // Check if there are any contour elements before proceeding
+            const contourElements = svgElement.querySelectorAll(".contour, [id^='C'], [id^='D']");
+            if (contourElements.length === 0) {
+                console.log("No contour elements found, aborting animation setup");
+                return;
+            }
+
             setupAnimation();
         })
         .catch(error => {
@@ -38,87 +52,149 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function setupAnimation() {
         const svg = document.getElementById("contour-svg");
-        let contourLines = svg.querySelectorAll(".contour");
+        if (!svg) return;
 
-        // If no contour lines are found, add the class to all paths
+        // Select contours by both class and ID pattern
+        let contourLines = svg.querySelectorAll(".contour, [id^='C'], [id^='D']");
+
+        // If no contour lines are found, abort
         if (contourLines.length === 0) {
-            const paths = svg.querySelectorAll("path");
-            paths.forEach(path => {
-                path.classList.add("contour");
-            });
-            contourLines = svg.querySelectorAll(".contour");
+            console.log("No contour lines found after replacement");
+            return;
         }
 
         const allContours = Array.from(contourLines);
 
-        // PHASE 1: Initial Drawing Animation - ADJUSTED TO 4s
-        allContours.forEach((contour, index) => {
+        // Store original positions
+        allContours.forEach(contour => {
+            // Extract contour level from ID (e.g., C1, D36)
+            const id = contour.getAttribute('id') || '';
+            let level = 0;
+
+            if (id.startsWith('C') || id.startsWith('D')) {
+                level = parseInt(id.substring(1), 10) || 0;
+            }
+
+            // Store the level as a data attribute for easy access
+            contour.dataset.level = level;
+
+            // Store original transform or create one if it doesn't exist
+            const originalTransform = contour.getAttribute('transform') || '';
+            contour.dataset.originalTransform = originalTransform;
+
+            // Set up for the drawing animation
             contour.style.fill = "none";
             contour.style.strokeDasharray = "7000";
             contour.style.strokeDashoffset = "7000";
             contour.style.transition = "none";
+        });
 
+        // Initial drawing animation
+        allContours.forEach((contour, index) => {
             void contour.offsetWidth;
 
             const groupIndex = Math.floor(index / 10);
             const delay = 0.2 * (groupIndex + 1);
 
-            // ANIMATION DURATION REDUCED TO 4s
             contour.style.animation = `initialDraw 4s forwards ease-in-out ${delay}s`;
         });
 
-        // PHASE 2: Switch to scroll-based animation after initial drawing completes
+        // Switch to scroll-based animation after initial drawing completes
         setTimeout(() => {
             allContours.forEach((contour) => {
                 contour.style.animation = "none";
-
-                // SCROLL ANIMATION SPEED - ADJUST THE 0.1s VALUE TO CHANGE RESPONSIVENESS
-                contour.style.transition = "stroke-dashoffset 0.05s linear";
-
-                contour.style.strokeDashoffset = "0";
+                contour.style.transition = "transform 0.05s linear";
+                contour.style.strokeDashoffset = "0"; // Keep lines fully drawn
             });
 
+            // Set up just the parallax (no undrawing)
             setupScrollHandler(allContours);
 
-        }, 4500); // Adjusted timing for 4s animation + delays
+        }, 4500); // Wait for initial drawing animation to complete
 
         function setupScrollHandler(contours) {
+            // Calculate max level for normalization
+            let maxLevel = 0;
+            contours.forEach(contour => {
+                const level = parseInt(contour.dataset.level, 10) || 0;
+                maxLevel = Math.max(maxLevel, level);
+            });
+
             function handleScroll() {
-                const section = document.getElementById("dira");
+                const section = document.getElementById("background");
+                if (!section) return;
+
                 const rect = section.getBoundingClientRect();
                 const viewportHeight = window.innerHeight;
 
-                // SCROLL TRIGGER POINT CALCULATION
-                // Adjust the formula below to change when and how fast the animation responds to scrolling
-                // 1 - ((rect.top + rect.height / 2) / (viewportHeight + rect.height / 2))
-                // This calculates a value from 0 (when section enters viewport) to 1 (when it leaves viewport)
+                // Calculate scroll progress factor with much shorter range
+                // This will complete the effect after approximately two scroll motions
 
-                // You can adjust the thresholds by modifying this formula
-                // For example, to start the animation sooner, you could use:
-                // const positionFactor = Math.max(0, Math.min(1, 1 - ((rect.top + rect.height * 0.7) / (viewportHeight + rect.height * 0.7))));
+                // Calculate position relative to viewport center
+                // -1 when completely above viewport, 0 at center, 1 when completely below
+                const viewportCenter = window.innerHeight / 2;
+                const elementCenter = rect.top + (rect.height / 2);
+                const distanceFromCenter = (elementCenter - viewportCenter) / (viewportCenter + rect.height/2);
 
-                const positionFactor = Math.max(0, Math.min(1,
-                    1 - ((rect.top + rect.height * 0.9) / (viewportHeight + rect.height * 0.9))
-                ));
+                // Create a normalized value that goes from 0 to 1 as element passes through viewport
+                // When element is at the top of viewport, value is close to 0
+                // When element is centered, value is 0.5
+                // When element is at bottom of viewport, value is close to 1
+                let scrollPosition = 0.5 - (distanceFromCenter / 2);
 
-                const progress = positionFactor;
+                // Apply a multiplier to make it complete faster (after ~2 scrolls)
+                // We'll adjust from center position (0.5)
+                scrollPosition = 0.5 + (scrollPosition - 0.5) * 5;
 
-                // Apply the animation to each contour with staggered effect
-                contours.forEach((contour, index) => {
-                    const groupIndex = Math.floor(index / 10);
-                    // STAGGER AMOUNT - Adjust 0.05 to change how staggered the effect is
-                    const delayFactor = 0.005 * groupIndex;
+                // Clamp the value between 0 and 1
+                const positionFactor = Math.max(0, Math.min(1, scrollPosition));
 
-                    const adjustedProgress = Math.max(0, Math.min(1, progress - delayFactor));
-                    // ADJUSTED TO 5000 to match the new dasharray value
-                    const dashOffset = adjustedProgress * 7000;
+                // Apply parallax effect to all contours with staggered movement
+                contours.forEach((contour) => {
+                    const id = contour.getAttribute('id') || '';
+                    const level = parseInt(contour.dataset.level, 10) || 0;
 
-                    contour.style.strokeDashoffset = dashOffset.toString();
+                    // Keep lines fully drawn
+                    contour.style.strokeDashoffset = "0";
+
+                    // Create a non-linear curve for movement amount
+                    // First contour (level 1) moves the most
+                    // Movement gradually decreases for higher numbered contours
+
+                    let movementAmount;
+                    if (level <= 1) {
+                        // First contour gets maximum movement
+                        movementAmount = 120;
+                    } else if (level <= 6) {
+                        // Contours 2-6 get gradually less movement
+                        // First contour moves 2x the amount of the sixth contour
+                        movementAmount = 120 - ((level - 1) * (60 / 5)); // Goes from 120 to 60
+                    } else {
+                        // All remaining contours gradually fade to 10px movement
+                        // Calculate on a curve from 60px to 10px
+                        const remainingLevels = maxLevel - 6;
+                        const positionInRemaining = level - 6;
+                        const ratio = remainingLevels > 0 ? positionInRemaining / remainingLevels : 0;
+                        movementAmount = 60 - (ratio * 50); // 60px down to 10px
+                    }
+
+                    // Apply the parallax offset
+                    const yOffset = -movementAmount * positionFactor;
+
+                    // Apply the transform, preserving any original transform
+                    const originalTransform = contour.dataset.originalTransform || '';
+
+                    // Add the translation to any existing transform
+                    if (originalTransform) {
+                        contour.setAttribute('transform', `${originalTransform} translate(0,${yOffset})`);
+                    } else {
+                        contour.setAttribute('transform', `translate(0,${yOffset})`);
+                    }
                 });
             }
 
             window.addEventListener("scroll", handleScroll);
-            handleScroll();
+            handleScroll(); // Initial call to set positions
         }
     }
 });
