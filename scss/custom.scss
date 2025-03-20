@@ -77,6 +77,16 @@ body {
     object-position: center; /* Centers the SVG */
 }
 
+#background svg {
+    width: 100%;
+    height: 100%;
+}
+
+#background svg g {
+    width: 100%;
+    height: 100%;
+}
+
 /* Make sure content appears above the background */
 .main-container > *:not(#background) {
     position: relative;

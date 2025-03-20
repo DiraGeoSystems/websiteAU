@@ -37,6 +37,22 @@ document.addEventListener("DOMContentLoaded", function() {
             svgElement.id = "contour-svg";
             svgImage.parentNode.replaceChild(svgElement, svgImage);
 
+            if (svgElement) {
+                // Make sure the SVG has a viewBox
+                if (!svgElement.getAttribute('viewBox')) {
+                    const width = svgElement.getAttribute('width') || 100;
+                    const height = svgElement.getAttribute('height') || 100;
+                    svgElement.setAttribute('viewBox', `0 0 ${width} ${height}`);
+                }
+
+                // Set width and height to 100%
+                svgElement.setAttribute('width', '100%');
+                svgElement.setAttribute('height', '100%');
+
+                // Set preserveAspectRatio to cover the area
+                svgElement.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+            }
+
             // Check if there are any contour elements before proceeding
             const contourElements = svgElement.querySelectorAll(".contour, [id^='C'], [id^='D']");
             if (contourElements.length === 0) {
