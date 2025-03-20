@@ -256,10 +256,11 @@ header {
 
     .dropdown-menu {
         border-color: var(--sec-deep-ocean);
-        border-radius: 17% 83% 17% 83% / 17% 17% 83% 83%;
+        border-radius: 17px;
         margin-top: 25px;
         min-width: 250px;
         padding: 0;
+        background-color: var(--general-bg-linen);
 
         .nav-item-1 {
             &:last-child {
@@ -271,7 +272,7 @@ header {
     }
 
     .dropdown-item {
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid var(--sec-deep-ocean);
         padding-bottom: 10px;
         padding-top: 10px;
 
@@ -401,13 +402,13 @@ header {
 
     @media (max-width:767px) {
         .border-bottom-xs {
-            border-bottom: 0px solid #929292;
+            border-bottom: 0 solid #929292;
         }
     }
 
     @media (max-width:991px) {
         .border-bottom-sm {
-            border-bottom: 0px solid #929292;
+            border-bottom: 0 solid #929292;
         }
     }
 }
