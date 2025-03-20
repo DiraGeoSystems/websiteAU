@@ -49,11 +49,7 @@ body {
 }
 
 .main-container {
-    padding-top: 10.5rem;
-}
-
-.landing-page {
-    min-height: 80vh;
+    padding-top: 6rem;
 }
 
 .box {
@@ -169,6 +165,7 @@ section {
     }
 }
 
+
 header {
     font-size: 18px;
     text-transform: uppercase;
@@ -184,6 +181,23 @@ header {
 
 .navbar {
     background-color: var(--general-bg-linen);
+
+    /* Add gradient overlay to bottom of navbar */
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -20px;
+        height: 20px; /* Adjust height as needed */
+        background: linear-gradient(
+                        to bottom,
+                        var(--general-bg-linen),  /* Solid background color at top */
+                        rgba(255, 255, 255, 0) /* Fully transparent at bottom */
+        );
+        pointer-events: none; /* Allow clicks to pass through */
+        z-index: 10; /* Ensure it's above the main page content */
+    }
 
     .navbar-nav {
         .nav-link {
@@ -380,7 +394,7 @@ header {
 }
 
 .footer {
-    background-color: var(--acc-amber-gold);
+    background-color: var(--acc-sec-pale-honey);
     color: var(--dark-2-black);
     font-size: 16px;
 
@@ -403,4 +417,17 @@ header {
         color: var(--primary-dira-cobalt) !important;
     }
 }
+
+//#contour-svg {
+//    mask-image: linear-gradient(to bottom,
+//            transparent 0%,
+//            black 10%,
+//            black 90%,
+//            transparent 100%);
+//    -webkit-mask-image: linear-gradient(to bottom,
+//            transparent 0%,
+//            black 10%,
+//            black 90%,
+//            transparent 100%);
+//}
 
