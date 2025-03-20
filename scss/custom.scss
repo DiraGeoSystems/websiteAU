@@ -52,7 +52,7 @@ body {
 .main-container {
     position: relative;
     min-height: 100vh; /* Ensures the container is at least as tall as the viewport */
-    /* Other styles you might already have */
+    margin-top: 15vh;
 }
 
 #background {
@@ -437,6 +437,8 @@ header {
     background-color: var(--acc-sec-pale-honey);
     color: var(--dark-2-black);
     font-size: 16px;
+    position: relative; /* Make sure footer is in normal flow */
+    z-index: 1; /* Ensure it's above the background */
 
     a {
         color: var(--dark-2-black);
