@@ -4,16 +4,11 @@ window.addEventListener("scroll", navHighlighter);
 function navHighlighter() {
     let scrollY = window["pageYOffset"];
     
-    // Always highlight the current page's nav link
+    // Get current page info
     const currentPath = window.location.pathname;
     const currentPage = currentPath.split('/').pop() || 'index.html';
     
-    // First remove active class from all nav links except language buttons
-    document.querySelectorAll(".navbar a.nav-link:not(.nav-link-lang)").forEach(elem => {
-        elem.classList.remove("active");
-    });
-    
-    // Highlight current page link and handle Products dropdown
+    // Handle Products dropdown and current page highlighting
     if (currentPage === 'prosuite.html' || currentPage === 'locationfinder.html') {
         // Highlight the specific product link
         document.querySelectorAll(`.navbar a.nav-link[href$="${currentPage}"]`).forEach(link => {
@@ -27,7 +22,7 @@ function navHighlighter() {
             }
         });
     } else {
-        // For non-product pages, just highlight the current page link
+        // For non-product pages, highlight the current page link
         document.querySelectorAll(`.navbar a.nav-link[href$="${currentPage}"]`).forEach(link => {
             if (!link.classList.contains('nav-link-lang')) {
                 link.classList.add("active");
