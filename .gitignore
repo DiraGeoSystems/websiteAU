@@ -3,3 +3,5 @@
 _site
 .idea
 .jekyll-cache
+/dist/css/custom.min.css
+/dist/css/custom.min.css.map
