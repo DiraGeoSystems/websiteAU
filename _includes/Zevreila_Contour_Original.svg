@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
         "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 3334 2500"
-     version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"><g><path class="contour" id="D35" d="M0,154.636l26.479,-27.031l28.173,-27.411l18.274,-15.99l19.035,-15.99l19.798,-15.99l19.035,-15.229l20.559,-14.467l33.792,-22.528" style="fill:none;fill-rule:nonzero;stroke:#ffe5ad;stroke-width:2.5px;"/><path
+     version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="contour-svg" preserveAspectRatio="xMidYMid slice"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"><g transform="scale(1.05)"><path class="contour" id="D35" d="M0,154.636l26.479,-27.031l28.173,-27.411l18.274,-15.99l19.035,-15.99l19.798,-15.99l19.035,-15.229l20.559,-14.467l33.792,-22.528" style="fill:none;fill-rule:nonzero;stroke:#ffe5ad;stroke-width:2.5px;"/><path
         class="contour" id="D34"
         d="M0,300.714l3.636,-4.072l48.731,-58.63l16.752,-19.035l17.512,-18.275l18.275,-17.512l18.274,-16.752l19.036,-16.751l19.797,-15.99l16.751,-12.945l17.513,-12.182l35.787,-24.366l32.742,-20.559l15.99,-9.898l17.512,-9.137l34.265,-17.513l55.787,-27.097"
         style="fill:none;fill-rule:nonzero;stroke:#ffe5ad;stroke-width:2.5px;"/><path class="contour" id="D33"
