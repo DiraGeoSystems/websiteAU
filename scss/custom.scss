@@ -518,3 +518,15 @@ header {
   color: #333;
   font-size: 14px;
 }
+
+.aligned-list {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.aligned-list li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
