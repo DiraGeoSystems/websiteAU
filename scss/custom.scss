@@ -497,4 +497,24 @@ header {
     font-weight: bold;
     color: var(--primary-dira-cobalt) !important;
   }
+
+}
+
+.code-box {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.code-box pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.code-box code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: #333;
+  font-size: 14px;
 }
