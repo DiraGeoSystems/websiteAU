@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const groupIndex = Math.floor(index / 10);
             const delay = 0.2 * (groupIndex + 1);
 
-            contour.style.animation = `initialDraw 6s forwards ease-in-out ${delay}s`;
+            contour.style.animation = `initialDraw 4s forwards ease-in-out ${delay}s`;
         });
 
         // Switch to scroll-based animation after initial drawing completes
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Set up just the parallax (no undrawing)
             setupScrollHandler(allContours);
 
-        }, 6000); // Wait for initial drawing animation to complete
+        }, 4000); // Wait for initial drawing animation to complete
 
         function setupScrollHandler(contours) {
             // Calculate max level for normalization
