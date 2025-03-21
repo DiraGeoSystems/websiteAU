@@ -89,30 +89,53 @@ document.addEventListener("DOMContentLoaded", function() {
             const scrollY = window.scrollY;
             const viewportHeight = window.innerHeight;
 
-            // Calculate scroll ratio (0 to 1)
-            const scrollRatio = Math.min(1, Math.max(0, (scrollY / viewportHeight) * 2));
+            // Calculate how many "screens" we've scrolled
+            const screensScrolled = scrollY / viewportHeight;
+
+            // Define the convergence threshold - after this many screens, all lines move at the same rate
+            const convergenceThreshold = 4;
+
+            // Calculate convergence ratio (0 to 1)
+            // 0 = full differential movement, 1 = uniform movement
+            const convergenceRatio = Math.min(1, Math.max(0, screensScrolled / convergenceThreshold));
+
+            // Base movement amount for all contours
+            const baseMovement = 120; // Maximum movement for any contour
 
             // Apply parallax effect based on level
             contours.forEach(contour => {
                 const level = parseInt(contour.dataset.level, 10) || 0;
 
-                // Calculate movement amount based on level
-                let movementAmount;
+                // Calculate movement differential based on level (becomes smaller as we scroll more)
+                let movementReduction;
                 if (level <= 1) {
-                    movementAmount = 120; // Maximum movement
+                    movementReduction = 0; // No reduction for lowest levels
                 } else if (level <= 6) {
-                    movementAmount = 120 - ((level - 1) * (60 / 5)); // 120 to 60
+                    // Reduction from 0 to 60px for levels 2-6
+                    const initialReduction = ((level - 1) * (60 / 5));
+                    // As convergenceRatio approaches 1, the reduction approaches 0
+                    movementReduction = initialReduction * (1 - convergenceRatio);
                 } else {
+                    // For higher levels: reduction from 60px to 110px initially
                     const remainingLevels = maxLevel - 6;
                     const positionInRemaining = level - 6;
                     const ratio = remainingLevels > 0 ? positionInRemaining / remainingLevels : 0;
-                    movementAmount = 60 - (ratio * 50); // 60 to 10
+
+                    // Initial reduction (60 to 110)
+                    const initialReduction = 60 + (ratio * 50);
+                    // As convergenceRatio approaches 1, the reduction approaches 0
+                    movementReduction = initialReduction * (1 - convergenceRatio);
                 }
 
-                // Apply parallax transformation
-                const yOffset = -movementAmount * scrollRatio;
-                const originalTransform = contour.dataset.originalTransform || '';
+                // Calculate final movement amount that converges as we scroll
+                const movementAmount = baseMovement - movementReduction;
 
+                // Apply a scroll factor that continues beyond 1.0 (unlike the original ratio)
+                // This allows continuous movement even after convergence
+                const yOffset = -movementAmount * (scrollY / viewportHeight);
+
+                // Apply transform
+                const originalTransform = contour.dataset.originalTransform || '';
                 if (originalTransform) {
                     contour.setAttribute('transform', `${originalTransform} translate(0,${yOffset})`);
                 } else {
