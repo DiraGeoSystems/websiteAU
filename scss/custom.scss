@@ -7,6 +7,7 @@
   --dark-1-deep-space: #232933;
   --dark-2-black: #01040a;
   --general-bg-linen: #fffcfa;
+  --general-bg-linen-transparent: rgba(255, 252, 250, 0.8);
   --acc-chestnut: #663C35;
   --acc-terracotta: #C43D25;
   --acc-blush: #BFA8A4;
@@ -403,6 +404,29 @@ header {
   }
 }
 
+
+/* Style for product cards on home */
+.product-card {
+  background-color: var(--general-bg-linen-transparent);
+  border: 2px solid var(--acc-sec-pale-honey);
+  border-radius: 40px;
+  width: 220px;
+  height: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-logo {
+  height: 120px;
+  width: 120px;
+}
+
+
 .carousel-item {
   height: 32rem;
 }
@@ -454,10 +478,6 @@ header {
   img {
     height: 50px;
   }
-}
-
-#dira {
-  height: 500px;
 }
 
 #team {
