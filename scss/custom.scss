@@ -406,24 +406,21 @@ header {
 
 
 /* Style for product cards on home */
-.product-card {
-  background-color: var(--general-bg-linen-transparent);
-  border: 2px solid var(--sec-deep-ocean);
-  border-radius: 40px;
-  width: 220px;
-  height: 220px;
+.product-link {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
   text-decoration: none;
 }
 
-.product-card:hover {
+.product-link:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-logo {
-  height: 120px;
-  width: 120px;
+  height: 90px;
+  width: 90px;
 }
 
 
