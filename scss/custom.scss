@@ -66,6 +66,12 @@ h1 {
 
 }
 
+.standout-statement {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+
 /* CSS for the background contour setup */
 .main-container {
   position: relative;
@@ -171,7 +177,7 @@ section {
   h2 {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -231,6 +237,11 @@ section {
   margin-top: 5rem;
 }
 
+.px-6 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .my-md {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -258,6 +269,11 @@ section {
   .my-lg {
     margin-top: 12rem;
     margin-bottom: 12rem;
+  }
+
+  .px-6 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
