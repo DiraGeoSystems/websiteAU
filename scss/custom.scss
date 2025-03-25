@@ -690,10 +690,11 @@ i.product-detail-name {
 .book-demo-btn {
   display: inline-block;
   padding: 20px 30px;
-  background-color: var(--primary-dira-cobalt);
-  color: white;
+  background-color: var(--sec-deep-ocean);
+  color: var(--general-bg-linen);
   text-decoration: none;
   border-radius: 40px;
+  border: none;
   font-weight: bold;
   font-weight: 600;
   font-size: 20px;
@@ -703,11 +704,11 @@ i.product-detail-name {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
-  border: none;
+
 }
 
 .book-demo-btn:hover {
-  background-color: var(--sec-deep-ocean);
+  background-color: var(--primary-dira-cobalt);
   opacity: 1 !important;
   color: white;
   text-decoration: none;
