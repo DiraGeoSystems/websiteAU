@@ -7,7 +7,7 @@
   --dark-1-deep-space: #232933;
   --dark-2-black: #01040a;
   --general-bg-linen: #ffffff;
-  --general-bg-linen-transparent: rgba(255, 252, 250, 0.8);
+  --general-bg-linen-transparent: rgba(255, 255, 255, 0.8);
   --acc-chestnut: #663C35;
   --acc-terracotta: #C43D25;
   --acc-blush: #BFA8A4;
@@ -277,6 +277,10 @@ header {
 
 .navbar {
   background-color: var(--general-bg-linen);
+  // If your want the header to be slightly transparent and white on hover:
+  //&:hover {
+  //  background-color: var(--general-bg-linen);
+  //}
 
   /* Add gradient overlay to bottom of navbar */
   &::after {
