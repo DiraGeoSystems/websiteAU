@@ -748,4 +748,14 @@ i.product-detail-name {
   object-fit: cover;
 }
 
+.alt-highlight{
+  color: var(--primary-dira-cobalt);
+  text-decoration: none !important;
+}
+
+.alt-highlight:hover{
+  color: var(--sec-deep-ocean);
+  font-weight: bold;
+}
+
 
