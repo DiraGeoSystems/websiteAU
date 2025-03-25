@@ -443,6 +443,9 @@ header {
 
 
 /* Style for product links on home */
+#dira-products {
+  min-height: 260px;
+}
 .product-link {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: "Lato", sans-serif;
