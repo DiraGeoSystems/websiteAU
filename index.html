@@ -61,7 +61,7 @@ title: Dira GeoSystems
     <div class="container">
         <div class="row align-items-center">
             <!-- Text content on the left -->
-            <div class="col-md-6 px-6 text-center">
+            <div class="col-md-6 px-4 px-md-5 px-lg-6 text-center">
                 <h2 class="lang-en">Our Mission</h2>
                 <p class="lang-en standout-statement">With our products, we elevate geospatial data production, improve data quality, and
                     inspire the creation of impactful, striking maps through innovative software solutions.</p>
@@ -83,18 +83,77 @@ title: Dira GeoSystems
 
 
 <section id="solutions" class="background-color-1 py-5 mt-6 mb-6">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="p-3">
-                    <h3 class="lang-de">Präzision trifft Innovation</h3>
-                    <h3 class="lang-en">Precision Meets Innovation</h3>
-                    <p class="lang-de">Unsere Kartierungslösungen verbinden traditionelle Vermessungsgenauigkeit mit modernster Technologie. Wir bieten massgeschneiderte Lösungen für Behörden, Unternehmen und Forschungseinrichtungen, die auf präzise Geodaten angewiesen sind.</p>
-                    <p class="lang-en">Our mapping solutions combine traditional surveying accuracy with cutting-edge technology. We provide customized solutions for government agencies, businesses, and research institutions that rely on precise geodata.</p>
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Our Solutions</h2>
+
+        <!-- Centered Horizontal tabs -->
+        <ul class="nav nav-tabs mb-4 justify-content-center" id="productTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="product1-tab" data-bs-toggle="tab" data-bs-target="#product1" type="button" role="tab" aria-controls="ProSuite Carto" aria-selected="true">ProSuite <i class="product-detail-name">Carto</i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="product2-tab" data-bs-toggle="tab" data-bs-target="#product2" type="button" role="tab" aria-controls="ProSuite Quality Assurance" aria-selected="false">ProSuite <i class="product-detail-name">QA</i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="product3-tab" data-bs-toggle="tab" data-bs-target="#product3" type="button" role="tab" aria-controls="ProSuite Edit Tools" aria-selected="false">ProSuite <i class="product-detail-name">EditTools</i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="product4-tab" data-bs-toggle="tab" data-bs-target="#product4" type="button" role="tab" aria-controls="LocationFinder" aria-selected="false">LocationFinder</button>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content" id="productTabsContent">
+            <!-- Product 1 -->
+            <div class="tab-pane fade show active" id="product1" role="tabpanel" aria-labelledby="product1-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-md-5 px-lg-6">
+                        <p class="standout-statement lang-en">Produce beautiful and accurate maps with confidence.</p>
+                        <p class="standout-statement lang-de">Erstellen Sie mühelos schöne und präzise Karten.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/dist/img/main/spiez_coastline.jpg" alt="ProSuite Carto" class="product-image fade-in img-fluid rounded">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <img src="dist/img/main/landwasser_viaduct.jpg" alt="Precision Mapping Solutions" class="img-fluid rounded">
+
+            <!-- Product 2 -->
+            <div class="tab-pane fade" id="product2" role="tabpanel" aria-labelledby="product2-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-md-5 px-lg-6">
+                        <p class="standout-statement lang-en">Produce beautiful and accurate maps with confidence.</p>
+                        <p class="standout-statement lang-de">Produce beautiful and accurate maps with confidence</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/dist/img/main/landwasser_viaduct.jpg" alt="ProSuite Quality Assurance" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="tab-pane fade" id="product3" role="tabpanel" aria-labelledby="product3-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-md-5 px-lg-6">
+                        <p class="standout-statement lang-en">Produce beautiful and accurate maps with confidence</p>
+                        <p class="standout-statement lang-de">Produce beautiful and accurate maps with confidence</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="dist/img/main/tractor_top.jpg" alt="ProSuite Edit Tools" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="tab-pane fade" id="product4" role="tabpanel" aria-labelledby="product4-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-md-5 px-lg-6">
+                        <p class="standout-statement lang-en">Unlock your location data with our powerful search engine.</p>
+                        <p class="standout-statement lang-de">Erschliessen Sie Ihre Standortdaten mit unserer leistungsstarken Suchmaschine.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/dist/img/main/zurich_aerial.jpg" alt="LocationFinder" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

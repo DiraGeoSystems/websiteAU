@@ -69,8 +69,25 @@ h1 {
 .standout-statement {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 20px;
 }
+
+@media (min-width: 992px) {
+  .standout-statement {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .standout-statement {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+  }
+}
+
 
 /* CSS for the background contour setup */
 .main-container {
@@ -213,11 +230,6 @@ section {
     padding: 0;
   }
 
-  li::before {
-    content: "—";
-    padding-right: 10px;
-  }
-
   .arrow li:before {
     content: ">";
     font-weight: bold;
@@ -237,7 +249,7 @@ section {
   margin-top: 5rem;
 }
 
-.px-6 {
+.px-lg-6 {
   padding-left: 4rem;
   padding-right: 4rem;
 }
@@ -425,13 +437,19 @@ header {
 }
 
 
-/* Style for product cards on home */
+/* Style for product links on home */
 .product-link {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 30px;
   text-decoration: none;
+}
+
+i.product-detail-name {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .product-link:hover {
@@ -441,6 +459,59 @@ header {
 .product-logo {
   height: 90px;
   width: 90px;
+}
+
+/* Style for tabs */
+.nav-tabs {
+  border-bottom: unset;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: -2px;
+  border: none;
+  color: var(--dark-1-deep-space);
+  padding: 12px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-dira-cobalt);
+  background-color: transparent;
+  border-bottom: 3px solid var(--primary-dira-cobalt);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid var(--primary-dira-cobalt);
+}
+
+.nav-tabs .nav-item {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+.tab-content {
+  padding: 30px 20px;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 
@@ -597,6 +668,11 @@ header {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+
+  ::before {
+    content: "—";
+    padding-right: 10px;
+  }
 }
 
 @media (max-width: 767px) {
