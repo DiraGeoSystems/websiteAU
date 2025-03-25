@@ -668,11 +668,15 @@ i.product-detail-name {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  position: relative;
+  padding-left: 25px; /* Space for the dash */
+}
 
-  ::before {
-    content: "—";
-    padding-right: 10px;
-  }
+.aligned-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 @media (max-width: 767px) {
