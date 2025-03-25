@@ -573,15 +573,22 @@ header {
 }
 
 .aligned-list {
-  text-align: left;
-  padding-left: 20px;
+  width: 100%;
 }
 
 .aligned-list li {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 8px;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 767px) {
+  .aligned-list li b,
+  .aligned-list li a {
+    display: inline-block;
+    max-width: 100%;
+  }
 }
 
 .book-demo-btn {
