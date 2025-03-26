@@ -182,7 +182,12 @@ h1 {
   background-color: var(--sec-deep-ocean);
 }
 
-.standout-color {
+.standout-color-1 {
+  color: var(--dark-1-deep-space);
+  background-color: var(--acc-sage);
+}
+
+.standout-color-2 {
   background-color: var(--acc-chestnut);
 }
 
@@ -624,7 +629,7 @@ i.product-detail-name {
   position: relative; /* Ensure footer is in the normal document flow */
   z-index: 1; /* Make sure it's above the background */
   margin-top: auto; /* This helps push it to the bottom */
-  background-color: var(--acc-sage);
+  background-color: var(--sec-deep-ocean);
   color: white;
   font-size: 16px;
 
