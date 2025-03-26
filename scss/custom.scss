@@ -66,6 +66,10 @@ h1 {
 
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .standout-statement {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -183,7 +187,7 @@ h1 {
 }
 
 .standout-color-1 {
-  color: var(--dark-1-deep-space);
+  color: var(--dark-1-deep-space) !important;
   background-color: var(--acc-sage);
 }
 
@@ -252,6 +256,16 @@ section {
 
 .mt-6 {
   margin-top: 5rem;
+}
+
+.my-6 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.my-7 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .px-lg-6 {
@@ -517,6 +531,10 @@ i.product-detail-name {
   max-width: 100%;
   height: auto;
   transition: transform 0.3s ease;
+}
+
+.product-detail-image {
+  max-width: 80%;
 }
 
 .fade-in {
