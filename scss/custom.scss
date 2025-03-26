@@ -449,7 +449,7 @@ header {
 
 /* Style for product links on home */
 #dira-products {
-  min-height: 260px;
+  min-height: 35vh;
 }
 .product-link {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -471,8 +471,8 @@ i.product-detail-name {
 }
 
 .product-logo {
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
 }
 
 /* Style for tabs */
