@@ -1,0 +1,20 @@
+title: Dira GeoSystems
+description: Dira GeoSystems creates software for producing top quality geodata and the most beautiful maps
+url: https://beta.dirageosystems.ch
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Makefile
+  - README.md
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

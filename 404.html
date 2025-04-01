@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8">
+<title>Page Not Found | Dira GeoSystems</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  * {line-height:1.2;margin:0;}
+  html, body {
+    width:100%;
+    height:100%;
+    font-family: "Garamond", serif;
+    line-height:150%;
+    color:#eee;
+    background-color:#444;
+  }
+  body {
+    background-position:center;
+    background-size:cover;
+    background-image:url("dist/img/MercatorMonstreMarin.jpg");
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:1rem;
+    position:relative;
+    min-height:100%;
+    box-sizing:border-box;
+    text-shadow:2px 2px 0 #444;
+  }
+  h1 {
+    font-size:clamp(2em, 5vw, 3em);
+    font-weight:800;
+    margin:2rem auto;
+  }
+  h2 {
+    font-size:clamp(1.5em, 4vw, 2em);
+    font-weight:700;
+    margin:2rem auto;
+  }
+  p {
+    font-size:clamp(1.1em, 3vw, 1.44em);
+    font-weight:500;
+    margin:1rem auto;
+  }
+  a {
+    color:#eee;
+    text-shadow:1px 1px 0 #bf2d00;
+    text-decoration:none;
+    font-weight:bold;
+  }
+  .dragons {
+    margin-top:1rem;
+    text-shadow:2px 2px 0 #bf2d00;
+    font-weight:bold;
+  }
+  .explain {
+    width:90%;
+    max-width:600px;
+    margin:1rem auto;
+  }
+  .source {
+    color:#ccc;
+    font-size:clamp(0.8em, 2vw, 1em);
+    position:absolute;
+    width:100%;
+    left:0;
+    bottom:0.5rem;
+    padding:0 1rem;
+    box-sizing:border-box;
+  }
+  .source a {color:#ccc;}
+
+  /* Add media query for very small screens */
+  @media (max-width: 480px) {
+    h1 {
+      margin:1rem auto;
+    }
+    h2 {
+      margin:1rem auto;
+    }
+    .explain {
+      width:95%;
+    }
+  }
+</style>
+
+<body>
+  <h1 class="dragons" title="Here Be Dragons">Hic Sunt Dracones</h1>
+  <h2 title="HTTP 404">Page Not Found</h2>
+  <p>Go back to safe waters: <a href="/">www.dirageosystems.ch</a></p>
+  <p class="explain">"Hic Sunt Dracones" or "Here Be Dragons" was a phrase used by medieval cartographers to mark dangerous or unexplored territories on maps. While the exact Latin phrase appears on only one known historical artifact—the Hunt-Lenox Globe (c. 1510)—sea monsters and mythical creatures were commonly drawn on uncharted areas of medieval maps, warning sailors of the unknown dangers that might await them.</p>
+
+  <p class="source">Detail from a Mercator globe from about 1550,
+    <a href="https://www2.unil.ch/mercator/en/index.html">digitized
+    by Université de Lausanne</a></p>
+</body>
+</html>

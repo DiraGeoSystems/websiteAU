@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jekyll:
+    build: .
+    command: jekyll serve --livereload --force_polling
+    ports:
+      - 4000:4000
+      - 35729:35729
+    volumes:
+      - .:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle

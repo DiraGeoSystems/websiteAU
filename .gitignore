@@ -1,1 +1,5 @@
 .sass-cache/
+.aider*
+_site
+.idea
+.jekyll-cache
