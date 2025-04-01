@@ -1,0 +1,45 @@
+prosuite.datatypes package
+==========================
+
+
+esri\_geometry\_type module
+----------------------------------------------
+
+.. automodule:: prosuite.datatypes.esri_geometry_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+expected\_case module
+----------------------------------------
+
+.. automodule:: prosuite.datatypes.expected_case
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+expected\_string\_difference module
+------------------------------------------------------
+
+.. automodule:: prosuite.datatypes.expected_string_difference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+non\_linear\_segment\_type module
+----------------------------------------------------
+
+.. automodule:: prosuite.datatypes.non_linear_segment_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+unique\_strings\_constraint module
+-----------------------------------------------------
+
+.. automodule:: prosuite.datatypes.unique_strings_constraint
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+

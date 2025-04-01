@@ -1,0 +1,12 @@
+prosuite.generated package
+==========================
+
+
+enums module
+--------------------------------------------
+
+.. automodule:: prosuite.generated.enums
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
