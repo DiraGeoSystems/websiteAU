@@ -53,7 +53,7 @@
 }
 
 /** For language switcher **/
-/* Hide all language elements by default */
+//* Hide all language elements by default */
 .lang-en, .lang-de {
   display: none;
 }
@@ -85,6 +85,52 @@ body.lang-active-en div[class*="lang-en"].grid-item,
 body.lang-active-de div[class*="lang-de"].grid-item {
   display: grid;
 }
+
+/* Add proper display values for table elements */
+body.lang-active-en table [class*="lang-en"],
+body.lang-active-de table [class*="lang-de"] {
+  display: table-cell;
+}
+
+body.lang-active-en thead [class*="lang-en"],
+body.lang-active-de thead [class*="lang-de"] {
+  display: table-cell;
+}
+
+body.lang-active-en tbody [class*="lang-en"],
+body.lang-active-de tbody [class*="lang-de"] {
+  display: table-cell;
+}
+
+body.lang-active-en tr [class*="lang-en"],
+body.lang-active-de tr [class*="lang-de"] {
+  display: table-cell;
+}
+
+/* Fix for entire rows that have language classes */
+body.lang-active-en tr[class*="lang-en"],
+body.lang-active-de tr[class*="lang-de"] {
+  display: table-row;
+}
+
+/* Fix for entire tables that have language classes */
+body.lang-active-en table[class*="lang-en"],
+body.lang-active-de table[class*="lang-de"] {
+  display: table;
+}
+
+/* Fix for thead that have language classes */
+body.lang-active-en thead[class*="lang-en"],
+body.lang-active-de thead[class*="lang-de"] {
+  display: table-header-group;
+}
+
+/* Fix for tbody that have language classes */
+body.lang-active-en tbody[class*="lang-en"],
+body.lang-active-de tbody[class*="lang-de"] {
+  display: table-row-group;
+}
+
 
 body {
   font-family: "Lato", sans-serif;
@@ -780,7 +826,7 @@ i.product-detail-name {
   text-decoration: none;
 }
 
-.my-table {
+.dira-table {
   background-color: transparent;
 
   & th,

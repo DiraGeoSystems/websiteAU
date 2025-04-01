@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Toggle visibility of language-specific elements
+        // Toggle visibility of language-specific elements - MODIFIED to handle tables properly
         document.querySelectorAll('[class*="lang-"]').forEach(element => {
+            // Let CSS handle the display property instead of directly setting it
+            // This allows our table-specific CSS rules to work properly
             if (element.classList.contains(`lang-${lang}`)) {
-                element.style.display = '';  // Use default display
+                element.style.removeProperty('display');
             } else {
                 element.style.display = 'none';
             }
