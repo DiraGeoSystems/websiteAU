@@ -93,6 +93,9 @@ Siehe:
 - <https://docs.github.com/en/github/site-policy/global-privacy-practices>
 
 ## Analytics
+**We do not collect any user data at the moment at all (but GitHub might)**
+We don't even use cookies.
+THe language selection happens via a lang flag wwhich is updated in all links through a js file.
 
 *Should* we decide for site usage statistics, we could use
 good old StatCounter (I'm using this for the IEG site) or
