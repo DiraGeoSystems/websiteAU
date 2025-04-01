@@ -52,6 +52,40 @@
   src: url("../fonts/lato-bold.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/** For language switcher **/
+/* Hide all language elements by default */
+.lang-en, .lang-de {
+  display: none;
+}
+
+[class*="lang-en"], [class*="lang-de"] {
+  display: none;
+}
+
+/* Show only the active language elements */
+body.lang-active-en [class*="lang-en"],
+body.lang-active-de [class*="lang-de"] {
+  display: block;
+}
+
+/* For inline elements */
+body.lang-active-en span[class*="lang-en"],
+body.lang-active-de span[class*="lang-de"] {
+  display: inline;
+}
+
+/* For flex items */
+body.lang-active-en div[class*="lang-en"].flex-item,
+body.lang-active-de div[class*="lang-de"].flex-item {
+  display: flex;
+}
+
+/* For grid items */
+body.lang-active-en div[class*="lang-en"].grid-item,
+body.lang-active-de div[class*="lang-de"].grid-item {
+  display: grid;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-size: 20px;
