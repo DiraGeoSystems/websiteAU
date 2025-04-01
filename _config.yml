@@ -18,3 +18,15 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Explicitly include documentation files
+include:
+  - prosuite/doc/api
+  - prosuite/doc/api/_static
+  - prosuite/doc/api/_static/css
+  - prosuite/doc/api/_static/js
+
+# Copy documentation to destination
+keep_files:
+  - prosuite/doc/api
+  - prosuite/doc/api/_static
