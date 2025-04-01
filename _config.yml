@@ -18,3 +18,9 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Include documentation static files
+include:
+  - dist/docs/prosuite/doc/api/_static
+  - dist/docs/prosuite/doc/api/_static/css
+  - dist/docs/prosuite/doc/api/_static/js
