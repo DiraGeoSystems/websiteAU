@@ -9,6 +9,8 @@ It now uses Bootstrap (no longer W3CSS) and the custom CSS
 is generated and minified from scss/custom.scss (keep these
 files in sync, either with a scss processor or manually).
 
+**In early 2024, <www.dirageosystems.com.au> came alive!**
+
 In 2025 we made a big-ish update, and moved from a single page to multiple pages.
 The website is still static, still uses bootstrap and now added jekyll (GitHub Pages Default) static site generator
 
