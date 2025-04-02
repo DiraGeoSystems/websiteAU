@@ -19,8 +19,18 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Include documentation static files
+# Explicitly include documentation files
 include:
-  - dist/docs/prosuite/doc/api/_static
-  - dist/docs/prosuite/doc/api/_static/css
-  - dist/docs/prosuite/doc/api/_static/js
+  - prosuite/doc/api
+  - prosuite/doc/api/_static
+  - prosuite/doc/api/_static/css
+  - prosuite/doc/api/_static/js
+
+# Copy documentation to destination
+keep_files:
+  - prosuite/doc/api
+  - prosuite/doc/api/_static
+
+# Additional static file serving
+staticfiles:
+  - prosuite/doc/api/_static
