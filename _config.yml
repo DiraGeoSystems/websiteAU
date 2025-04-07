@@ -30,3 +30,7 @@ include:
 keep_files:
   - prosuite/doc/api
   - prosuite/doc/api/_static
+
+# Additional static file serving
+staticfiles:
+  - prosuite/doc/api/_static
