@@ -3,10 +3,6 @@ description: Dira GeoSystems creates software for producing top quality geodata 
 url: https://dirageosystems.ch
 baseurl: ""
 
-plugins:
-  - jekyll-static-file
-
-
 # Build settings
 markdown: kramdown
 exclude:
@@ -27,12 +23,9 @@ exclude:
 include:
   - prosuite/doc/api/
   - prosuite/doc/api/_static/
-  - prosuite/doc/api/_static/css/
-  - prosuite/doc/api/_static/js/
+  - prosuite/doc/api/_static/**/*
   - prosuite/doc/api/_sources/
 
-static_files:
-  - prosuite/doc/api/_static
 
 
 
