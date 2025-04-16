@@ -28,6 +28,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Add .nojekyll file to Sphinx directory
+        run: |
+          mkdir -p prosuite/doc/api
+          touch prosuite/doc/api/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
@@ -35,10 +40,6 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Copy Sphinx static files
-        run: |
-          mkdir -p _site/prosuite/doc/api/_static
-          cp -rT prosuite/doc/api/_static _site/prosuite/doc/api/_static
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
