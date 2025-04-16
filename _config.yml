@@ -18,14 +18,12 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - prosuite/doc/api/
+  - prosuite/doc/
 
 
 ## Copy documentation to destination
-#keep_files:
-#  - prosuite/doc/api
+keep_files:
+  - prosuite/doc/
 #  - prosuite/doc/api/_static
 #
-## Additional static file serving
-#staticfiles:
-#  - prosuite/doc/api/_static
+
