@@ -22,6 +22,7 @@ exclude:
 # Include in the output but don't process
 include:
   - prosuite/doc/api
+  - prosuite/doc/api/_static
 
 
 
