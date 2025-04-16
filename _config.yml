@@ -18,8 +18,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - prosuite/doc/api
-
 
 
 # Explicitly include documentation files
