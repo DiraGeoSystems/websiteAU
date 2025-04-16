@@ -35,12 +35,13 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
       - name: Copy Sphinx static files
         run: |
           mkdir -p _site/prosuite/doc/api/_static
           cp -rT prosuite/doc/api/_static _site/prosuite/doc/api/_static
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
 
 
   # Deployment job
