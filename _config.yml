@@ -21,7 +21,9 @@ exclude:
 
 # Include in the output but don't process
 include:
-  - prosuite/doc/api/**/*
+  - prosuite/doc/api/
+  - prosuite/doc/api/static/
+  - prosuite/doc/api/static/**/*
   - "**/_static/**"
   - "**/_sources/**"
   - "**/_images/**"

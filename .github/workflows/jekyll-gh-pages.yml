@@ -28,13 +28,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Add .nojekyll file to Sphinx directory
-        run: |
-          mkdir -p prosuite/doc/api
-          touch prosuite/doc/api/.nojekyll
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Prepare Sphinx files (rename _static to static)
+        run: |
+          # Check if the source directory exists
+          if [ -d "prosuite/doc/api/_static" ]; then
+          mkdir -p prosuite/doc/api/static
+          cp -r prosuite/doc/api/_static/* prosuite/doc/api/static/
+
+          # Update HTML files to point to the new location
+          find prosuite/doc/api -name "*.html" -type f -exec sed -i 's/_static/static/g' {} \;
+          else
+          echo "WARNING: prosuite/doc/api/_static directory not found!"
+          ls -la prosuite/doc/api/ || echo "api directory not found or empty"
+          fi
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
