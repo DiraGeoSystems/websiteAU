@@ -18,7 +18,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - prosuite/doc/api
 
 # Include in the output but don't process
 include:
