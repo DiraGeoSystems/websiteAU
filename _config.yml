@@ -1,6 +1,6 @@
 title: Dira GeoSystems
 description: Dira GeoSystems creates software for producing top quality geodata and the most beautiful maps
-url: https://beta.dirageosystems.ch
+url: https://dirageosystems.ch
 baseurl: ""
 
 # Build settings
@@ -19,8 +19,16 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Include documentation static files
+# Include in the output but don't process
 include:
-  - dist/docs/prosuite/doc/api/_static
-  - dist/docs/prosuite/doc/api/_static/css
-  - dist/docs/prosuite/doc/api/_static/js
+  - prosuite/doc/api/
+  - prosuite/doc/api/static/
+  - prosuite/doc/api/static/**/*
+  - "**/_static/**"
+  - "**/_sources/**"
+  - "**/_images/**"
+
+
+
+
+
