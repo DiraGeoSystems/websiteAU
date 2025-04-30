@@ -575,15 +575,14 @@ header {
 }
 
 /* Pause animation on hover */
-.logo-marquee-container:hover .logo-marquee,
-.logo-marquee-container:active .logo-marquee {
+.logo-marquee-container:hover .logo-marquee {
   animation-play-state: paused;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .logo-marquee {
-    animation-duration: 30s; /* Speed up on smaller screens */
+    animation-duration: 25s; /* Speed up on smaller screens */
   }
 }
 
