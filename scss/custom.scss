@@ -471,7 +471,7 @@ header {
 
 /* Style for partner logos and the rotation */
 .partner-logo {
-  max-height: 55px;
+  max-height: 50px;
   width: auto;
   margin: 0 auto; /* Center logos */
   padding-bottom: 5px;
@@ -484,35 +484,44 @@ header {
   white-space: nowrap;
 }
 
-.logo-marquee {
+.logo-marquee-left {
   display: inline-block;
   white-space: nowrap;
-  animation: marquee 40s linear infinite;
+  animation: marquee-left 40s linear infinite;
   animation-delay: 3s;
   /* Keep logos stationary during delay instead of starting from animation midpoint */
   animation-fill-mode: both;
 }
 
-.logo-marquee > div {
+.logo-marquee-right {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee-right 40s linear infinite;
+  animation-delay: 3s;
+  /* Keep logos stationary during delay instead of starting from animation midpoint */
+  animation-fill-mode: both;
+}
+
+.logo-marquee-left > div,
+.logo-marquee-right > div {
   display: inline-block;
   vertical-align: middle;
 }
 
-@keyframes marquee {
+@keyframes marquee-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Pause animation on hover */
-.logo-marquee-container:hover .logo-marquee {
-  animation-play-state: paused;
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .logo-marquee {
-    animation-duration: 25s; /* Speed up on smaller screens */
-  }
+/* Pause animation on hover */
+.logo-marquee-container:hover .logo-marquee-left,
+.logo-marquee-container:hover .logo-marquee-right {
+  animation-play-state: paused;
 }
 
 /* Style for product links on home */
