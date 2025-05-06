@@ -542,10 +542,49 @@ header {
 
 /* Style for partner logos and the rotation */
 .partner-logo {
-  max-height: 50px;
+  max-height: 45px;
   width: auto;
   margin: 0 auto; /* Center logos */
   padding-bottom: 5px;
+}
+
+.margin-logo {
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
+}
+
+@media (max-width: 991px) {
+  .partner-logo-container {
+    max-width: unset;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .margin-logo {
+    margin-right: 1.8rem !important;
+    margin-left: 1.8rem !important;
+  }
+}
+
+@media (max-width: 728px) {
+  .partner-logo-container {
+    max-width: unset;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .margin-logo {
+    margin-right: 1.2rem !important;
+    margin-left: 1.2rem !important;
+  }
+
+  .partner-logo {
+    max-height: 40px;
+    width: auto;
+    margin: 0 auto; /* Center logos */
+  }
 }
 
 .logo-marquee-container {
