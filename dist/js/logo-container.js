@@ -4,7 +4,7 @@ class InfiniteScroller {
         this.wrapperId = wrapperId;
         this.wrapper = document.getElementById(this.wrapperId);
         this.direction = direction; // 'left' or 'right'
-        this.animationDuration = durationForOneFullScrollS; // seconds
+        this.animationDuration = durationForOneFullScrollS * 1000; // Convert to milliseconds
 
         // Validate inputs
         if (!this.container) {
@@ -22,8 +22,13 @@ class InfiniteScroller {
             child.cloneNode(true)
         );
 
-        this.isManualScrolling = false;
-        this.scrollCheckInterval = null;
+        // Animation state
+        this.currentTransform = 0;
+        this.animationId = null;
+        this.lastTimestamp = null;
+        this.isPaused = false;
+        this.isManualControl = false;
+        this.manualTimeout = null;
 
         this.init();
     }
@@ -32,9 +37,9 @@ class InfiniteScroller {
         setTimeout(() => {
             this.createSufficientDuplicates();
             this.setupInitialPosition();
-            this.setupCSSAnimation();
+            this.setupStyles();
             this.setupEvents();
-            this.startScrollMonitoring();
+            this.startAnimation();
         }, 100);
     }
 
@@ -42,12 +47,23 @@ class InfiniteScroller {
         // Clear existing content
         this.wrapper.innerHTML = '';
 
-        // Calculate how many sets we need
-        const containerWidth = this.container.offsetWidth;
-        const originalSetWidth = this.calculateOriginalSetWidth();
-        const minSetsNeeded = Math.max(4, Math.ceil((containerWidth * 4) / originalSetWidth));
+        // Add original set first to measure
+        this.originalLogos.forEach(logo => {
+            this.wrapper.appendChild(logo.cloneNode(true));
+        });
 
-        // Create the sets
+        // Force layout and measure
+        this.container.offsetWidth; // Force reflow
+        const originalSetWidth = this.wrapper.scrollWidth;
+        const containerWidth = this.container.offsetWidth;
+
+        // Calculate minimum sets needed for seamless infinite scroll
+        // Need enough sets to cover: container width + buffer for smooth transitions
+        const minSetsNeeded = Math.max(5, Math.ceil((containerWidth * 3) / originalSetWidth));
+
+        // Clear and rebuild with calculated sets
+        this.wrapper.innerHTML = '';
+
         for (let i = 0; i < minSetsNeeded; i++) {
             this.originalLogos.forEach(logo => {
                 const clone = logo.cloneNode(true);
@@ -60,64 +76,24 @@ class InfiniteScroller {
 
         this.singleSetWidth = originalSetWidth;
         this.totalSets = minSetsNeeded;
-    }
 
-    calculateOriginalSetWidth() {
-        const tempWrapper = document.createElement('div');
-        tempWrapper.style.cssText = `
-            position: absolute;
-            visibility: hidden;
-            display: flex;
-            white-space: nowrap;
-            top: -9999px;
-        `;
-
-        this.originalLogos.forEach(logo => {
-            tempWrapper.appendChild(logo.cloneNode(true));
-        });
-
-        document.body.appendChild(tempWrapper);
-        const width = tempWrapper.scrollWidth;
-        document.body.removeChild(tempWrapper);
-
-        return width;
+        console.log(`Direction: ${this.direction}, Sets: ${minSetsNeeded}, Set width: ${originalSetWidth}px, Container: ${containerWidth}px`);
     }
 
     setupInitialPosition() {
-        // Always start from the middle set to allow scrolling in both directions
-        const middlePosition = this.singleSetWidth;
-        this.container.scrollLeft = middlePosition;
+        // Start from a middle position to allow movement in both directions
+        // For left direction: start at set 1 (can move to set 0 or set 2)
+        // For right direction: start at set 1 (can move to set 0 or set 2)
+        const middleSetIndex = 1;
+        this.currentTransform = -middleSetIndex * this.singleSetWidth;
     }
 
-    setupCSSAnimation() {
-        // Animation always moves one set width in the specified direction
-        const translateStart = this.direction === 'left' ? '0' : `-${this.singleSetWidth}px`;
-        const translateEnd = this.direction === 'left' ? `-${this.singleSetWidth}px` : '0';
-
+    setupStyles() {
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes infiniteScroll-${this.wrapperId} {
-                0% { transform: translateX(${translateStart}); }
-                100% { transform: translateX(${translateEnd}); }
-            }
-            
-            #${this.wrapperId} {
-                animation: infiniteScroll-${this.wrapperId} ${this.animationDuration}s linear infinite;
-                animation-play-state: running;
-                display: flex;
-                will-change: transform;
-            }
-            
-            #${this.wrapperId}:hover {
-                animation-play-state: paused;
-            }
-            
-            #${this.container.id}:hover #${this.wrapperId} {
-                animation-play-state: paused;
-            }
-            
             #${this.container.id} {
-                overflow-x: auto;
+                overflow: hidden;
+                position: relative;
                 scrollbar-width: none;
                 -ms-overflow-style: none;
             }
@@ -125,157 +101,215 @@ class InfiniteScroller {
             #${this.container.id}::-webkit-scrollbar {
                 display: none;
             }
+            
+            #${this.wrapperId} {
+                display: flex;
+                will-change: transform;
+                transition: none;
+            }
         `;
 
         document.head.appendChild(style);
         this.styleElement = style;
+
+        // Set initial transform
+        this.wrapper.style.transform = `translateX(${this.currentTransform}px)`;
     }
 
-    startScrollMonitoring() {
-        this.scrollCheckInterval = setInterval(() => {
-            this.normalizeScrollPosition();
-        }, 16);
+    startAnimation() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+        }
+
+        const animate = (timestamp) => {
+            if (this.lastTimestamp === null) {
+                this.lastTimestamp = timestamp;
+            }
+
+            if (!this.isPaused && !this.isManualControl) {
+                const deltaTime = timestamp - this.lastTimestamp;
+                const speed = this.singleSetWidth / this.animationDuration; // pixels per millisecond
+
+                // Direction determines animation direction
+                const deltaTransform = speed * deltaTime * (this.direction === 'left' ? -1 : 1);
+
+                this.currentTransform += deltaTransform;
+                this.normalizeTransform();
+                this.updateTransform();
+            }
+
+            this.lastTimestamp = timestamp;
+            this.animationId = requestAnimationFrame(animate);
+        };
+
+        this.animationId = requestAnimationFrame(animate);
     }
 
-    normalizeScrollPosition() {
-        const currentScroll = this.container.scrollLeft;
+    normalizeTransform() {
         const setWidth = this.singleSetWidth;
 
-        // Keep scroll position within bounds by jumping between equivalent positions
-        // We maintain at least one set width on each side for smooth transitions
-        if (currentScroll <= 0) {
-            // Jumped too far left, move to equivalent position one set to the right
-            this.container.scrollLeft = currentScroll + setWidth;
-        } else if (currentScroll >= setWidth * (this.totalSets - 1)) {
-            // Jumped too far right, move to equivalent position one set to the left
-            this.container.scrollLeft = currentScroll - setWidth;
+        // Keep transform within reasonable bounds by jumping to equivalent positions
+        // We maintain the illusion of infinite scroll by jumping between identical sets
+
+        if (this.currentTransform <= -setWidth * (this.totalSets - 2)) {
+            // Moving too far left/right, jump back to equivalent position
+            this.currentTransform += setWidth;
+        } else if (this.currentTransform >= 0) {
+            // Moving too far right/left, jump forward to equivalent position
+            this.currentTransform -= setWidth;
         }
     }
 
+    updateTransform() {
+        this.wrapper.style.transform = `translateX(${this.currentTransform}px)`;
+    }
+
     setupEvents() {
-        let scrollTimeout;
+        // Handle hover pause
+        this.container.addEventListener('mouseenter', () => {
+            this.isPaused = true;
+        });
+
+        this.container.addEventListener('mouseleave', () => {
+            this.isPaused = false;
+        });
 
         // Handle wheel scrolling
         this.container.addEventListener('wheel', (e) => {
             if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                 e.preventDefault();
 
-                // Pause animation and enter manual mode
-                this.isManualScrolling = true;
-                this.wrapper.style.animationPlayState = 'paused';
+                this.enterManualMode();
 
-                // Apply scroll based on direction preference
-                let scrollDelta = e.deltaY;
+                let scrollDelta = e.deltaY * 0.5; // Adjust sensitivity
 
-                // For right direction, reverse the scroll mapping so it feels natural
-                if (this.direction === 'right') {
-                    scrollDelta = -scrollDelta;
+                // Apply scroll in natural direction
+                // For left direction (moving left): positive deltaY should move content right (positive transform)
+                // For right direction (moving right): positive deltaY should move content left (negative transform)
+                if (this.direction === 'left') {
+                    this.currentTransform += scrollDelta;
+                } else {
+                    this.currentTransform -= scrollDelta;
                 }
 
-                this.container.scrollLeft += scrollDelta;
-
-                // Resume after user stops
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    this.resumeFromCurrentPosition();
-                }, 1000);
+                this.normalizeTransform();
+                this.updateTransform();
+                this.exitManualMode();
             }
         }, { passive: false });
 
-        // Handle touch/mouse scrolling
-        this.container.addEventListener('scroll', () => {
-            if (!this.isManualScrolling) return;
-
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                this.resumeFromCurrentPosition();
-            }, 1000);
-        });
-
         // Handle touch events
-        this.container.addEventListener('touchstart', () => {
-            this.isManualScrolling = true;
-            this.wrapper.style.animationPlayState = 'paused';
-        });
+        let startX = 0;
+        let startTransform = 0;
+        let isDragging = false;
+
+        this.container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            startTransform = this.currentTransform;
+            this.enterManualMode();
+        }, { passive: true });
+
+        this.container.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+
+            const currentX = e.touches[0].clientX;
+            const deltaX = currentX - startX;
+
+            // Natural touch behavior: dragging right moves content right (positive transform)
+            this.currentTransform = startTransform + deltaX;
+            this.normalizeTransform();
+            this.updateTransform();
+        }, { passive: true });
 
         this.container.addEventListener('touchend', () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                this.resumeFromCurrentPosition();
-            }, 1000);
+            isDragging = false;
+            this.exitManualMode();
+        }, { passive: true });
+
+        // Handle mouse drag
+        let isMouseDragging = false;
+        let mouseStartX = 0;
+        let mouseStartTransform = 0;
+
+        this.container.addEventListener('mousedown', (e) => {
+            isMouseDragging = true;
+            mouseStartX = e.clientX;
+            mouseStartTransform = this.currentTransform;
+            this.enterManualMode();
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isMouseDragging) return;
+
+            const deltaX = e.clientX - mouseStartX;
+            this.currentTransform = mouseStartTransform + deltaX;
+            this.normalizeTransform();
+            this.updateTransform();
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isMouseDragging) {
+                isMouseDragging = false;
+                this.exitManualMode();
+            }
         });
     }
 
-    resumeFromCurrentPosition() {
-        // Calculate position within the current set
-        const currentScroll = this.container.scrollLeft;
-        const positionInSet = currentScroll % this.singleSetWidth;
-
-        // Calculate what the transform should be to sync with scroll position
-        let targetTransform;
-
-        if (this.direction === 'left') {
-            // For left direction: transform goes from 0 to -setWidth
-            targetTransform = -positionInSet;
-        } else {
-            // For right direction: transform goes from -setWidth to 0
-            targetTransform = -(this.singleSetWidth - positionInSet);
-        }
-
-        // Apply the calculated transform
-        this.wrapper.style.transform = `translateX(${targetTransform}px)`;
-
-        // Resume animation
-        this.isManualScrolling = false;
-        this.wrapper.style.animationPlayState = 'running';
-
-        // Force reflow
-        this.wrapper.offsetHeight;
+    enterManualMode() {
+        this.isManualControl = true;
+        clearTimeout(this.manualTimeout);
     }
 
-    setSpeed(duration) {
-        this.animationDuration = duration;
-        this.wrapper.style.animationDuration = `${duration}s`;
+    exitManualMode() {
+        clearTimeout(this.manualTimeout);
+        this.manualTimeout = setTimeout(() => {
+            this.isManualControl = false;
+        }, 1000);
+    }
+
+    setSpeed(durationSeconds) {
+        this.animationDuration = durationSeconds * 1000;
     }
 
     setDirection(direction) {
         if (!['left', 'right'].includes(direction)) {
             throw new Error("Direction must be 'left' or 'right'");
         }
-
         this.direction = direction;
-
-        // Remove old style and recreate
-        if (this.styleElement) {
-            this.styleElement.remove();
-        }
-        this.setupCSSAnimation();
     }
 
     pause() {
-        this.wrapper.style.animationPlayState = 'paused';
+        this.isPaused = true;
     }
 
     resume() {
-        this.isManualScrolling = false;
-        this.wrapper.style.animationPlayState = 'running';
+        this.isPaused = false;
+        this.isManualControl = false;
     }
 
     destroy() {
         if (this.styleElement) {
             this.styleElement.remove();
         }
-        if (this.scrollCheckInterval) {
-            clearInterval(this.scrollCheckInterval);
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
         }
+        clearTimeout(this.manualTimeout);
     }
 }
 
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Destroy any existing instance first
+    // Destroy any existing instances first
     if (window.topLogoScroller) {
         window.topLogoScroller.destroy();
     }
+    if (window.bottomLogoScroller) {
+        window.bottomLogoScroller.destroy();
+    }
+
     window.topLogoScroller = new InfiniteScroller('logoTopContainer', 'logoTopWrapper', 'left', 40);
     window.bottomLogoScroller = new InfiniteScroller('logoBottomContainer', 'logoBottomWrapper', 'right', 40);
 });
