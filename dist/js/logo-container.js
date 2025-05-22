@@ -24,8 +24,6 @@ class InfiniteScroller {
 
         this.isManualScrolling = false;
         this.scrollCheckInterval = null;
-        this.lastScrollLeft = 0; // Track last scroll position
-        this.scrollVelocity = 0; // Track scroll velocity
 
         this.init();
     }
@@ -44,11 +42,10 @@ class InfiniteScroller {
         // Clear existing content
         this.wrapper.innerHTML = '';
 
-        // Calculate how many sets we need - increased buffer
+        // Calculate how many sets we need
         const containerWidth = this.container.offsetWidth;
         const originalSetWidth = this.calculateOriginalSetWidth();
-        // Increased multiplier from 4 to 8 for more buffer
-        const minSetsNeeded = Math.max(8, Math.ceil((containerWidth * 8) / originalSetWidth));
+        const minSetsNeeded = Math.max(4, Math.ceil((containerWidth * 4) / originalSetWidth));
 
         // Create the sets
         for (let i = 0; i < minSetsNeeded; i++) {
@@ -87,10 +84,9 @@ class InfiniteScroller {
     }
 
     setupInitialPosition() {
-        // Start from a more central position with more buffer
-        const middlePosition = this.singleSetWidth * Math.floor(this.totalSets / 2);
+        // Always start from the middle set to allow scrolling in both directions
+        const middlePosition = this.singleSetWidth;
         this.container.scrollLeft = middlePosition;
-        this.lastScrollLeft = middlePosition;
     }
 
     setupCSSAnimation() {
@@ -136,35 +132,22 @@ class InfiniteScroller {
     }
 
     startScrollMonitoring() {
-        // Reduced frequency to every 100ms instead of 16ms
         this.scrollCheckInterval = setInterval(() => {
             this.normalizeScrollPosition();
-        }, 100);
+        }, 16);
     }
 
     normalizeScrollPosition() {
         const currentScroll = this.container.scrollLeft;
         const setWidth = this.singleSetWidth;
 
-        // Calculate scroll velocity
-        this.scrollVelocity = currentScroll - this.lastScrollLeft;
-        this.lastScrollLeft = currentScroll;
-
-        // Only normalize if we're not manually scrolling and not recently scrolling
-        if (this.isManualScrolling || Math.abs(this.scrollVelocity) > 1) {
-            return;
-        }
-
-        // More conservative bounds - only normalize when really necessary
-        const bufferSets = 2; // Keep 2 sets as buffer on each side
-        const minScroll = setWidth * bufferSets;
-        const maxScroll = setWidth * (this.totalSets - bufferSets - 1);
-
-        if (currentScroll < minScroll) {
-            // Only jump if we're getting close to the edge
+        // Keep scroll position within bounds by jumping between equivalent positions
+        // We maintain at least one set width on each side for smooth transitions
+        if (currentScroll <= 0) {
+            // Jumped too far left, move to equivalent position one set to the right
             this.container.scrollLeft = currentScroll + setWidth;
-        } else if (currentScroll > maxScroll) {
-            // Only jump if we're getting close to the edge
+        } else if (currentScroll >= setWidth * (this.totalSets - 1)) {
+            // Jumped too far right, move to equivalent position one set to the left
             this.container.scrollLeft = currentScroll - setWidth;
         }
     }
@@ -191,11 +174,11 @@ class InfiniteScroller {
 
                 this.container.scrollLeft += scrollDelta;
 
-                // Resume after user stops - increased timeout
+                // Resume after user stops
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
                     this.resumeFromCurrentPosition();
-                }, 1500); // Increased from 1000ms
+                }, 1000);
             }
         }, { passive: false });
 
@@ -206,7 +189,7 @@ class InfiniteScroller {
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 this.resumeFromCurrentPosition();
-            }, 1500); // Increased from 1000ms
+            }, 1000);
         });
 
         // Handle touch events
@@ -219,7 +202,7 @@ class InfiniteScroller {
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 this.resumeFromCurrentPosition();
-            }, 1500); // Increased from 1000ms
+            }, 1000);
         });
     }
 
