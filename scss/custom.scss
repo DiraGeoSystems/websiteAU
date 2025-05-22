@@ -52,14 +52,85 @@
   src: url("../fonts/lato-bold.woff2") format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-//* Hide all german language elements */
-.lang-de {
-  display: none !important;
+/** For language switcher **/
+//* Hide all language elements by default */
+.lang-en, .lang-de {
+  display: none;
 }
 
-[class*="lang-de"] {
-  display: none !important;
+[class*="lang-en"], [class*="lang-de"] {
+  display: none;
 }
+
+/* Show only the active language elements */
+body.lang-active-en [class*="lang-en"],
+body.lang-active-de [class*="lang-de"] {
+  display: block;
+}
+
+/* For inline elements */
+body.lang-active-en span[class*="lang-en"],
+body.lang-active-de span[class*="lang-de"] {
+  display: inline;
+}
+
+/* For flex items */
+body.lang-active-en div[class*="lang-en"].flex-item,
+body.lang-active-de div[class*="lang-de"].flex-item {
+  display: flex;
+}
+
+/* For grid items */
+body.lang-active-en div[class*="lang-en"].grid-item,
+body.lang-active-de div[class*="lang-de"].grid-item {
+  display: grid;
+}
+
+/* Add proper display values for table elements */
+body.lang-active-en table [class*="lang-en"],
+body.lang-active-de table [class*="lang-de"] {
+  display: table-cell;
+}
+
+body.lang-active-en thead [class*="lang-en"],
+body.lang-active-de thead [class*="lang-de"] {
+  display: table-cell;
+}
+
+body.lang-active-en tbody [class*="lang-en"],
+body.lang-active-de tbody [class*="lang-de"] {
+  display: table-cell;
+}
+
+body.lang-active-en tr [class*="lang-en"],
+body.lang-active-de tr [class*="lang-de"] {
+  display: table-cell;
+}
+
+/* Fix for entire rows that have language classes */
+body.lang-active-en tr[class*="lang-en"],
+body.lang-active-de tr[class*="lang-de"] {
+  display: table-row;
+}
+
+/* Fix for entire tables that have language classes */
+body.lang-active-en table[class*="lang-en"],
+body.lang-active-de table[class*="lang-de"] {
+  display: table;
+}
+
+/* Fix for thead that have language classes */
+body.lang-active-en thead[class*="lang-en"],
+body.lang-active-de thead[class*="lang-de"] {
+  display: table-header-group;
+}
+
+/* Fix for tbody that have language classes */
+body.lang-active-en tbody[class*="lang-en"],
+body.lang-active-de tbody[class*="lang-de"] {
+  display: table-row-group;
+}
+
 
 body {
   font-family: "Lato", sans-serif;
