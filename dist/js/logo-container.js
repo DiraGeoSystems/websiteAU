@@ -183,14 +183,9 @@ class InfiniteScroller {
 
                 let scrollDelta = e.deltaY * 0.5; // Adjust sensitivity
 
-                // Apply scroll in natural direction
-                // For left direction (moving left): positive deltaY should move content right (positive transform)
-                // For right direction (moving right): positive deltaY should move content left (negative transform)
-                if (this.direction === 'left') {
-                    this.currentTransform += scrollDelta;
-                } else {
-                    this.currentTransform -= scrollDelta;
-                }
+                // Consistent scroll direction: scroll down = move logos left (negative transform)
+                // This feels natural regardless of the logo animation direction
+                this.currentTransform -= scrollDelta;
 
                 this.normalizeTransform();
                 this.updateTransform();
@@ -200,12 +195,16 @@ class InfiniteScroller {
 
         // Handle touch events
         let startX = 0;
+        let startY = 0;
         let startTransform = 0;
         let isDragging = false;
+        let isHorizontalScroll = false;
 
         this.container.addEventListener('touchstart', (e) => {
             isDragging = true;
+            isHorizontalScroll = false;
             startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
             startTransform = this.currentTransform;
             this.enterManualMode();
         }, { passive: true });
@@ -214,16 +213,30 @@ class InfiniteScroller {
             if (!isDragging) return;
 
             const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
             const deltaX = currentX - startX;
+            const deltaY = currentY - startY;
 
-            // Natural touch behavior: dragging right moves content right (positive transform)
-            this.currentTransform = startTransform + deltaX;
-            this.normalizeTransform();
-            this.updateTransform();
-        }, { passive: true });
+            // Determine scroll direction on first significant movement
+            if (!isHorizontalScroll && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
+                isHorizontalScroll = Math.abs(deltaX) > Math.abs(deltaY);
+            }
+
+            if (isHorizontalScroll) {
+                // Prevent vertical scrolling when scrolling horizontally through logos
+                e.preventDefault();
+
+                // Natural touch behavior: dragging right moves content right (positive transform)
+                this.currentTransform = startTransform + deltaX;
+                this.normalizeTransform();
+                this.updateTransform();
+            }
+            // If not horizontal scroll, allow default vertical scrolling behavior
+        }, { passive: false }); // Changed to passive: false to allow preventDefault
 
         this.container.addEventListener('touchend', () => {
             isDragging = false;
+            isHorizontalScroll = false;
             this.exitManualMode();
         }, { passive: true });
 
