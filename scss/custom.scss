@@ -540,10 +540,6 @@ header {
   }
 }
 
-
-
-
-
 /* Style for partner logos and the rotation */
 .logo-scroll-container {
   width: 100%;
@@ -567,7 +563,6 @@ header {
   display: flex;
   gap: 30px;
   width: fit-content;
-  transition: transform 0.1s ease-out;
 }
 
 .partner-logo {
