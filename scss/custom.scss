@@ -540,7 +540,36 @@ header {
   }
 }
 
+
+
+
+
 /* Style for partner logos and the rotation */
+.logo-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  scroll-behavior: auto; /* Disable smooth scroll for instant adjustments */
+}
+
+/* Hide scrollbar for different browsers */
+.logo-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.logo-scroll-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.logo-scroll-wrapper {
+  display: flex;
+  gap: 30px;
+  width: fit-content;
+  transition: transform 0.1s ease-out;
+}
+
 .partner-logo {
   max-height: 50px;
   width: auto;
@@ -567,7 +596,11 @@ header {
   }
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
+  .logo-scroll-wrapper {
+    gap: 20px;
+  }
+
   .partner-logo-container {
     max-width: unset;
     width: 100% !important;
@@ -585,53 +618,6 @@ header {
     width: auto;
     margin: 0 auto; /* Center logos */
   }
-}
-
-.logo-marquee-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-}
-
-.logo-marquee-left {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee-left 40s linear infinite;
-  animation-delay: 3s;
-  /* Keep logos stationary during delay instead of starting from animation midpoint */
-  animation-fill-mode: both;
-}
-
-.logo-marquee-right {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee-right 40s linear infinite;
-  animation-delay: 3s;
-  /* Keep logos stationary during delay instead of starting from animation midpoint */
-  animation-fill-mode: both;
-}
-
-.logo-marquee-left > div,
-.logo-marquee-right > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-@keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marquee-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
-}
-
-/* Pause animation on hover */
-.logo-marquee-container:hover .logo-marquee-left,
-.logo-marquee-container:hover .logo-marquee-right {
-  animation-play-state: paused;
 }
 
 /* Style for product links on home */
