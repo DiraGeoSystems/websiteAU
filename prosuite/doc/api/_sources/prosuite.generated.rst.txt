@@ -1,12 +1,85 @@
 prosuite.generated package
 ==========================
 
+Submodules
+----------
 
-enums module
+prosuite.generated.quality\_test\_pb2 module
 --------------------------------------------
 
-.. automodule:: prosuite.generated.enums
+.. automodule:: prosuite.generated.quality_test_pb2
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
+prosuite.generated.quality\_test\_pb2\_grpc module
+--------------------------------------------------
+
+.. automodule:: prosuite.generated.quality_test_pb2_grpc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.quality\_verification\_ddx\_pb2 module
+---------------------------------------------------------
+
+.. automodule:: prosuite.generated.quality_verification_ddx_pb2
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.quality\_verification\_ddx\_pb2\_grpc module
+---------------------------------------------------------------
+
+.. automodule:: prosuite.generated.quality_verification_ddx_pb2_grpc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.quality\_verification\_service\_pb2 module
+-------------------------------------------------------------
+
+.. automodule:: prosuite.generated.quality_verification_service_pb2
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.quality\_verification\_service\_pb2\_grpc module
+-------------------------------------------------------------------
+
+.. automodule:: prosuite.generated.quality_verification_service_pb2_grpc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.shared\_ddx\_pb2 module
+------------------------------------------
+
+.. automodule:: prosuite.generated.shared_ddx_pb2
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.shared\_gdb\_pb2 module
+------------------------------------------
+
+.. automodule:: prosuite.generated.shared_gdb_pb2
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.generated.shared\_qa\_pb2 module
+-----------------------------------------
+
+.. automodule:: prosuite.generated.shared_qa_pb2
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: prosuite.generated
+   :members:
+   :show-inheritance:
+   :undoc-members:

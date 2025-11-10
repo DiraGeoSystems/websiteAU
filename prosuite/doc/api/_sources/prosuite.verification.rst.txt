@@ -1,0 +1,109 @@
+prosuite.verification package
+=============================
+
+Submodules
+----------
+
+prosuite.verification.advanced\_parameters module
+-------------------------------------------------
+
+.. automodule:: prosuite.verification.advanced_parameters
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.ddx\_service module
+-----------------------------------------
+
+.. automodule:: prosuite.verification.ddx_service
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.envelope\_perimeter module
+------------------------------------------------
+
+.. automodule:: prosuite.verification.envelope_perimeter
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.esri\_shape\_perimeter module
+---------------------------------------------------
+
+.. automodule:: prosuite.verification.esri_shape_perimeter
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.involved\_table module
+--------------------------------------------
+
+.. automodule:: prosuite.verification.involved_table
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.issue module
+----------------------------------
+
+.. automodule:: prosuite.verification.issue
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.message\_level module
+-------------------------------------------
+
+.. automodule:: prosuite.verification.message_level
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.service module
+------------------------------------
+
+.. automodule:: prosuite.verification.service
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.service\_status module
+--------------------------------------------
+
+.. automodule:: prosuite.verification.service_status
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.verification\_parameters module
+-----------------------------------------------------
+
+.. automodule:: prosuite.verification.verification_parameters
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.verification\_response module
+---------------------------------------------------
+
+.. automodule:: prosuite.verification.verification_response
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.verification.wkb\_perimeter module
+-------------------------------------------
+
+.. automodule:: prosuite.verification.wkb_perimeter
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: prosuite.verification
+   :members:
+   :show-inheritance:
+   :undoc-members:

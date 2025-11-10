@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>prosuite.quality package &mdash; ProSuite 1.4.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=02f2166e"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ProSuite
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prosuite.html">ProSuite package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xmlspec.html">Xml Specification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ProSuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">prosuite.quality package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/prosuite.quality.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="prosuite-quality-package">
+<h1>prosuite.quality package<a class="headerlink" href="#prosuite-quality-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-prosuite.quality.condition">
+<span id="prosuite-quality-condition-module"></span><h2>prosuite.quality.condition module<a class="headerlink" href="#module-prosuite.quality.condition" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.condition.</span></span><span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.condition.Condition" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A quality condition. Conditions are the primary building blocks of quality specifications.
+Each Condition is a configuration of a test algorithm for one or more datasets.
+Conditions must be created with the factory methods from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.category">
+<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.category" title="Link to this definition"></a></dt>
+<dd><p>The name of the category, if this issue is assigned to a category.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.description" title="Link to this definition"></a></dt>
+<dd><p>Freely definable description of the Quality Condition. This description can be displayed when viewing 
+issues in the issue navigator, and may contain explanations to the Quality Condition and instructions for 
+correcting the issues.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.generate_name">
+<span class="sig-name descname"><span class="pre">generate_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.condition.Condition.generate_name" title="Link to this definition"></a></dt>
+<dd><p>Generates a technical name using the dataset name(s) and the test descriptor. This is the default name of
+a condition if it was created by the standard factory method from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the condition in the data dictionary, or None if
+it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.issue_filter_expression">
+<span class="sig-name descname"><span class="pre">issue_filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.issue_filter_expression" title="Link to this definition"></a></dt>
+<dd><p>The filter expression to be used for multiple issue_filters.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.issue_filters">
+<span class="sig-name descname"><span class="pre">issue_filters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.issue_filter.IssueFilter" title="prosuite.quality.issue_filter.IssueFilter"><span class="pre">IssueFilter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.issue_filters" title="Link to this definition"></a></dt>
+<dd><p>The list of issue filters for this condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.issue_type">
+<span class="sig-name descname"><span class="pre">issue_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.quality.issue_type.IssueType" title="prosuite.quality.issue_type.IssueType"><span class="pre">IssueType</span></a></em><a class="headerlink" href="#prosuite.quality.condition.Condition.issue_type" title="Link to this definition"></a></dt>
+<dd><p>Defines if a failing test returns a warning or an error issue. Quality conditions with 
+Issue Type = Warning are considered “soft” conditions, for which exceptions (“Allowed Issues”) may be defined.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.name" title="Link to this definition"></a></dt>
+<dd><p>The unique name of the quality condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.parameter.Parameter" title="prosuite.quality.parameter.Parameter"><span class="pre">Parameter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.parameters" title="Link to this definition"></a></dt>
+<dd><p>The list of parameters. Typically the parameters are specified in the factory method used to create the
+quality condition (see <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a>) and do not need to be changed
+through this list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.stop_on_error">
+<span class="sig-name descname"><span class="pre">stop_on_error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.stop_on_error" title="Link to this definition"></a></dt>
+<dd><p>Indicates if the occurrence of an error for an object should stop any further testing of the same object. 
+This can be used to prevent further tests on a feature after a serious geometry error (e.g. incorrectly 
+oriented rings) was detected for the feature.
+The used Test Descriptor provides a standard value for this property. It can optionally be overridden here.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.test_descriptor">
+<span class="sig-name descname"><span class="pre">test_descriptor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.test_descriptor" title="Link to this definition"></a></dt>
+<dd><p>The test descriptor, i.e. the algorithm used to verify this condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.condition.Condition.url">
+<span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.condition.Condition.url" title="Link to this definition"></a></dt>
+<dd><p>Optional URL to a website providing additional information for this Quality Condition.
+Certain Quality Conditions require more detailed information about the test logic and/or the correction 
+guidelines than the field “Description” can provide. This information can for example be assembled in a 
+wiki, and the URL may be provided here. When viewing issues in the issue navigator, the corresponding web 
+page can be opened. In the HTML verification reports these URLs are used to render the names of the 
+Quality Conditions as links.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality.ddx_specification">
+<span id="prosuite-quality-ddx-specification-module"></span><h2>prosuite.quality.ddx_specification module<a class="headerlink" href="#module-prosuite.quality.ddx_specification" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.ddx_specification.DdxSpecification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.ddx_specification.</span></span><span class="sig-name descname"><span class="pre">DdxSpecification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ddx_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_short_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.ddx_specification.DdxSpecification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a specification defined in the Data Dictionary (DDX). This requires a server that is configured
+with a data dictionary connection.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.ddx_specification.DdxSpecification.ddx_id">
+<span class="sig-name descname"><span class="pre">ddx_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.quality.ddx_specification.DdxSpecification.ddx_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the specification in the data dictionary. Find out by using the properties window of the specification in the 
+data dictionary editor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.ddx_specification.DdxSpecification.project_short_name">
+<span class="sig-name descname"><span class="pre">project_short_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.ddx_specification.DdxSpecification.project_short_name" title="Link to this definition"></a></dt>
+<dd><p>Short name of the project in the data dictionary. This is used to determine the main main workspace of the verification. 
+In case the issues are written to the error datasets in the data model the project short name is used to determine the correct 
+error datasets. See <code class="xref py py-attr docutils literal notranslate"><span class="pre">update_issues_in_verified_model</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality.issue_filter">
+<span id="prosuite-quality-issue-filter-module"></span><h2>prosuite.quality.issue_filter module<a class="headerlink" href="#module-prosuite.quality.issue_filter" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.issue_filter.</span></span><span class="sig-name descname"><span class="pre">IssueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">issue_filter_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An issue filter configures how issues from a quality condition are processed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter.description" title="Link to this definition"></a></dt>
+<dd><p>The description of the issue filter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter.generate_name">
+<span class="sig-name descname"><span class="pre">generate_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter.generate_name" title="Link to this definition"></a></dt>
+<dd><p>Generates a technical name using the dataset name(s) and the test descriptor. This is the default name of
+a condition if it was created by the standard factory method from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the issue filter in the data dictionary, or None if
+it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter.issue_filter_descriptor">
+<span class="sig-name descname"><span class="pre">issue_filter_descriptor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter.issue_filter_descriptor" title="Link to this definition"></a></dt>
+<dd><p>The issue filter descriptor, i.e. the algorithm used to filter the issues.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter.name" title="Link to this definition"></a></dt>
+<dd><p>The (unique) name of the issue filter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.issue_filter.IssueFilter.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.parameter.Parameter" title="prosuite.quality.parameter.Parameter"><span class="pre">Parameter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.quality.issue_filter.IssueFilter.parameters" title="Link to this definition"></a></dt>
+<dd><p>The list of parameters. Typically the parameters are specified in the factory method used to create the
+issue filter (see <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.issue_filters" title="prosuite.factories.issue_filters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.issue_filters</span></code></a>) and do not need to be changed
+through this list.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality.issue_type">
+<span id="prosuite-quality-issue-type-module"></span><h2>prosuite.quality.issue_type module<a class="headerlink" href="#module-prosuite.quality.issue_type" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.issue_type.IssueType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.issue_type.</span></span><span class="sig-name descname"><span class="pre">IssueType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.issue_type.IssueType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.issue_type.IssueType.Error">
+<span class="sig-name descname"><span class="pre">Error</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#prosuite.quality.issue_type.IssueType.Error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.issue_type.IssueType.Warning">
+<span class="sig-name descname"><span class="pre">Warning</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#prosuite.quality.issue_type.IssueType.Warning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality.parameter">
+<span id="prosuite-quality-parameter-module"></span><h2>prosuite.quality.parameter module<a class="headerlink" href="#module-prosuite.quality.parameter" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.parameter.</span></span><span class="sig-name descname"><span class="pre">Parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.parameter.Parameter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A parameter configures a quality condition. Parameters can represent Datasets (dataset parameter) or scalar values
+(scalar parameters). Parameters have a name and a value.</p>
+<p>Dataset parameters: value is of type dataset. The parameter can retrieve the workspace id (model name or model id
+if it has been retrieved from the data dictionary) and the where clause (filter expression) of the dataset.</p>
+<p>Scalar parameters: value is a simple type (number, string, bool).</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.dataset">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dataset</span></span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.dataset" title="Link to this definition"></a></dt>
+<dd><p>The dataset associated with this parameter (if any).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.get_string_value">
+<span class="sig-name descname"><span class="pre">get_string_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.get_string_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.get_where_clause">
+<span class="sig-name descname"><span class="pre">get_where_clause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.get_where_clause" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.get_workspace_id">
+<span class="sig-name descname"><span class="pre">get_workspace_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.get_workspace_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.is_dataset_parameter">
+<span class="sig-name descname"><span class="pre">is_dataset_parameter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.is_dataset_parameter" title="Link to this definition"></a></dt>
+<dd><p>Check if the parameter is a dataset parameter. A dataset parameter is a parameter that has a Dataset,
+a TransformedDataset or a list of datasets as its value.
+:return: True if the parameter is a dataset parameter, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.is_dataset_value">
+<span class="sig-name descname"><span class="pre">is_dataset_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.is_dataset_value" title="Link to this definition"></a></dt>
+<dd><p>Check if the parameter value is a Dataset (as opposed to a TransformedDataset or a list).
+:return: True if the parameter is a dataset parameter, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.is_transformed_dataset_value">
+<span class="sig-name descname"><span class="pre">is_transformed_dataset_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.is_transformed_dataset_value" title="Link to this definition"></a></dt>
+<dd><p>Check if the parameter value is a TransformedDataset (as opposed to a Dataset or a list).”</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.parameter.Parameter.name" title="Link to this definition"></a></dt>
+<dd><p>The parameter name.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.value">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.value" title="Link to this definition"></a></dt>
+<dd><p>The parameter value. Can be a dataset, transformed dataset, list of datasets, or a scalar value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.parameter.Parameter.value_is_list_of_datasets">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_is_list_of_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.parameter.Parameter.value_is_list_of_datasets" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality.specification">
+<span id="prosuite-quality-specification-module"></span><h2>prosuite.quality.specification module<a class="headerlink" href="#module-prosuite.quality.specification" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.specification.Specification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.specification.</span></span><span class="sig-name descname"><span class="pre">Specification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Custom</span> <span class="pre">Specification'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.specification.Specification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a quality specification defined in code. Quality specifications are collections of quality conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – specification name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – specification description</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.specification.Specification.add_condition">
+<span class="sig-name descname"><span class="pre">add_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.quality.condition.Condition" title="prosuite.quality.condition.Condition"><span class="pre">Condition</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.specification.Specification.add_condition" title="Link to this definition"></a></dt>
+<dd><p>Adds conditions to the specification</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.specification.Specification.get_conditions">
+<span class="sig-name descname"><span class="pre">get_conditions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.condition.Condition" title="prosuite.quality.condition.Condition"><span class="pre">Condition</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#prosuite.quality.specification.Specification.get_conditions" title="Link to this definition"></a></dt>
+<dd><p>Returns the List of conditions</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality.xml_specification">
+<span id="prosuite-quality-xml-specification-module"></span><h2>prosuite.quality.xml_specification module<a class="headerlink" href="#module-prosuite.quality.xml_specification" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.xml_specification.XmlSpecification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.xml_specification.</span></span><span class="sig-name descname"><span class="pre">XmlSpecification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_source_replacements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.xml_specification.XmlSpecification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a specification defined in the xml specification schema. Quality specifications are collections of quality conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specification_file</strong> (<em>str</em>) – path to the xml specification file</p></li>
+<li><p><strong>specification_name</strong> (<em>str</em>) – name of the specification (in the xml file) that should be executed. If not defined in the constructor, it needs to be defined before it is used.</p></li>
+<li><p><strong>data_source_replacements</strong> (<em>[</em><em>[</em><em>str</em><em>]</em><em>]</em>) – a list containing a list with two string elements. These represent a workspace id together with the path to the workspace. Example: [[“TLM_Production”, “C:/temp/user&#64;topgist.sde”]]. More details are provided below the XML verification sample.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.xml_specification.XmlSpecification.get_specification_names">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_specification_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#prosuite.quality.xml_specification.XmlSpecification.get_specification_names" title="Link to this definition"></a></dt>
+<dd><p>Returns a list of the specification names of all specifications in all categories of the xml-specifications doc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>specification_file</strong> (<em>str</em>) – path of xml specification file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of specification names</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.quality">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-prosuite.quality" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.Condition">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Condition" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A quality condition. Conditions are the primary building blocks of quality specifications.
+Each Condition is a configuration of a test algorithm for one or more datasets.
+Conditions must be created with the factory methods from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.category">
+<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Condition.category" title="Link to this definition"></a></dt>
+<dd><p>The name of the category, if this issue is assigned to a category.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Condition.description" title="Link to this definition"></a></dt>
+<dd><p>Freely definable description of the Quality Condition. This description can be displayed when viewing 
+issues in the issue navigator, and may contain explanations to the Quality Condition and instructions for 
+correcting the issues.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.generate_name">
+<span class="sig-name descname"><span class="pre">generate_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Condition.generate_name" title="Link to this definition"></a></dt>
+<dd><p>Generates a technical name using the dataset name(s) and the test descriptor. This is the default name of
+a condition if it was created by the standard factory method from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.quality.Condition.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the condition in the data dictionary, or None if
+it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.issue_filter_expression">
+<span class="sig-name descname"><span class="pre">issue_filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Condition.issue_filter_expression" title="Link to this definition"></a></dt>
+<dd><p>The filter expression to be used for multiple issue_filters.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.issue_filters">
+<span class="sig-name descname"><span class="pre">issue_filters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.issue_filter.IssueFilter" title="prosuite.quality.issue_filter.IssueFilter"><span class="pre">IssueFilter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.quality.Condition.issue_filters" title="Link to this definition"></a></dt>
+<dd><p>The list of issue filters for this condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.issue_type">
+<span class="sig-name descname"><span class="pre">issue_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.quality.issue_type.IssueType" title="prosuite.quality.issue_type.IssueType"><span class="pre">IssueType</span></a></em><a class="headerlink" href="#prosuite.quality.Condition.issue_type" title="Link to this definition"></a></dt>
+<dd><p>Defines if a failing test returns a warning or an error issue. Quality conditions with 
+Issue Type = Warning are considered “soft” conditions, for which exceptions (“Allowed Issues”) may be defined.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Condition.name" title="Link to this definition"></a></dt>
+<dd><p>The unique name of the quality condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.parameter.Parameter" title="prosuite.quality.parameter.Parameter"><span class="pre">Parameter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.quality.Condition.parameters" title="Link to this definition"></a></dt>
+<dd><p>The list of parameters. Typically the parameters are specified in the factory method used to create the
+quality condition (see <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a>) and do not need to be changed
+through this list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.stop_on_error">
+<span class="sig-name descname"><span class="pre">stop_on_error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#prosuite.quality.Condition.stop_on_error" title="Link to this definition"></a></dt>
+<dd><p>Indicates if the occurrence of an error for an object should stop any further testing of the same object. 
+This can be used to prevent further tests on a feature after a serious geometry error (e.g. incorrectly 
+oriented rings) was detected for the feature.
+The used Test Descriptor provides a standard value for this property. It can optionally be overridden here.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.test_descriptor">
+<span class="sig-name descname"><span class="pre">test_descriptor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Condition.test_descriptor" title="Link to this definition"></a></dt>
+<dd><p>The test descriptor, i.e. the algorithm used to verify this condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Condition.url">
+<span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Condition.url" title="Link to this definition"></a></dt>
+<dd><p>Optional URL to a website providing additional information for this Quality Condition.
+Certain Quality Conditions require more detailed information about the test logic and/or the correction 
+guidelines than the field “Description” can provide. This information can for example be assembled in a 
+wiki, and the URL may be provided here. When viewing issues in the issue navigator, the corresponding web 
+page can be opened. In the HTML verification reports these URLs are used to render the names of the 
+Quality Conditions as links.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.DdxSpecification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">DdxSpecification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ddx_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_short_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.DdxSpecification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a specification defined in the Data Dictionary (DDX). This requires a server that is configured
+with a data dictionary connection.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.DdxSpecification.ddx_id">
+<span class="sig-name descname"><span class="pre">ddx_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.quality.DdxSpecification.ddx_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the specification in the data dictionary. Find out by using the properties window of the specification in the 
+data dictionary editor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.DdxSpecification.project_short_name">
+<span class="sig-name descname"><span class="pre">project_short_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.DdxSpecification.project_short_name" title="Link to this definition"></a></dt>
+<dd><p>Short name of the project in the data dictionary. This is used to determine the main main workspace of the verification. 
+In case the issues are written to the error datasets in the data model the project short name is used to determine the correct 
+error datasets. See <code class="xref py py-attr docutils literal notranslate"><span class="pre">update_issues_in_verified_model</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">IssueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">issue_filter_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.IssueFilter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An issue filter configures how issues from a quality condition are processed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.IssueFilter.description" title="Link to this definition"></a></dt>
+<dd><p>The description of the issue filter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter.generate_name">
+<span class="sig-name descname"><span class="pre">generate_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.IssueFilter.generate_name" title="Link to this definition"></a></dt>
+<dd><p>Generates a technical name using the dataset name(s) and the test descriptor. This is the default name of
+a condition if it was created by the standard factory method from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.quality_conditions" title="prosuite.factories.quality_conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.quality_conditions</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.quality.IssueFilter.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the issue filter in the data dictionary, or None if
+it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter.issue_filter_descriptor">
+<span class="sig-name descname"><span class="pre">issue_filter_descriptor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.IssueFilter.issue_filter_descriptor" title="Link to this definition"></a></dt>
+<dd><p>The issue filter descriptor, i.e. the algorithm used to filter the issues.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.IssueFilter.name" title="Link to this definition"></a></dt>
+<dd><p>The (unique) name of the issue filter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.IssueFilter.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.parameter.Parameter" title="prosuite.quality.parameter.Parameter"><span class="pre">Parameter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.quality.IssueFilter.parameters" title="Link to this definition"></a></dt>
+<dd><p>The list of parameters. Typically the parameters are specified in the factory method used to create the
+issue filter (see <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.issue_filters" title="prosuite.factories.issue_filters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.issue_filters</span></code></a>) and do not need to be changed
+through this list.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.IssueType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">IssueType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.IssueType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.IssueType.Error">
+<span class="sig-name descname"><span class="pre">Error</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#prosuite.quality.IssueType.Error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.IssueType.Warning">
+<span class="sig-name descname"><span class="pre">Warning</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#prosuite.quality.IssueType.Warning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">Parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Parameter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A parameter configures a quality condition. Parameters can represent Datasets (dataset parameter) or scalar values
+(scalar parameters). Parameters have a name and a value.</p>
+<p>Dataset parameters: value is of type dataset. The parameter can retrieve the workspace id (model name or model id
+if it has been retrieved from the data dictionary) and the where clause (filter expression) of the dataset.</p>
+<p>Scalar parameters: value is a simple type (number, string, bool).</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.dataset">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dataset</span></span><a class="headerlink" href="#prosuite.quality.Parameter.dataset" title="Link to this definition"></a></dt>
+<dd><p>The dataset associated with this parameter (if any).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.get_string_value">
+<span class="sig-name descname"><span class="pre">get_string_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#prosuite.quality.Parameter.get_string_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.get_where_clause">
+<span class="sig-name descname"><span class="pre">get_where_clause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Parameter.get_where_clause" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.get_workspace_id">
+<span class="sig-name descname"><span class="pre">get_workspace_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Parameter.get_workspace_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.is_dataset_parameter">
+<span class="sig-name descname"><span class="pre">is_dataset_parameter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.quality.Parameter.is_dataset_parameter" title="Link to this definition"></a></dt>
+<dd><p>Check if the parameter is a dataset parameter. A dataset parameter is a parameter that has a Dataset,
+a TransformedDataset or a list of datasets as its value.
+:return: True if the parameter is a dataset parameter, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.is_dataset_value">
+<span class="sig-name descname"><span class="pre">is_dataset_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.quality.Parameter.is_dataset_value" title="Link to this definition"></a></dt>
+<dd><p>Check if the parameter value is a Dataset (as opposed to a TransformedDataset or a list).
+:return: True if the parameter is a dataset parameter, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.is_transformed_dataset_value">
+<span class="sig-name descname"><span class="pre">is_transformed_dataset_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.quality.Parameter.is_transformed_dataset_value" title="Link to this definition"></a></dt>
+<dd><p>Check if the parameter value is a TransformedDataset (as opposed to a Dataset or a list).”</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.quality.Parameter.name" title="Link to this definition"></a></dt>
+<dd><p>The parameter name.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.value">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#prosuite.quality.Parameter.value" title="Link to this definition"></a></dt>
+<dd><p>The parameter value. Can be a dataset, transformed dataset, list of datasets, or a scalar value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Parameter.value_is_list_of_datasets">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_is_list_of_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Parameter.value_is_list_of_datasets" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.Specification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">Specification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Custom</span> <span class="pre">Specification'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Specification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a quality specification defined in code. Quality specifications are collections of quality conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – specification name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – specification description</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Specification.add_condition">
+<span class="sig-name descname"><span class="pre">add_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.quality.condition.Condition" title="prosuite.quality.condition.Condition"><span class="pre">Condition</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.Specification.add_condition" title="Link to this definition"></a></dt>
+<dd><p>Adds conditions to the specification</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.Specification.get_conditions">
+<span class="sig-name descname"><span class="pre">get_conditions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.quality.condition.Condition" title="prosuite.quality.condition.Condition"><span class="pre">Condition</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#prosuite.quality.Specification.get_conditions" title="Link to this definition"></a></dt>
+<dd><p>Returns the List of conditions</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.quality.XmlSpecification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.quality.</span></span><span class="sig-name descname"><span class="pre">XmlSpecification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_source_replacements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.quality.XmlSpecification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a specification defined in the xml specification schema. Quality specifications are collections of quality conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specification_file</strong> (<em>str</em>) – path to the xml specification file</p></li>
+<li><p><strong>specification_name</strong> (<em>str</em>) – name of the specification (in the xml file) that should be executed. If not defined in the constructor, it needs to be defined before it is used.</p></li>
+<li><p><strong>data_source_replacements</strong> (<em>[</em><em>[</em><em>str</em><em>]</em><em>]</em>) – a list containing a list with two string elements. These represent a workspace id together with the path to the workspace. Example: [[“TLM_Production”, “C:/temp/user&#64;topgist.sde”]]. More details are provided below the XML verification sample.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.quality.XmlSpecification.get_specification_names">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_specification_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#prosuite.quality.XmlSpecification.get_specification_names" title="Link to this definition"></a></dt>
+<dd><p>Returns a list of the specification names of all specifications in all categories of the xml-specifications doc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>specification_file</strong> (<em>str</em>) – path of xml specification file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of specification names</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Dira GeoSystems AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

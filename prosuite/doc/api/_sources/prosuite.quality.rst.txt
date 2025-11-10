@@ -1,0 +1,69 @@
+prosuite.quality package
+========================
+
+Submodules
+----------
+
+prosuite.quality.condition module
+---------------------------------
+
+.. automodule:: prosuite.quality.condition
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.quality.ddx\_specification module
+------------------------------------------
+
+.. automodule:: prosuite.quality.ddx_specification
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.quality.issue\_filter module
+-------------------------------------
+
+.. automodule:: prosuite.quality.issue_filter
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.quality.issue\_type module
+-----------------------------------
+
+.. automodule:: prosuite.quality.issue_type
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.quality.parameter module
+---------------------------------
+
+.. automodule:: prosuite.quality.parameter
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.quality.specification module
+-------------------------------------
+
+.. automodule:: prosuite.quality.specification
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.quality.xml\_specification module
+------------------------------------------
+
+.. automodule:: prosuite.quality.xml_specification
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: prosuite.quality
+   :members:
+   :show-inheritance:
+   :undoc-members:

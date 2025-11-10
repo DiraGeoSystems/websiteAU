@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>prosuite.data_model package &mdash; ProSuite 1.4.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=02f2166e"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ProSuite
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prosuite.html">ProSuite package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xmlspec.html">Xml Specification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ProSuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">prosuite.data_model package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/prosuite.data_model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="prosuite-data-model-package">
+<h1>prosuite.data_model package<a class="headerlink" href="#prosuite-data-model-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-prosuite.data_model.base_dataset">
+<span id="prosuite-data-model-base-dataset-module"></span><h2>prosuite.data_model.base_dataset module<a class="headerlink" href="#module-prosuite.data_model.base_dataset" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.base_dataset.BaseDataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.base_dataset.</span></span><span class="sig-name descname"><span class="pre">BaseDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.base_dataset.BaseDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The base class for datasets representing tabular data. It is either a <a class="reference internal" href="#prosuite.data_model.Dataset" title="prosuite.data_model.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> or, in the future, a <a class="reference internal" href="#prosuite.data_model.TransformedDataset" title="prosuite.data_model.TransformedDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformedDataset</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.base_dataset.BaseDataset.filter_expression">
+<span class="sig-name descname"><span class="pre">filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.base_dataset.BaseDataset.filter_expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.base_dataset.BaseDataset.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.base_dataset.BaseDataset.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the dataset. Must be unique with respect to all other datasets of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.data_model.dataset">
+<span id="prosuite-data-model-dataset-module"></span><h2>prosuite.data_model.dataset module<a class="headerlink" href="#module-prosuite.data_model.dataset" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.dataset.Dataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.dataset.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.data_model.model.Model" title="prosuite.data_model.model.Model"><span class="pre">Model</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.dataset.Dataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#prosuite.data_model.base_dataset.BaseDataset" title="prosuite.data_model.base_dataset.BaseDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p>
+<p>A dataset represents data from a table or feature class in a workspace, optionally filtered by an SQL expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – table or featureclass name</p></li>
+<li><p><strong>model</strong> (class:<cite>prosuite.data_model.Model</cite>) – The <a class="reference internal" href="#prosuite.data_model.Model" title="prosuite.data_model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">prosuite.data_model.Model</span></code></a> this dataset belongs to.</p></li>
+<li><p><strong>filter_expression</strong> (<em>str</em><em>, </em><em>optional</em>) – A where clause that filters the table. The syntax of the where clause is defined in
+the document SQLSyntax_en.pdf</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.dataset.Dataset.alias_name">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alias_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.dataset.Dataset.alias_name" title="Link to this definition"></a></dt>
+<dd><p>The alias name of the dataset in the data dictionary, or None it 
+has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.dataset.Dataset.filter_expression">
+<span class="sig-name descname"><span class="pre">filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.dataset.Dataset.filter_expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.dataset.Dataset.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.dataset.Dataset.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the dataset in the data dictionary, or None it 
+has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.dataset.Dataset.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.data_model.model.Model" title="prosuite.data_model.model.Model"><span class="pre">Model</span></a></em><a class="headerlink" href="#prosuite.data_model.dataset.Dataset.model" title="Link to this definition"></a></dt>
+<dd><p>The dataset’s data model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.dataset.Dataset.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.dataset.Dataset.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the dataset. Must be unique with respect to all other datasets of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.data_model.model">
+<span id="prosuite-data-model-model-module"></span><h2>prosuite.data_model.model module<a class="headerlink" href="#module-prosuite.data_model.model" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.model.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">catalog_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.model.Model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Model represents the data model in a workspace (file-gdb or enterprise-gdb)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of the transformed table or featureclass</p></li>
+<li><p><strong>catalog_path</strong> – The catalog path of the associated workspace.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>catalog_path examples:</dt><dd><p>c:/data.gdb
+c:/enterprise_gdb.sde</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.add_dataset">
+<span class="sig-name descname"><span class="pre">add_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.model.Model.add_dataset" title="Link to this definition"></a></dt>
+<dd><p>Add a dataset to the model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.catalog_path">
+<span class="sig-name descname"><span class="pre">catalog_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.catalog_path" title="Link to this definition"></a></dt>
+<dd><p>The catalog path of the associated workspace.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.datasets">
+<span class="sig-name descname"><span class="pre">datasets</span></span><a class="headerlink" href="#prosuite.data_model.model.Model.datasets" title="Link to this definition"></a></dt>
+<dd><p>List of datasets in the model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.default_database_name">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_database_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.default_database_name" title="Link to this definition"></a></dt>
+<dd><p>Gets the default database name for this model as defined in 
+the data dictionary, or None it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.default_database_schema_owner">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_database_schema_owner</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.default_database_schema_owner" title="Link to this definition"></a></dt>
+<dd><p>Gets the default database schema owner for this model as defined in 
+the data dictionary, or None it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.element_names_are_qualified">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_names_are_qualified</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.element_names_are_qualified" title="Link to this definition"></a></dt>
+<dd><p>Gets whether Whether model element names (datasets, associations) are qualified in this model.
+For models not loaded from the data dictionary always fully qualify dataset/table names from
+RDBMS.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.get_dataset_by_name">
+<span class="sig-name descname"><span class="pre">get_dataset_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.model.Model.get_dataset_by_name" title="Link to this definition"></a></dt>
+<dd><p>Get a dataset from this model by its name.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the model in the data dictionary, or None it
+has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.name" title="Link to this definition"></a></dt>
+<dd><p>The unique name of the model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.model.Model.wkid">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wkid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.model.Model.wkid" title="Link to this definition"></a></dt>
+<dd><p>The spatial reference well-known ID (WKID) for the model as defined in 
+the data dictionary, or None it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.data_model.transformed_dataset">
+<span id="prosuite-data-model-transformed-dataset-module"></span><h2>prosuite.data_model.transformed_dataset module<a class="headerlink" href="#module-prosuite.data_model.transformed_dataset" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.transformed_dataset.TransformedDataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.transformed_dataset.</span></span><span class="sig-name descname"><span class="pre">TransformedDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformer_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.transformed_dataset.TransformedDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#prosuite.data_model.base_dataset.BaseDataset" title="prosuite.data_model.base_dataset.BaseDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p>
+<p>A transformed dataset represents tabular data that has been transformed from other input 
+tables or feature classes, optionally filtered by an SQL expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transformer_descriptor</strong> (<em>str</em>) – The transformer descriptor, i.e. the algorithm used to 
+generate this dataset.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – name of the transformed table or featureclass</p></li>
+<li><p><strong>filter_expression</strong> (<em>str</em><em>, </em><em>optional</em>) – A where clause that filters the table. The syntax of the where 
+clause is defined in the document SQLSyntax_en.pdf</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.transformed_dataset.TransformedDataset.filter_expression">
+<span class="sig-name descname"><span class="pre">filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.transformed_dataset.TransformedDataset.filter_expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.data_model.transformed_dataset.TransformedDataset.generate_name">
+<span class="sig-name descname"><span class="pre">generate_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.transformed_dataset.TransformedDataset.generate_name" title="Link to this definition"></a></dt>
+<dd><p>Generates a technical name using the dataset name(s) and the transformer descriptor. This is the default name of
+a transformed dataset if it was created by the standard factory method from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.transformers" title="prosuite.factories.transformers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.transformers</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.transformed_dataset.TransformedDataset.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.transformed_dataset.TransformedDataset.name" title="Link to this definition"></a></dt>
+<dd><p>The unique name of the transformed dataset.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.transformed_dataset.TransformedDataset.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="prosuite.quality.html#prosuite.quality.parameter.Parameter" title="prosuite.quality.parameter.Parameter"><span class="pre">Parameter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.data_model.transformed_dataset.TransformedDataset.parameters" title="Link to this definition"></a></dt>
+<dd><p>The list of parameters. Typically the parameters are specified in the factory method used to create the
+transformed dataset (see <a class="reference internal" href="prosuite.factories.html#prosuite.factories.transformers.Transformers" title="prosuite.factories.transformers.Transformers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.transformers.Transformers</span></code></a>) and do not need to be changed
+through this list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.transformed_dataset.TransformedDataset.transformer_descriptor">
+<span class="sig-name descname"><span class="pre">transformer_descriptor</span></span><a class="headerlink" href="#prosuite.data_model.transformed_dataset.TransformedDataset.transformer_descriptor" title="Link to this definition"></a></dt>
+<dd><p>The transformer descriptor, i.e. the algorithm used to generate this dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-prosuite.data_model">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-prosuite.data_model" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.BaseDataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.</span></span><span class="sig-name descname"><span class="pre">BaseDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.BaseDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The base class for datasets representing tabular data. It is either a <a class="reference internal" href="#prosuite.data_model.Dataset" title="prosuite.data_model.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> or, in the future, a <a class="reference internal" href="#prosuite.data_model.TransformedDataset" title="prosuite.data_model.TransformedDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformedDataset</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.BaseDataset.filter_expression">
+<span class="sig-name descname"><span class="pre">filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.BaseDataset.filter_expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.BaseDataset.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.BaseDataset.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the dataset. Must be unique with respect to all other datasets of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.Dataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.data_model.model.Model" title="prosuite.data_model.model.Model"><span class="pre">Model</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.Dataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#prosuite.data_model.base_dataset.BaseDataset" title="prosuite.data_model.base_dataset.BaseDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p>
+<p>A dataset represents data from a table or feature class in a workspace, optionally filtered by an SQL expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – table or featureclass name</p></li>
+<li><p><strong>model</strong> (class:<cite>prosuite.data_model.Model</cite>) – The <a class="reference internal" href="#prosuite.data_model.Model" title="prosuite.data_model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">prosuite.data_model.Model</span></code></a> this dataset belongs to.</p></li>
+<li><p><strong>filter_expression</strong> (<em>str</em><em>, </em><em>optional</em>) – A where clause that filters the table. The syntax of the where clause is defined in
+the document SQLSyntax_en.pdf</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Dataset.alias_name">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alias_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Dataset.alias_name" title="Link to this definition"></a></dt>
+<dd><p>The alias name of the dataset in the data dictionary, or None it 
+has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.Dataset.filter_expression">
+<span class="sig-name descname"><span class="pre">filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Dataset.filter_expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Dataset.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.Dataset.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the dataset in the data dictionary, or None it 
+has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.Dataset.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.data_model.model.Model" title="prosuite.data_model.model.Model"><span class="pre">Model</span></a></em><a class="headerlink" href="#prosuite.data_model.Dataset.model" title="Link to this definition"></a></dt>
+<dd><p>The dataset’s data model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.Dataset.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Dataset.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the dataset. Must be unique with respect to all other datasets of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.Model">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">catalog_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.Model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Model represents the data model in a workspace (file-gdb or enterprise-gdb)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of the transformed table or featureclass</p></li>
+<li><p><strong>catalog_path</strong> – The catalog path of the associated workspace.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>catalog_path examples:</dt><dd><p>c:/data.gdb
+c:/enterprise_gdb.sde</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.add_dataset">
+<span class="sig-name descname"><span class="pre">add_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.Model.add_dataset" title="Link to this definition"></a></dt>
+<dd><p>Add a dataset to the model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.catalog_path">
+<span class="sig-name descname"><span class="pre">catalog_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Model.catalog_path" title="Link to this definition"></a></dt>
+<dd><p>The catalog path of the associated workspace.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.datasets">
+<span class="sig-name descname"><span class="pre">datasets</span></span><a class="headerlink" href="#prosuite.data_model.Model.datasets" title="Link to this definition"></a></dt>
+<dd><p>List of datasets in the model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.default_database_name">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_database_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Model.default_database_name" title="Link to this definition"></a></dt>
+<dd><p>Gets the default database name for this model as defined in 
+the data dictionary, or None it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.default_database_schema_owner">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_database_schema_owner</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Model.default_database_schema_owner" title="Link to this definition"></a></dt>
+<dd><p>Gets the default database schema owner for this model as defined in 
+the data dictionary, or None it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.element_names_are_qualified">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_names_are_qualified</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#prosuite.data_model.Model.element_names_are_qualified" title="Link to this definition"></a></dt>
+<dd><p>Gets whether Whether model element names (datasets, associations) are qualified in this model.
+For models not loaded from the data dictionary always fully qualify dataset/table names from
+RDBMS.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.get_dataset_by_name">
+<span class="sig-name descname"><span class="pre">get_dataset_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.Model.get_dataset_by_name" title="Link to this definition"></a></dt>
+<dd><p>Get a dataset from this model by its name.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.Model.id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the model in the data dictionary, or None it
+has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Model.name" title="Link to this definition"></a></dt>
+<dd><p>The unique name of the model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.data_model.Model.wkid">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wkid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.Model.wkid" title="Link to this definition"></a></dt>
+<dd><p>The spatial reference well-known ID (WKID) for the model as defined in 
+the data dictionary, or None it has not been loaded from the data dictionary.
+This property is read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.</span></span><span class="sig-name descname"><span class="pre">TransformedDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformer_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.TransformedDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#prosuite.data_model.base_dataset.BaseDataset" title="prosuite.data_model.base_dataset.BaseDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p>
+<p>A transformed dataset represents tabular data that has been transformed from other input 
+tables or feature classes, optionally filtered by an SQL expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transformer_descriptor</strong> (<em>str</em>) – The transformer descriptor, i.e. the algorithm used to 
+generate this dataset.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – name of the transformed table or featureclass</p></li>
+<li><p><strong>filter_expression</strong> (<em>str</em><em>, </em><em>optional</em>) – A where clause that filters the table. The syntax of the where 
+clause is defined in the document SQLSyntax_en.pdf</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset.filter_expression">
+<span class="sig-name descname"><span class="pre">filter_expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.TransformedDataset.filter_expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset.generate_name">
+<span class="sig-name descname"><span class="pre">generate_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.TransformedDataset.generate_name" title="Link to this definition"></a></dt>
+<dd><p>Generates a technical name using the dataset name(s) and the transformer descriptor. This is the default name of
+a transformed dataset if it was created by the standard factory method from <a class="reference internal" href="prosuite.factories.html#module-prosuite.factories.transformers" title="prosuite.factories.transformers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.transformers</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.TransformedDataset.name" title="Link to this definition"></a></dt>
+<dd><p>The unique name of the transformed dataset.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="prosuite.quality.html#prosuite.quality.parameter.Parameter" title="prosuite.quality.parameter.Parameter"><span class="pre">Parameter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.data_model.TransformedDataset.parameters" title="Link to this definition"></a></dt>
+<dd><p>The list of parameters. Typically the parameters are specified in the factory method used to create the
+transformed dataset (see <a class="reference internal" href="prosuite.factories.html#prosuite.factories.transformers.Transformers" title="prosuite.factories.transformers.Transformers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prosuite.factories.transformers.Transformers</span></code></a>) and do not need to be changed
+through this list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset.transformer_descriptor">
+<span class="sig-name descname"><span class="pre">transformer_descriptor</span></span><a class="headerlink" href="#prosuite.data_model.TransformedDataset.transformer_descriptor" title="Link to this definition"></a></dt>
+<dd><p>The transformer descriptor, i.e. the algorithm used to generate this dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Dira GeoSystems AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -2,50 +2,161 @@
 layout: default
 title: Dira | Services
 ---
-
-<section  id="services" class="box background-color-1 mt-5">
+<section  id="services" class="box background-color-1 my-7">
     <div class="container box py-4" id="services-container">
         <div class="col-lg-8 py-4 offset-lg-2 mb-5">
             <h2 id="ServicesTitleDe" class="lang-de text-center">Dienstleistungen</h2>
             <h2 id="ServicesTitleEn" class="lang-en text-center">Services</h2>
+            <p class="lang-en">
+                Geographic data forms the foundation of informed decision-making, from urban planning and infrastructure
+                development to environmental protection and emergency response. Capturing and managing large-scale
+                datasets with precision, and making them accessible to the public, all while working within an evolving
+                technological landscape, demands specialised expertise.
+            </p>
+            <p class="lang-en">
+                At Dira GeoSystems, we bring deep expertise to addressing these challenges. Our open-source ProSuite
+                Platform has been the foundation for data production at the national mapping agencies of Switzerland,
+                Germany, and Austria for over 20 years. Most recently, we have built the complete data editing and
+                quality assurance infrastructure for the Swiss Federal Office of Topography, swisstopo.
+                From local authorities to national agencies and private-sector organisations, we implement and
+                support geographic data management solutions tailored to each client’s needs.
+            </p>
 
-            <p id="ServicesContentDe" class="lang-de">Dira GeoSystems bietet Schulungen und Beratungsdienstleistungen
-                für die Produktfamilie Dira ProSuite und LocationFinder an.
-                Der <a href="https://github.com/prosuite/">ProSuite-Quellcode</a> ist
-                weitgehend Open Source und kann problemlos in kundenspezifische Lösungen integriert werden.
-                Dies ermöglicht die kostengünstige und schnelle Entwicklung Ihrer Softwareprojekte.
-                Wir teilen gerne unsere umfangreiche Erfahrung in der Datenproduktion und Kartografie.
-                Unsere besondere Expertise umfasst die folgenden Themen:</p>
+            <p class="lang-de">
+                Geodaten sind die Grundlage fundierter Entscheidungen – sei es in der Stadtplanung, beim Ausbau von Infrastrukturen,
+                im Umweltschutz oder im Krisenmanagement. Die präzise Erfassung und Verwaltung großflächiger Datensätze
+                sowie deren öffentliche Bereitstellung erfordern ein hohes Mass an Fachwissen – insbesondere in einer sich
+                ständig weiterentwickelnden Technologielandschaft.
+            </p>
 
-            <ul id="ServicesListDe" class="lang-de aligned-list">
-                <li>Entwicklung Ihrer individuellen Geodatenlösung</li>
-                <li>Geodatenbankmodellierung und -entwurf</li>
-                <li style="white-space: nowrap;">Workflows für Daten- und Kartenerstellung, Geodatenbank-Versionierung und Datenbank-Tuning</li>
-                <li>Entwicklung von Kartenproduktionsprozessen</li>
-                <li>Entwicklung von Workflows für die Verarbeitung sehr grosser Datensätze</li>
-                <li>Softwareentwicklung für <a href="https://www.esri.com/de-de/arcgis/products/arcgis-pro/overview" target="_blank">ArcGIS Pro</a> und <a href="https://www.esri.com/de-de/arcgis/products/arcgis-enterprise/overview" target="_blank">ArcGIS Enterprise</a></li>
-            </ul>
-
-
-            <p id="ServicesContentEn" class="lang-en">Dira GeoSystems provides training and consulting services
-                for the Dira ProSuite product family and LocationFinder.
-                The <a href="https://github.com/prosuite/">ProSuite codebase</a>
-                is largely open source and can be easily integrated into
-                customer-specific solutions, allowing for the cost-efficient
-                and rapid development of your software projects. We are happy
-                to share our vast experience in data production and cartography.
-                Our special expertise covers the following topics:</p>
-
-            <ul id="ServicesListEn" class="lang-en aligned-list">
-                <li>Development of your custom geospatial solution</li>
-                <li>Geodatabase modelling and design</li>
-                <li>Data and map production workflows, geodatabase versioning and database tuning</li>
-                <li>Development of map production processes</li>
-                <li>Designing workflows for the processing of very large datasets</li>
-                <li>Software development for <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview/" target="_blank">ArcGIS Pro</a> and <a href="https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview" target="_blank">ArcGIS Enterprise</a></li>
-            </ul>
+            <p class="lang-de">
+                Bei Dira GeoSystems setzen wir unsere langjährige Erfahrung gezielt ein, um komplexe Herausforderungen
+                im Geodatenmanagement zu meistern. Unsere Open-Source-Plattform ProSuite bildet seit über 20 Jahren
+                das Rückgrat der Datenproduktion bei den nationalen Kartenwerken der Schweiz, Deutschlands und Österreichs.
+                Zuletzt haben wir für das Bundesamt für Landestopografie swisstopo die komplette Infrastruktur für
+                Datenerfassung und Qualitätssicherung entwickelt. Von Gemeinden über nationale Behörden bis hin zu
+                privaten Organisationen – wir realisieren und betreuen massgeschneiderte Lösungen für das Management geografischer Daten.
+            </p>
         </div>
-        <div class="row mt-5">
+    </div>
+</section>
+
+<section id="focus-i" class="background-color-1 py-5 my-7">
+    <div class="container py-5">
+        <h2 class="lang-en text-center mb-4">Our Focus</h2>
+        <h2 class="lang-de text-center mb-4">Unser Fokus</h2>
+
+        <!-- Centered Horizontal tabs -->
+        <ul class="nav nav-tabs mb-4 justify-content-center" id="productTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="product1-tab" data-bs-toggle="tab" data-bs-target="#focus1" type="button" role="tab" aria-controls="Geodata & Map Production" aria-selected="true">
+                    <span class="lang-en">Geodata & Map Production</span>
+                    <span class="lang-de">Geodaten-/ & Kartenproduktion</span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="focus2-tab" data-bs-toggle="tab" data-bs-target="#focus2" type="button" role="tab" aria-controls="Spatial Data Infrastructure" aria-selected="false">Spatial Data Infrastructure</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="focus3-tab" data-bs-toggle="tab" data-bs-target="#focus3" type="button" role="tab" aria-controls="Geodata Quality" aria-selected="false">
+                    <span class="lang-en">Geodata Quality</span>
+                    <span class="lang-de">Geodaten-Qualität</span>
+                </button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="focus4-tab" data-bs-toggle="tab" data-bs-target="#focus4" type="button" role="tab" aria-controls="Geographic Information System" aria-selected="false">
+                    <span class="lang-en">Geographic Information Systems</span>
+                    <span class="lang-de">Geografische Informationssysteme</span>
+                </button>
+            </li>
+
+<!--            <li class="nav-item" role="presentation">-->
+<!--                <button class="nav-link" id="focus5-tab" data-bs-toggle="tab" data-bs-target="#focus5" type="button" role="tab" aria-controls="GeoAI" aria-selected="false">GeoAI</button>-->
+<!--            </li>-->
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content" id="productTabsContent">
+            <!-- Geodata & Map Production -->
+            <div class="tab-pane fade show active" id="focus1" role="tabpanel" aria-labelledby="focus1-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-lg-5">
+                        <p class="standout-statement lang-en px-lg-2">High-quality geodata and maps are the cornerstone of decision-making. We give you the tools to produce them with confidence.</p>
+                        <p class="standout-statement lang-de px-lg-2">Hochwertige Geodaten und Karten bilden die Grundlage fundierter Entscheidungen. Mit unseren Tools erstellen Sie diese präzise und zuverlässig.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/dist/img/main/spiez_coastline.jpg" alt="ProSuite Carto" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spatial Data Infrastructure -->
+            <div class="tab-pane fade" id="focus2" role="tabpanel" aria-labelledby="focus2-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-lg-5">
+                        <p class="standout-statement lang-en px-lg-2">Strong spatial data infrastructure powers everything you do. We build it to last.</p>
+                        <p class="standout-statement lang-de px-lg-2">Eine robuste Geodaten-Infrastruktur bildet das Fundament all Ihrer Anwendungen. Wir entwickeln Lösungen, die Bestand haben.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/dist/img/main/landwasser_viaduct.jpg" alt="ProSuite Quality Assurance" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geodata Quality -->
+            <div class="tab-pane fade" id="focus3" role="tabpanel" aria-labelledby="focus3-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-lg-5">
+                        <p class="standout-statement lang-en px-lg-2">Geodata quality is non-negotiable. We help you get it right from the start.</p>
+                        <p class="standout-statement lang-de px-lg-2">Qualität bei Geodaten ist unverzichtbar. Wir unterstützen Sie dabei, diese von Anfang an sicherzustellen.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="dist/img/main/tractor_top.jpg" alt="ProSuite Edit Tools" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic Information System -->
+            <div class="tab-pane fade" id="focus4" role="tabpanel" aria-labelledby="focus4-tab">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-lg-5">
+                        <p class="standout-statement lang-en px-lg-2">Using ArcGIS Pro or ArcGIS Enterprise? We help you unlock its full potential.</p>
+                        <p class="standout-statement lang-de px-lg-2">Arbeiten Sie mit ArcGIS Pro oder ArcGIS Enterprise? Wir helfen Ihnen, das volle Potenzial auszuschöpfen.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/dist/img/main/cherry_blossom_tea_garden.jpg" alt="LocationFinder" class="product-image fade-in img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- GeoAI -->
+<!--            <div class="tab-pane fade" id="focus5" role="tabpanel" aria-labelledby="focus5-tab">-->
+<!--                <div class="row align-items-center">-->
+<!--                    <div class="col-md-6 text-center d-flex flex-column justify-content-center px-4 px-lg-5">-->
+<!--                        <p class="standout-statement lang-en px-lg-2">GeoAI streamlines geodata production while keeping human experts in control. We help you balance it.</p>-->
+<!--                        <p class="standout-statement lang-de px-lg-2">GeoAI optimiert die Geodaten-Produktion, während die Kontrolle bei menschlichen Experten bleibt. Wir unterstützen Sie dabei, die richtige Balance zu wahren.</p>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                        <img src="/dist/img/main/bellevue_aerial.jpg" alt="LocationFinder" class="product-image fade-in img-fluid rounded">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+        <div class="col-lg-8 py-4 offset-lg-2 mt-5">
+            <h3 class="lang-de text-center">Bereit, Ihr Projekt zu besprechen?</h3>
+            <h3 class="lang-en text-center">Ready to discuss your Project?</h3>
+            <p class="lang-en">
+                Every geodata challenge is unique. Whether your requirements align perfectly with what we have described
+                here or you are facing something more complex, we would like to hear about it. Get in touch to explore
+                how we can support your organisation’s geographic data goals.
+            </p>
+            <p class="lang-de">
+                Jede Geodaten-Herausforderung ist einzigartig. Ganz gleich, ob Ihre Anforderungen genau zu dem passen,
+                was wir hier beschrieben haben, oder ob Sie vor einer komplexeren Aufgabe stehen – wir freuen uns, mehr
+                darüber zu erfahren. Nehmen Sie Kontakt mit uns auf und erfahren Sie, wie wir Sie bei der Umsetzung
+                Ihrer Geodatenprojekte unterstützen können.
+            </p>
             <a class="btn btn-primary book-demo-btn lang-en"
                href="mailto:hello@dirageosystems.ch?subject=Contact%20concerning%20services%20by%20Dira">Contact us</a>
             <a class="btn btn-primary book-demo-btn lang-de"
@@ -53,3 +164,55 @@ title: Dira | Services
         </div>
     </div>
 </section>
+
+<section id="what-we-do" class="box background-color-1 my-7">
+    <div class="container box py-4" id="what-we-do-container">
+        <div class="col-lg-8 py-4 offset-lg-2">
+            <h2 class="lang-en text-center">What we Do</h2>
+            <p class="lang-en">We provide training and consulting services built around the Dira ProSuite product family
+                and the LocationFinder. The <a href="https://github.com/prosuite/">ProSuite codebase</a> is largely
+                open source and designed for seamless integration into customer-specific solutions,
+                enabling cost-efficient and rapid development of your software projects. Whether you are establishing a
+                new geodata production workflow, modernising legacy systems, or tackling datasets at national scale,
+                we can help.
+            </p>
+            <h2 class="lang-de text-center">Was machen wir</h2>
+            <p class="lang-de">Dira GeoSystems bietet Schulungen und Beratungsdienstleistungen für die Produktfamilie
+                Dira ProSuite und LocationFinder an.
+                Der <a href="https://github.com/prosuite/">ProSuite-Quellcode</a> ist weitgehend Open Source und
+                lässt sich problemlos in kundenspezifische Lösungen integrieren.
+                Dies ermöglicht die kostengünstige und schnelle Entwicklung Ihrer Softwareprojekte.
+                Wir teilen gerne unsere umfangreiche Erfahrung in der Datenproduktion und Kartografie.</p>
+        </div>
+        <div class="row text-center" id="services-containter">
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img alt="Geodata Production" class="rounded-circle circle-outline" height="140" src="dist/img/icons/services/Implementation.png"
+                     width="140">
+                <h3 class="lang-de">Entwicklung</h3>
+                <h3 class="lang-en">Development</h3>
+                <p class="lang-de">Wir sind Spezialistinnen und Spezialisten für Geodatenproduktion und -management und
+                    optimieren gemeinsam mit Ihnen Ihre Arbeitsabläufe.</p>
+                <p class="lang-en">We specialise in geodata production and management, helping you streamline and enhance your workflows.</p>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img alt="Training & Support" class="rounded-circle circle-outline" height="140" src="dist/img/icons/services/Teaching.png"
+                     width="140">
+                <h3 class="lang-de">Training & Support</h3>
+                <h3 class="lang-en">Training & Support</h3>
+                <p class="lang-de">Wir schulen Sie in der präzisen Erstellung von Geodaten und unterstützen Sie bei der Nutzung der Dira ProSuite sowie des LocationFinder.</p>
+                <p class="lang-en">We train you to create precise geodata and support you in using the Dira ProSuite and LocationFinder.</p>
+
+            </div>
+            <div class="col-md-6 col-lg-4 mt-5">
+                <img alt="Consulting" class="rounded-circle circle-outline" height="140" src="dist/img/icons/services/Consulting.png"
+                     width="140">
+                <h3 class="lang-de">Consulting</h3>
+                <h3 class="lang-en">Consulting</h3>
+                <p class="lang-de">Wir teilen unser Fachwissen in Geodaten- und Kartenproduktion, um Ihre Prozesse effizienter und präziser zu gestalten.</p>
+                <p class="lang-en">We share our expertise in geodata and map production to make your processes more efficient and the results more precise.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,45 @@
+prosuite.data\_model package
+============================
+
+Submodules
+----------
+
+prosuite.data\_model.base\_dataset module
+-----------------------------------------
+
+.. automodule:: prosuite.data_model.base_dataset
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.data\_model.dataset module
+-----------------------------------
+
+.. automodule:: prosuite.data_model.dataset
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.data\_model.model module
+---------------------------------
+
+.. automodule:: prosuite.data_model.model
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+prosuite.data\_model.transformed\_dataset module
+------------------------------------------------
+
+.. automodule:: prosuite.data_model.transformed_dataset
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: prosuite.data_model
+   :members:
+   :show-inheritance:
+   :undoc-members:
