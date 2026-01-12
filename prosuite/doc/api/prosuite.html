@@ -146,7 +146,89 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#verification">Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-prosuite.verification">Verification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.EnvelopePerimeter"><code class="docutils literal notranslate"><span class="pre">EnvelopePerimeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.EsriShapePerimeter"><code class="docutils literal notranslate"><span class="pre">EsriShapePerimeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.InvolvedTable"><code class="docutils literal notranslate"><span class="pre">InvolvedTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.InvolvedTable.object_ids"><code class="docutils literal notranslate"><span class="pre">InvolvedTable.object_ids</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.InvolvedTable.table_name"><code class="docutils literal notranslate"><span class="pre">InvolvedTable.table_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.Issue"><code class="docutils literal notranslate"><span class="pre">Issue</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.allowable"><code class="docutils literal notranslate"><span class="pre">Issue.allowable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.description"><code class="docutils literal notranslate"><span class="pre">Issue.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.geometry"><code class="docutils literal notranslate"><span class="pre">Issue.geometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.involved_objects"><code class="docutils literal notranslate"><span class="pre">Issue.involved_objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.issue_code"><code class="docutils literal notranslate"><span class="pre">Issue.issue_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.stop_condition"><code class="docutils literal notranslate"><span class="pre">Issue.stop_condition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.MessageLevel"><code class="docutils literal notranslate"><span class="pre">MessageLevel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.MessageLevel.level_10000"><code class="docutils literal notranslate"><span class="pre">MessageLevel.level_10000</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.MessageLevel.level_110000"><code class="docutils literal notranslate"><span class="pre">MessageLevel.level_110000</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.MessageLevel.level_30000"><code class="docutils literal notranslate"><span class="pre">MessageLevel.level_30000</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.MessageLevel.level_40000"><code class="docutils literal notranslate"><span class="pre">MessageLevel.level_40000</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.MessageLevel.level_60000"><code class="docutils literal notranslate"><span class="pre">MessageLevel.level_60000</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.MessageLevel.level_70000"><code class="docutils literal notranslate"><span class="pre">MessageLevel.level_70000</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.Service"><code class="docutils literal notranslate"><span class="pre">Service</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.HTML_REPORT"><code class="docutils literal notranslate"><span class="pre">Service.HTML_REPORT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.ISSUE_GDB"><code class="docutils literal notranslate"><span class="pre">Service.ISSUE_GDB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.XML_REPORT"><code class="docutils literal notranslate"><span class="pre">Service.XML_REPORT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.cancel"><code class="docutils literal notranslate"><span class="pre">Service.cancel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.configure_parameter_msgs"><code class="docutils literal notranslate"><span class="pre">Service.configure_parameter_msgs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.host_name"><code class="docutils literal notranslate"><span class="pre">Service.host_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.port_nr"><code class="docutils literal notranslate"><span class="pre">Service.port_nr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.ssl_channel_credentials"><code class="docutils literal notranslate"><span class="pre">Service.ssl_channel_credentials</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Service.verify"><code class="docutils literal notranslate"><span class="pre">Service.verify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.ServiceStatus"><code class="docutils literal notranslate"><span class="pre">ServiceStatus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.ServiceStatus.status_0"><code class="docutils literal notranslate"><span class="pre">ServiceStatus.status_0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.ServiceStatus.status_1"><code class="docutils literal notranslate"><span class="pre">ServiceStatus.status_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.ServiceStatus.status_2"><code class="docutils literal notranslate"><span class="pre">ServiceStatus.status_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.ServiceStatus.status_3"><code class="docutils literal notranslate"><span class="pre">ServiceStatus.status_3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.ServiceStatus.status_4"><code class="docutils literal notranslate"><span class="pre">ServiceStatus.status_4</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.VerificationParameters"><code class="docutils literal notranslate"><span class="pre">VerificationParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.add_objects_to_verify"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.add_objects_to_verify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.delete_issues_in_verified_model"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.delete_issues_in_verified_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.desired_parallel_processing"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.desired_parallel_processing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.objects_to_verify"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.objects_to_verify</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.report_culture_code"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.report_culture_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.save_verification_statistics"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.save_verification_statistics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.tile_size"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.tile_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.update_issues_in_verified_model"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.update_issues_in_verified_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationParameters.user_name"><code class="docutils literal notranslate"><span class="pre">VerificationParameters.user_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.VerificationResponse"><code class="docutils literal notranslate"><span class="pre">VerificationResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationResponse.issues"><code class="docutils literal notranslate"><span class="pre">VerificationResponse.issues</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationResponse.message"><code class="docutils literal notranslate"><span class="pre">VerificationResponse.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationResponse.message_level"><code class="docutils literal notranslate"><span class="pre">VerificationResponse.message_level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationResponse.service_call_status"><code class="docutils literal notranslate"><span class="pre">VerificationResponse.service_call_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerificationResponse.verified_specification"><code class="docutils literal notranslate"><span class="pre">VerificationResponse.verified_specification</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.VerifiedCondition"><code class="docutils literal notranslate"><span class="pre">VerifiedCondition</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedCondition.condition_id"><code class="docutils literal notranslate"><span class="pre">VerifiedCondition.condition_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedCondition.error_count"><code class="docutils literal notranslate"><span class="pre">VerifiedCondition.error_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedCondition.name"><code class="docutils literal notranslate"><span class="pre">VerifiedCondition.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification"><code class="docutils literal notranslate"><span class="pre">VerifiedSpecification</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification.specification_id"><code class="docutils literal notranslate"><span class="pre">VerifiedSpecification.specification_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification.specification_name"><code class="docutils literal notranslate"><span class="pre">VerifiedSpecification.specification_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification.user_name"><code class="docutils literal notranslate"><span class="pre">VerifiedSpecification.user_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification.verified_conditions"><code class="docutils literal notranslate"><span class="pre">VerifiedSpecification.verified_conditions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification.verified_conditions_count"><code class="docutils literal notranslate"><span class="pre">VerifiedSpecification.verified_conditions_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.WkbPerimeter"><code class="docutils literal notranslate"><span class="pre">WkbPerimeter</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-prosuite.utils">Utils</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prosuite.utils.append_timestamp_to_basepath"><code class="docutils literal notranslate"><span class="pre">append_timestamp_to_basepath()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#prosuite.utils.get_ssl_channel_credentials"><code class="docutils literal notranslate"><span class="pre">get_ssl_channel_credentials()</span></code></a></li>
@@ -759,8 +841,443 @@ error datasets. See <code class="xref py py-attr docutils literal notranslate"><
 </dd></dl>
 
 </section>
-<section id="verification">
-<h2>Verification<a class="headerlink" href="#verification" title="Link to this heading"></a></h2>
+<section id="module-prosuite.verification">
+<span id="verification"></span><h2>Verification<a class="headerlink" href="#module-prosuite.verification" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.EnvelopePerimeter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">EnvelopePerimeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.EnvelopePerimeter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A spatial envelope defined by the bounding coordinates. The spatial reference must match the
+spatial reference of the datasets.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.EsriShapePerimeter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">EsriShapePerimeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">esri_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.EsriShapePerimeter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A polygon in the Esri shape buffer format.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.InvolvedTable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">InvolvedTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.InvolvedTable" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a table involved in a verification issue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.InvolvedTable.object_ids">
+<span class="sig-name descname"><span class="pre">object_ids</span></span><a class="headerlink" href="#prosuite.verification.InvolvedTable.object_ids" title="Link to this definition"></a></dt>
+<dd><p>A list of object IDs from the table that are involved in the issue.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.InvolvedTable.table_name">
+<span class="sig-name descname"><span class="pre">table_name</span></span><a class="headerlink" href="#prosuite.verification.InvolvedTable.table_name" title="Link to this definition"></a></dt>
+<dd><p>The name of the table.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.Issue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">Issue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">issue_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">prosuite.generated.shared_qa_pb2.IssueMsg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.Issue" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents an issue found during the verification.</p>
+<p>To initialize an Issue object, pass the issue message to it.
+The Issue object extracts some properties from the issue message and makes them available as attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.allowable">
+<span class="sig-name descname"><span class="pre">allowable</span></span><a class="headerlink" href="#prosuite.verification.Issue.allowable" title="Link to this definition"></a></dt>
+<dd><p>If the issue is allowable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#prosuite.verification.Issue.description" title="Link to this definition"></a></dt>
+<dd><p>The description of the issue.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.geometry">
+<span class="sig-name descname"><span class="pre">geometry</span></span><a class="headerlink" href="#prosuite.verification.Issue.geometry" title="Link to this definition"></a></dt>
+<dd><p>The geometry involved of the issue.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.involved_objects">
+<span class="sig-name descname"><span class="pre">involved_objects</span></span><a class="headerlink" href="#prosuite.verification.Issue.involved_objects" title="Link to this definition"></a></dt>
+<dd><p>A list of InvolvedTable objects that are involved in the issue.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.issue_code">
+<span class="sig-name descname"><span class="pre">issue_code</span></span><a class="headerlink" href="#prosuite.verification.Issue.issue_code" title="Link to this definition"></a></dt>
+<dd><p>The issue code ID.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.stop_condition">
+<span class="sig-name descname"><span class="pre">stop_condition</span></span><a class="headerlink" href="#prosuite.verification.Issue.stop_condition" title="Link to this definition"></a></dt>
+<dd><p>If the issue is a stop condition.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">MessageLevel</span></span><a class="headerlink" href="#prosuite.verification.MessageLevel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel.level_10000">
+<span class="sig-name descname"><span class="pre">level_10000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Verbose'</span></em><a class="headerlink" href="#prosuite.verification.MessageLevel.level_10000" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel.level_110000">
+<span class="sig-name descname"><span class="pre">level_110000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Fatal'</span></em><a class="headerlink" href="#prosuite.verification.MessageLevel.level_110000" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel.level_30000">
+<span class="sig-name descname"><span class="pre">level_30000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Debug'</span></em><a class="headerlink" href="#prosuite.verification.MessageLevel.level_30000" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel.level_40000">
+<span class="sig-name descname"><span class="pre">level_40000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Info'</span></em><a class="headerlink" href="#prosuite.verification.MessageLevel.level_40000" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel.level_60000">
+<span class="sig-name descname"><span class="pre">level_60000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Warn'</span></em><a class="headerlink" href="#prosuite.verification.MessageLevel.level_60000" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.MessageLevel.level_70000">
+<span class="sig-name descname"><span class="pre">level_70000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Error'</span></em><a class="headerlink" href="#prosuite.verification.MessageLevel.level_70000" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.Service">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">Service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port_nr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">grpc.ssl_channel_credentials</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.Service" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The service class communicates on the http/2 channel with the server and initiates the
+quality verifications.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Service.HTML_REPORT">
+<span class="sig-name descname"><span class="pre">HTML_REPORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'verification.html'</span></em><a class="headerlink" href="#prosuite.verification.Service.HTML_REPORT" title="Link to this definition"></a></dt>
+<dd><p>The name of the html verification report.
+It will be written to the output_dir specified in the <code class="xref py py-meth docutils literal notranslate"><span class="pre">prosuite.service.Service.verify()</span></code> 
+method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Service.ISSUE_GDB">
+<span class="sig-name descname"><span class="pre">ISSUE_GDB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Issues.gdb'</span></em><a class="headerlink" href="#prosuite.verification.Service.ISSUE_GDB" title="Link to this definition"></a></dt>
+<dd><p>The name of the issue File Geodatabase. 
+It will be written to the output_dir specified in the <code class="xref py py-meth docutils literal notranslate"><span class="pre">prosuite.service.Service.verify()</span></code> 
+method. This File Geodatabase contains the issues found during the verification and could 
+be used as the source for the Issue Worklist in the ProSuite QA Add-In for ArcGIS Pro.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Service.XML_REPORT">
+<span class="sig-name descname"><span class="pre">XML_REPORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'verification.xml'</span></em><a class="headerlink" href="#prosuite.verification.Service.XML_REPORT" title="Link to this definition"></a></dt>
+<dd><p>The name of the xml verification report.
+It will be written to the output_dir specified in the <code class="xref py py-meth docutils literal notranslate"><span class="pre">prosuite.service.Service.verify()</span></code> 
+method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.verification.Service.cancel">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">environment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#prosuite.verification.Service.cancel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.verification.Service.configure_parameter_msgs">
+<span class="sig-name descname"><span class="pre">configure_parameter_msgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_msgs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.Service.configure_parameter_msgs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Service.host_name">
+<span class="sig-name descname"><span class="pre">host_name</span></span><a class="headerlink" href="#prosuite.verification.Service.host_name" title="Link to this definition"></a></dt>
+<dd><p>The name or IP address of the host running the quality verification service.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Service.port_nr">
+<span class="sig-name descname"><span class="pre">port_nr</span></span><a class="headerlink" href="#prosuite.verification.Service.port_nr" title="Link to this definition"></a></dt>
+<dd><p>The port used by the quality verification service.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Service.ssl_channel_credentials">
+<span class="sig-name descname"><span class="pre">ssl_channel_credentials</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">grpc.ssl_channel_credentials</span></em><a class="headerlink" href="#prosuite.verification.Service.ssl_channel_credentials" title="Link to this definition"></a></dt>
+<dd><p>The channel credentials to be used for TLS/SSL server 
+authentication, if required by the server (Default: None -&gt; No TLS/SSL).</p>
+<p>Use <a class="reference internal" href="#prosuite.utils.get_ssl_channel_credentials" title="prosuite.utils.get_ssl_channel_credentials"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prosuite.utils.get_ssl_channel_credentials()</span></code></a> to create the basic https 
+credentials if the appropria root certificates are in the windows certificate store.
+For advanced scenarios or credentials on a non-windows platform, see the gRPC Python docs
+(<a class="reference external" href="https://grpc.github.io/grpc/python/grpc.html">https://grpc.github.io/grpc/python/grpc.html</a>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.verification.Service.verify">
+<span class="sig-name descname"><span class="pre">verify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.quality.Specification" title="prosuite.quality.specification.Specification"><span class="pre">Specification</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.quality.XmlSpecification" title="prosuite.quality.xml_specification.XmlSpecification"><span class="pre">XmlSpecification</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.quality.DdxSpecification" title="prosuite.quality.ddx_specification.DdxSpecification"><span class="pre">DdxSpecification</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">perimeter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.verification.EnvelopePerimeter" title="prosuite.verification.envelope_perimeter.EnvelopePerimeter"><span class="pre">EnvelopePerimeter</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.verification.EsriShapePerimeter" title="prosuite.verification.esri_shape_perimeter.EsriShapePerimeter"><span class="pre">EsriShapePerimeter</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.verification.WkbPerimeter" title="prosuite.verification.wkb_perimeter.WkbPerimeter"><span class="pre">WkbPerimeter</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.verification.VerificationParameters" title="prosuite.verification.verification_parameters.VerificationParameters"><span class="pre">VerificationParameters</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.verification.VerificationResponse" title="prosuite.verification.verification_response.VerificationResponse"><span class="pre">VerificationResponse</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#prosuite.verification.Service.verify" title="Link to this definition"></a></dt>
+<dd><p>Executes a quality verification by running all quality conditions defined in the
+provided quality specification.</p>
+<p>Returns an iterator of VerificationResponse objects. Each response contains progress
+information, detected issues, and, in the final message, a complete VerifiedSpecification object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specification</strong> – The quality specification containing the conditions to be verified.
+Can be:
+- prosuite.quality.Specification (defined in Python)
+- prosuite.quality.DdxSpecification (from the data dictionary)
+- prosuite.quality.XmlSpecification (from an XML file)</p></li>
+<li><p><strong>perimeter</strong> – Polygon/extent that defines the verification area.
+Default = None → full extent of verified datasets.</p></li>
+<li><p><strong>output_dir</strong> – Optional output directory for results.</p></li>
+<li><p><strong>parameters</strong> – Additional optional verification parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterator of VerificationResponse objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.ServiceStatus">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">ServiceStatus</span></span><a class="headerlink" href="#prosuite.verification.ServiceStatus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.ServiceStatus.status_0">
+<span class="sig-name descname"><span class="pre">status_0</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Undefined'</span></em><a class="headerlink" href="#prosuite.verification.ServiceStatus.status_0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.ServiceStatus.status_1">
+<span class="sig-name descname"><span class="pre">status_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Running'</span></em><a class="headerlink" href="#prosuite.verification.ServiceStatus.status_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.ServiceStatus.status_2">
+<span class="sig-name descname"><span class="pre">status_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Cancelled'</span></em><a class="headerlink" href="#prosuite.verification.ServiceStatus.status_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.ServiceStatus.status_3">
+<span class="sig-name descname"><span class="pre">status_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Finished'</span></em><a class="headerlink" href="#prosuite.verification.ServiceStatus.status_3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.ServiceStatus.status_4">
+<span class="sig-name descname"><span class="pre">status_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Failed'</span></em><a class="headerlink" href="#prosuite.verification.ServiceStatus.status_4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">VerificationParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.VerificationParameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains all parameters that can be passed to a verification.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.add_objects_to_verify">
+<span class="sig-name descname"><span class="pre">add_objects_to_verify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.VerificationParameters.add_objects_to_verify" title="Link to this definition"></a></dt>
+<dd><p>Adds a dataset and a list of object IDs to the objects to be verified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_id</strong> (<em>int</em>) – The dataset ID containing the selected datasets The id can be look up in the DataDictionaryEditor -&gt; Data -&gt; Data Models -&gt; Dataset -&gt; Properties.</p></li>
+<li><p><strong>object_ids</strong> (<em>list</em>) – A list of feature-object IDs from the dataset to be verified.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.delete_issues_in_verified_model">
+<span class="sig-name descname"><span class="pre">delete_issues_in_verified_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#prosuite.quality.DeleteIssuesInVerifiedModel" title="prosuite.quality.delete_issues.DeleteIssuesInVerifiedModel"><span class="pre">DeleteIssuesInVerifiedModel</span></a></em><a class="headerlink" href="#prosuite.verification.VerificationParameters.delete_issues_in_verified_model" title="Link to this definition"></a></dt>
+<dd><p>Defines how existing issues in the primary model’s error datasets are deleted
+before writing new QA results.</p>
+<p>This setting corresponds to the C# enum <cite>ErrorDeletionInPerimeter</cite> used in
+<cite>QualityVerificationServiceBase.DeleteErrors()</cite>.</p>
+<dl class="simple">
+<dt>Enum values:</dt><dd><dl class="simple">
+<dt>delete_verified_conditions_in_perimeter (0):</dt><dd><p>Delete only issues in the verification perimeter that belong to
+verified quality conditions.</p>
+</dd>
+<dt>delete_all_in_perimeter (1):</dt><dd><p>Delete all issues in the verification perimeter, regardless of condition.</p>
+</dd>
+<dt>delete_none (2):</dt><dd><p>Do not delete any existing issues.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.desired_parallel_processing">
+<span class="sig-name descname"><span class="pre">desired_parallel_processing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.verification.VerificationParameters.desired_parallel_processing" title="Link to this definition"></a></dt>
+<dd><p>The desired number of parallel worker processes to be used if the server allows parallel processing.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.objects_to_verify">
+<span class="sig-name descname"><span class="pre">objects_to_verify</span></span><a class="headerlink" href="#prosuite.verification.VerificationParameters.objects_to_verify" title="Link to this definition"></a></dt>
+<dd><p>A dictionary containing the dataset IDs and the object IDs to be verified. The dataset ID can be looked up in the Data Dictionary Editor -&gt; Data -&gt; Data Models -&gt; Dataset -&gt; Properties.  Use the method add_objects_to_verify to add a list of IDs for a specific dataset.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.report_culture_code">
+<span class="sig-name descname"><span class="pre">report_culture_code</span></span><a class="headerlink" href="#prosuite.verification.VerificationParameters.report_culture_code" title="Link to this definition"></a></dt>
+<dd><p>The culture code that determines the language of the report. If None, the culture code of the machine of the server will be used. 
+Examples: ‘de-CH’, ‘de-DE’, ‘de-AT’, ‘en-GB’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.save_verification_statistics">
+<span class="sig-name descname"><span class="pre">save_verification_statistics</span></span><a class="headerlink" href="#prosuite.verification.VerificationParameters.save_verification_statistics" title="Link to this definition"></a></dt>
+<dd><p>If True, the verification statistics will be saved into the Data Dictionary database.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.tile_size">
+<span class="sig-name descname"><span class="pre">tile_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.verification.VerificationParameters.tile_size" title="Link to this definition"></a></dt>
+<dd><p>The size (in meter) for testing quality conditions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.update_issues_in_verified_model">
+<span class="sig-name descname"><span class="pre">update_issues_in_verified_model</span></span><a class="headerlink" href="#prosuite.verification.VerificationParameters.update_issues_in_verified_model" title="Link to this definition"></a></dt>
+<dd><p>If True, the issues will be updated in the error datasets of the verified model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationParameters.user_name">
+<span class="sig-name descname"><span class="pre">user_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.verification.VerificationParameters.user_name" title="Link to this definition"></a></dt>
+<dd><p>The executing user which will be used in issue features.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">VerificationResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_call_status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issue_msgs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verified_specification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#prosuite.verification.VerifiedSpecification" title="prosuite.verification.verified_specification.VerifiedSpecification"><span class="pre">VerifiedSpecification</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.VerificationResponse" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class represents a VerificationResponse Message.
+The str() method is overridden to return all properties from the VerificationResponse when
+a VerificationResponse object is printed using pythons print() method.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationResponse.issues">
+<span class="sig-name descname"><span class="pre">issues</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.verification.Issue" title="prosuite.verification.issue.Issue"><span class="pre">Issue</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.verification.VerificationResponse.issues" title="Link to this definition"></a></dt>
+<dd><p>List of issues</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationResponse.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.verification.VerificationResponse.message" title="Link to this definition"></a></dt>
+<dd><p>the actual message</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationResponse.message_level">
+<span class="sig-name descname"><span class="pre">message_level</span></span><a class="headerlink" href="#prosuite.verification.VerificationResponse.message_level" title="Link to this definition"></a></dt>
+<dd><p>message level -&gt; see class MessageLevel</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationResponse.service_call_status">
+<span class="sig-name descname"><span class="pre">service_call_status</span></span><a class="headerlink" href="#prosuite.verification.VerificationResponse.service_call_status" title="Link to this definition"></a></dt>
+<dd><p>service status -&gt; see class ServiceStatus</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerificationResponse.verified_specification">
+<span class="sig-name descname"><span class="pre">verified_specification</span></span><a class="headerlink" href="#prosuite.verification.VerificationResponse.verified_specification" title="Link to this definition"></a></dt>
+<dd><p>Optional object containing metadata and results of the verified QA specification.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedCondition">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">VerifiedCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.VerifiedCondition" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a verified QA condition, including its ID, name, and error count.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedCondition.condition_id">
+<span class="sig-name descname"><span class="pre">condition_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#prosuite.verification.VerifiedCondition.condition_id" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier of the condition in the data dictionary, or None if
+it has not been loaded from the data dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedCondition.error_count">
+<span class="sig-name descname"><span class="pre">error_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.verification.VerifiedCondition.error_count" title="Link to this definition"></a></dt>
+<dd><p>Number of detected issues (errors) for this condition.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedCondition.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.verification.VerifiedCondition.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the verified quality condition (empty string if unavailable).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedSpecification">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">VerifiedSpecification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verified_conditions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.verification.VerifiedCondition" title="prosuite.verification.verified_condition.VerifiedCondition"><span class="pre">VerifiedCondition</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.VerifiedSpecification" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents the verified QA specification and its results.
+Includes metadata about the executed specification and all verified conditions.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedSpecification.specification_id">
+<span class="sig-name descname"><span class="pre">specification_id</span></span><a class="headerlink" href="#prosuite.verification.VerifiedSpecification.specification_id" title="Link to this definition"></a></dt>
+<dd><p>The ID of the verified specification or -1 in case if its not originated from the data dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedSpecification.specification_name">
+<span class="sig-name descname"><span class="pre">specification_name</span></span><a class="headerlink" href="#prosuite.verification.VerifiedSpecification.specification_name" title="Link to this definition"></a></dt>
+<dd><p>The name of the verified specification.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedSpecification.user_name">
+<span class="sig-name descname"><span class="pre">user_name</span></span><a class="headerlink" href="#prosuite.verification.VerifiedSpecification.user_name" title="Link to this definition"></a></dt>
+<dd><p>User who executed the verification.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedSpecification.verified_conditions">
+<span class="sig-name descname"><span class="pre">verified_conditions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#prosuite.verification.VerifiedCondition" title="prosuite.verification.verified_condition.VerifiedCondition"><span class="pre">VerifiedCondition</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#prosuite.verification.VerifiedSpecification.verified_conditions" title="Link to this definition"></a></dt>
+<dd><p>List of all verified QA conditions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="prosuite.verification.VerifiedSpecification.verified_conditions_count">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verified_conditions_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.verification.VerifiedSpecification.verified_conditions_count" title="Link to this definition"></a></dt>
+<dd><p>Returns the number of verified QA conditions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.verification.WkbPerimeter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.verification.</span></span><span class="sig-name descname"><span class="pre">WkbPerimeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wkb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.verification.WkbPerimeter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A polygon in the OGC well-known-binary format. For example, in ArcPy the geometry’s WKB
+property could be used to acquire this format.</p>
+</dd></dl>
+
 </section>
 <section id="module-prosuite.utils">
 <span id="utils"></span><h2>Utils<a class="headerlink" href="#module-prosuite.utils" title="Link to this heading"></a></h2>

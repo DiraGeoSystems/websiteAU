@@ -48,16 +48,16 @@
 <li class="toctree-l1 current"><a class="reference internal" href="prosuite.html">ProSuite package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="prosuite.html#module-prosuite.data_model">Data Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prosuite.html#module-prosuite.quality">Quality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prosuite.html#verification">Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prosuite.html#module-prosuite.verification">Verification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prosuite.html#module-prosuite.utils">Utils</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="prosuite.html#organisational-modules-subpackages">Organisational modules - Subpackages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="prosuite.factories.html">prosuite.factories package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">prosuite.datatypes package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#esri-geometry-type-module">esri_geometry_type module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#expected-case-module">expected_case module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#expected-string-difference-module">expected_string_difference module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#non-linear-segment-type-module">non_linear_segment_type module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#unique-strings-constraint-module">unique_strings_constraint module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-prosuite.datatypes.esri_geometry_type">esri_geometry_type module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-prosuite.datatypes.expected_case">expected_case module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-prosuite.datatypes.expected_string_difference">expected_string_difference module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-prosuite.datatypes.non_linear_segment_type">non_linear_segment_type module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-prosuite.datatypes.unique_strings_constraint">unique_strings_constraint module</a></li>
 </ul>
 </li>
 </ul>
@@ -94,20 +94,155 @@
              
   <section id="prosuite-datatypes-package">
 <h1>prosuite.datatypes package<a class="headerlink" href="#prosuite-datatypes-package" title="Link to this heading"></a></h1>
-<section id="esri-geometry-type-module">
-<h2>esri_geometry_type module<a class="headerlink" href="#esri-geometry-type-module" title="Link to this heading"></a></h2>
+<section id="module-prosuite.datatypes.esri_geometry_type">
+<span id="esri-geometry-type-module"></span><h2>esri_geometry_type module<a class="headerlink" href="#module-prosuite.datatypes.esri_geometry_type" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.datatypes.esri_geometry_type.EsriGeometryType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.datatypes.esri_geometry_type.</span></span><span class="sig-name descname"><span class="pre">EsriGeometryType</span></span><a class="headerlink" href="#prosuite.datatypes.esri_geometry_type.EsriGeometryType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.esri_geometry_type.EsriGeometryType.Multipatch">
+<span class="sig-name descname"><span class="pre">Multipatch</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Multipatch'</span></em><a class="headerlink" href="#prosuite.datatypes.esri_geometry_type.EsriGeometryType.Multipatch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.esri_geometry_type.EsriGeometryType.Multipoint">
+<span class="sig-name descname"><span class="pre">Multipoint</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Multipoint'</span></em><a class="headerlink" href="#prosuite.datatypes.esri_geometry_type.EsriGeometryType.Multipoint" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.esri_geometry_type.EsriGeometryType.Point">
+<span class="sig-name descname"><span class="pre">Point</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Point'</span></em><a class="headerlink" href="#prosuite.datatypes.esri_geometry_type.EsriGeometryType.Point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.esri_geometry_type.EsriGeometryType.Polygon">
+<span class="sig-name descname"><span class="pre">Polygon</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Polygon'</span></em><a class="headerlink" href="#prosuite.datatypes.esri_geometry_type.EsriGeometryType.Polygon" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.esri_geometry_type.EsriGeometryType.Polyline">
+<span class="sig-name descname"><span class="pre">Polyline</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Polyline'</span></em><a class="headerlink" href="#prosuite.datatypes.esri_geometry_type.EsriGeometryType.Polyline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="expected-case-module">
-<h2>expected_case module<a class="headerlink" href="#expected-case-module" title="Link to this heading"></a></h2>
+<section id="module-prosuite.datatypes.expected_case">
+<span id="expected-case-module"></span><h2>expected_case module<a class="headerlink" href="#module-prosuite.datatypes.expected_case" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.datatypes.expected_case.</span></span><span class="sig-name descname"><span class="pre">ExpectedCase</span></span><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase.ALLLOWER">
+<span class="sig-name descname"><span class="pre">ALLLOWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase.ALLLOWER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase.ALLUPPER">
+<span class="sig-name descname"><span class="pre">ALLUPPER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase.ALLUPPER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase.ANY">
+<span class="sig-name descname"><span class="pre">ANY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase.ANY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase.MIXED">
+<span class="sig-name descname"><span class="pre">MIXED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase.MIXED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase.NOTALLLOWER">
+<span class="sig-name descname"><span class="pre">NOTALLLOWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase.NOTALLLOWER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_case.ExpectedCase.NOTALLUPPER">
+<span class="sig-name descname"><span class="pre">NOTALLUPPER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#prosuite.datatypes.expected_case.ExpectedCase.NOTALLUPPER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="expected-string-difference-module">
-<h2>expected_string_difference module<a class="headerlink" href="#expected-string-difference-module" title="Link to this heading"></a></h2>
+<section id="module-prosuite.datatypes.expected_string_difference">
+<span id="expected-string-difference-module"></span><h2>expected_string_difference module<a class="headerlink" href="#module-prosuite.datatypes.expected_string_difference" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_string_difference.ExpectedStringDifference">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.datatypes.expected_string_difference.</span></span><span class="sig-name descname"><span class="pre">ExpectedStringDifference</span></span><a class="headerlink" href="#prosuite.datatypes.expected_string_difference.ExpectedStringDifference" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_string_difference.ExpectedStringDifference.ANY">
+<span class="sig-name descname"><span class="pre">ANY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#prosuite.datatypes.expected_string_difference.ExpectedStringDifference.ANY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_string_difference.ExpectedStringDifference.CASE_INSENITIVE_DIFFERENCE">
+<span class="sig-name descname"><span class="pre">CASE_INSENITIVE_DIFFERENCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#prosuite.datatypes.expected_string_difference.ExpectedStringDifference.CASE_INSENITIVE_DIFFERENCE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.expected_string_difference.ExpectedStringDifference.CASE_SENSITIVE_DIFFERENCE">
+<span class="sig-name descname"><span class="pre">CASE_SENSITIVE_DIFFERENCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#prosuite.datatypes.expected_string_difference.ExpectedStringDifference.CASE_SENSITIVE_DIFFERENCE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="non-linear-segment-type-module">
-<h2>non_linear_segment_type module<a class="headerlink" href="#non-linear-segment-type-module" title="Link to this heading"></a></h2>
+<section id="module-prosuite.datatypes.non_linear_segment_type">
+<span id="non-linear-segment-type-module"></span><h2>non_linear_segment_type module<a class="headerlink" href="#module-prosuite.datatypes.non_linear_segment_type" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.datatypes.non_linear_segment_type.</span></span><span class="sig-name descname"><span class="pre">NonLinearSegmentType</span></span><a class="headerlink" href="#prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.Bezier">
+<span class="sig-name descname"><span class="pre">Bezier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('BEZIER',</span> <span class="pre">0)</span></em><a class="headerlink" href="#prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.Bezier" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.CircularArc">
+<span class="sig-name descname"><span class="pre">CircularArc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('CIRCULARARC',</span> <span class="pre">1)</span></em><a class="headerlink" href="#prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.CircularArc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.EllipticArc">
+<span class="sig-name descname"><span class="pre">EllipticArc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ELLIPTICARC',</span> <span class="pre">2)</span></em><a class="headerlink" href="#prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.EllipticArc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.type_list">
+<span class="sig-name descname"><span class="pre">type_list</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('BEZIER',</span> <span class="pre">0),</span> <span class="pre">('CIRCULARARC',</span> <span class="pre">1),</span> <span class="pre">('ELLIPTICARC',</span> <span class="pre">2)]</span></em><a class="headerlink" href="#prosuite.datatypes.non_linear_segment_type.NonLinearSegmentType.type_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="unique-strings-constraint-module">
-<h2>unique_strings_constraint module<a class="headerlink" href="#unique-strings-constraint-module" title="Link to this heading"></a></h2>
+<section id="module-prosuite.datatypes.unique_strings_constraint">
+<span id="unique-strings-constraint-module"></span><h2>unique_strings_constraint module<a class="headerlink" href="#module-prosuite.datatypes.unique_strings_constraint" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.datatypes.unique_strings_constraint.</span></span><span class="sig-name descname"><span class="pre">UniqueStringsConstraint</span></span><a class="headerlink" href="#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.NONE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.UNIQUE_ANY_CASE">
+<span class="sig-name descname"><span class="pre">UNIQUE_ANY_CASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.UNIQUE_ANY_CASE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.UNIQUE_EXACT_CASE">
+<span class="sig-name descname"><span class="pre">UNIQUE_EXACT_CASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.UNIQUE_EXACT_CASE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
