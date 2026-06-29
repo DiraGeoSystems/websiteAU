@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProSuite package &mdash; ProSuite 1.5.1 documentation</title>
+  <title>ProSuite package &mdash; ProSuite 1.7.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -156,6 +156,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#prosuite.verification.Issue"><code class="docutils literal notranslate"><span class="pre">Issue</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.allowable"><code class="docutils literal notranslate"><span class="pre">Issue.allowable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.condition_id"><code class="docutils literal notranslate"><span class="pre">Issue.condition_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.description"><code class="docutils literal notranslate"><span class="pre">Issue.description</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.geometry"><code class="docutils literal notranslate"><span class="pre">Issue.geometry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prosuite.verification.Issue.involved_objects"><code class="docutils literal notranslate"><span class="pre">Issue.involved_objects</span></code></a></li>
@@ -318,7 +319,7 @@ the document SQLSyntax_en.pdf</p></li>
 <dl class="py property">
 <dt class="sig sig-object py" id="prosuite.data_model.Dataset.alias_name">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alias_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Dataset.alias_name" title="Link to this definition"></a></dt>
-<dd><p>The alias name of the dataset in the data dictionary, or None it 
+<dd><p>The alias name of the dataset in the data dictionary, or None it
 has not been loaded from the data dictionary.
 This property is read-only.</p>
 </dd></dl>
@@ -326,7 +327,7 @@ This property is read-only.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="prosuite.data_model.Dataset.id">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.Dataset.id" title="Link to this definition"></a></dt>
-<dd><p>The unique identifier of the dataset in the data dictionary, or None it 
+<dd><p>The unique identifier of the dataset in the data dictionary, or None it
 has not been loaded from the data dictionary.
 This property is read-only.</p>
 </dd></dl>
@@ -378,7 +379,7 @@ c:/enterprise_gdb.sde</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="prosuite.data_model.Model.default_database_name">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_database_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Model.default_database_name" title="Link to this definition"></a></dt>
-<dd><p>Gets the default database name for this model as defined in 
+<dd><p>Gets the default database name for this model as defined in
 the data dictionary, or None it has not been loaded from the data dictionary.
 This property is read-only.</p>
 </dd></dl>
@@ -386,7 +387,7 @@ This property is read-only.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="prosuite.data_model.Model.default_database_schema_owner">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_database_schema_owner</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#prosuite.data_model.Model.default_database_schema_owner" title="Link to this definition"></a></dt>
-<dd><p>Gets the default database schema owner for this model as defined in 
+<dd><p>Gets the default database schema owner for this model as defined in
 the data dictionary, or None it has not been loaded from the data dictionary.
 This property is read-only.</p>
 </dd></dl>
@@ -423,7 +424,7 @@ This property is read-only.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="prosuite.data_model.Model.wkid">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wkid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#prosuite.data_model.Model.wkid" title="Link to this definition"></a></dt>
-<dd><p>The spatial reference well-known ID (WKID) for the model as defined in 
+<dd><p>The spatial reference well-known ID (WKID) for the model as defined in
 the data dictionary, or None it has not been loaded from the data dictionary.
 This property is read-only.</p>
 </dd></dl>
@@ -434,15 +435,15 @@ This property is read-only.</p>
 <dt class="sig sig-object py" id="prosuite.data_model.TransformedDataset">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prosuite.data_model.</span></span><span class="sig-name descname"><span class="pre">TransformedDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformer_descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prosuite.data_model.TransformedDataset" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#prosuite.data_model.BaseDataset" title="prosuite.data_model.base_dataset.BaseDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p>
-<p>A transformed dataset represents tabular data that has been transformed from other input 
+<p>A transformed dataset represents tabular data that has been transformed from other input
 tables or feature classes, optionally filtered by an SQL expression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>transformer_descriptor</strong> (<em>str</em>) – The transformer descriptor, i.e. the algorithm used to 
+<li><p><strong>transformer_descriptor</strong> (<em>str</em>) – The transformer descriptor, i.e. the algorithm used to
 generate this dataset.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – name of the transformed table or featureclass</p></li>
-<li><p><strong>filter_expression</strong> (<em>str</em><em>, </em><em>optional</em>) – A where clause that filters the table. The syntax of the where 
+<li><p><strong>filter_expression</strong> (<em>str</em><em>, </em><em>optional</em>) – A where clause that filters the table. The syntax of the where
 clause is defined in the document SQLSyntax_en.pdf</p></li>
 </ul>
 </dd>
@@ -637,7 +638,7 @@ have none, one or multiple issue filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>issue_filter_descriptor</strong> (<em>str</em>) – The issue filter descriptor, i.e. the algorithm used to 
+<li><p><strong>issue_filter_descriptor</strong> (<em>str</em>) – The issue filter descriptor, i.e. the algorithm used to
 filter issues found by the condition.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – name of the issue filter</p></li>
 </ul>
@@ -892,6 +893,12 @@ The Issue object extracts some properties from the issue message and makes them 
 <dt class="sig sig-object py" id="prosuite.verification.Issue.allowable">
 <span class="sig-name descname"><span class="pre">allowable</span></span><a class="headerlink" href="#prosuite.verification.Issue.allowable" title="Link to this definition"></a></dt>
 <dd><p>If the issue is allowable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="prosuite.verification.Issue.condition_id">
+<span class="sig-name descname"><span class="pre">condition_id</span></span><a class="headerlink" href="#prosuite.verification.Issue.condition_id" title="Link to this definition"></a></dt>
+<dd><p>Id of the condition</p>
 </dd></dl>
 
 <dl class="py attribute">
