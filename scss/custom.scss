@@ -184,7 +184,7 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  height:115%; /* To ensure the parallax effect doesn't remove lines at the bottom */
+  height:180%; /* Extra height so the scroll drift never exposes a gap at the edges */
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
@@ -216,6 +216,7 @@ h1 {
 #contour-svg {
   width: 100%;
   height: 100%;
+  will-change: transform; /* Promote to a GPU layer for the scroll drift */
 
   /* Style all contour lines */
   .contour, [id^='C'], [id^='D'] {
@@ -224,9 +225,22 @@ h1 {
     stroke-width: 2.5px;
     stroke-dasharray: 7000;
     stroke-dashoffset: 0; /* Default state (fully drawn) */
-    transition: transform 0.05s linear;
   }
 }
+
+/*
+ * Scroll parallax.
+ *
+ * contour.js moves the whole SVG as a single GPU-composited layer (will-change:
+ * transform, above), drifting it up at a fraction of the scroll distance via
+ * translate3d. Every contour moves by the same amount, so nothing shifts
+ * relative to anything else (no overlap), and the GPU just slides one cached
+ * bitmap instead of re-rasterising 63 vector paths per frame — which was the
+ * cause of the scroll stutter on weaker GPUs.
+ *
+ * Gracefully degrades: reduced-motion users, and cases where the JS doesn't
+ * run, simply get a static background.
+ */
 
 /* Initial draw animation state - applied by JS when needed */
 .drawing-animation {
