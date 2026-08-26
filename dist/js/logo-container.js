@@ -34,13 +34,45 @@ class InfiniteScroller {
     }
 
     init() {
-        setTimeout(() => {
+        // Wait until the logo images have loaded before measuring the strip.
+        // Measuring too early (images not yet loaded → zero intrinsic width)
+        // yields a tiny set width, which makes the scroll speed far too slow
+        // and inflates the clone count. A fixed delay is unreliable, especially
+        // right after the image files change and the cache is cold.
+        this.whenImagesReady(() => {
             this.createSufficientDuplicates();
             this.setupInitialPosition();
             this.setupStyles();
             this.setupEvents();
             this.startAnimation();
-        }, 100);
+        });
+    }
+
+    whenImagesReady(callback) {
+        const imgs = Array.from(this.wrapper.querySelectorAll('img'));
+        let remaining = imgs.filter(img => !img.complete).length;
+
+        if (remaining === 0) {
+            requestAnimationFrame(callback);
+            return;
+        }
+
+        let done = false;
+        const finish = () => {
+            if (done) return;
+            done = true;
+            requestAnimationFrame(callback);
+        };
+        const onOne = () => { if (--remaining === 0) finish(); };
+
+        imgs.forEach(img => {
+            if (img.complete) return;
+            img.addEventListener('load', onOne, { once: true });
+            img.addEventListener('error', onOne, { once: true });
+        });
+
+        // Safety net in case a load/error event never arrives
+        setTimeout(finish, 3000);
     }
 
     createSufficientDuplicates() {
@@ -76,8 +108,6 @@ class InfiniteScroller {
 
         this.singleSetWidth = originalSetWidth;
         this.totalSets = minSetsNeeded;
-
-        console.log(`Direction: ${this.direction}, Sets: ${minSetsNeeded}, Set width: ${originalSetWidth}px, Container: ${containerWidth}px`);
     }
 
     setupInitialPosition() {
@@ -146,29 +176,19 @@ class InfiniteScroller {
     }
 
     normalizeTransform() {
+        // The strip is periodic: every set of logos is identical, so shifting by
+        // exactly one set width is visually invisible. We wrap in BOTH automatic
+        // and manual mode so dragging/wheeling can never reach a hard end — the
+        // strip is genuinely endless in every mode. `while` (not `if`) handles
+        // large wheel/drag deltas that overshoot the window in one step.
         const setWidth = this.singleSetWidth;
+        const lowerBound = -setWidth * (this.totalSets - 2);
 
-        // Only normalize during automatic animation to prevent jumps during manual control
-        if (this.isManualControl) {
-            // During manual control, allow wider bounds to prevent sudden jumps
-            // Only clamp to extreme limits to prevent going completely off-screen
-            const maxBound = setWidth;
-            const minBound = -setWidth * this.totalSets;
-
-            if (this.currentTransform > maxBound) {
-                this.currentTransform = maxBound;
-            } else if (this.currentTransform < minBound) {
-                this.currentTransform = minBound;
-            }
-        } else {
-            // During automatic animation, use seamless wrapping
-            if (this.currentTransform <= -setWidth * (this.totalSets - 2)) {
-                // Moving too far left/right, jump back to equivalent position
-                this.currentTransform += setWidth;
-            } else if (this.currentTransform >= 0) {
-                // Moving too far right/left, jump forward to equivalent position
-                this.currentTransform -= setWidth;
-            }
+        while (this.currentTransform <= lowerBound) {
+            this.currentTransform += setWidth;
+        }
+        while (this.currentTransform >= 0) {
+            this.currentTransform -= setWidth;
         }
     }
 
@@ -290,25 +310,10 @@ class InfiniteScroller {
     exitManualMode() {
         clearTimeout(this.manualTimeout);
         this.manualTimeout = setTimeout(() => {
-            // Before resuming automatic mode, normalize position for seamless continuation
-            this.normalizeTransformForResume();
+            // Position is already kept within the safe window by normalizeTransform
+            // on every manual update, so resuming is seamless with no extra work.
             this.isManualControl = false;
         }, 1000);
-    }
-
-    normalizeTransformForResume() {
-        // When transitioning back to automatic mode, smoothly normalize position
-        const setWidth = this.singleSetWidth;
-
-        // Find the equivalent position within the safe range for automatic animation
-        while (this.currentTransform <= -setWidth * (this.totalSets - 2)) {
-            this.currentTransform += setWidth;
-        }
-        while (this.currentTransform >= 0) {
-            this.currentTransform -= setWidth;
-        }
-
-        this.updateTransform();
     }
 
     setSpeed(durationSeconds) {

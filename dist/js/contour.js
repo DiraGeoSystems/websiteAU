@@ -8,144 +8,89 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.pathname === '/index.html' ||
         window.location.href.endsWith('/');
 
-    // Track if animation has been run in this session
+    // Track if the reveal has been run in this session
     const animationRun = sessionStorage.getItem('svgAnimationRun');
     const shouldRunAnimation = isHomePage || !animationRun;
 
-    // Find all contour elements
-    const contourElements = svgElement.querySelectorAll(".contour, [id^='C'], [id^='D']");
-    if (contourElements.length === 0) return;
+    // Respect users who ask for less motion (OS-level setting)
+    const prefersReducedMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Convert to array and calculate max level
-    const contours = Array.from(contourElements);
-    let maxLevel = 0;
+    const contours = Array.from(svgElement.querySelectorAll(".contour, [id^='C'], [id^='D']"));
+    if (contours.length === 0) return;
 
-    // Process contours: extract levels and store original transforms
+    // Extract the elevation level from each ID (e.g. C1, D36) — used only to
+    // order the staggered reveal from the lowest contours upward.
     contours.forEach(contour => {
-        // Extract level from ID (e.g., C1, D36)
         const id = contour.getAttribute('id') || '';
         let level = 0;
-
         if (id.startsWith('C') || id.startsWith('D')) {
             level = parseInt(id.substring(1), 10) || 0;
         }
-
-        // Store the level and original transform as data attributes
         contour.dataset.level = level;
-        contour.dataset.originalTransform = contour.getAttribute('transform') || '';
-
-        // Update max level
-        maxLevel = Math.max(maxLevel, level);
     });
 
-    // Run initial drawing animation if on homepage for first time
-    if (shouldRunAnimation) {
+    // Intro reveal (skipped for reduced motion; lines just start drawn)
+    if (shouldRunAnimation && !prefersReducedMotion) {
         sessionStorage.setItem('svgAnimationRun', 'true');
         runDrawingAnimation(contours);
-
-        // Set up scroll parallax after drawing animation completes
-        setTimeout(() => {
-            setupScrollParallax(contours, maxLevel);
-        }, 4000);
     } else {
-        // Skip animation and go straight to parallax
-        setupScrollParallax(contours, maxLevel);
+        contours.forEach(contour => { contour.style.strokeDashoffset = "0"; });
+    }
+
+    // Parallax: move the whole SVG as one GPU-composited layer (reduced motion off)
+    if (!prefersReducedMotion) {
+        setupScrollParallax(svgElement);
     }
 
     function runDrawingAnimation(contours) {
-        // Sort contours by level (smaller numbers first)
-        const sortedContours = [...contours].sort((a, b) => {
-            const levelA = parseInt(a.dataset.level, 10) || 0;
-            const levelB = parseInt(b.dataset.level, 10) || 0;
-            return levelA - levelB;
-        });
+        // Reveal from the lowest contours upward, staggered in groups of 5
+        const sorted = [...contours].sort((a, b) =>
+            (parseInt(a.dataset.level, 10) || 0) - (parseInt(b.dataset.level, 10) || 0));
 
-        // Apply animation with staggered delays
-        sortedContours.forEach((contour, index) => {
-            // Reset animation state first
+        sorted.forEach((contour, index) => {
             contour.style.animation = "none";
             void contour.offsetWidth; // Force reflow
 
-            // Calculate delay based on group position
-            const groupSize = 5;
-            const groupIndex = Math.floor(index / groupSize);
+            const groupIndex = Math.floor(index / 5);
             const delay = 0.2 * groupIndex;
 
-            // Apply animation with delay
             contour.style.strokeDashoffset = "7000";
             contour.style.animation = `initialDraw 4s forwards ease-in-out ${delay}s`;
         });
     }
 
-    function setupScrollParallax(contours, maxLevel) {
-        // Clear any active animations
-        contours.forEach(contour => {
-            contour.style.animation = "none";
-            contour.style.strokeDashoffset = "0"; // Keep lines visible
-        });
+    function setupScrollParallax(el) {
+        // The whole SVG drifts up at a fraction of the scroll distance, so the
+        // background moves slower than the page content. Every contour moves by
+        // the same amount, so lines never shift relative to each other.
+        const FACTOR = 0.15;
+        let lastOffset = null;
+        let ticking = false;
 
-        // Handle scroll events
-        function handleScroll() {
-            const scrollY = window.scrollY;
-            const viewportHeight = window.innerHeight;
+        function update() {
+            ticking = false;
+            // Cap the drift so it can't exceed the #background buffer and expose
+            // a gap at the bottom edge (see height in the SCSS). At FACTOR 0.15
+            // this cap is reached at ~4 screens scrolled.
+            const cap = window.innerHeight * 0.6;
+            let drift = window.scrollY * FACTOR;
+            if (drift > cap) drift = cap;
 
-            // Calculate how many "screens" we've scrolled
-            const screensScrolled = scrollY / viewportHeight;
-
-            // Define the convergence threshold - after this many screens, all lines move at the same rate
-            const convergenceThreshold = 4;
-
-            // Calculate convergence ratio (0 to 1)
-            // 0 = full differential movement, 1 = uniform movement
-            const convergenceRatio = Math.min(1, Math.max(0, screensScrolled / convergenceThreshold));
-
-            // Base movement amount for all contours
-            const baseMovement = 120; // Maximum movement for any contour
-
-            // Apply parallax effect based on level
-            contours.forEach(contour => {
-                const level = parseInt(contour.dataset.level, 10) || 0;
-
-                // Calculate movement differential based on level (becomes smaller as we scroll more)
-                let movementReduction;
-                if (level <= 1) {
-                    movementReduction = 0; // No reduction for lowest levels
-                } else if (level <= 6) {
-                    // Reduction from 0 to 60px for levels 2-6
-                    const initialReduction = ((level - 1) * (60 / 5));
-                    // As convergenceRatio approaches 1, the reduction approaches 0
-                    movementReduction = initialReduction * (1 - convergenceRatio);
-                } else {
-                    // For higher levels: reduction from 60px to 110px initially
-                    const remainingLevels = maxLevel - 6;
-                    const positionInRemaining = level - 6;
-                    const ratio = remainingLevels > 0 ? positionInRemaining / remainingLevels : 0;
-
-                    // Initial reduction (60 to 110)
-                    const initialReduction = 60 + (ratio * 50);
-                    // As convergenceRatio approaches 1, the reduction approaches 0
-                    movementReduction = initialReduction * (1 - convergenceRatio);
-                }
-
-                // Calculate final movement amount that converges as we scroll
-                const movementAmount = baseMovement - movementReduction;
-
-                // Apply a scroll factor that continues beyond 1.0 (unlike the original ratio)
-                // This allows continuous movement even after convergence
-                const yOffset = -movementAmount * (scrollY / viewportHeight);
-
-                // Apply transform
-                const originalTransform = contour.dataset.originalTransform || '';
-                if (originalTransform) {
-                    contour.setAttribute('transform', `${originalTransform} translate(0,${yOffset})`);
-                } else {
-                    contour.setAttribute('transform', `translate(0,${yOffset})`);
-                }
-            });
+            const yOffset = -Math.round(drift);
+            if (yOffset === lastOffset) return;
+            lastOffset = yOffset;
+            el.style.transform = `translate3d(0, ${yOffset}px, 0)`;
         }
 
-        // Add scroll listener and initialize
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
+        function requestUpdate() {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        update(); // set initial position
     }
 });
