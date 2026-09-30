@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; ProSuite 1.7.0 documentation</title>
+  <title>Index &mdash; ProSuite 1.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=44dfd65d"></script>
+      <script src="_static/documentation_options.js?v=a77542ef"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -258,6 +258,8 @@
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.ConnectionMode">ConnectionMode (class in prosuite.factories.enums)</a>
 </li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.current_box">current_box (prosuite.verification.VerificationProgress attribute)</a>
+</li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.ShapeAllowed.Cycles">Cycles (prosuite.factories.enums.ShapeAllowed attribute)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.ShapeAllowed.CyclesAndBranches">CyclesAndBranches (prosuite.factories.enums.ShapeAllowed attribute)</a>
@@ -268,13 +270,19 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressStep.DATA_LOADING">DATA_LOADING (prosuite.verification.VerificationProgressStep attribute)</a>
+</li>
       <li><a href="prosuite.html#prosuite.data_model.Dataset">Dataset (class in prosuite.data_model)</a>
 </li>
       <li><a href="prosuite.html#prosuite.quality.Parameter.dataset">dataset (prosuite.quality.Parameter property)</a>
 </li>
       <li><a href="prosuite.html#prosuite.data_model.Model.datasets">datasets (prosuite.data_model.Model attribute)</a>
 </li>
+      <li><a href="prosuite.html#prosuite.verification.DdxService.ddx_environment">ddx_environment (prosuite.verification.DdxService attribute)</a>
+</li>
       <li><a href="prosuite.html#prosuite.quality.DdxSpecification.ddx_id">ddx_id (prosuite.quality.DdxSpecification attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.DdxService">DdxService (class in prosuite.verification)</a>
 </li>
       <li><a href="prosuite.html#prosuite.quality.DdxSpecification">DdxSpecification (class in prosuite.quality)</a>
 </li>
@@ -284,10 +292,10 @@
 </li>
       <li><a href="prosuite.html#prosuite.data_model.Model.default_database_schema_owner">default_database_schema_owner (prosuite.data_model.Model property)</a>
 </li>
-      <li><a href="prosuite.factories.html#prosuite.factories.enums.AngleUnit.Degree">Degree (prosuite.factories.enums.AngleUnit attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.factories.html#prosuite.factories.enums.AngleUnit.Degree">Degree (prosuite.factories.enums.AngleUnit attribute)</a>
+</li>
       <li><a href="prosuite.html#prosuite.quality.DeleteIssuesInVerifiedModel.delete_all_issues_in_perimeter">delete_all_issues_in_perimeter (prosuite.quality.DeleteIssuesInVerifiedModel attribute)</a>
 </li>
       <li><a href="prosuite.html#prosuite.quality.DeleteIssuesInVerifiedModel.delete_issues_in_perimeter_with_condition">delete_issues_in_perimeter_with_condition (prosuite.quality.DeleteIssuesInVerifiedModel attribute)</a>
@@ -307,6 +315,10 @@
 </li>
       </ul></li>
       <li><a href="prosuite.html#prosuite.verification.VerificationParameters.desired_parallel_processing">desired_parallel_processing (prosuite.verification.VerificationParameters attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.detailed_progress_current_step">detailed_progress_current_step (prosuite.verification.VerificationProgress attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.detailed_progress_total_steps">detailed_progress_total_steps (prosuite.verification.VerificationProgress attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -333,6 +345,8 @@
       <li><a href="prosuite.html#prosuite.verification.EnvelopePerimeter">EnvelopePerimeter (class in prosuite.verification)</a>
 </li>
       <li><a href="prosuite.html#prosuite.quality.IssueType.Error">Error (prosuite.quality.IssueType attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressType.ERROR">ERROR (prosuite.verification.VerificationProgressType attribute)</a>
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerifiedCondition.error_count">error_count (prosuite.verification.VerifiedCondition attribute)</a>
 </li>
@@ -393,6 +407,10 @@
       <li><a href="prosuite.factories.html#prosuite.factories.enums.FieldListType">FieldListType (class in prosuite.factories.enums)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.html#prosuite.verification.MessageLevel.from_value">from_value() (prosuite.verification.MessageLevel class method)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
@@ -414,9 +432,11 @@
 </li>
       <li><a href="prosuite.html#prosuite.quality.Specification.get_conditions">get_conditions() (prosuite.quality.Specification method)</a>
 </li>
+      <li><a href="prosuite.html#prosuite.data_model.Model.get_dataset_by_name">get_dataset_by_name() (prosuite.data_model.Model method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="prosuite.html#prosuite.data_model.Model.get_dataset_by_name">get_dataset_by_name() (prosuite.data_model.Model method)</a>
+      <li><a href="prosuite.html#prosuite.verification.DdxService.get_specification">get_specification() (prosuite.verification.DdxService method)</a>
 </li>
       <li><a href="prosuite.html#prosuite.quality.XmlSpecification.get_specification_names">get_specification_names() (prosuite.quality.XmlSpecification static method)</a>
 </li>
@@ -438,8 +458,12 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="prosuite.html#prosuite.verification.Service.host_name">host_name (prosuite.verification.Service attribute)</a>
+      <li><a href="prosuite.html#prosuite.verification.DdxService.host_name">host_name (prosuite.verification.DdxService attribute)</a>
+
+      <ul>
+        <li><a href="prosuite.html#prosuite.verification.Service.host_name">(prosuite.verification.Service attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.html#prosuite.verification.Service.HTML_REPORT">HTML_REPORT (prosuite.verification.Service attribute)</a>
@@ -560,10 +584,12 @@
 </li>
       <li><a href="prosuite.html#prosuite.verification.MessageLevel.level_70000">level_70000 (prosuite.verification.MessageLevel attribute)</a>
 </li>
-      <li><a href="prosuite.factories.html#prosuite.factories.enums.LineCapStyle">LineCapStyle (class in prosuite.factories.enums)</a>
+      <li><a href="prosuite.html#prosuite.verification.MessageLevel.LEVEL_NOT_REPORTED">LEVEL_NOT_REPORTED (prosuite.verification.MessageLevel attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.factories.html#prosuite.factories.enums.LineCapStyle">LineCapStyle (class in prosuite.factories.enums)</a>
+</li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.GeometryComponent.LineEndPoint">LineEndPoint (prosuite.factories.enums.GeometryComponent attribute)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.GeometryComponent.LineEndPoints">LineEndPoints (prosuite.factories.enums.GeometryComponent attribute)</a>
@@ -588,10 +614,18 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="prosuite.html#prosuite.verification.VerificationResponse.message">message (prosuite.verification.VerificationResponse attribute)</a>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.message">message (prosuite.verification.VerificationProgress attribute)</a>
+
+      <ul>
+        <li><a href="prosuite.html#prosuite.verification.VerificationResponse.message">(prosuite.verification.VerificationResponse attribute)</a>
 </li>
-      <li><a href="prosuite.html#prosuite.verification.VerificationResponse.message_level">message_level (prosuite.verification.VerificationResponse attribute)</a>
+      </ul></li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.message_level">message_level (prosuite.verification.VerificationProgress attribute)</a>
+
+      <ul>
+        <li><a href="prosuite.html#prosuite.verification.VerificationResponse.message_level">(prosuite.verification.VerificationResponse attribute)</a>
 </li>
+      </ul></li>
       <li><a href="prosuite.html#prosuite.verification.MessageLevel">MessageLevel (class in prosuite.verification)</a>
 </li>
       <li><a href="prosuite.datatypes.html#prosuite.datatypes.expected_case.ExpectedCase.MIXED">MIXED (prosuite.datatypes.expected_case.ExpectedCase attribute)</a>
@@ -713,13 +747,17 @@
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerificationParameters.objects_to_verify">objects_to_verify (prosuite.verification.VerificationParameters attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.OrphanErrorType.OrphanedPoint">OrphanedPoint (prosuite.factories.enums.OrphanErrorType attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.OrphanErrorType">OrphanErrorType (class in prosuite.factories.enums)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.PolygonPart.OuterRings">OuterRings (prosuite.factories.enums.PolygonPart attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.overall_progress_current_step">overall_progress_current_step (prosuite.verification.VerificationProgress attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.overall_progress_total_steps">overall_progress_total_steps (prosuite.verification.VerificationProgress attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -753,7 +791,27 @@
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.PolylineUsage">PolylineUsage (class in prosuite.factories.enums)</a>
 </li>
-      <li><a href="prosuite.html#prosuite.verification.Service.port_nr">port_nr (prosuite.verification.Service attribute)</a>
+      <li><a href="prosuite.html#prosuite.verification.DdxService.port_nr">port_nr (prosuite.verification.DdxService attribute)</a>
+
+      <ul>
+        <li><a href="prosuite.html#prosuite.verification.Service.port_nr">(prosuite.verification.Service attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressType.PRE_PROCESS">PRE_PROCESS (prosuite.verification.VerificationProgressType attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressType.PROCESS_CONTAINER">PROCESS_CONTAINER (prosuite.verification.VerificationProgressType attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressType.PROCESS_NON_CACHE">PROCESS_NON_CACHE (prosuite.verification.VerificationProgressType attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressType.PROCESS_PARALLEL">PROCESS_PARALLEL (prosuite.verification.VerificationProgressType attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.processing_step_message">processing_step_message (prosuite.verification.VerificationProgress attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationResponse.progress">progress (prosuite.verification.VerificationResponse attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.progress_step">progress_step (prosuite.verification.VerificationProgress attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.progress_type">progress_type (prosuite.verification.VerificationProgress attribute)</a>
 </li>
       <li><a href="prosuite.html#prosuite.quality.DdxSpecification.project_short_name">project_short_name (prosuite.quality.DdxSpecification attribute)</a>
 
@@ -768,6 +826,8 @@
         <li><a href="prosuite.html#module-prosuite.data_model">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     prosuite.datatypes.esri_geometry_type
 
@@ -782,8 +842,6 @@
         <li><a href="prosuite.datatypes.html#module-prosuite.datatypes.expected_case">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     prosuite.datatypes.expected_string_difference
 
@@ -1155,8 +1213,6 @@
       <li><a href="prosuite.factories.html#prosuite.factories.quality_conditions.Conditions.qa_min_area_0">qa_min_area_0() (prosuite.factories.quality_conditions.Conditions class method)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.quality_conditions.Conditions.qa_min_area_1">qa_min_area_1() (prosuite.factories.quality_conditions.Conditions class method)</a>
-</li>
-      <li><a href="prosuite.factories.html#prosuite.factories.quality_conditions.Conditions.qa_min_extent_0">qa_min_extent_0() (prosuite.factories.quality_conditions.Conditions class method)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.quality_conditions.Conditions.qa_min_intersect_0">qa_min_intersect_0() (prosuite.factories.quality_conditions.Conditions class method)</a>
 </li>
@@ -1656,14 +1712,18 @@
 </li>
       <li><a href="prosuite.html#prosuite.quality.Specification">Specification (class in prosuite.quality)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.html#prosuite.verification.VerifiedSpecification.specification_id">specification_id (prosuite.verification.VerifiedSpecification attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.html#prosuite.verification.VerifiedSpecification.specification_name">specification_name (prosuite.verification.VerifiedSpecification attribute)</a>
 </li>
-      <li><a href="prosuite.html#prosuite.verification.Service.ssl_channel_credentials">ssl_channel_credentials (prosuite.verification.Service attribute)</a>
+      <li><a href="prosuite.html#prosuite.verification.DdxService.ssl_channel_credentials">ssl_channel_credentials (prosuite.verification.DdxService attribute)</a>
+
+      <ul>
+        <li><a href="prosuite.html#prosuite.verification.Service.ssl_channel_credentials">(prosuite.verification.Service attribute)</a>
 </li>
+      </ul></li>
       <li><a href="prosuite.html#prosuite.verification.ServiceStatus.status_0">status_0 (prosuite.verification.ServiceStatus attribute)</a>
 </li>
       <li><a href="prosuite.html#prosuite.verification.ServiceStatus.status_1">status_1 (prosuite.verification.ServiceStatus attribute)</a>
@@ -1688,7 +1748,13 @@
 </li>
       <li><a href="prosuite.html#prosuite.quality.Condition.test_descriptor">test_descriptor (prosuite.quality.Condition attribute)</a>
 </li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressStep.TESTING">TESTING (prosuite.verification.VerificationProgressStep attribute)</a>
+</li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.SearchOption.Tile">Tile (prosuite.factories.enums.SearchOption attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressStep.TILE_COMPLETING">TILE_COMPLETING (prosuite.verification.VerificationProgressStep attribute)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressStep.TILE_PROCESSING">TILE_PROCESSING (prosuite.verification.VerificationProgressStep attribute)</a>
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerificationParameters.tile_size">tile_size (prosuite.verification.VerificationParameters attribute)</a>
 </li>
@@ -1699,6 +1765,8 @@
       <li><a href="prosuite.html#prosuite.utils.to_int">to_int() (in module prosuite.utils)</a>
 </li>
       <li><a href="prosuite.html#prosuite.utils.to_spatial_reference_xml">to_spatial_reference_xml() (in module prosuite.utils)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress.total_box">total_box (prosuite.verification.VerificationProgress attribute)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.transformers.Transformers.tr_combined_filter_0">tr_combined_filter_0() (prosuite.factories.transformers.Transformers class method)</a>
 </li>
@@ -1714,12 +1782,12 @@
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.transformers.Transformers.tr_make_table_0">tr_make_table_0() (prosuite.factories.transformers.Transformers class method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.factories.html#prosuite.factories.transformers.Transformers.tr_make_table_1">tr_make_table_1() (prosuite.factories.transformers.Transformers class method)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.transformers.Transformers.tr_multiline_to_line_0">tr_multiline_to_line_0() (prosuite.factories.transformers.Transformers class method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="prosuite.factories.html#prosuite.factories.transformers.Transformers.tr_multipolygon_to_polygon_0">tr_multipolygon_to_polygon_0() (prosuite.factories.transformers.Transformers class method)</a>
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.transformers.Transformers.tr_only_contained_features_0">tr_only_contained_features_0() (prosuite.factories.transformers.Transformers class method)</a>
@@ -1760,6 +1828,12 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressStep.UNDEFINED">UNDEFINED (prosuite.verification.VerificationProgressStep attribute)</a>
+
+      <ul>
+        <li><a href="prosuite.html#prosuite.verification.VerificationProgressType.UNDEFINED">(prosuite.verification.VerificationProgressType attribute)</a>
+</li>
+      </ul></li>
       <li><a href="prosuite.datatypes.html#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.UNIQUE_ANY_CASE">UNIQUE_ANY_CASE (prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint attribute)</a>
 </li>
       <li><a href="prosuite.datatypes.html#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint.UNIQUE_EXACT_CASE">UNIQUE_EXACT_CASE (prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint attribute)</a>
@@ -1768,10 +1842,10 @@
 </li>
       <li><a href="prosuite.factories.html#prosuite.factories.enums.UniqueStringsConstraint.UniqueExactCase">UniqueExactCase (prosuite.factories.enums.UniqueStringsConstraint attribute)</a>
 </li>
-      <li><a href="prosuite.factories.html#prosuite.factories.enums.LineFieldValuesConstraint.UniqueOrValidPointExists">UniqueOrValidPointExists (prosuite.factories.enums.LineFieldValuesConstraint attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.factories.html#prosuite.factories.enums.LineFieldValuesConstraint.UniqueOrValidPointExists">UniqueOrValidPointExists (prosuite.factories.enums.LineFieldValuesConstraint attribute)</a>
+</li>
       <li><a href="prosuite.datatypes.html#prosuite.datatypes.unique_strings_constraint.UniqueStringsConstraint">UniqueStringsConstraint (class in prosuite.datatypes.unique_strings_constraint)</a>
 
       <ul>
@@ -1800,16 +1874,22 @@
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerificationParameters">VerificationParameters (class in prosuite.verification)</a>
 </li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgress">VerificationProgress (class in prosuite.verification)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressStep">VerificationProgressStep (class in prosuite.verification)</a>
+</li>
+      <li><a href="prosuite.html#prosuite.verification.VerificationProgressType">VerificationProgressType (class in prosuite.verification)</a>
+</li>
       <li><a href="prosuite.html#prosuite.verification.VerificationResponse">VerificationResponse (class in prosuite.verification)</a>
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerifiedSpecification.verified_conditions">verified_conditions (prosuite.verification.VerifiedSpecification attribute)</a>
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerifiedSpecification.verified_conditions_count">verified_conditions_count (prosuite.verification.VerifiedSpecification property)</a>
 </li>
-      <li><a href="prosuite.html#prosuite.verification.VerificationResponse.verified_specification">verified_specification (prosuite.verification.VerificationResponse attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="prosuite.html#prosuite.verification.VerificationResponse.verified_specification">verified_specification (prosuite.verification.VerificationResponse attribute)</a>
+</li>
       <li><a href="prosuite.html#prosuite.verification.VerifiedCondition">VerifiedCondition (class in prosuite.verification)</a>
 </li>
       <li><a href="prosuite.html#prosuite.verification.VerifiedSpecification">VerifiedSpecification (class in prosuite.verification)</a>
