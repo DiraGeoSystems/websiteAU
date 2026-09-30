@@ -18,6 +18,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - source-assets/
 
 # Include in the output but don't process
 include:
