@@ -6,8 +6,8 @@ the Jekyll build (`_config.yml`), so it is never published.
 
 ## Build and preview
 
-- Static Jekyll site, published by GitHub Pages. **Every push to `main` deploys
-  to https://www.dirageosystems.ch within minutes.**
+- Static Jekyll site, published by GitHub Pages. **Every change that lands on
+  `main` deploys to https://www.dirageosystems.ch within minutes.**
 - Local preview: `docker-compose up`, then http://localhost:4000. Ruby/bundle are
   not installed on the host, so run Jekyll only through Docker.
 - The dev server rebuilds on file changes but reads `_config.yml` only at
@@ -53,7 +53,8 @@ the Jekyll build (`_config.yml`), so it is never published.
 
 ## Git workflow
 
-- Only push when asked, because a push to `main` deploys.
+- `main` is protected. Make changes on a branch, push it and open a PR against
+  `main`. Merging the PR deploys the site, so only merge when asked.
 
 ## Australian site (`DiraGeoSystems/websiteAU`)
 

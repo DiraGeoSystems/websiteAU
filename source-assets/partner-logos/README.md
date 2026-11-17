@@ -20,5 +20,11 @@ the same `viewBox` (`22.5 20.5 155.75 62.125`), which leaves a little white on
 the right of the narrower English logo. Equal widths matter because the
 carousel measures its width only once, so switching language must not change it.
 
+`LFU_Logo.png` is made from `LFU_Schriftzug_50c60k_2015.jpg` in the shared
+Firmenlogos folder on kDrive. That file is CMYK, so its ink coverage is used as
+the alpha channel, filled with the web colour `#526D7F` on a transparent
+background. The earlier PNG had the bottom of "Umwelt" cut off. The right
+lion's tail touching the right edge is part of the official artwork.
+
 To update a logo, edit or replace the original here, then re-export it into
 `dist/img/partner-logos/` at the height above.

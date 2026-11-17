@@ -20,6 +20,9 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - source-assets/
+  - Dockerfile
+  - docker-compose.yaml
+  - scss/
 
 # Include in the output but don't process
 include:
