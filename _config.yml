@@ -8,6 +8,7 @@ markdown: kramdown
 exclude:
   - Makefile
   - README.md
+  - AGENTS.md
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/

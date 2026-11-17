@@ -44,8 +44,30 @@ class InfiniteScroller {
             this.setupInitialPosition();
             this.setupStyles();
             this.setupEvents();
-            this.startAnimation();
+            this.startWhenVisible();
         });
+    }
+
+    startWhenVisible() {
+        // The carousel sits below the fold. Starting right away means it has
+        // already scrolled past the first logos by the time a visitor reaches
+        // it, and how far depends on whether the images came from cache.
+        // Start only once it is on screen, so the first logo is always seen first.
+        if (!('IntersectionObserver' in window)) {
+            this.startAnimation();
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some(entry => entry.isIntersecting)) {
+                observer.disconnect();
+                this.visibilityObserver = null;
+                this.startAnimation();
+            }
+        }, { threshold: 0.5 });
+
+        observer.observe(this.container);
+        this.visibilityObserver = observer;
     }
 
     whenImagesReady(callback) {
@@ -76,34 +98,33 @@ class InfiniteScroller {
     }
 
     createSufficientDuplicates() {
-        // Clear existing content
-        this.wrapper.innerHTML = '';
+        // The wrapper still holds the original logos from the page, whose images
+        // whenImagesReady has waited for. Keep them as the first set and measure
+        // on them. Fresh clones may still be loading at this point (Firefox
+        // re-downloads them on a cache-bypassing reload), so they have no width yet.
+        const appendSet = () => {
+            this.originalLogos.forEach(logo => {
+                const clone = logo.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                this.wrapper.appendChild(clone);
+            });
+        };
+        appendSet();
 
-        // Add original set first to measure
-        this.originalLogos.forEach(logo => {
-            this.wrapper.appendChild(logo.cloneNode(true));
-        });
-
-        // Force layout and measure
+        // Measure the repeat distance: the offset between the first logo of
+        // each set. It depends only on the first set's widths, and unlike one
+        // set's scrollWidth it includes the flex gap between the sets.
         this.container.offsetWidth; // Force reflow
-        const originalSetWidth = this.wrapper.scrollWidth;
+        const n = this.originalLogos.length;
+        const originalSetWidth = this.wrapper.children[n].offsetLeft - this.wrapper.children[0].offsetLeft;
         const containerWidth = this.container.offsetWidth;
 
         // Calculate minimum sets needed for seamless infinite scroll
         // Need enough sets to cover: container width + buffer for smooth transitions
         const minSetsNeeded = Math.max(5, Math.ceil((containerWidth * 3) / originalSetWidth));
 
-        // Clear and rebuild with calculated sets
-        this.wrapper.innerHTML = '';
-
-        for (let i = 0; i < minSetsNeeded; i++) {
-            this.originalLogos.forEach(logo => {
-                const clone = logo.cloneNode(true);
-                if (i > 0) {
-                    clone.setAttribute('aria-hidden', 'true');
-                }
-                this.wrapper.appendChild(clone);
-            });
+        for (let i = 2; i < minSetsNeeded; i++) {
+            appendSet();
         }
 
         this.singleSetWidth = originalSetWidth;
@@ -343,6 +364,9 @@ class InfiniteScroller {
         if (this.animationId) {
             cancelAnimationFrame(this.animationId);
         }
+        if (this.visibilityObserver) {
+            this.visibilityObserver.disconnect();
+        }
         clearTimeout(this.manualTimeout);
     }
 }
@@ -357,6 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.bottomLogoScroller.destroy();
     }
 
-    window.topLogoScroller = new InfiniteScroller('logoTopContainer', 'logoTopWrapper', 'left', 40);
-    window.bottomLogoScroller = new InfiniteScroller('logoBottomContainer', 'logoBottomWrapper', 'right', 40);
+    window.topLogoScroller = new InfiniteScroller('logoTopContainer', 'logoTopWrapper', 'left', 50);
+    window.bottomLogoScroller = new InfiniteScroller('logoBottomContainer', 'logoBottomWrapper', 'right', 50);
 });
