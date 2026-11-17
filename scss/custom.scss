@@ -758,6 +758,10 @@ i.product-detail-name {
       opacity: .5;
     }
   }
+
+  .footer-social li + li {
+    margin-top: 2px;
+  }
 }
 
 .nav-link-lang {
