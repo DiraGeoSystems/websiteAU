@@ -381,6 +381,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.bottomLogoScroller.destroy();
     }
 
-    window.topLogoScroller = new InfiniteScroller('logoTopContainer', 'logoTopWrapper', 'left', 50);
-    window.bottomLogoScroller = new InfiniteScroller('logoBottomContainer', 'logoBottomWrapper', 'right', 50);
+    // This script is loaded on every page, but only the home page has the
+    // carousel. Skip it elsewhere instead of letting the constructor throw.
+    if (document.getElementById('logoTopContainer')) {
+        window.topLogoScroller = new InfiniteScroller('logoTopContainer', 'logoTopWrapper', 'left', 50);
+    }
+    if (document.getElementById('logoBottomContainer')) {
+        window.bottomLogoScroller = new InfiniteScroller('logoBottomContainer', 'logoBottomWrapper', 'right', 50);
+    }
 });

@@ -1,10 +1,11 @@
 services:
   jekyll:
     build: .
-    command: jekyll serve --livereload --force_polling
+    # --host 0.0.0.0: Jekyll listens on localhost by default, which is not
+    # reachable from outside the container.
+    command: jekyll serve --host 0.0.0.0 --livereload --force_polling
     ports:
       - 4000:4000
       - 35729:35729
     volumes:
       - .:/srv/jekyll
-      - ./vendor/bundle:/usr/local/bundle
